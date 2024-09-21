@@ -1,7 +1,7 @@
 from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy.future import select
-from app.models.categories import *
-from app.schemas.categories import *
+from app.models.categories import Category
+from app.schemas.categories import CategoryCreateModel,CategoryModel,CategoryUpdateModel
 from app.core.logging import logger
 from sqlalchemy import func, select, desc
 
@@ -86,5 +86,32 @@ class CategoryService:
             return {
                 "status": "failure",
                 "message": f"Error retrieving categories: {str(e)}",
+                "data": None
+            }
+
+
+    @staticmethod
+    async def get_category_by_id(db: AsyncSession, category_id: int):
+        try:
+            result = await db.execute(select(Category).where(Category.id == category_id))
+            category = result.scalars().first()
+
+            if category:
+                return {
+                    "status": "success",
+                    "message": "Category retrieved successfully.",
+                    "data": CategoryModel.from_orm(category)
+                }
+            else:
+                return {
+                    "status": "failure",
+                    "message": "Category not found.",
+                    "data": None
+                }
+        except Exception as e:
+            logger.error(f"Error retrieving category by id: {str(e)}")
+            return {
+                "status": "failure",
+                "message": f"Error retrieving category: {str(e)}",
                 "data": None
             }
