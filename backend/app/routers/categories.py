@@ -1,16 +1,13 @@
-from fastapi import APIRouter, Depends, HTTPException
+from fastapi import APIRouter, Depends
 from sqlalchemy.ext.asyncio import AsyncSession
-from app.schemas.categories import CategoryCreateModel
+from app.schemas.categories import *
 from app.services.categories import CategoryService
 from app.core.database import get_db
-from app.core.logging import logger
 
 router = APIRouter()
 
 
-@router.post("/")
+@router.post("/create-or-bulk/")
 async def create_category(category_data: CategoryCreateModel, db: AsyncSession = Depends(get_db)):
-    # Call service method and get the response
-    response = await CategoryService.create_category(db=db, category_data=category_data)
-    # Return the response directly (with the custom structure)
+    response = await CategoryService.create_categories(db=db, names=category_data.names, is_active=category_data.is_active)
     return response

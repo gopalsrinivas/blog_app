@@ -1,6 +1,6 @@
 from pydantic import BaseModel
 from datetime import datetime
-from typing import Optional
+from typing import List, Optional
 
 
 class CategoryModel(BaseModel):
@@ -15,7 +15,6 @@ class CategoryModel(BaseModel):
         orm_mode = True
         json_schema_extra = {
             "example": {
-                "cat_id": "cat__001",
                 "name": "Sample Category",
                 "is_active": True
             }
@@ -23,13 +22,13 @@ class CategoryModel(BaseModel):
 
 
 class CategoryCreateModel(BaseModel):
-    name: str
+    names: List[str]  # List for bulk insert
     is_active: bool = True
 
     class Config:
         json_schema_extra = {
             "example": {
-                "name": "Sample Category",
+                "names": ["Sample Category 1", "Sample Category 2"],
                 "is_active": True
             }
         }

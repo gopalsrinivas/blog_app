@@ -3481,3 +3481,367 @@ WHERE categories.name = $1::VARCHAR
 INFO 2024-09-21 21:25:04,289 sqlalchemy.engine.Engine [cached since 8.14s ago] ('11Sample Category',)
 INFO 2024-09-21 21:25:04,291 sqlalchemy.engine.Engine ROLLBACK
 INFO 2024-09-21 21:25:10,752 root Shutting down application...
+INFO 2024-09-21 21:25:14,593 root Application startup application...
+INFO 2024-09-21 21:29:05,724 root Shutting down application...
+INFO 2024-09-21 21:29:55,385 root Application startup application...
+INFO 2024-09-21 21:30:16,623 root Shutting down application...
+INFO 2024-09-21 21:30:19,880 root Application startup application...
+INFO 2024-09-21 21:31:28,576 sqlalchemy.engine.Engine select pg_catalog.version()
+INFO 2024-09-21 21:31:28,576 sqlalchemy.engine.Engine [raw sql] ()
+INFO 2024-09-21 21:31:28,579 sqlalchemy.engine.Engine select current_schema()
+INFO 2024-09-21 21:31:28,580 sqlalchemy.engine.Engine [raw sql] ()
+INFO 2024-09-21 21:31:28,582 sqlalchemy.engine.Engine show standard_conforming_strings
+INFO 2024-09-21 21:31:28,582 sqlalchemy.engine.Engine [raw sql] ()
+INFO 2024-09-21 21:31:28,584 sqlalchemy.engine.Engine BEGIN (implicit)
+INFO 2024-09-21 21:31:28,590 sqlalchemy.engine.Engine SELECT categories.id, categories.cat_id, categories.name, categories.is_active, categories.created_on, categories.updated_on 
+FROM categories 
+WHERE categories.name = $1::VARCHAR
+INFO 2024-09-21 21:31:28,591 sqlalchemy.engine.Engine [generated in 0.00118s] ('Category_1',)
+INFO 2024-09-21 21:31:28,600 sqlalchemy.engine.Engine SELECT categories.id, categories.cat_id, categories.name, categories.is_active, categories.created_on, categories.updated_on 
+FROM categories
+INFO 2024-09-21 21:31:28,601 sqlalchemy.engine.Engine [generated in 0.00103s] ()
+INFO 2024-09-21 21:31:28,607 sqlalchemy.engine.Engine INSERT INTO categories (id, cat_id, name, is_active, created_on, updated_on) VALUES (nextval('cat_id_seq'), $1::VARCHAR, $2::VARCHAR, $3::BOOLEAN, now(), $4::TIMESTAMP WITHOUT TIME ZONE) RETURNING categories.id, categories.created_on
+INFO 2024-09-21 21:31:28,608 sqlalchemy.engine.Engine [generated in 0.00099s] ('cat__012', 'Category_1', True, None)
+INFO 2024-09-21 21:31:28,612 sqlalchemy.engine.Engine COMMIT
+INFO 2024-09-21 21:31:28,616 sqlalchemy.engine.Engine BEGIN (implicit)
+INFO 2024-09-21 21:31:28,620 sqlalchemy.engine.Engine SELECT categories.id, categories.cat_id, categories.name, categories.is_active, categories.created_on, categories.updated_on 
+FROM categories 
+WHERE categories.id = $1::INTEGER
+INFO 2024-09-21 21:31:28,621 sqlalchemy.engine.Engine [generated in 0.00114s] (47,)
+INFO 2024-09-21 21:31:28,624 sqlalchemy.engine.Engine SELECT categories.id, categories.cat_id, categories.name, categories.is_active, categories.created_on, categories.updated_on 
+FROM categories 
+WHERE categories.name = $1::VARCHAR
+INFO 2024-09-21 21:31:28,625 sqlalchemy.engine.Engine [cached since 0.03519s ago] ('Category_2',)
+INFO 2024-09-21 21:31:28,627 sqlalchemy.engine.Engine SELECT categories.id, categories.cat_id, categories.name, categories.is_active, categories.created_on, categories.updated_on 
+FROM categories
+INFO 2024-09-21 21:31:28,628 sqlalchemy.engine.Engine [cached since 0.02855s ago] ()
+INFO 2024-09-21 21:31:28,632 sqlalchemy.engine.Engine INSERT INTO categories (id, cat_id, name, is_active, created_on, updated_on) VALUES (nextval('cat_id_seq'), $1::VARCHAR, $2::VARCHAR, $3::BOOLEAN, now(), $4::TIMESTAMP WITHOUT TIME ZONE) RETURNING categories.id, categories.created_on
+INFO 2024-09-21 21:31:28,633 sqlalchemy.engine.Engine [cached since 0.0257s ago] ('cat__013', 'Category_2', True, None)
+INFO 2024-09-21 21:31:28,635 sqlalchemy.engine.Engine COMMIT
+INFO 2024-09-21 21:31:28,638 sqlalchemy.engine.Engine BEGIN (implicit)
+INFO 2024-09-21 21:31:28,639 sqlalchemy.engine.Engine SELECT categories.id, categories.cat_id, categories.name, categories.is_active, categories.created_on, categories.updated_on 
+FROM categories 
+WHERE categories.id = $1::INTEGER
+INFO 2024-09-21 21:31:28,640 sqlalchemy.engine.Engine [cached since 0.02095s ago] (48,)
+INFO 2024-09-21 21:31:28,643 sqlalchemy.engine.Engine SELECT categories.id, categories.cat_id, categories.name, categories.is_active, categories.created_on, categories.updated_on 
+FROM categories 
+WHERE categories.name = $1::VARCHAR
+INFO 2024-09-21 21:31:28,644 sqlalchemy.engine.Engine [cached since 0.05422s ago] ('Category_3',)
+INFO 2024-09-21 21:31:28,647 sqlalchemy.engine.Engine SELECT categories.id, categories.cat_id, categories.name, categories.is_active, categories.created_on, categories.updated_on 
+FROM categories
+INFO 2024-09-21 21:31:28,648 sqlalchemy.engine.Engine [cached since 0.04874s ago] ()
+INFO 2024-09-21 21:31:28,650 sqlalchemy.engine.Engine INSERT INTO categories (id, cat_id, name, is_active, created_on, updated_on) VALUES (nextval('cat_id_seq'), $1::VARCHAR, $2::VARCHAR, $3::BOOLEAN, now(), $4::TIMESTAMP WITHOUT TIME ZONE) RETURNING categories.id, categories.created_on
+INFO 2024-09-21 21:31:28,652 sqlalchemy.engine.Engine [cached since 0.04459s ago] ('cat__014', 'Category_3', True, None)
+INFO 2024-09-21 21:31:28,654 sqlalchemy.engine.Engine COMMIT
+INFO 2024-09-21 21:31:28,656 sqlalchemy.engine.Engine BEGIN (implicit)
+INFO 2024-09-21 21:31:28,657 sqlalchemy.engine.Engine SELECT categories.id, categories.cat_id, categories.name, categories.is_active, categories.created_on, categories.updated_on 
+FROM categories 
+WHERE categories.id = $1::INTEGER
+INFO 2024-09-21 21:31:28,659 sqlalchemy.engine.Engine [cached since 0.03893s ago] (49,)
+INFO 2024-09-21 21:31:28,662 sqlalchemy.engine.Engine ROLLBACK
+INFO 2024-09-21 21:33:21,350 sqlalchemy.engine.Engine BEGIN (implicit)
+INFO 2024-09-21 21:33:21,352 sqlalchemy.engine.Engine SELECT categories.id, categories.cat_id, categories.name, categories.is_active, categories.created_on, categories.updated_on 
+FROM categories 
+WHERE categories.name = $1::VARCHAR
+INFO 2024-09-21 21:33:21,353 sqlalchemy.engine.Engine [cached since 112.8s ago] ('Billa',)
+INFO 2024-09-21 21:33:21,355 sqlalchemy.engine.Engine SELECT categories.id, categories.cat_id, categories.name, categories.is_active, categories.created_on, categories.updated_on 
+FROM categories
+INFO 2024-09-21 21:33:21,356 sqlalchemy.engine.Engine [cached since 112.8s ago] ()
+INFO 2024-09-21 21:33:21,358 sqlalchemy.engine.Engine INSERT INTO categories (id, cat_id, name, is_active, created_on, updated_on) VALUES (nextval('cat_id_seq'), $1::VARCHAR, $2::VARCHAR, $3::BOOLEAN, now(), $4::TIMESTAMP WITHOUT TIME ZONE) RETURNING categories.id, categories.created_on
+INFO 2024-09-21 21:33:21,359 sqlalchemy.engine.Engine [cached since 112.8s ago] ('cat__015', 'Billa', True, None)
+INFO 2024-09-21 21:33:21,360 sqlalchemy.engine.Engine COMMIT
+INFO 2024-09-21 21:33:21,363 sqlalchemy.engine.Engine BEGIN (implicit)
+INFO 2024-09-21 21:33:21,364 sqlalchemy.engine.Engine SELECT categories.id, categories.cat_id, categories.name, categories.is_active, categories.created_on, categories.updated_on 
+FROM categories 
+WHERE categories.id = $1::INTEGER
+INFO 2024-09-21 21:33:21,365 sqlalchemy.engine.Engine [cached since 112.7s ago] (50,)
+INFO 2024-09-21 21:33:21,368 sqlalchemy.engine.Engine SELECT categories.id, categories.cat_id, categories.name, categories.is_active, categories.created_on, categories.updated_on 
+FROM categories 
+WHERE categories.name = $1::VARCHAR
+INFO 2024-09-21 21:33:21,369 sqlalchemy.engine.Engine [cached since 112.8s ago] ('Kurthi',)
+INFO 2024-09-21 21:33:21,372 sqlalchemy.engine.Engine SELECT categories.id, categories.cat_id, categories.name, categories.is_active, categories.created_on, categories.updated_on 
+FROM categories
+INFO 2024-09-21 21:33:21,372 sqlalchemy.engine.Engine [cached since 112.8s ago] ()
+INFO 2024-09-21 21:33:21,375 sqlalchemy.engine.Engine INSERT INTO categories (id, cat_id, name, is_active, created_on, updated_on) VALUES (nextval('cat_id_seq'), $1::VARCHAR, $2::VARCHAR, $3::BOOLEAN, now(), $4::TIMESTAMP WITHOUT TIME ZONE) RETURNING categories.id, categories.created_on
+INFO 2024-09-21 21:33:21,376 sqlalchemy.engine.Engine [cached since 112.8s ago] ('cat__016', 'Kurthi', True, None)
+INFO 2024-09-21 21:33:21,378 sqlalchemy.engine.Engine COMMIT
+INFO 2024-09-21 21:33:21,380 sqlalchemy.engine.Engine BEGIN (implicit)
+INFO 2024-09-21 21:33:21,381 sqlalchemy.engine.Engine SELECT categories.id, categories.cat_id, categories.name, categories.is_active, categories.created_on, categories.updated_on 
+FROM categories 
+WHERE categories.id = $1::INTEGER
+INFO 2024-09-21 21:33:21,382 sqlalchemy.engine.Engine [cached since 112.8s ago] (51,)
+INFO 2024-09-21 21:33:21,384 sqlalchemy.engine.Engine SELECT categories.id, categories.cat_id, categories.name, categories.is_active, categories.created_on, categories.updated_on 
+FROM categories 
+WHERE categories.name = $1::VARCHAR
+INFO 2024-09-21 21:33:21,386 sqlalchemy.engine.Engine [cached since 112.8s ago] ('gopal',)
+INFO 2024-09-21 21:33:21,388 sqlalchemy.engine.Engine SELECT categories.id, categories.cat_id, categories.name, categories.is_active, categories.created_on, categories.updated_on 
+FROM categories
+INFO 2024-09-21 21:33:21,389 sqlalchemy.engine.Engine [cached since 112.8s ago] ()
+INFO 2024-09-21 21:33:21,392 sqlalchemy.engine.Engine INSERT INTO categories (id, cat_id, name, is_active, created_on, updated_on) VALUES (nextval('cat_id_seq'), $1::VARCHAR, $2::VARCHAR, $3::BOOLEAN, now(), $4::TIMESTAMP WITHOUT TIME ZONE) RETURNING categories.id, categories.created_on
+INFO 2024-09-21 21:33:21,393 sqlalchemy.engine.Engine [cached since 112.8s ago] ('cat__017', 'gopal', True, None)
+INFO 2024-09-21 21:33:21,395 sqlalchemy.engine.Engine COMMIT
+INFO 2024-09-21 21:33:21,398 sqlalchemy.engine.Engine BEGIN (implicit)
+INFO 2024-09-21 21:33:21,398 sqlalchemy.engine.Engine SELECT categories.id, categories.cat_id, categories.name, categories.is_active, categories.created_on, categories.updated_on 
+FROM categories 
+WHERE categories.id = $1::INTEGER
+INFO 2024-09-21 21:33:21,400 sqlalchemy.engine.Engine [cached since 112.8s ago] (52,)
+INFO 2024-09-21 21:33:21,403 sqlalchemy.engine.Engine ROLLBACK
+INFO 2024-09-21 21:35:16,925 sqlalchemy.engine.Engine BEGIN (implicit)
+INFO 2024-09-21 21:35:16,926 sqlalchemy.engine.Engine SELECT categories.id, categories.cat_id, categories.name, categories.is_active, categories.created_on, categories.updated_on 
+FROM categories 
+WHERE categories.name = $1::VARCHAR
+INFO 2024-09-21 21:35:16,927 sqlalchemy.engine.Engine [cached since 228.3s ago] ('Billa',)
+INFO 2024-09-21 21:35:16,929 sqlalchemy.engine.Engine SELECT categories.id, categories.cat_id, categories.name, categories.is_active, categories.created_on, categories.updated_on 
+FROM categories 
+WHERE categories.name = $1::VARCHAR
+INFO 2024-09-21 21:35:16,929 sqlalchemy.engine.Engine [cached since 228.3s ago] ('Kurthi',)
+INFO 2024-09-21 21:35:16,931 sqlalchemy.engine.Engine SELECT categories.id, categories.cat_id, categories.name, categories.is_active, categories.created_on, categories.updated_on 
+FROM categories 
+WHERE categories.name = $1::VARCHAR
+INFO 2024-09-21 21:35:16,932 sqlalchemy.engine.Engine [cached since 228.3s ago] ('gopal',)
+INFO 2024-09-21 21:35:16,933 sqlalchemy.engine.Engine ROLLBACK
+INFO 2024-09-21 21:35:31,163 sqlalchemy.engine.Engine BEGIN (implicit)
+INFO 2024-09-21 21:35:31,164 sqlalchemy.engine.Engine SELECT categories.id, categories.cat_id, categories.name, categories.is_active, categories.created_on, categories.updated_on 
+FROM categories 
+WHERE categories.name = $1::VARCHAR
+INFO 2024-09-21 21:35:31,165 sqlalchemy.engine.Engine [cached since 242.6s ago] ('Billa1',)
+INFO 2024-09-21 21:35:31,166 sqlalchemy.engine.Engine SELECT categories.id, categories.cat_id, categories.name, categories.is_active, categories.created_on, categories.updated_on 
+FROM categories
+INFO 2024-09-21 21:35:31,166 sqlalchemy.engine.Engine [cached since 242.6s ago] ()
+INFO 2024-09-21 21:35:31,169 sqlalchemy.engine.Engine INSERT INTO categories (id, cat_id, name, is_active, created_on, updated_on) VALUES (nextval('cat_id_seq'), $1::VARCHAR, $2::VARCHAR, $3::BOOLEAN, now(), $4::TIMESTAMP WITHOUT TIME ZONE) RETURNING categories.id, categories.created_on
+INFO 2024-09-21 21:35:31,169 sqlalchemy.engine.Engine [cached since 242.6s ago] ('cat__018', 'Billa1', True, None)
+INFO 2024-09-21 21:35:31,171 sqlalchemy.engine.Engine COMMIT
+INFO 2024-09-21 21:35:31,172 sqlalchemy.engine.Engine BEGIN (implicit)
+INFO 2024-09-21 21:35:31,174 sqlalchemy.engine.Engine SELECT categories.id, categories.cat_id, categories.name, categories.is_active, categories.created_on, categories.updated_on 
+FROM categories 
+WHERE categories.id = $1::INTEGER
+INFO 2024-09-21 21:35:31,175 sqlalchemy.engine.Engine [cached since 242.6s ago] (53,)
+INFO 2024-09-21 21:35:31,177 sqlalchemy.engine.Engine SELECT categories.id, categories.cat_id, categories.name, categories.is_active, categories.created_on, categories.updated_on 
+FROM categories 
+WHERE categories.name = $1::VARCHAR
+INFO 2024-09-21 21:35:31,178 sqlalchemy.engine.Engine [cached since 242.6s ago] ('Kurthi1',)
+INFO 2024-09-21 21:35:31,181 sqlalchemy.engine.Engine SELECT categories.id, categories.cat_id, categories.name, categories.is_active, categories.created_on, categories.updated_on 
+FROM categories
+INFO 2024-09-21 21:35:31,182 sqlalchemy.engine.Engine [cached since 242.6s ago] ()
+INFO 2024-09-21 21:35:31,184 sqlalchemy.engine.Engine INSERT INTO categories (id, cat_id, name, is_active, created_on, updated_on) VALUES (nextval('cat_id_seq'), $1::VARCHAR, $2::VARCHAR, $3::BOOLEAN, now(), $4::TIMESTAMP WITHOUT TIME ZONE) RETURNING categories.id, categories.created_on
+INFO 2024-09-21 21:35:31,184 sqlalchemy.engine.Engine [cached since 242.6s ago] ('cat__019', 'Kurthi1', True, None)
+INFO 2024-09-21 21:35:31,186 sqlalchemy.engine.Engine COMMIT
+INFO 2024-09-21 21:35:31,187 sqlalchemy.engine.Engine BEGIN (implicit)
+INFO 2024-09-21 21:35:31,188 sqlalchemy.engine.Engine SELECT categories.id, categories.cat_id, categories.name, categories.is_active, categories.created_on, categories.updated_on 
+FROM categories 
+WHERE categories.id = $1::INTEGER
+INFO 2024-09-21 21:35:31,190 sqlalchemy.engine.Engine [cached since 242.6s ago] (54,)
+INFO 2024-09-21 21:35:31,192 sqlalchemy.engine.Engine SELECT categories.id, categories.cat_id, categories.name, categories.is_active, categories.created_on, categories.updated_on 
+FROM categories 
+WHERE categories.name = $1::VARCHAR
+INFO 2024-09-21 21:35:31,194 sqlalchemy.engine.Engine [cached since 242.6s ago] ('gopal1',)
+INFO 2024-09-21 21:35:31,195 sqlalchemy.engine.Engine SELECT categories.id, categories.cat_id, categories.name, categories.is_active, categories.created_on, categories.updated_on 
+FROM categories
+INFO 2024-09-21 21:35:31,196 sqlalchemy.engine.Engine [cached since 242.6s ago] ()
+INFO 2024-09-21 21:35:31,198 sqlalchemy.engine.Engine INSERT INTO categories (id, cat_id, name, is_active, created_on, updated_on) VALUES (nextval('cat_id_seq'), $1::VARCHAR, $2::VARCHAR, $3::BOOLEAN, now(), $4::TIMESTAMP WITHOUT TIME ZONE) RETURNING categories.id, categories.created_on
+INFO 2024-09-21 21:35:31,200 sqlalchemy.engine.Engine [cached since 242.6s ago] ('cat__020', 'gopal1', True, None)
+INFO 2024-09-21 21:35:31,201 sqlalchemy.engine.Engine COMMIT
+INFO 2024-09-21 21:35:31,203 sqlalchemy.engine.Engine BEGIN (implicit)
+INFO 2024-09-21 21:35:31,204 sqlalchemy.engine.Engine SELECT categories.id, categories.cat_id, categories.name, categories.is_active, categories.created_on, categories.updated_on 
+FROM categories 
+WHERE categories.id = $1::INTEGER
+INFO 2024-09-21 21:35:31,205 sqlalchemy.engine.Engine [cached since 242.6s ago] (55,)
+INFO 2024-09-21 21:35:31,206 sqlalchemy.engine.Engine ROLLBACK
+INFO 2024-09-21 21:37:06,507 root Shutting down application...
+INFO 2024-09-21 21:37:09,746 root Application startup application...
+INFO 2024-09-21 21:37:14,534 root Shutting down application...
+INFO 2024-09-21 21:37:18,888 root Application startup application...
+INFO 2024-09-21 21:54:20,441 root Shutting down application...
+INFO 2024-09-21 21:58:06,183 root Application startup application...
+INFO 2024-09-21 21:59:25,467 root Shutting down application...
+INFO 2024-09-21 21:59:31,181 root Application startup application...
+INFO 2024-09-21 21:59:41,602 root Shutting down application...
+INFO 2024-09-21 21:59:48,801 root Application startup application...
+INFO 2024-09-21 21:59:50,426 root Shutting down application...
+INFO 2024-09-21 21:59:56,565 root Application startup application...
+INFO 2024-09-21 22:01:47,662 root Shutting down application...
+INFO 2024-09-21 22:01:52,820 root Application startup application...
+INFO 2024-09-21 22:02:08,232 sqlalchemy.engine.Engine select pg_catalog.version()
+INFO 2024-09-21 22:02:08,235 sqlalchemy.engine.Engine [raw sql] ()
+INFO 2024-09-21 22:02:08,272 sqlalchemy.engine.Engine select current_schema()
+INFO 2024-09-21 22:02:08,274 sqlalchemy.engine.Engine [raw sql] ()
+INFO 2024-09-21 22:02:08,281 sqlalchemy.engine.Engine show standard_conforming_strings
+INFO 2024-09-21 22:02:08,284 sqlalchemy.engine.Engine [raw sql] ()
+INFO 2024-09-21 22:02:08,293 sqlalchemy.engine.Engine BEGIN (implicit)
+INFO 2024-09-21 22:02:08,323 sqlalchemy.engine.Engine SELECT categories.id, categories.cat_id, categories.name, categories.is_active, categories.created_on, categories.updated_on 
+FROM categories 
+WHERE categories.name = $1::VARCHAR
+INFO 2024-09-21 22:02:08,327 sqlalchemy.engine.Engine [generated in 0.00419s] ('Billa2',)
+INFO 2024-09-21 22:02:08,381 sqlalchemy.engine.Engine SELECT categories.id, categories.cat_id, categories.name, categories.is_active, categories.created_on, categories.updated_on 
+FROM categories
+INFO 2024-09-21 22:02:08,385 sqlalchemy.engine.Engine [generated in 0.00476s] ()
+INFO 2024-09-21 22:02:08,410 sqlalchemy.engine.Engine INSERT INTO categories (id, cat_id, name, is_active, created_on, updated_on) VALUES (nextval('cat_id_seq'), $1::VARCHAR, $2::VARCHAR, $3::BOOLEAN, now(), $4::TIMESTAMP WITHOUT TIME ZONE) RETURNING categories.id, categories.created_on
+INFO 2024-09-21 22:02:08,412 sqlalchemy.engine.Engine [generated in 0.00311s] ('cat__021', 'Billa2', True, None)
+INFO 2024-09-21 22:02:08,442 sqlalchemy.engine.Engine COMMIT
+INFO 2024-09-21 22:02:08,456 sqlalchemy.engine.Engine BEGIN (implicit)
+INFO 2024-09-21 22:02:08,464 sqlalchemy.engine.Engine SELECT categories.id, categories.cat_id, categories.name, categories.is_active, categories.created_on, categories.updated_on 
+FROM categories 
+WHERE categories.id = $1::INTEGER
+INFO 2024-09-21 22:02:08,468 sqlalchemy.engine.Engine [generated in 0.00394s] (56,)
+INFO 2024-09-21 22:02:08,479 sqlalchemy.engine.Engine SELECT categories.id, categories.cat_id, categories.name, categories.is_active, categories.created_on, categories.updated_on 
+FROM categories 
+WHERE categories.name = $1::VARCHAR
+INFO 2024-09-21 22:02:08,483 sqlalchemy.engine.Engine [cached since 0.1601s ago] ('Kurthi2',)
+INFO 2024-09-21 22:02:08,494 sqlalchemy.engine.Engine SELECT categories.id, categories.cat_id, categories.name, categories.is_active, categories.created_on, categories.updated_on 
+FROM categories
+INFO 2024-09-21 22:02:08,497 sqlalchemy.engine.Engine [cached since 0.1165s ago] ()
+INFO 2024-09-21 22:02:08,510 sqlalchemy.engine.Engine INSERT INTO categories (id, cat_id, name, is_active, created_on, updated_on) VALUES (nextval('cat_id_seq'), $1::VARCHAR, $2::VARCHAR, $3::BOOLEAN, now(), $4::TIMESTAMP WITHOUT TIME ZONE) RETURNING categories.id, categories.created_on
+INFO 2024-09-21 22:02:08,514 sqlalchemy.engine.Engine [cached since 0.1048s ago] ('cat__022', 'Kurthi2', True, None)
+INFO 2024-09-21 22:02:08,523 sqlalchemy.engine.Engine COMMIT
+INFO 2024-09-21 22:02:08,528 sqlalchemy.engine.Engine BEGIN (implicit)
+INFO 2024-09-21 22:02:08,530 sqlalchemy.engine.Engine SELECT categories.id, categories.cat_id, categories.name, categories.is_active, categories.created_on, categories.updated_on 
+FROM categories 
+WHERE categories.id = $1::INTEGER
+INFO 2024-09-21 22:02:08,532 sqlalchemy.engine.Engine [cached since 0.06897s ago] (57,)
+INFO 2024-09-21 22:02:08,538 sqlalchemy.engine.Engine SELECT categories.id, categories.cat_id, categories.name, categories.is_active, categories.created_on, categories.updated_on 
+FROM categories 
+WHERE categories.name = $1::VARCHAR
+INFO 2024-09-21 22:02:08,539 sqlalchemy.engine.Engine [cached since 0.2164s ago] ('gopal2',)
+INFO 2024-09-21 22:02:08,542 sqlalchemy.engine.Engine SELECT categories.id, categories.cat_id, categories.name, categories.is_active, categories.created_on, categories.updated_on 
+FROM categories
+INFO 2024-09-21 22:02:08,544 sqlalchemy.engine.Engine [cached since 0.1638s ago] ()
+INFO 2024-09-21 22:02:08,546 sqlalchemy.engine.Engine INSERT INTO categories (id, cat_id, name, is_active, created_on, updated_on) VALUES (nextval('cat_id_seq'), $1::VARCHAR, $2::VARCHAR, $3::BOOLEAN, now(), $4::TIMESTAMP WITHOUT TIME ZONE) RETURNING categories.id, categories.created_on
+INFO 2024-09-21 22:02:08,547 sqlalchemy.engine.Engine [cached since 0.1383s ago] ('cat__023', 'gopal2', True, None)
+INFO 2024-09-21 22:02:08,550 sqlalchemy.engine.Engine COMMIT
+INFO 2024-09-21 22:02:08,554 sqlalchemy.engine.Engine BEGIN (implicit)
+INFO 2024-09-21 22:02:08,555 sqlalchemy.engine.Engine SELECT categories.id, categories.cat_id, categories.name, categories.is_active, categories.created_on, categories.updated_on 
+FROM categories 
+WHERE categories.id = $1::INTEGER
+INFO 2024-09-21 22:02:08,557 sqlalchemy.engine.Engine [cached since 0.09362s ago] (58,)
+INFO 2024-09-21 22:02:08,560 sqlalchemy.engine.Engine ROLLBACK
+INFO 2024-09-21 22:02:29,224 sqlalchemy.engine.Engine BEGIN (implicit)
+INFO 2024-09-21 22:02:29,225 sqlalchemy.engine.Engine SELECT categories.id, categories.cat_id, categories.name, categories.is_active, categories.created_on, categories.updated_on 
+FROM categories 
+WHERE categories.name = $1::VARCHAR
+INFO 2024-09-21 22:02:29,227 sqlalchemy.engine.Engine [cached since 20.9s ago] ('Billa2',)
+INFO 2024-09-21 22:02:29,230 sqlalchemy.engine.Engine SELECT categories.id, categories.cat_id, categories.name, categories.is_active, categories.created_on, categories.updated_on 
+FROM categories 
+WHERE categories.name = $1::VARCHAR
+INFO 2024-09-21 22:02:29,232 sqlalchemy.engine.Engine [cached since 20.91s ago] ('Kurthi2',)
+INFO 2024-09-21 22:02:29,236 sqlalchemy.engine.Engine SELECT categories.id, categories.cat_id, categories.name, categories.is_active, categories.created_on, categories.updated_on 
+FROM categories 
+WHERE categories.name = $1::VARCHAR
+INFO 2024-09-21 22:02:29,238 sqlalchemy.engine.Engine [cached since 20.91s ago] ('gopal2',)
+INFO 2024-09-21 22:02:29,240 sqlalchemy.engine.Engine ROLLBACK
+INFO 2024-09-21 22:02:42,118 sqlalchemy.engine.Engine BEGIN (implicit)
+INFO 2024-09-21 22:02:42,119 sqlalchemy.engine.Engine SELECT categories.id, categories.cat_id, categories.name, categories.is_active, categories.created_on, categories.updated_on 
+FROM categories 
+WHERE categories.name = $1::VARCHAR
+INFO 2024-09-21 22:02:42,120 sqlalchemy.engine.Engine [cached since 33.8s ago] ('Billa3',)
+INFO 2024-09-21 22:02:42,123 sqlalchemy.engine.Engine SELECT categories.id, categories.cat_id, categories.name, categories.is_active, categories.created_on, categories.updated_on 
+FROM categories
+INFO 2024-09-21 22:02:42,126 sqlalchemy.engine.Engine [cached since 33.75s ago] ()
+INFO 2024-09-21 22:02:42,131 sqlalchemy.engine.Engine INSERT INTO categories (id, cat_id, name, is_active, created_on, updated_on) VALUES (nextval('cat_id_seq'), $1::VARCHAR, $2::VARCHAR, $3::BOOLEAN, now(), $4::TIMESTAMP WITHOUT TIME ZONE) RETURNING categories.id, categories.created_on
+INFO 2024-09-21 22:02:42,132 sqlalchemy.engine.Engine [cached since 33.72s ago] ('cat__024', 'Billa3', True, None)
+INFO 2024-09-21 22:02:42,135 sqlalchemy.engine.Engine COMMIT
+INFO 2024-09-21 22:02:42,789 sqlalchemy.engine.Engine BEGIN (implicit)
+INFO 2024-09-21 22:02:42,794 sqlalchemy.engine.Engine SELECT categories.id, categories.cat_id, categories.name, categories.is_active, categories.created_on, categories.updated_on 
+FROM categories 
+WHERE categories.id = $1::INTEGER
+INFO 2024-09-21 22:02:42,797 sqlalchemy.engine.Engine [cached since 34.33s ago] (59,)
+INFO 2024-09-21 22:02:42,808 sqlalchemy.engine.Engine SELECT categories.id, categories.cat_id, categories.name, categories.is_active, categories.created_on, categories.updated_on 
+FROM categories 
+WHERE categories.name = $1::VARCHAR
+INFO 2024-09-21 22:02:42,811 sqlalchemy.engine.Engine [cached since 34.49s ago] ('Kurthi3',)
+INFO 2024-09-21 22:02:42,816 sqlalchemy.engine.Engine SELECT categories.id, categories.cat_id, categories.name, categories.is_active, categories.created_on, categories.updated_on 
+FROM categories
+INFO 2024-09-21 22:02:42,819 sqlalchemy.engine.Engine [cached since 34.44s ago] ()
+INFO 2024-09-21 22:02:42,829 sqlalchemy.engine.Engine INSERT INTO categories (id, cat_id, name, is_active, created_on, updated_on) VALUES (nextval('cat_id_seq'), $1::VARCHAR, $2::VARCHAR, $3::BOOLEAN, now(), $4::TIMESTAMP WITHOUT TIME ZONE) RETURNING categories.id, categories.created_on
+INFO 2024-09-21 22:02:42,831 sqlalchemy.engine.Engine [cached since 34.42s ago] ('cat__025', 'Kurthi3', True, None)
+INFO 2024-09-21 22:02:42,836 sqlalchemy.engine.Engine COMMIT
+INFO 2024-09-21 22:02:42,881 sqlalchemy.engine.Engine BEGIN (implicit)
+INFO 2024-09-21 22:02:42,883 sqlalchemy.engine.Engine SELECT categories.id, categories.cat_id, categories.name, categories.is_active, categories.created_on, categories.updated_on 
+FROM categories 
+WHERE categories.id = $1::INTEGER
+INFO 2024-09-21 22:02:42,886 sqlalchemy.engine.Engine [cached since 34.42s ago] (60,)
+INFO 2024-09-21 22:02:42,897 sqlalchemy.engine.Engine SELECT categories.id, categories.cat_id, categories.name, categories.is_active, categories.created_on, categories.updated_on 
+FROM categories 
+WHERE categories.name = $1::VARCHAR
+INFO 2024-09-21 22:02:42,900 sqlalchemy.engine.Engine [cached since 34.58s ago] ('gopal3',)
+INFO 2024-09-21 22:02:42,905 sqlalchemy.engine.Engine SELECT categories.id, categories.cat_id, categories.name, categories.is_active, categories.created_on, categories.updated_on 
+FROM categories
+INFO 2024-09-21 22:02:42,909 sqlalchemy.engine.Engine [cached since 34.53s ago] ()
+INFO 2024-09-21 22:02:42,914 sqlalchemy.engine.Engine INSERT INTO categories (id, cat_id, name, is_active, created_on, updated_on) VALUES (nextval('cat_id_seq'), $1::VARCHAR, $2::VARCHAR, $3::BOOLEAN, now(), $4::TIMESTAMP WITHOUT TIME ZONE) RETURNING categories.id, categories.created_on
+INFO 2024-09-21 22:02:42,915 sqlalchemy.engine.Engine [cached since 34.51s ago] ('cat__026', 'gopal3', True, None)
+INFO 2024-09-21 22:02:42,917 sqlalchemy.engine.Engine COMMIT
+INFO 2024-09-21 22:02:42,920 sqlalchemy.engine.Engine BEGIN (implicit)
+INFO 2024-09-21 22:02:42,921 sqlalchemy.engine.Engine SELECT categories.id, categories.cat_id, categories.name, categories.is_active, categories.created_on, categories.updated_on 
+FROM categories 
+WHERE categories.id = $1::INTEGER
+INFO 2024-09-21 22:02:42,923 sqlalchemy.engine.Engine [cached since 34.46s ago] (61,)
+INFO 2024-09-21 22:02:42,928 sqlalchemy.engine.Engine ROLLBACK
+INFO 2024-09-21 22:05:11,292 root Shutting down application...
+INFO 2024-09-21 22:05:34,328 root Application startup application...
+INFO 2024-09-21 22:05:43,860 sqlalchemy.engine.Engine select pg_catalog.version()
+INFO 2024-09-21 22:05:43,861 sqlalchemy.engine.Engine [raw sql] ()
+INFO 2024-09-21 22:05:43,866 sqlalchemy.engine.Engine select current_schema()
+INFO 2024-09-21 22:05:43,867 sqlalchemy.engine.Engine [raw sql] ()
+INFO 2024-09-21 22:05:43,870 sqlalchemy.engine.Engine show standard_conforming_strings
+INFO 2024-09-21 22:05:43,872 sqlalchemy.engine.Engine [raw sql] ()
+INFO 2024-09-21 22:05:43,876 sqlalchemy.engine.Engine BEGIN (implicit)
+INFO 2024-09-21 22:05:43,884 sqlalchemy.engine.Engine SELECT categories.id, categories.cat_id, categories.name, categories.is_active, categories.created_on, categories.updated_on 
+FROM categories 
+WHERE categories.name = $1::VARCHAR
+INFO 2024-09-21 22:05:43,886 sqlalchemy.engine.Engine [generated in 0.00195s] ('Billa3',)
+INFO 2024-09-21 22:05:43,898 sqlalchemy.engine.Engine SELECT categories.id, categories.cat_id, categories.name, categories.is_active, categories.created_on, categories.updated_on 
+FROM categories 
+WHERE categories.name = $1::VARCHAR
+INFO 2024-09-21 22:05:43,899 sqlalchemy.engine.Engine [cached since 0.01477s ago] ('Kurthi3',)
+INFO 2024-09-21 22:05:43,903 sqlalchemy.engine.Engine SELECT categories.id, categories.cat_id, categories.name, categories.is_active, categories.created_on, categories.updated_on 
+FROM categories 
+WHERE categories.name = $1::VARCHAR
+INFO 2024-09-21 22:05:43,904 sqlalchemy.engine.Engine [cached since 0.0199s ago] ('gopal3',)
+INFO 2024-09-21 22:05:43,909 sqlalchemy.engine.Engine ROLLBACK
+INFO 2024-09-21 22:05:56,386 sqlalchemy.engine.Engine BEGIN (implicit)
+INFO 2024-09-21 22:05:56,389 sqlalchemy.engine.Engine SELECT categories.id, categories.cat_id, categories.name, categories.is_active, categories.created_on, categories.updated_on 
+FROM categories 
+WHERE categories.name = $1::VARCHAR
+INFO 2024-09-21 22:05:56,391 sqlalchemy.engine.Engine [cached since 12.51s ago] ('Billa4',)
+INFO 2024-09-21 22:05:56,402 sqlalchemy.engine.Engine SELECT categories.id, categories.cat_id, categories.name, categories.is_active, categories.created_on, categories.updated_on 
+FROM categories
+INFO 2024-09-21 22:05:56,405 sqlalchemy.engine.Engine [generated in 0.00298s] ()
+INFO 2024-09-21 22:05:56,422 sqlalchemy.engine.Engine INSERT INTO categories (id, cat_id, name, is_active, created_on, updated_on) VALUES (nextval('cat_id_seq'), $1::VARCHAR, $2::VARCHAR, $3::BOOLEAN, now(), $4::TIMESTAMP WITHOUT TIME ZONE) RETURNING categories.id, categories.created_on
+INFO 2024-09-21 22:05:56,425 sqlalchemy.engine.Engine [generated in 0.00274s] ('cat__027', 'Billa4', True, None)
+INFO 2024-09-21 22:05:56,435 sqlalchemy.engine.Engine COMMIT
+INFO 2024-09-21 22:05:56,446 sqlalchemy.engine.Engine BEGIN (implicit)
+INFO 2024-09-21 22:05:56,457 sqlalchemy.engine.Engine SELECT categories.id, categories.cat_id, categories.name, categories.is_active, categories.created_on, categories.updated_on 
+FROM categories 
+WHERE categories.id = $1::INTEGER
+INFO 2024-09-21 22:05:56,459 sqlalchemy.engine.Engine [generated in 0.00350s] (62,)
+INFO 2024-09-21 22:05:56,472 sqlalchemy.engine.Engine SELECT categories.id, categories.cat_id, categories.name, categories.is_active, categories.created_on, categories.updated_on 
+FROM categories 
+WHERE categories.name = $1::VARCHAR
+INFO 2024-09-21 22:05:56,476 sqlalchemy.engine.Engine [cached since 12.59s ago] ('Kurthi4',)
+INFO 2024-09-21 22:05:56,484 sqlalchemy.engine.Engine SELECT categories.id, categories.cat_id, categories.name, categories.is_active, categories.created_on, categories.updated_on 
+FROM categories
+INFO 2024-09-21 22:05:56,487 sqlalchemy.engine.Engine [cached since 0.08528s ago] ()
+INFO 2024-09-21 22:05:56,493 sqlalchemy.engine.Engine INSERT INTO categories (id, cat_id, name, is_active, created_on, updated_on) VALUES (nextval('cat_id_seq'), $1::VARCHAR, $2::VARCHAR, $3::BOOLEAN, now(), $4::TIMESTAMP WITHOUT TIME ZONE) RETURNING categories.id, categories.created_on
+INFO 2024-09-21 22:05:56,497 sqlalchemy.engine.Engine [cached since 0.07461s ago] ('cat__028', 'Kurthi4', True, None)
+INFO 2024-09-21 22:05:56,503 sqlalchemy.engine.Engine COMMIT
+INFO 2024-09-21 22:05:56,510 sqlalchemy.engine.Engine BEGIN (implicit)
+INFO 2024-09-21 22:05:56,513 sqlalchemy.engine.Engine SELECT categories.id, categories.cat_id, categories.name, categories.is_active, categories.created_on, categories.updated_on 
+FROM categories 
+WHERE categories.id = $1::INTEGER
+INFO 2024-09-21 22:05:56,517 sqlalchemy.engine.Engine [cached since 0.06092s ago] (63,)
+INFO 2024-09-21 22:05:56,526 sqlalchemy.engine.Engine SELECT categories.id, categories.cat_id, categories.name, categories.is_active, categories.created_on, categories.updated_on 
+FROM categories 
+WHERE categories.name = $1::VARCHAR
+INFO 2024-09-21 22:05:56,533 sqlalchemy.engine.Engine [cached since 12.65s ago] ('gopal4',)
+INFO 2024-09-21 22:05:56,537 sqlalchemy.engine.Engine SELECT categories.id, categories.cat_id, categories.name, categories.is_active, categories.created_on, categories.updated_on 
+FROM categories
+INFO 2024-09-21 22:05:56,540 sqlalchemy.engine.Engine [cached since 0.1381s ago] ()
+INFO 2024-09-21 22:05:56,549 sqlalchemy.engine.Engine INSERT INTO categories (id, cat_id, name, is_active, created_on, updated_on) VALUES (nextval('cat_id_seq'), $1::VARCHAR, $2::VARCHAR, $3::BOOLEAN, now(), $4::TIMESTAMP WITHOUT TIME ZONE) RETURNING categories.id, categories.created_on
+INFO 2024-09-21 22:05:56,552 sqlalchemy.engine.Engine [cached since 0.1296s ago] ('cat__029', 'gopal4', True, None)
+INFO 2024-09-21 22:05:56,557 sqlalchemy.engine.Engine COMMIT
+INFO 2024-09-21 22:05:56,562 sqlalchemy.engine.Engine BEGIN (implicit)
+INFO 2024-09-21 22:05:56,565 sqlalchemy.engine.Engine SELECT categories.id, categories.cat_id, categories.name, categories.is_active, categories.created_on, categories.updated_on 
+FROM categories 
+WHERE categories.id = $1::INTEGER
+INFO 2024-09-21 22:05:56,569 sqlalchemy.engine.Engine [cached since 0.1129s ago] (64,)
+INFO 2024-09-21 22:05:56,577 sqlalchemy.engine.Engine ROLLBACK
+INFO 2024-09-21 22:06:10,950 root Shutting down application...
