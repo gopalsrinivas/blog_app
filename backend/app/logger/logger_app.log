@@ -3845,3 +3845,444 @@ WHERE categories.id = $1::INTEGER
 INFO 2024-09-21 22:05:56,569 sqlalchemy.engine.Engine [cached since 0.1129s ago] (64,)
 INFO 2024-09-21 22:05:56,577 sqlalchemy.engine.Engine ROLLBACK
 INFO 2024-09-21 22:06:10,950 root Shutting down application...
+INFO 2024-09-21 22:17:01,431 root Application startup application...
+INFO 2024-09-21 22:24:11,960 root Shutting down application...
+INFO 2024-09-21 22:24:15,768 root Application startup application...
+INFO 2024-09-21 22:24:21,618 root Shutting down application...
+INFO 2024-09-21 22:24:26,654 root Application startup application...
+INFO 2024-09-21 22:24:26,655 root Shutting down application...
+INFO 2024-09-21 22:24:31,163 root Application startup application...
+INFO 2024-09-21 22:25:00,181 sqlalchemy.engine.Engine select pg_catalog.version()
+INFO 2024-09-21 22:25:00,181 sqlalchemy.engine.Engine [raw sql] ()
+INFO 2024-09-21 22:25:00,183 sqlalchemy.engine.Engine select current_schema()
+INFO 2024-09-21 22:25:00,184 sqlalchemy.engine.Engine [raw sql] ()
+INFO 2024-09-21 22:25:00,188 sqlalchemy.engine.Engine show standard_conforming_strings
+INFO 2024-09-21 22:25:00,188 sqlalchemy.engine.Engine [raw sql] ()
+INFO 2024-09-21 22:25:00,190 sqlalchemy.engine.Engine BEGIN (implicit)
+INFO 2024-09-21 22:25:00,192 sqlalchemy.engine.Engine SELECT categories.id, categories.cat_id, categories.name, categories.is_active, categories.created_on, categories.updated_on 
+FROM categories 
+ LIMIT $1::INTEGER OFFSET $2::INTEGER
+INFO 2024-09-21 22:25:00,193 sqlalchemy.engine.Engine [generated in 0.00088s] (4, 0)
+ERROR 2024-09-21 22:25:00,197 app.core.logging Error in get_categories endpoint: You must set the config attribute `from_attributes=True` to use from_orm
+Traceback (most recent call last):
+  File "D:\Projects\Fast_API\blog_app\backend\app\routers\categories.py", line 19, in get_categories
+    categories = await CategoryService.get_categories(db=db, skip=skip, limit=limit)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\Fast_API\blog_app\backend\app\services\categories.py", line 72, in get_categories
+    return [CategoryModel.from_orm(cat) for cat in categories]
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\pydantic\main.py", line 1234, in from_orm
+    raise PydanticUserError(
+pydantic.errors.PydanticUserError: You must set the config attribute `from_attributes=True` to use from_orm
+INFO 2024-09-21 22:25:00,199 sqlalchemy.engine.Engine ROLLBACK
+INFO 2024-09-21 22:27:50,457 root Shutting down application...
+INFO 2024-09-21 22:27:53,562 root Application startup application...
+INFO 2024-09-21 22:28:09,368 root Shutting down application...
+INFO 2024-09-21 22:28:29,881 root Application startup application...
+INFO 2024-09-21 22:28:29,883 root Shutting down application...
+INFO 2024-09-21 22:28:32,385 root Application startup application...
+INFO 2024-09-21 22:28:52,973 sqlalchemy.engine.Engine select pg_catalog.version()
+INFO 2024-09-21 22:28:52,973 sqlalchemy.engine.Engine [raw sql] ()
+INFO 2024-09-21 22:28:52,977 sqlalchemy.engine.Engine select current_schema()
+INFO 2024-09-21 22:28:52,978 sqlalchemy.engine.Engine [raw sql] ()
+INFO 2024-09-21 22:28:52,981 sqlalchemy.engine.Engine show standard_conforming_strings
+INFO 2024-09-21 22:28:52,982 sqlalchemy.engine.Engine [raw sql] ()
+INFO 2024-09-21 22:28:52,984 sqlalchemy.engine.Engine BEGIN (implicit)
+INFO 2024-09-21 22:28:52,989 sqlalchemy.engine.Engine SELECT categories.id, categories.cat_id, categories.name, categories.is_active, categories.created_on, categories.updated_on 
+FROM categories 
+ LIMIT $1::INTEGER OFFSET $2::INTEGER
+INFO 2024-09-21 22:28:52,990 sqlalchemy.engine.Engine [generated in 0.00120s] (4, 0)
+ERROR 2024-09-21 22:28:52,996 app.core.logging Error in get_categories endpoint: You must set the config attribute `from_attributes=True` to use from_orm
+Traceback (most recent call last):
+  File "D:\Projects\Fast_API\blog_app\backend\app\routers\categories.py", line 19, in get_categories
+    categories = await CategoryService.get_categories(db=db, skip=skip, limit=limit)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\Fast_API\blog_app\backend\app\services\categories.py", line 75, in get_categories
+    return [CategoryModel.from_orm(cat) for cat in categories]
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\pydantic\main.py", line 1234, in from_orm
+    raise PydanticUserError(
+pydantic.errors.PydanticUserError: You must set the config attribute `from_attributes=True` to use from_orm
+INFO 2024-09-21 22:28:52,999 sqlalchemy.engine.Engine ROLLBACK
+INFO 2024-09-21 22:31:37,391 root Shutting down application...
+INFO 2024-09-21 22:31:40,877 root Application startup application...
+INFO 2024-09-21 22:32:09,772 root Shutting down application...
+INFO 2024-09-21 22:32:12,818 root Application startup application...
+INFO 2024-09-21 22:32:14,564 root Shutting down application...
+INFO 2024-09-21 22:32:17,959 root Application startup application...
+INFO 2024-09-21 22:32:33,756 sqlalchemy.engine.Engine select pg_catalog.version()
+INFO 2024-09-21 22:32:33,757 sqlalchemy.engine.Engine [raw sql] ()
+INFO 2024-09-21 22:32:33,759 sqlalchemy.engine.Engine select current_schema()
+INFO 2024-09-21 22:32:33,760 sqlalchemy.engine.Engine [raw sql] ()
+INFO 2024-09-21 22:32:33,762 sqlalchemy.engine.Engine show standard_conforming_strings
+INFO 2024-09-21 22:32:33,763 sqlalchemy.engine.Engine [raw sql] ()
+INFO 2024-09-21 22:32:33,766 sqlalchemy.engine.Engine BEGIN (implicit)
+INFO 2024-09-21 22:32:33,770 sqlalchemy.engine.Engine SELECT categories.id, categories.cat_id, categories.name, categories.is_active, categories.created_on, categories.updated_on 
+FROM categories 
+ LIMIT $1::INTEGER OFFSET $2::INTEGER
+INFO 2024-09-21 22:32:33,771 sqlalchemy.engine.Engine [generated in 0.00100s] (3, 0)
+INFO 2024-09-21 22:32:33,775 app.core.logging Successfully fetched 3 categories.
+ERROR 2024-09-21 22:32:33,775 app.core.logging Error retrieving categories: You must set the config attribute `from_attributes=True` to use from_orm
+ERROR 2024-09-21 22:32:33,775 app.core.logging Failed to retrieve categories: object of type 'NoneType' has no len()
+INFO 2024-09-21 22:32:33,775 sqlalchemy.engine.Engine ROLLBACK
+INFO 2024-09-21 22:33:31,187 root Shutting down application...
+INFO 2024-09-21 22:33:38,457 root Application startup application...
+INFO 2024-09-21 22:33:46,595 sqlalchemy.engine.Engine select pg_catalog.version()
+INFO 2024-09-21 22:33:46,596 sqlalchemy.engine.Engine [raw sql] ()
+INFO 2024-09-21 22:33:46,599 sqlalchemy.engine.Engine select current_schema()
+INFO 2024-09-21 22:33:46,599 sqlalchemy.engine.Engine [raw sql] ()
+INFO 2024-09-21 22:33:46,602 sqlalchemy.engine.Engine show standard_conforming_strings
+INFO 2024-09-21 22:33:46,603 sqlalchemy.engine.Engine [raw sql] ()
+INFO 2024-09-21 22:33:46,605 sqlalchemy.engine.Engine BEGIN (implicit)
+INFO 2024-09-21 22:33:46,610 sqlalchemy.engine.Engine SELECT categories.id, categories.cat_id, categories.name, categories.is_active, categories.created_on, categories.updated_on 
+FROM categories 
+ LIMIT $1::INTEGER OFFSET $2::INTEGER
+INFO 2024-09-21 22:33:46,611 sqlalchemy.engine.Engine [generated in 0.00108s] (3, 0)
+INFO 2024-09-21 22:33:46,618 app.core.logging Successfully fetched 3 categories.
+ERROR 2024-09-21 22:33:46,618 app.core.logging Error retrieving categories: You must set the config attribute `from_attributes=True` to use from_orm
+ERROR 2024-09-21 22:33:46,618 app.core.logging Failed to retrieve categories: object of type 'NoneType' has no len()
+INFO 2024-09-21 22:33:46,619 sqlalchemy.engine.Engine ROLLBACK
+INFO 2024-09-21 22:35:00,303 root Shutting down application...
+INFO 2024-09-21 22:35:30,820 root Application startup application...
+INFO 2024-09-21 22:35:38,972 sqlalchemy.engine.Engine select pg_catalog.version()
+INFO 2024-09-21 22:35:38,972 sqlalchemy.engine.Engine [raw sql] ()
+INFO 2024-09-21 22:35:38,976 sqlalchemy.engine.Engine select current_schema()
+INFO 2024-09-21 22:35:38,976 sqlalchemy.engine.Engine [raw sql] ()
+INFO 2024-09-21 22:35:38,978 sqlalchemy.engine.Engine show standard_conforming_strings
+INFO 2024-09-21 22:35:38,978 sqlalchemy.engine.Engine [raw sql] ()
+INFO 2024-09-21 22:35:38,980 sqlalchemy.engine.Engine BEGIN (implicit)
+INFO 2024-09-21 22:35:38,985 sqlalchemy.engine.Engine SELECT categories.id, categories.cat_id, categories.name, categories.is_active, categories.created_on, categories.updated_on 
+FROM categories 
+ LIMIT $1::INTEGER OFFSET $2::INTEGER
+INFO 2024-09-21 22:35:38,986 sqlalchemy.engine.Engine [generated in 0.00099s] (3, 0)
+INFO 2024-09-21 22:35:38,991 app.core.logging Successfully fetched 3 categories.
+ERROR 2024-09-21 22:35:38,991 app.core.logging Error retrieving categories: You must set the config attribute `from_attributes=True` to use from_orm
+Traceback (most recent call last):
+  File "D:\Projects\Fast_API\blog_app\backend\app\services\categories.py", line 80, in get_all_categories
+    "data": [CategoryModel.from_orm(cat) for cat in categories]
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\pydantic\main.py", line 1234, in from_orm
+    raise PydanticUserError(
+pydantic.errors.PydanticUserError: You must set the config attribute `from_attributes=True` to use from_orm
+ERROR 2024-09-21 22:35:38,993 app.core.logging Failed to retrieve categories: object of type 'NoneType' has no len()
+INFO 2024-09-21 22:35:38,994 sqlalchemy.engine.Engine ROLLBACK
+INFO 2024-09-21 22:36:35,798 root Shutting down application...
+INFO 2024-09-21 22:36:45,015 root Application startup application...
+INFO 2024-09-21 22:36:52,420 sqlalchemy.engine.Engine select pg_catalog.version()
+INFO 2024-09-21 22:36:52,420 sqlalchemy.engine.Engine [raw sql] ()
+INFO 2024-09-21 22:36:52,422 sqlalchemy.engine.Engine select current_schema()
+INFO 2024-09-21 22:36:52,424 sqlalchemy.engine.Engine [raw sql] ()
+INFO 2024-09-21 22:36:52,425 sqlalchemy.engine.Engine show standard_conforming_strings
+INFO 2024-09-21 22:36:52,426 sqlalchemy.engine.Engine [raw sql] ()
+INFO 2024-09-21 22:36:52,428 sqlalchemy.engine.Engine BEGIN (implicit)
+INFO 2024-09-21 22:36:52,433 sqlalchemy.engine.Engine SELECT categories.id, categories.cat_id, categories.name, categories.is_active, categories.created_on, categories.updated_on 
+FROM categories 
+ LIMIT $1::INTEGER OFFSET $2::INTEGER
+INFO 2024-09-21 22:36:52,435 sqlalchemy.engine.Engine [generated in 0.00119s] (3, 0)
+INFO 2024-09-21 22:36:52,441 app.core.logging Successfully fetched 3 categories.
+ERROR 2024-09-21 22:36:52,441 app.core.logging Error retrieving categories: You must set the config attribute `from_attributes=True` to use from_orm
+Traceback (most recent call last):
+  File "D:\Projects\Fast_API\blog_app\backend\app\services\categories.py", line 78, in get_all_categories
+    "data": [CategoryModel.from_orm(cat) for cat in categories]
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\pydantic\main.py", line 1234, in from_orm
+    raise PydanticUserError(
+pydantic.errors.PydanticUserError: You must set the config attribute `from_attributes=True` to use from_orm
+ERROR 2024-09-21 22:36:52,443 app.core.logging Failed to retrieve categories: object of type 'NoneType' has no len()
+INFO 2024-09-21 22:36:52,443 sqlalchemy.engine.Engine ROLLBACK
+INFO 2024-09-21 22:41:32,985 root Shutting down application...
+INFO 2024-09-21 22:41:37,072 root Application startup application...
+INFO 2024-09-21 22:41:51,206 root Shutting down application...
+INFO 2024-09-21 22:45:31,337 root Application startup application...
+INFO 2024-09-21 22:45:39,284 sqlalchemy.engine.Engine select pg_catalog.version()
+INFO 2024-09-21 22:45:39,284 sqlalchemy.engine.Engine [raw sql] ()
+INFO 2024-09-21 22:45:39,287 sqlalchemy.engine.Engine select current_schema()
+INFO 2024-09-21 22:45:39,287 sqlalchemy.engine.Engine [raw sql] ()
+INFO 2024-09-21 22:45:39,290 sqlalchemy.engine.Engine show standard_conforming_strings
+INFO 2024-09-21 22:45:39,291 sqlalchemy.engine.Engine [raw sql] ()
+INFO 2024-09-21 22:45:39,294 sqlalchemy.engine.Engine BEGIN (implicit)
+INFO 2024-09-21 22:45:39,300 sqlalchemy.engine.Engine SELECT categories.id, categories.cat_id, categories.name, categories.is_active, categories.created_on, categories.updated_on 
+FROM categories 
+ LIMIT $1::INTEGER OFFSET $2::INTEGER
+INFO 2024-09-21 22:45:39,301 sqlalchemy.engine.Engine [generated in 0.00141s] (3, 0)
+INFO 2024-09-21 22:45:39,307 app.core.logging Successfully fetched 3 categories.
+ERROR 2024-09-21 22:45:39,307 app.core.logging Error retrieving categories: You must set the config attribute `from_attributes=True` to use from_orm
+ERROR 2024-09-21 22:45:39,308 app.core.logging Failed to retrieve categories: Error retrieving categories: You must set the config attribute `from_attributes=True` to use from_orm
+ERROR 2024-09-21 22:45:39,308 app.core.logging Failed to retrieve categories: 500: Error retrieving categories: You must set the config attribute `from_attributes=True` to use from_orm
+INFO 2024-09-21 22:45:39,308 sqlalchemy.engine.Engine ROLLBACK
+INFO 2024-09-21 22:47:41,059 root Shutting down application...
+INFO 2024-09-21 22:47:52,373 root Application startup application...
+INFO 2024-09-21 22:48:01,912 root Shutting down application...
+INFO 2024-09-21 22:48:05,582 root Application startup application...
+INFO 2024-09-21 22:48:05,584 root Shutting down application...
+INFO 2024-09-21 22:48:08,801 root Application startup application...
+INFO 2024-09-21 22:48:16,546 sqlalchemy.engine.Engine select pg_catalog.version()
+INFO 2024-09-21 22:48:16,546 sqlalchemy.engine.Engine [raw sql] ()
+INFO 2024-09-21 22:48:16,550 sqlalchemy.engine.Engine select current_schema()
+INFO 2024-09-21 22:48:16,550 sqlalchemy.engine.Engine [raw sql] ()
+INFO 2024-09-21 22:48:16,553 sqlalchemy.engine.Engine show standard_conforming_strings
+INFO 2024-09-21 22:48:16,554 sqlalchemy.engine.Engine [raw sql] ()
+INFO 2024-09-21 22:48:16,556 sqlalchemy.engine.Engine BEGIN (implicit)
+INFO 2024-09-21 22:48:16,560 sqlalchemy.engine.Engine SELECT count(*) AS count_1 
+FROM categories
+INFO 2024-09-21 22:48:16,561 sqlalchemy.engine.Engine [generated in 0.00074s] ()
+INFO 2024-09-21 22:48:16,569 sqlalchemy.engine.Engine SELECT categories.id, categories.cat_id, categories.name, categories.is_active, categories.created_on, categories.updated_on 
+FROM categories 
+ LIMIT $1::INTEGER OFFSET $2::INTEGER
+INFO 2024-09-21 22:48:16,569 sqlalchemy.engine.Engine [generated in 0.00095s] (3, 0)
+INFO 2024-09-21 22:48:16,572 app.core.logging Successfully fetched 3 categories.
+ERROR 2024-09-21 22:48:16,572 app.core.logging Error retrieving categories: You must set the config attribute `from_attributes=True` to use from_orm
+ERROR 2024-09-21 22:48:16,573 app.core.logging Failed to retrieve categories: Error retrieving categories: You must set the config attribute `from_attributes=True` to use from_orm
+ERROR 2024-09-21 22:48:16,573 app.core.logging Failed to retrieve categories: 500: Error retrieving categories: You must set the config attribute `from_attributes=True` to use from_orm
+INFO 2024-09-21 22:48:16,573 sqlalchemy.engine.Engine ROLLBACK
+INFO 2024-09-21 22:49:36,825 root Shutting down application...
+INFO 2024-09-21 22:49:46,135 root Application startup application...
+INFO 2024-09-21 22:49:59,628 root Shutting down application...
+INFO 2024-09-21 22:50:54,902 root Application startup application...
+INFO 2024-09-21 22:51:22,270 sqlalchemy.engine.Engine select pg_catalog.version()
+INFO 2024-09-21 22:51:22,270 sqlalchemy.engine.Engine [raw sql] ()
+INFO 2024-09-21 22:51:22,273 sqlalchemy.engine.Engine select current_schema()
+INFO 2024-09-21 22:51:22,274 sqlalchemy.engine.Engine [raw sql] ()
+INFO 2024-09-21 22:51:22,276 sqlalchemy.engine.Engine show standard_conforming_strings
+INFO 2024-09-21 22:51:22,276 sqlalchemy.engine.Engine [raw sql] ()
+INFO 2024-09-21 22:51:22,279 sqlalchemy.engine.Engine BEGIN (implicit)
+INFO 2024-09-21 22:51:22,282 sqlalchemy.engine.Engine SELECT count(*) AS count_1 
+FROM categories
+INFO 2024-09-21 22:51:22,284 sqlalchemy.engine.Engine [generated in 0.00079s] ()
+INFO 2024-09-21 22:51:22,294 sqlalchemy.engine.Engine SELECT categories.id, categories.cat_id, categories.name, categories.is_active, categories.created_on, categories.updated_on 
+FROM categories 
+ LIMIT $1::INTEGER OFFSET $2::INTEGER
+INFO 2024-09-21 22:51:22,295 sqlalchemy.engine.Engine [generated in 0.00161s] (10, 0)
+INFO 2024-09-21 22:51:22,299 app.core.logging Successfully fetched 10 categories.
+ERROR 2024-09-21 22:51:22,299 app.core.logging Error retrieving categories: You must set the config attribute `from_attributes=True` to use from_orm
+ERROR 2024-09-21 22:51:22,299 app.core.logging Exception occurred
+Traceback (most recent call last):
+  File "D:\Projects\Fast_API\blog_app\backend\app\services\categories.py", line 84, in get_all_categories
+    "data": [CategoryModel.from_orm(category) for category in categories]
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\pydantic\main.py", line 1234, in from_orm
+    raise PydanticUserError(
+pydantic.errors.PydanticUserError: You must set the config attribute `from_attributes=True` to use from_orm
+ERROR 2024-09-21 22:51:22,301 app.core.logging Failed to retrieve categories: Error retrieving categories: You must set the config attribute `from_attributes=True` to use from_orm
+ERROR 2024-09-21 22:51:22,301 app.core.logging Failed to retrieve categories: 500: Error retrieving categories: You must set the config attribute `from_attributes=True` to use from_orm
+INFO 2024-09-21 22:51:22,302 sqlalchemy.engine.Engine ROLLBACK
+INFO 2024-09-21 22:51:28,569 root Shutting down application...
+INFO 2024-09-21 22:51:37,189 root Application startup application...
+INFO 2024-09-21 22:51:42,958 sqlalchemy.engine.Engine select pg_catalog.version()
+INFO 2024-09-21 22:51:42,959 sqlalchemy.engine.Engine [raw sql] ()
+INFO 2024-09-21 22:51:42,962 sqlalchemy.engine.Engine select current_schema()
+INFO 2024-09-21 22:51:42,962 sqlalchemy.engine.Engine [raw sql] ()
+INFO 2024-09-21 22:51:42,965 sqlalchemy.engine.Engine show standard_conforming_strings
+INFO 2024-09-21 22:51:42,965 sqlalchemy.engine.Engine [raw sql] ()
+INFO 2024-09-21 22:51:42,968 sqlalchemy.engine.Engine BEGIN (implicit)
+INFO 2024-09-21 22:51:42,971 sqlalchemy.engine.Engine SELECT count(*) AS count_1 
+FROM categories
+INFO 2024-09-21 22:51:42,971 sqlalchemy.engine.Engine [generated in 0.00065s] ()
+INFO 2024-09-21 22:51:42,979 sqlalchemy.engine.Engine SELECT categories.id, categories.cat_id, categories.name, categories.is_active, categories.created_on, categories.updated_on 
+FROM categories 
+ LIMIT $1::INTEGER OFFSET $2::INTEGER
+INFO 2024-09-21 22:51:42,980 sqlalchemy.engine.Engine [generated in 0.00117s] (10, 0)
+INFO 2024-09-21 22:51:42,983 app.core.logging Successfully fetched 10 categories.
+ERROR 2024-09-21 22:51:42,983 app.core.logging Error retrieving categories: You must set the config attribute `from_attributes=True` to use from_orm
+ERROR 2024-09-21 22:51:42,983 app.core.logging Exception occurred
+Traceback (most recent call last):
+  File "D:\Projects\Fast_API\blog_app\backend\app\services\categories.py", line 84, in get_all_categories
+    "data": [CategoryModel.from_orm(category) for category in categories]
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\pydantic\main.py", line 1234, in from_orm
+    raise PydanticUserError(
+pydantic.errors.PydanticUserError: You must set the config attribute `from_attributes=True` to use from_orm
+ERROR 2024-09-21 22:51:42,985 app.core.logging Failed to retrieve categories: Error retrieving categories: You must set the config attribute `from_attributes=True` to use from_orm
+ERROR 2024-09-21 22:51:42,985 app.core.logging Failed to retrieve categories: 500: Error retrieving categories: You must set the config attribute `from_attributes=True` to use from_orm
+INFO 2024-09-21 22:51:42,986 sqlalchemy.engine.Engine ROLLBACK
+INFO 2024-09-21 22:52:29,219 sqlalchemy.engine.Engine BEGIN (implicit)
+INFO 2024-09-21 22:52:29,221 sqlalchemy.engine.Engine SELECT categories.id, categories.cat_id, categories.name, categories.is_active, categories.created_on, categories.updated_on 
+FROM categories 
+WHERE categories.name = $1::VARCHAR
+INFO 2024-09-21 22:52:29,221 sqlalchemy.engine.Engine [generated in 0.00096s] ('Sample Category 1',)
+INFO 2024-09-21 22:52:29,225 sqlalchemy.engine.Engine SELECT categories.id, categories.cat_id, categories.name, categories.is_active, categories.created_on, categories.updated_on 
+FROM categories
+INFO 2024-09-21 22:52:29,227 sqlalchemy.engine.Engine [generated in 0.00100s] ()
+INFO 2024-09-21 22:52:29,234 sqlalchemy.engine.Engine INSERT INTO categories (id, cat_id, name, is_active, created_on, updated_on) VALUES (nextval('cat_id_seq'), $1::VARCHAR, $2::VARCHAR, $3::BOOLEAN, now(), $4::TIMESTAMP WITHOUT TIME ZONE) RETURNING categories.id, categories.created_on
+INFO 2024-09-21 22:52:29,235 sqlalchemy.engine.Engine [generated in 0.00090s] ('cat__030', 'Sample Category 1', True, None)
+INFO 2024-09-21 22:52:29,237 sqlalchemy.engine.Engine COMMIT
+INFO 2024-09-21 22:52:29,456 sqlalchemy.engine.Engine BEGIN (implicit)
+INFO 2024-09-21 22:52:29,461 sqlalchemy.engine.Engine SELECT categories.id, categories.cat_id, categories.name, categories.is_active, categories.created_on, categories.updated_on 
+FROM categories 
+WHERE categories.id = $1::INTEGER
+INFO 2024-09-21 22:52:29,462 sqlalchemy.engine.Engine [generated in 0.00108s] (65,)
+INFO 2024-09-21 22:52:29,464 sqlalchemy.engine.Engine SELECT categories.id, categories.cat_id, categories.name, categories.is_active, categories.created_on, categories.updated_on 
+FROM categories 
+WHERE categories.name = $1::VARCHAR
+INFO 2024-09-21 22:52:29,465 sqlalchemy.engine.Engine [cached since 0.2451s ago] ('Sample Category 2',)
+INFO 2024-09-21 22:52:29,467 sqlalchemy.engine.Engine SELECT categories.id, categories.cat_id, categories.name, categories.is_active, categories.created_on, categories.updated_on 
+FROM categories
+INFO 2024-09-21 22:52:29,467 sqlalchemy.engine.Engine [cached since 0.2414s ago] ()
+INFO 2024-09-21 22:52:29,469 sqlalchemy.engine.Engine INSERT INTO categories (id, cat_id, name, is_active, created_on, updated_on) VALUES (nextval('cat_id_seq'), $1::VARCHAR, $2::VARCHAR, $3::BOOLEAN, now(), $4::TIMESTAMP WITHOUT TIME ZONE) RETURNING categories.id, categories.created_on
+INFO 2024-09-21 22:52:29,471 sqlalchemy.engine.Engine [cached since 0.2367s ago] ('cat__031', 'Sample Category 2', True, None)
+INFO 2024-09-21 22:52:29,472 sqlalchemy.engine.Engine COMMIT
+INFO 2024-09-21 22:52:29,512 sqlalchemy.engine.Engine BEGIN (implicit)
+INFO 2024-09-21 22:52:29,512 sqlalchemy.engine.Engine SELECT categories.id, categories.cat_id, categories.name, categories.is_active, categories.created_on, categories.updated_on 
+FROM categories 
+WHERE categories.id = $1::INTEGER
+INFO 2024-09-21 22:52:29,513 sqlalchemy.engine.Engine [cached since 0.05252s ago] (66,)
+INFO 2024-09-21 22:52:29,515 sqlalchemy.engine.Engine ROLLBACK
+INFO 2024-09-21 22:52:57,417 sqlalchemy.engine.Engine BEGIN (implicit)
+INFO 2024-09-21 22:52:57,418 sqlalchemy.engine.Engine SELECT categories.id, categories.cat_id, categories.name, categories.is_active, categories.created_on, categories.updated_on 
+FROM categories 
+WHERE categories.name = $1::VARCHAR
+INFO 2024-09-21 22:52:57,419 sqlalchemy.engine.Engine [cached since 28.2s ago] ('Sample Category 1',)
+INFO 2024-09-21 22:52:57,421 sqlalchemy.engine.Engine SELECT categories.id, categories.cat_id, categories.name, categories.is_active, categories.created_on, categories.updated_on 
+FROM categories 
+WHERE categories.name = $1::VARCHAR
+INFO 2024-09-21 22:52:57,422 sqlalchemy.engine.Engine [cached since 28.2s ago] ('Sample Category 2',)
+INFO 2024-09-21 22:52:57,424 sqlalchemy.engine.Engine ROLLBACK
+INFO 2024-09-21 22:55:35,641 root Shutting down application...
+INFO 2024-09-21 22:55:48,445 root Application startup application...
+INFO 2024-09-21 22:55:58,984 root Shutting down application...
+INFO 2024-09-21 22:56:03,438 root Application startup application...
+INFO 2024-09-21 22:56:03,439 root Shutting down application...
+INFO 2024-09-21 22:56:11,453 root Application startup application...
+INFO 2024-09-21 22:56:11,456 root Shutting down application...
+INFO 2024-09-21 22:56:19,136 root Application startup application...
+INFO 2024-09-21 22:56:22,603 root Shutting down application...
+INFO 2024-09-21 22:56:32,968 root Application startup application...
+INFO 2024-09-21 22:56:33,068 sqlalchemy.engine.Engine select pg_catalog.version()
+INFO 2024-09-21 22:56:33,069 sqlalchemy.engine.Engine [raw sql] ()
+INFO 2024-09-21 22:56:33,073 sqlalchemy.engine.Engine select current_schema()
+INFO 2024-09-21 22:56:33,074 sqlalchemy.engine.Engine [raw sql] ()
+INFO 2024-09-21 22:56:33,078 sqlalchemy.engine.Engine show standard_conforming_strings
+INFO 2024-09-21 22:56:33,079 sqlalchemy.engine.Engine [raw sql] ()
+INFO 2024-09-21 22:56:33,081 sqlalchemy.engine.Engine BEGIN (implicit)
+INFO 2024-09-21 22:56:33,088 sqlalchemy.engine.Engine SELECT categories.id, categories.cat_id, categories.name, categories.is_active, categories.created_on, categories.updated_on 
+FROM categories 
+WHERE categories.name = $1::VARCHAR
+INFO 2024-09-21 22:56:33,090 sqlalchemy.engine.Engine [generated in 0.00171s] ('Sample Category 1',)
+INFO 2024-09-21 22:56:33,098 sqlalchemy.engine.Engine SELECT categories.id, categories.cat_id, categories.name, categories.is_active, categories.created_on, categories.updated_on 
+FROM categories 
+WHERE categories.name = $1::VARCHAR
+INFO 2024-09-21 22:56:33,099 sqlalchemy.engine.Engine [cached since 0.01132s ago] ('Sample Category 2',)
+INFO 2024-09-21 22:56:33,101 sqlalchemy.engine.Engine ROLLBACK
+INFO 2024-09-21 22:56:44,082 sqlalchemy.engine.Engine BEGIN (implicit)
+INFO 2024-09-21 22:56:44,084 sqlalchemy.engine.Engine SELECT categories.id, categories.cat_id, categories.name, categories.is_active, categories.created_on, categories.updated_on 
+FROM categories
+INFO 2024-09-21 22:56:44,084 sqlalchemy.engine.Engine [generated in 0.00105s] ()
+ERROR 2024-09-21 22:56:44,087 app.core.logging Error retrieving categories: You must set the config attribute `from_attributes=True` to use from_orm
+ERROR 2024-09-21 22:56:44,087 app.core.logging Failed to retrieve categories: Error retrieving categories: You must set the config attribute `from_attributes=True` to use from_orm
+INFO 2024-09-21 22:56:44,088 sqlalchemy.engine.Engine ROLLBACK
+INFO 2024-09-21 22:57:35,611 root Shutting down application...
+INFO 2024-09-21 22:57:39,385 root Application startup application...
+INFO 2024-09-21 22:57:42,028 sqlalchemy.engine.Engine select pg_catalog.version()
+INFO 2024-09-21 22:57:42,030 sqlalchemy.engine.Engine [raw sql] ()
+INFO 2024-09-21 22:57:42,032 sqlalchemy.engine.Engine select current_schema()
+INFO 2024-09-21 22:57:42,033 sqlalchemy.engine.Engine [raw sql] ()
+INFO 2024-09-21 22:57:42,035 sqlalchemy.engine.Engine show standard_conforming_strings
+INFO 2024-09-21 22:57:42,035 sqlalchemy.engine.Engine [raw sql] ()
+INFO 2024-09-21 22:57:42,037 sqlalchemy.engine.Engine BEGIN (implicit)
+INFO 2024-09-21 22:57:42,043 sqlalchemy.engine.Engine SELECT categories.id, categories.cat_id, categories.name, categories.is_active, categories.created_on, categories.updated_on 
+FROM categories
+INFO 2024-09-21 22:57:42,044 sqlalchemy.engine.Engine [generated in 0.00094s] ()
+INFO 2024-09-21 22:57:42,077 app.core.logging Successfully retrieved 31 categories.
+INFO 2024-09-21 22:57:42,095 sqlalchemy.engine.Engine ROLLBACK
+INFO 2024-09-21 22:58:34,436 sqlalchemy.engine.Engine BEGIN (implicit)
+INFO 2024-09-21 22:58:34,437 sqlalchemy.engine.Engine SELECT categories.id, categories.cat_id, categories.name, categories.is_active, categories.created_on, categories.updated_on 
+FROM categories
+INFO 2024-09-21 22:58:34,439 sqlalchemy.engine.Engine [cached since 52.4s ago] ()
+INFO 2024-09-21 22:58:34,441 app.core.logging Successfully retrieved 31 categories.
+INFO 2024-09-21 22:58:34,442 sqlalchemy.engine.Engine ROLLBACK
+INFO 2024-09-21 22:59:45,446 root Shutting down application...
+INFO 2024-09-21 22:59:59,110 root Application startup application...
+INFO 2024-09-21 23:00:05,194 root Shutting down application...
+INFO 2024-09-21 23:00:09,037 root Application startup application...
+INFO 2024-09-21 23:00:09,039 root Shutting down application...
+INFO 2024-09-21 23:00:12,533 root Application startup application...
+INFO 2024-09-21 23:01:17,701 root Shutting down application...
+INFO 2024-09-21 23:01:23,753 root Application startup application...
+INFO 2024-09-21 23:01:23,754 root Shutting down application...
+INFO 2024-09-21 23:01:27,310 root Application startup application...
+INFO 2024-09-21 23:01:27,388 sqlalchemy.engine.Engine select pg_catalog.version()
+INFO 2024-09-21 23:01:27,388 sqlalchemy.engine.Engine [raw sql] ()
+INFO 2024-09-21 23:01:27,391 sqlalchemy.engine.Engine select current_schema()
+INFO 2024-09-21 23:01:27,392 sqlalchemy.engine.Engine [raw sql] ()
+INFO 2024-09-21 23:01:27,394 sqlalchemy.engine.Engine show standard_conforming_strings
+INFO 2024-09-21 23:01:27,395 sqlalchemy.engine.Engine [raw sql] ()
+INFO 2024-09-21 23:01:27,397 sqlalchemy.engine.Engine BEGIN (implicit)
+INFO 2024-09-21 23:01:27,403 sqlalchemy.engine.Engine SELECT categories.id, categories.cat_id, categories.name, categories.is_active, categories.created_on, categories.updated_on 
+FROM categories
+INFO 2024-09-21 23:01:27,404 sqlalchemy.engine.Engine [generated in 0.00080s] ()
+INFO 2024-09-21 23:01:27,410 app.core.logging Successfully retrieved 31 categories.
+INFO 2024-09-21 23:01:27,411 sqlalchemy.engine.Engine ROLLBACK
+INFO 2024-09-21 23:02:34,815 root Shutting down application...
+INFO 2024-09-21 23:02:54,456 root Application startup application...
+INFO 2024-09-21 23:02:54,458 root Shutting down application...
+INFO 2024-09-21 23:02:57,244 root Application startup application...
+INFO 2024-09-21 23:03:05,327 root Shutting down application...
+INFO 2024-09-21 23:03:09,206 root Application startup application...
+INFO 2024-09-21 23:03:09,207 root Shutting down application...
+INFO 2024-09-21 23:03:13,384 root Application startup application...
+INFO 2024-09-21 23:03:27,038 sqlalchemy.engine.Engine select pg_catalog.version()
+INFO 2024-09-21 23:03:27,039 sqlalchemy.engine.Engine [raw sql] ()
+INFO 2024-09-21 23:03:27,044 sqlalchemy.engine.Engine select current_schema()
+INFO 2024-09-21 23:03:27,045 sqlalchemy.engine.Engine [raw sql] ()
+INFO 2024-09-21 23:03:27,049 sqlalchemy.engine.Engine show standard_conforming_strings
+INFO 2024-09-21 23:03:27,051 sqlalchemy.engine.Engine [raw sql] ()
+INFO 2024-09-21 23:03:27,054 sqlalchemy.engine.Engine BEGIN (implicit)
+INFO 2024-09-21 23:03:27,059 sqlalchemy.engine.Engine SELECT count(*) AS count_1 
+FROM categories
+INFO 2024-09-21 23:03:27,060 sqlalchemy.engine.Engine [generated in 0.00113s] ()
+INFO 2024-09-21 23:03:27,075 sqlalchemy.engine.Engine SELECT categories.id, categories.cat_id, categories.name, categories.is_active, categories.created_on, categories.updated_on 
+FROM categories 
+ LIMIT $1::INTEGER OFFSET $2::INTEGER
+INFO 2024-09-21 23:03:27,076 sqlalchemy.engine.Engine [generated in 0.00160s] (10, 0)
+INFO 2024-09-21 23:03:27,082 app.core.logging Successfully retrieved 10 categories.
+INFO 2024-09-21 23:03:27,084 sqlalchemy.engine.Engine ROLLBACK
+INFO 2024-09-21 23:03:59,144 sqlalchemy.engine.Engine BEGIN (implicit)
+INFO 2024-09-21 23:03:59,145 sqlalchemy.engine.Engine SELECT count(*) AS count_1 
+FROM categories
+INFO 2024-09-21 23:03:59,146 sqlalchemy.engine.Engine [cached since 32.09s ago] ()
+INFO 2024-09-21 23:03:59,148 sqlalchemy.engine.Engine SELECT categories.id, categories.cat_id, categories.name, categories.is_active, categories.created_on, categories.updated_on 
+FROM categories 
+ LIMIT $1::INTEGER OFFSET $2::INTEGER
+INFO 2024-09-21 23:03:59,149 sqlalchemy.engine.Engine [cached since 32.07s ago] (10, 0)
+INFO 2024-09-21 23:03:59,152 app.core.logging Successfully retrieved 10 categories.
+INFO 2024-09-21 23:03:59,153 sqlalchemy.engine.Engine ROLLBACK
+INFO 2024-09-21 23:04:42,101 root Shutting down application...
+INFO 2024-09-21 23:04:47,343 root Application startup application...
+INFO 2024-09-21 23:04:47,358 root Shutting down application...
+INFO 2024-09-21 23:04:51,357 root Application startup application...
+INFO 2024-09-21 23:04:56,030 root Shutting down application...
+INFO 2024-09-21 23:04:59,464 root Application startup application...
+INFO 2024-09-21 23:04:59,466 root Shutting down application...
+INFO 2024-09-21 23:05:03,099 root Application startup application...
+INFO 2024-09-21 23:05:34,770 root Shutting down application...
+INFO 2024-09-21 23:05:38,399 root Application startup application...
+INFO 2024-09-21 23:06:18,199 root Shutting down application...
+INFO 2024-09-21 23:06:28,833 root Application startup application...
+INFO 2024-09-21 23:06:28,836 root Shutting down application...
+INFO 2024-09-21 23:06:37,430 root Application startup application...
+INFO 2024-09-21 23:06:37,431 root Shutting down application...
+INFO 2024-09-21 23:06:42,479 root Application startup application...
+INFO 2024-09-21 23:06:58,028 root Shutting down application...
+INFO 2024-09-21 23:07:02,167 root Application startup application...
+INFO 2024-09-21 23:07:11,517 root Shutting down application...
+INFO 2024-09-21 23:07:15,429 root Application startup application...
+INFO 2024-09-21 23:07:15,431 root Shutting down application...
+INFO 2024-09-21 23:07:19,629 root Application startup application...
+INFO 2024-09-21 23:07:25,615 root Shutting down application...
+INFO 2024-09-21 23:07:30,693 root Application startup application...
+INFO 2024-09-21 23:07:42,456 sqlalchemy.engine.Engine select pg_catalog.version()
+INFO 2024-09-21 23:07:42,456 sqlalchemy.engine.Engine [raw sql] ()
+INFO 2024-09-21 23:07:42,459 sqlalchemy.engine.Engine select current_schema()
+INFO 2024-09-21 23:07:42,460 sqlalchemy.engine.Engine [raw sql] ()
+INFO 2024-09-21 23:07:42,463 sqlalchemy.engine.Engine show standard_conforming_strings
+INFO 2024-09-21 23:07:42,463 sqlalchemy.engine.Engine [raw sql] ()
+INFO 2024-09-21 23:07:42,466 sqlalchemy.engine.Engine BEGIN (implicit)
+INFO 2024-09-21 23:07:42,472 sqlalchemy.engine.Engine SELECT count(*) AS count_1 
+FROM categories
+INFO 2024-09-21 23:07:42,472 sqlalchemy.engine.Engine [generated in 0.00098s] ()
+ERROR 2024-09-21 23:07:42,477 app.core.logging Error retrieving categories: 'Select' object has no attribute 'orderby'
+ERROR 2024-09-21 23:07:42,478 app.core.logging Failed to retrieve categories: Error retrieving categories: 'Select' object has no attribute 'orderby'
+INFO 2024-09-21 23:07:42,478 sqlalchemy.engine.Engine ROLLBACK
+INFO 2024-09-21 23:08:07,043 root Shutting down application...
+INFO 2024-09-21 23:08:12,893 root Application startup application...
+INFO 2024-09-21 23:08:12,895 root Shutting down application...

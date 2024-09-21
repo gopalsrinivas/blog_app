@@ -13,6 +13,7 @@ class CategoryModel(BaseModel):
 
     class Config:
         orm_mode = True
+        from_attributes = True
         json_schema_extra = {
             "example": {
                 "name": "Sample Category",
