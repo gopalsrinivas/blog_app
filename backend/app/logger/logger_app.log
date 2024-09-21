@@ -4663,3 +4663,42 @@ INFO 2024-09-21 23:56:15,557 root Application startup application...
 INFO 2024-09-22 00:00:06,958 root Shutting down application...
 INFO 2024-09-22 00:00:18,798 root Application startup application...
 INFO 2024-09-22 00:00:34,739 root Shutting down application...
+INFO 2024-09-22 00:00:40,087 root Application startup application...
+INFO 2024-09-22 00:00:51,285 sqlalchemy.engine.Engine select pg_catalog.version()
+INFO 2024-09-22 00:00:51,287 sqlalchemy.engine.Engine [raw sql] ()
+INFO 2024-09-22 00:00:51,292 sqlalchemy.engine.Engine select current_schema()
+INFO 2024-09-22 00:00:51,293 sqlalchemy.engine.Engine [raw sql] ()
+INFO 2024-09-22 00:00:51,296 sqlalchemy.engine.Engine show standard_conforming_strings
+INFO 2024-09-22 00:00:51,296 sqlalchemy.engine.Engine [raw sql] ()
+INFO 2024-09-22 00:00:51,299 sqlalchemy.engine.Engine BEGIN (implicit)
+INFO 2024-09-22 00:00:51,306 sqlalchemy.engine.Engine SELECT categories.id, categories.cat_id, categories.name, categories.is_active, categories.created_on, categories.updated_on 
+FROM categories 
+WHERE categories.id = $1::INTEGER
+INFO 2024-09-22 00:00:51,307 sqlalchemy.engine.Engine [generated in 0.00142s] (55,)
+INFO 2024-09-22 00:00:51,341 sqlalchemy.engine.Engine UPDATE categories SET name=$1::VARCHAR, updated_on=$2::TIMESTAMP WITHOUT TIME ZONE WHERE categories.id = $3::INTEGER
+INFO 2024-09-22 00:00:51,342 sqlalchemy.engine.Engine [generated in 0.00107s] ('string_updated1', datetime.datetime(2024, 9, 22, 0, 0, 51, 337016), 55)
+INFO 2024-09-22 00:00:51,346 sqlalchemy.engine.Engine COMMIT
+INFO 2024-09-22 00:00:51,349 app.core.logging Successfully updated category with id 55.
+INFO 2024-09-22 00:01:40,549 sqlalchemy.engine.Engine BEGIN (implicit)
+INFO 2024-09-22 00:01:40,550 sqlalchemy.engine.Engine SELECT categories.id, categories.cat_id, categories.name, categories.is_active, categories.created_on, categories.updated_on 
+FROM categories 
+WHERE categories.id = $1::INTEGER
+INFO 2024-09-22 00:01:40,551 sqlalchemy.engine.Engine [cached since 49.25s ago] (55,)
+INFO 2024-09-22 00:01:40,556 sqlalchemy.engine.Engine UPDATE categories SET name=$1::VARCHAR, updated_on=$2::TIMESTAMP WITHOUT TIME ZONE WHERE categories.id = $3::INTEGER
+INFO 2024-09-22 00:01:40,558 sqlalchemy.engine.Engine [cached since 49.22s ago] ('string_updated12', datetime.datetime(2024, 9, 22, 0, 1, 40, 555203), 55)
+INFO 2024-09-22 00:01:40,561 sqlalchemy.engine.Engine COMMIT
+INFO 2024-09-22 00:01:41,151 app.core.logging Successfully updated category with id 55.
+INFO 2024-09-22 00:02:15,570 sqlalchemy.engine.Engine BEGIN (implicit)
+INFO 2024-09-22 00:02:15,574 sqlalchemy.engine.Engine SELECT categories.id, categories.cat_id, categories.name, categories.is_active, categories.created_on, categories.updated_on 
+FROM categories 
+WHERE categories.id = $1::INTEGER
+INFO 2024-09-22 00:02:15,577 sqlalchemy.engine.Engine [cached since 84.27s ago] (55,)
+INFO 2024-09-22 00:02:15,588 sqlalchemy.engine.Engine UPDATE categories SET is_active=$1::BOOLEAN, updated_on=$2::TIMESTAMP WITHOUT TIME ZONE WHERE categories.id = $3::INTEGER
+INFO 2024-09-22 00:02:15,591 sqlalchemy.engine.Engine [generated in 0.00287s] (False, datetime.datetime(2024, 9, 22, 0, 2, 15, 584112), 55)
+INFO 2024-09-22 00:02:15,596 sqlalchemy.engine.Engine COMMIT
+INFO 2024-09-22 00:02:16,492 app.core.logging Successfully updated category with id 55.
+INFO 2024-09-22 00:09:24,488 root Shutting down application...
+INFO 2024-09-22 00:09:39,128 root Application startup application...
+INFO 2024-09-22 00:09:50,200 root Shutting down application...
+INFO 2024-09-22 00:09:53,537 root Application startup application...
+INFO 2024-09-22 00:09:56,680 root Shutting down application...

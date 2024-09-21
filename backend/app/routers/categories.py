@@ -46,3 +46,14 @@ async def update_category(category_id: int, category_data: CategoryUpdateModel, 
     else:
         logger.error(f"Failed to update category: {response['message']}")
         raise HTTPException(status_code=404, detail=response["message"])
+
+
+@router.delete("/{category_id}", response_model=Dict[str, Any])
+async def delete_category(category_id: int, db: AsyncSession = Depends(get_db)):
+    response = await CategoryService.soft_delete_category(db=db, category_id=category_id)
+    if response["status"] == "success":
+        logger.info(f"Successfully soft deleted category with id {category_id}.")
+        return response
+    else:
+        logger.error(f"Failed to delete category: {response['message']}")
+        raise HTTPException(status_code=404, detail=response["message"])

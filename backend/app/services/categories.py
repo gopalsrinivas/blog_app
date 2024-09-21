@@ -157,3 +157,33 @@ class CategoryService:
                 "message": f"Error updating category: {str(e)}",
                 "data": None
             }
+            
+    @staticmethod
+    async def soft_delete_category(db: AsyncSession, category_id: int):
+        try:
+            result = await db.execute(select(Category).where(Category.id == category_id))
+            category = result.scalars().first()
+
+            if category:
+                category.is_active = False  # Mark as inactive
+                db.add(category)
+                await db.commit()  # Commit changes
+
+                return {
+                    "status": "success",
+                    "message": "Category soft deleted successfully.",
+                    "data": CategoryModel.from_orm(category)
+                }
+            else:
+                return {
+                    "status": "failure",
+                    "message": "Category not found.",
+                    "data": None
+                }
+        except Exception as e:
+            logger.error(f"Error soft deleting category: {str(e)}")
+            return {
+                "status": "failure",
+                "message": f"Error soft deleting category: {str(e)}",
+                "data": None
+            }
