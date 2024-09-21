@@ -35,3 +35,14 @@ async def get_category(category_id: int, db: AsyncSession = Depends(get_db)):
     else:
         logger.error(f"Failed to retrieve category: {response['message']}")
         raise HTTPException(status_code=404, detail=response["message"])
+
+
+@router.put("/{category_id}", response_model=Dict[str, Any])
+async def update_category(category_id: int, category_data: CategoryUpdateModel, db: AsyncSession = Depends(get_db)):
+    response = await CategoryService.update_category(db=db, category_id=category_id, category_data=category_data)
+    if response["status"] == "success":
+        logger.info(f"Successfully updated category with id {category_id}.")
+        return response
+    else:
+        logger.error(f"Failed to update category: {response['message']}")
+        raise HTTPException(status_code=404, detail=response["message"])

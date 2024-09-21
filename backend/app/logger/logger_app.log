@@ -4387,3 +4387,279 @@ INFO 2024-09-21 23:27:41,029 sqlalchemy.engine.Engine [cached since 28.68s ago] 
 INFO 2024-09-21 23:27:41,031 app.core.logging Successfully retrieved category with id 50.
 INFO 2024-09-21 23:27:41,031 sqlalchemy.engine.Engine ROLLBACK
 INFO 2024-09-21 23:27:48,541 root Shutting down application...
+INFO 2024-09-21 23:27:53,506 root Application startup application...
+INFO 2024-09-21 23:30:29,253 root Shutting down application...
+INFO 2024-09-21 23:30:32,578 root Application startup application...
+INFO 2024-09-21 23:30:45,089 root Shutting down application...
+INFO 2024-09-21 23:30:48,562 root Application startup application...
+INFO 2024-09-21 23:33:20,450 root Shutting down application...
+INFO 2024-09-21 23:33:32,765 root Application startup application...
+INFO 2024-09-21 23:33:34,165 root Shutting down application...
+INFO 2024-09-21 23:33:37,838 root Application startup application...
+INFO 2024-09-21 23:33:41,437 sqlalchemy.engine.Engine select pg_catalog.version()
+INFO 2024-09-21 23:33:41,438 sqlalchemy.engine.Engine [raw sql] ()
+INFO 2024-09-21 23:33:41,441 sqlalchemy.engine.Engine select current_schema()
+INFO 2024-09-21 23:33:41,442 sqlalchemy.engine.Engine [raw sql] ()
+INFO 2024-09-21 23:33:41,444 sqlalchemy.engine.Engine show standard_conforming_strings
+INFO 2024-09-21 23:33:41,445 sqlalchemy.engine.Engine [raw sql] ()
+INFO 2024-09-21 23:33:41,447 sqlalchemy.engine.Engine BEGIN (implicit)
+INFO 2024-09-21 23:33:41,454 sqlalchemy.engine.Engine SELECT categories.id, categories.cat_id, categories.name, categories.is_active, categories.created_on, categories.updated_on 
+FROM categories 
+WHERE categories.id = $1::INTEGER
+INFO 2024-09-21 23:33:41,455 sqlalchemy.engine.Engine [generated in 0.00123s] (66,)
+INFO 2024-09-21 23:33:41,464 sqlalchemy.engine.Engine UPDATE categories SET name=$1::VARCHAR, is_active=$2::BOOLEAN, updated_on=now() WHERE categories.id = $3::INTEGER
+INFO 2024-09-21 23:33:41,466 sqlalchemy.engine.Engine [generated in 0.00144s] ('Sample Category 2_updated', False, 66)
+INFO 2024-09-21 23:33:41,569 sqlalchemy.engine.Engine COMMIT
+INFO 2024-09-21 23:33:41,617 sqlalchemy.engine.Engine BEGIN (implicit)
+INFO 2024-09-21 23:33:41,622 sqlalchemy.engine.Engine SELECT categories.id AS categories_id, categories.cat_id AS categories_cat_id, categories.name AS categories_name, categories.is_active AS categories_is_active, categories.created_on AS categories_created_on, categories.updated_on AS categories_updated_on 
+FROM categories 
+WHERE categories.id = $1::INTEGER
+INFO 2024-09-21 23:33:41,623 sqlalchemy.engine.Engine [generated in 0.00149s] (66,)
+INFO 2024-09-21 23:33:41,748 sqlalchemy.engine.Engine SELECT categories.id AS categories_id, categories.cat_id AS categories_cat_id, categories.name AS categories_name, categories.is_active AS categories_is_active, categories.created_on AS categories_created_on, categories.updated_on AS categories_updated_on 
+FROM categories 
+WHERE categories.id = $1::INTEGER
+INFO 2024-09-21 23:33:41,750 sqlalchemy.engine.Engine [cached since 0.1277s ago] (66,)
+INFO 2024-09-21 23:33:41,751 sqlalchemy.engine.Engine SELECT categories.id AS categories_id, categories.cat_id AS categories_cat_id, categories.name AS categories_name, categories.is_active AS categories_is_active, categories.created_on AS categories_created_on, categories.updated_on AS categories_updated_on 
+FROM categories 
+WHERE categories.id = $1::INTEGER
+INFO 2024-09-21 23:33:41,752 sqlalchemy.engine.Engine [cached since 0.1302s ago] (66,)
+INFO 2024-09-21 23:33:41,754 sqlalchemy.engine.Engine SELECT categories.id AS categories_id, categories.cat_id AS categories_cat_id, categories.name AS categories_name, categories.is_active AS categories_is_active, categories.created_on AS categories_created_on, categories.updated_on AS categories_updated_on 
+FROM categories 
+WHERE categories.id = $1::INTEGER
+INFO 2024-09-21 23:33:41,755 sqlalchemy.engine.Engine [cached since 0.1329s ago] (66,)
+INFO 2024-09-21 23:33:41,756 sqlalchemy.engine.Engine SELECT categories.id AS categories_id, categories.cat_id AS categories_cat_id, categories.name AS categories_name, categories.is_active AS categories_is_active, categories.created_on AS categories_created_on, categories.updated_on AS categories_updated_on 
+FROM categories 
+WHERE categories.id = $1::INTEGER
+INFO 2024-09-21 23:33:41,757 sqlalchemy.engine.Engine [cached since 0.1357s ago] (66,)
+INFO 2024-09-21 23:33:41,759 sqlalchemy.engine.Engine SELECT categories.id AS categories_id, categories.cat_id AS categories_cat_id, categories.name AS categories_name, categories.is_active AS categories_is_active, categories.created_on AS categories_created_on, categories.updated_on AS categories_updated_on 
+FROM categories 
+WHERE categories.id = $1::INTEGER
+INFO 2024-09-21 23:33:41,761 sqlalchemy.engine.Engine [cached since 0.1383s ago] (66,)
+INFO 2024-09-21 23:33:41,886 sqlalchemy.engine.Engine SELECT categories.id AS categories_id, categories.cat_id AS categories_cat_id, categories.name AS categories_name, categories.is_active AS categories_is_active, categories.created_on AS categories_created_on, categories.updated_on AS categories_updated_on 
+FROM categories 
+WHERE categories.id = $1::INTEGER
+INFO 2024-09-21 23:33:41,887 sqlalchemy.engine.Engine [cached since 0.2644s ago] (66,)
+INFO 2024-09-21 23:33:41,888 sqlalchemy.engine.Engine SELECT categories.id AS categories_id, categories.cat_id AS categories_cat_id, categories.name AS categories_name, categories.is_active AS categories_is_active, categories.created_on AS categories_created_on, categories.updated_on AS categories_updated_on 
+FROM categories 
+WHERE categories.id = $1::INTEGER
+INFO 2024-09-21 23:33:41,889 sqlalchemy.engine.Engine [cached since 0.2664s ago] (66,)
+INFO 2024-09-21 23:33:41,890 sqlalchemy.engine.Engine SELECT categories.id AS categories_id, categories.cat_id AS categories_cat_id, categories.name AS categories_name, categories.is_active AS categories_is_active, categories.created_on AS categories_created_on, categories.updated_on AS categories_updated_on 
+FROM categories 
+WHERE categories.id = $1::INTEGER
+INFO 2024-09-21 23:33:41,890 sqlalchemy.engine.Engine [cached since 0.2681s ago] (66,)
+INFO 2024-09-21 23:33:41,891 sqlalchemy.engine.Engine SELECT categories.id AS categories_id, categories.cat_id AS categories_cat_id, categories.name AS categories_name, categories.is_active AS categories_is_active, categories.created_on AS categories_created_on, categories.updated_on AS categories_updated_on 
+FROM categories 
+WHERE categories.id = $1::INTEGER
+INFO 2024-09-21 23:33:41,892 sqlalchemy.engine.Engine [cached since 0.2702s ago] (66,)
+INFO 2024-09-21 23:33:41,893 sqlalchemy.engine.Engine SELECT categories.id AS categories_id, categories.cat_id AS categories_cat_id, categories.name AS categories_name, categories.is_active AS categories_is_active, categories.created_on AS categories_created_on, categories.updated_on AS categories_updated_on 
+FROM categories 
+WHERE categories.id = $1::INTEGER
+INFO 2024-09-21 23:33:41,895 sqlalchemy.engine.Engine [cached since 0.2727s ago] (66,)
+INFO 2024-09-21 23:33:41,897 sqlalchemy.engine.Engine SELECT categories.id AS categories_id, categories.cat_id AS categories_cat_id, categories.name AS categories_name, categories.is_active AS categories_is_active, categories.created_on AS categories_created_on, categories.updated_on AS categories_updated_on 
+FROM categories 
+WHERE categories.id = $1::INTEGER
+INFO 2024-09-21 23:33:41,898 sqlalchemy.engine.Engine [cached since 0.275s ago] (66,)
+ERROR 2024-09-21 23:33:41,899 app.core.logging Error updating category: 6 validation errors for CategoryModel
+id
+  Error extracting attribute: MissingGreenlet: greenlet_spawn has not been called; can't call await_only() here. Was IO attempted in an unexpected place? (Background on this error at: https://sqlalche.me/e/20/xd2s) [type=get_attribute_error, input_value=<unprintable Category object>, input_type=Category]
+    For further information visit https://errors.pydantic.dev/2.8/v/get_attribute_error
+cat_id
+  Error extracting attribute: MissingGreenlet: greenlet_spawn has not been called; can't call await_only() here. Was IO attempted in an unexpected place? (Background on this error at: https://sqlalche.me/e/20/xd2s) [type=get_attribute_error, input_value=<unprintable Category object>, input_type=Category]
+    For further information visit https://errors.pydantic.dev/2.8/v/get_attribute_error
+name
+  Error extracting attribute: MissingGreenlet: greenlet_spawn has not been called; can't call await_only() here. Was IO attempted in an unexpected place? (Background on this error at: https://sqlalche.me/e/20/xd2s) [type=get_attribute_error, input_value=<unprintable Category object>, input_type=Category]
+    For further information visit https://errors.pydantic.dev/2.8/v/get_attribute_error
+is_active
+  Error extracting attribute: MissingGreenlet: greenlet_spawn has not been called; can't call await_only() here. Was IO attempted in an unexpected place? (Background on this error at: https://sqlalche.me/e/20/xd2s) [type=get_attribute_error, input_value=<unprintable Category object>, input_type=Category]
+    For further information visit https://errors.pydantic.dev/2.8/v/get_attribute_error
+created_on
+  Error extracting attribute: MissingGreenlet: greenlet_spawn has not been called; can't call await_only() here. Was IO attempted in an unexpected place? (Background on this error at: https://sqlalche.me/e/20/xd2s) [type=get_attribute_error, input_value=<unprintable Category object>, input_type=Category]
+    For further information visit https://errors.pydantic.dev/2.8/v/get_attribute_error
+updated_on
+  Error extracting attribute: MissingGreenlet: greenlet_spawn has not been called; can't call await_only() here. Was IO attempted in an unexpected place? (Background on this error at: https://sqlalche.me/e/20/xd2s) [type=get_attribute_error, input_value=<unprintable Category object>, input_type=Category]
+    For further information visit https://errors.pydantic.dev/2.8/v/get_attribute_error
+INFO 2024-09-21 23:33:41,900 sqlalchemy.engine.Engine SELECT categories.id AS categories_id, categories.cat_id AS categories_cat_id, categories.name AS categories_name, categories.is_active AS categories_is_active, categories.created_on AS categories_created_on, categories.updated_on AS categories_updated_on 
+FROM categories 
+WHERE categories.id = $1::INTEGER
+INFO 2024-09-21 23:33:41,902 sqlalchemy.engine.Engine [cached since 0.2795s ago] (66,)
+INFO 2024-09-21 23:33:41,903 sqlalchemy.engine.Engine SELECT categories.id AS categories_id, categories.cat_id AS categories_cat_id, categories.name AS categories_name, categories.is_active AS categories_is_active, categories.created_on AS categories_created_on, categories.updated_on AS categories_updated_on 
+FROM categories 
+WHERE categories.id = $1::INTEGER
+INFO 2024-09-21 23:33:41,904 sqlalchemy.engine.Engine [cached since 0.282s ago] (66,)
+INFO 2024-09-21 23:33:41,905 sqlalchemy.engine.Engine SELECT categories.id AS categories_id, categories.cat_id AS categories_cat_id, categories.name AS categories_name, categories.is_active AS categories_is_active, categories.created_on AS categories_created_on, categories.updated_on AS categories_updated_on 
+FROM categories 
+WHERE categories.id = $1::INTEGER
+INFO 2024-09-21 23:33:41,906 sqlalchemy.engine.Engine [cached since 0.2842s ago] (66,)
+INFO 2024-09-21 23:33:41,908 sqlalchemy.engine.Engine SELECT categories.id AS categories_id, categories.cat_id AS categories_cat_id, categories.name AS categories_name, categories.is_active AS categories_is_active, categories.created_on AS categories_created_on, categories.updated_on AS categories_updated_on 
+FROM categories 
+WHERE categories.id = $1::INTEGER
+INFO 2024-09-21 23:33:41,909 sqlalchemy.engine.Engine [cached since 0.2866s ago] (66,)
+INFO 2024-09-21 23:33:41,910 sqlalchemy.engine.Engine SELECT categories.id AS categories_id, categories.cat_id AS categories_cat_id, categories.name AS categories_name, categories.is_active AS categories_is_active, categories.created_on AS categories_created_on, categories.updated_on AS categories_updated_on 
+FROM categories 
+WHERE categories.id = $1::INTEGER
+INFO 2024-09-21 23:33:41,911 sqlalchemy.engine.Engine [cached since 0.289s ago] (66,)
+INFO 2024-09-21 23:33:41,912 sqlalchemy.engine.Engine SELECT categories.id AS categories_id, categories.cat_id AS categories_cat_id, categories.name AS categories_name, categories.is_active AS categories_is_active, categories.created_on AS categories_created_on, categories.updated_on AS categories_updated_on 
+FROM categories 
+WHERE categories.id = $1::INTEGER
+INFO 2024-09-21 23:33:41,913 sqlalchemy.engine.Engine [cached since 0.2911s ago] (66,)
+ERROR 2024-09-21 23:33:41,913 app.core.logging Failed to update category: Error updating category: 6 validation errors for CategoryModel
+id
+  Error extracting attribute: MissingGreenlet: greenlet_spawn has not been called; can't call await_only() here. Was IO attempted in an unexpected place? (Background on this error at: https://sqlalche.me/e/20/xd2s) [type=get_attribute_error, input_value=<unprintable Category object>, input_type=Category]
+    For further information visit https://errors.pydantic.dev/2.8/v/get_attribute_error
+cat_id
+  Error extracting attribute: MissingGreenlet: greenlet_spawn has not been called; can't call await_only() here. Was IO attempted in an unexpected place? (Background on this error at: https://sqlalche.me/e/20/xd2s) [type=get_attribute_error, input_value=<unprintable Category object>, input_type=Category]
+    For further information visit https://errors.pydantic.dev/2.8/v/get_attribute_error
+name
+  Error extracting attribute: MissingGreenlet: greenlet_spawn has not been called; can't call await_only() here. Was IO attempted in an unexpected place? (Background on this error at: https://sqlalche.me/e/20/xd2s) [type=get_attribute_error, input_value=<unprintable Category object>, input_type=Category]
+    For further information visit https://errors.pydantic.dev/2.8/v/get_attribute_error
+is_active
+  Error extracting attribute: MissingGreenlet: greenlet_spawn has not been called; can't call await_only() here. Was IO attempted in an unexpected place? (Background on this error at: https://sqlalche.me/e/20/xd2s) [type=get_attribute_error, input_value=<unprintable Category object>, input_type=Category]
+    For further information visit https://errors.pydantic.dev/2.8/v/get_attribute_error
+created_on
+  Error extracting attribute: MissingGreenlet: greenlet_spawn has not been called; can't call await_only() here. Was IO attempted in an unexpected place? (Background on this error at: https://sqlalche.me/e/20/xd2s) [type=get_attribute_error, input_value=<unprintable Category object>, input_type=Category]
+    For further information visit https://errors.pydantic.dev/2.8/v/get_attribute_error
+updated_on
+  Error extracting attribute: MissingGreenlet: greenlet_spawn has not been called; can't call await_only() here. Was IO attempted in an unexpected place? (Background on this error at: https://sqlalche.me/e/20/xd2s) [type=get_attribute_error, input_value=<unprintable Category object>, input_type=Category]
+    For further information visit https://errors.pydantic.dev/2.8/v/get_attribute_error
+INFO 2024-09-21 23:33:41,914 sqlalchemy.engine.Engine ROLLBACK
+INFO 2024-09-21 23:39:32,508 root Shutting down application...
+INFO 2024-09-21 23:39:43,612 root Application startup application...
+INFO 2024-09-21 23:39:57,106 root Shutting down application...
+INFO 2024-09-21 23:40:02,871 root Application startup application...
+INFO 2024-09-21 23:40:04,168 root Shutting down application...
+INFO 2024-09-21 23:40:09,789 root Application startup application...
+INFO 2024-09-21 23:40:11,744 root Shutting down application...
+INFO 2024-09-21 23:40:17,903 root Application startup application...
+INFO 2024-09-21 23:42:06,005 root Shutting down application...
+INFO 2024-09-21 23:42:12,075 root Application startup application...
+INFO 2024-09-21 23:42:43,486 root Shutting down application...
+INFO 2024-09-21 23:42:49,203 root Application startup application...
+INFO 2024-09-21 23:43:47,177 root Shutting down application...
+INFO 2024-09-21 23:43:53,927 root Application startup application...
+INFO 2024-09-21 23:44:03,528 sqlalchemy.engine.Engine select pg_catalog.version()
+INFO 2024-09-21 23:44:03,529 sqlalchemy.engine.Engine [raw sql] ()
+INFO 2024-09-21 23:44:03,534 sqlalchemy.engine.Engine select current_schema()
+INFO 2024-09-21 23:44:03,534 sqlalchemy.engine.Engine [raw sql] ()
+INFO 2024-09-21 23:44:03,538 sqlalchemy.engine.Engine show standard_conforming_strings
+INFO 2024-09-21 23:44:03,539 sqlalchemy.engine.Engine [raw sql] ()
+INFO 2024-09-21 23:44:03,541 sqlalchemy.engine.Engine BEGIN (implicit)
+INFO 2024-09-21 23:44:03,547 sqlalchemy.engine.Engine SELECT count(*) AS count_1 
+FROM categories
+INFO 2024-09-21 23:44:03,548 sqlalchemy.engine.Engine [generated in 0.00102s] ()
+INFO 2024-09-21 23:44:03,563 sqlalchemy.engine.Engine SELECT categories.id, categories.cat_id, categories.name, categories.is_active, categories.created_on, categories.updated_on 
+FROM categories ORDER BY categories.id DESC 
+ LIMIT $1::INTEGER OFFSET $2::INTEGER
+INFO 2024-09-21 23:44:03,564 sqlalchemy.engine.Engine [generated in 0.00146s] (10, 0)
+INFO 2024-09-21 23:44:03,571 app.core.logging Successfully retrieved 10 categories.
+INFO 2024-09-21 23:44:03,573 sqlalchemy.engine.Engine ROLLBACK
+INFO 2024-09-21 23:44:31,842 root Shutting down application...
+INFO 2024-09-21 23:44:38,507 root Application startup application...
+INFO 2024-09-21 23:44:57,058 sqlalchemy.engine.Engine select pg_catalog.version()
+INFO 2024-09-21 23:44:57,059 sqlalchemy.engine.Engine [raw sql] ()
+INFO 2024-09-21 23:44:57,064 sqlalchemy.engine.Engine select current_schema()
+INFO 2024-09-21 23:44:57,064 sqlalchemy.engine.Engine [raw sql] ()
+INFO 2024-09-21 23:44:57,067 sqlalchemy.engine.Engine show standard_conforming_strings
+INFO 2024-09-21 23:44:57,068 sqlalchemy.engine.Engine [raw sql] ()
+INFO 2024-09-21 23:44:57,071 sqlalchemy.engine.Engine BEGIN (implicit)
+INFO 2024-09-21 23:44:57,080 sqlalchemy.engine.Engine SELECT categories.id, categories.cat_id, categories.name, categories.is_active, categories.created_on, categories.updated_on 
+FROM categories 
+WHERE categories.id = $1::INTEGER
+INFO 2024-09-21 23:44:57,082 sqlalchemy.engine.Engine [generated in 0.00137s] (55,)
+INFO 2024-09-21 23:44:57,093 sqlalchemy.engine.Engine UPDATE categories SET name=$1::VARCHAR, updated_on=now() WHERE categories.id = $2::INTEGER
+INFO 2024-09-21 23:44:57,095 sqlalchemy.engine.Engine [generated in 0.00142s] ('string_updated', 55)
+INFO 2024-09-21 23:44:57,099 sqlalchemy.engine.Engine COMMIT
+INFO 2024-09-21 23:44:57,103 sqlalchemy.engine.Engine BEGIN (implicit)
+INFO 2024-09-21 23:44:57,106 sqlalchemy.engine.Engine SELECT categories.updated_on AS categories_updated_on 
+FROM categories 
+WHERE categories.id = $1::INTEGER
+INFO 2024-09-21 23:44:57,108 sqlalchemy.engine.Engine [generated in 0.00136s] (55,)
+ERROR 2024-09-21 23:44:57,110 app.core.logging Error updating category: 1 validation error for CategoryModel
+updated_on
+  Error extracting attribute: MissingGreenlet: greenlet_spawn has not been called; can't call await_only() here. Was IO attempted in an unexpected place? (Background on this error at: https://sqlalche.me/e/20/xd2s) [type=get_attribute_error, input_value=<Category string_updated ...4-09-21 21:35:31.191661>, input_type=Category]
+    For further information visit https://errors.pydantic.dev/2.8/v/get_attribute_error
+ERROR 2024-09-21 23:44:57,110 app.core.logging Failed to update category: Error updating category: 1 validation error for CategoryModel
+updated_on
+  Error extracting attribute: MissingGreenlet: greenlet_spawn has not been called; can't call await_only() here. Was IO attempted in an unexpected place? (Background on this error at: https://sqlalche.me/e/20/xd2s) [type=get_attribute_error, input_value=<Category string_updated ...4-09-21 21:35:31.191661>, input_type=Category]
+    For further information visit https://errors.pydantic.dev/2.8/v/get_attribute_error
+INFO 2024-09-21 23:44:57,111 sqlalchemy.engine.Engine ROLLBACK
+INFO 2024-09-21 23:48:57,309 root Shutting down application...
+INFO 2024-09-21 23:49:02,367 root Application startup application...
+INFO 2024-09-21 23:49:10,656 root Shutting down application...
+INFO 2024-09-21 23:49:16,424 root Application startup application...
+INFO 2024-09-21 23:49:28,529 root Shutting down application...
+INFO 2024-09-21 23:49:34,031 root Application startup application...
+INFO 2024-09-21 23:49:37,296 root Shutting down application...
+INFO 2024-09-21 23:49:41,748 root Application startup application...
+INFO 2024-09-21 23:49:49,701 root Shutting down application...
+INFO 2024-09-21 23:49:56,274 root Application startup application...
+INFO 2024-09-21 23:49:56,277 root Shutting down application...
+INFO 2024-09-21 23:50:01,425 root Application startup application...
+INFO 2024-09-21 23:50:20,253 sqlalchemy.engine.Engine select pg_catalog.version()
+INFO 2024-09-21 23:50:20,253 sqlalchemy.engine.Engine [raw sql] ()
+INFO 2024-09-21 23:50:20,259 sqlalchemy.engine.Engine select current_schema()
+INFO 2024-09-21 23:50:20,260 sqlalchemy.engine.Engine [raw sql] ()
+INFO 2024-09-21 23:50:20,263 sqlalchemy.engine.Engine show standard_conforming_strings
+INFO 2024-09-21 23:50:20,263 sqlalchemy.engine.Engine [raw sql] ()
+INFO 2024-09-21 23:50:20,267 sqlalchemy.engine.Engine BEGIN (implicit)
+INFO 2024-09-21 23:50:20,279 sqlalchemy.engine.Engine SELECT categories.id, categories.cat_id, categories.name, categories.is_active, categories.created_on, categories.updated_on 
+FROM categories 
+WHERE categories.id = $1::INTEGER
+INFO 2024-09-21 23:50:20,281 sqlalchemy.engine.Engine [generated in 0.00187s] (55,)
+ERROR 2024-09-21 23:50:20,290 app.core.logging Error updating category: name 'datetime' is not defined
+ERROR 2024-09-21 23:50:20,290 app.core.logging Failed to update category: Error updating category: name 'datetime' is not defined
+INFO 2024-09-21 23:50:20,291 sqlalchemy.engine.Engine ROLLBACK
+INFO 2024-09-21 23:52:07,821 root Shutting down application...
+INFO 2024-09-21 23:52:13,049 root Application startup application...
+INFO 2024-09-21 23:52:33,020 root Shutting down application...
+INFO 2024-09-21 23:52:39,951 root Application startup application...
+INFO 2024-09-21 23:52:50,929 root Shutting down application...
+INFO 2024-09-21 23:52:56,999 root Application startup application...
+INFO 2024-09-21 23:52:57,001 root Shutting down application...
+INFO 2024-09-21 23:53:02,761 root Application startup application...
+INFO 2024-09-21 23:53:07,036 sqlalchemy.engine.Engine select pg_catalog.version()
+INFO 2024-09-21 23:53:07,036 sqlalchemy.engine.Engine [raw sql] ()
+INFO 2024-09-21 23:53:07,043 sqlalchemy.engine.Engine select current_schema()
+INFO 2024-09-21 23:53:07,044 sqlalchemy.engine.Engine [raw sql] ()
+INFO 2024-09-21 23:53:07,049 sqlalchemy.engine.Engine show standard_conforming_strings
+INFO 2024-09-21 23:53:07,050 sqlalchemy.engine.Engine [raw sql] ()
+INFO 2024-09-21 23:53:07,053 sqlalchemy.engine.Engine BEGIN (implicit)
+INFO 2024-09-21 23:53:07,062 sqlalchemy.engine.Engine SELECT categories.id, categories.cat_id, categories.name, categories.is_active, categories.created_on, categories.updated_on 
+FROM categories 
+WHERE categories.id = $1::INTEGER
+INFO 2024-09-21 23:53:07,063 sqlalchemy.engine.Engine [generated in 0.00184s] (55,)
+INFO 2024-09-21 23:53:07,080 sqlalchemy.engine.Engine UPDATE categories SET updated_on=$1::TIMESTAMP WITHOUT TIME ZONE WHERE categories.id = $2::INTEGER
+INFO 2024-09-21 23:53:07,081 sqlalchemy.engine.Engine [generated in 0.00194s] (datetime.datetime(2024, 9, 21, 18, 23, 7, 73565), 55)
+INFO 2024-09-21 23:53:07,374 sqlalchemy.engine.Engine COMMIT
+INFO 2024-09-21 23:53:07,379 app.core.logging Successfully updated category with id 55.
+INFO 2024-09-21 23:53:45,666 sqlalchemy.engine.Engine BEGIN (implicit)
+INFO 2024-09-21 23:53:45,668 sqlalchemy.engine.Engine SELECT categories.id, categories.cat_id, categories.name, categories.is_active, categories.created_on, categories.updated_on 
+FROM categories 
+WHERE categories.id = $1::INTEGER
+INFO 2024-09-21 23:53:45,669 sqlalchemy.engine.Engine [cached since 38.61s ago] (55,)
+INFO 2024-09-21 23:53:45,674 sqlalchemy.engine.Engine UPDATE categories SET is_active=$1::BOOLEAN, updated_on=$2::TIMESTAMP WITHOUT TIME ZONE WHERE categories.id = $3::INTEGER
+INFO 2024-09-21 23:53:45,675 sqlalchemy.engine.Engine [generated in 0.00155s] (False, datetime.datetime(2024, 9, 21, 18, 23, 45, 672620), 55)
+INFO 2024-09-21 23:53:45,678 sqlalchemy.engine.Engine COMMIT
+INFO 2024-09-21 23:53:45,682 app.core.logging Successfully updated category with id 55.
+INFO 2024-09-21 23:54:00,446 sqlalchemy.engine.Engine BEGIN (implicit)
+INFO 2024-09-21 23:54:00,448 sqlalchemy.engine.Engine SELECT categories.id, categories.cat_id, categories.name, categories.is_active, categories.created_on, categories.updated_on 
+FROM categories 
+WHERE categories.id = $1::INTEGER
+INFO 2024-09-21 23:54:00,452 sqlalchemy.engine.Engine [cached since 53.39s ago] (55,)
+INFO 2024-09-21 23:54:00,461 sqlalchemy.engine.Engine UPDATE categories SET is_active=$1::BOOLEAN, updated_on=$2::TIMESTAMP WITHOUT TIME ZONE WHERE categories.id = $3::INTEGER
+INFO 2024-09-21 23:54:00,462 sqlalchemy.engine.Engine [cached since 14.79s ago] (True, datetime.datetime(2024, 9, 21, 18, 24, 0, 458591), 55)
+INFO 2024-09-21 23:54:00,468 sqlalchemy.engine.Engine COMMIT
+INFO 2024-09-21 23:54:00,473 app.core.logging Successfully updated category with id 55.
+INFO 2024-09-21 23:56:09,887 sqlalchemy.engine.Engine BEGIN (implicit)
+INFO 2024-09-21 23:56:09,889 sqlalchemy.engine.Engine SELECT categories.id, categories.cat_id, categories.name, categories.is_active, categories.created_on, categories.updated_on 
+FROM categories 
+WHERE categories.id = $1::INTEGER
+INFO 2024-09-21 23:56:09,890 sqlalchemy.engine.Engine [cached since 182.8s ago] (55,)
+INFO 2024-09-21 23:56:09,896 sqlalchemy.engine.Engine UPDATE categories SET updated_on=$1::TIMESTAMP WITHOUT TIME ZONE WHERE categories.id = $2::INTEGER
+INFO 2024-09-21 23:56:09,897 sqlalchemy.engine.Engine [cached since 182.8s ago] (datetime.datetime(2024, 9, 21, 18, 26, 9, 894869), 55)
+INFO 2024-09-21 23:56:09,899 sqlalchemy.engine.Engine COMMIT
+INFO 2024-09-21 23:56:09,901 app.core.logging Successfully updated category with id 55.
+INFO 2024-09-21 23:56:10,020 root Shutting down application...
+INFO 2024-09-21 23:56:15,557 root Application startup application...
+INFO 2024-09-22 00:00:06,958 root Shutting down application...
+INFO 2024-09-22 00:00:18,798 root Application startup application...
+INFO 2024-09-22 00:00:34,739 root Shutting down application...

@@ -1,9 +1,12 @@
 from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy.future import select
+from sqlalchemy.exc import NoResultFound
+from fastapi import HTTPException
 from app.models.categories import Category
 from app.schemas.categories import CategoryCreateModel,CategoryModel,CategoryUpdateModel
 from app.core.logging import logger
 from sqlalchemy import func, select, desc
+from datetime import datetime
 
 
 def generate_cat_id(category_count: int) -> str:
@@ -113,5 +116,44 @@ class CategoryService:
             return {
                 "status": "failure",
                 "message": f"Error retrieving category: {str(e)}",
+                "data": None
+            }
+
+
+    @staticmethod
+    async def update_category(db: AsyncSession, category_id: int, category_data: CategoryUpdateModel):
+        try:
+            result = await db.execute(select(Category).where(Category.id == category_id))
+            category = result.scalars().first()
+
+            if not category:
+                return {
+                    "status": "failure",
+                    "message": "Category not found.",
+                    "data": None
+                }
+
+            # Update fields if provided
+            if category_data.name is not None:
+                category.name = category_data.name
+            if category_data.is_active is not None:
+                category.is_active = category_data.is_active
+
+            # Update 'updated_on' to the current system time
+            category.updated_on = datetime.now()
+
+            db.add(category)  # Add to session
+            await db.commit()  # Commit changes
+
+            return {
+                "status": "success",
+                "message": "Category updated successfully.",
+                "data": CategoryModel.from_orm(category)
+            }
+        except Exception as e:
+            logger.error(f"Error updating category: {str(e)}")
+            return {
+                "status": "failure",
+                "message": f"Error updating category: {str(e)}",
                 "data": None
             }
