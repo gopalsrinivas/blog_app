@@ -8,7 +8,7 @@ Base = declarative_base()
 class Category(Base):
     __tablename__ = "categories"
 
-    id = Column(Integer, Sequence('cat_id_seq'), primary_key=True)
+    id = Column(Integer, primary_key=True)
     cat_id = Column(String, nullable=False, unique=True)
     name = Column(String, nullable=False, unique=True)
     is_active = Column(Boolean, default=True)

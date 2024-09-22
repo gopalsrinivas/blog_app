@@ -1,5 +1,6 @@
 from fastapi import APIRouter, Depends, HTTPException
 from sqlalchemy.ext.asyncio import AsyncSession
+from fastapi.responses import JSONResponse
 from app.schemas.categories import CategoryModel, CategoryCreateModel, CategoryUpdateModel
 from app.services.categories import CategoryService
 from app.core.database import get_db
@@ -11,14 +12,45 @@ router = APIRouter()
 
 @router.post("/create-or-bulk/")
 async def create_category(category_data: CategoryCreateModel, db: AsyncSession = Depends(get_db)):
-    response = await CategoryService.create_categories(db=db, names=category_data.names, is_active=category_data.is_active)
-    if any(resp["status_code"] != 201 for resp in response):
-        logger.error("Failed to create one or more categories.")
-        raise HTTPException(
-            status_code=400, detail="One or more categories could not be created.")
-    logger.info("Categories created successfully.")
-    return response
+    response = await CategoryService.create_categories(
+        db=db,
+        names=category_data.names,
+        is_active=category_data.is_active
+    )
 
+    # Check if categories already exist and return structured response
+    if isinstance(response, list) and any(resp["status_code"] == 400 for resp in response):
+        # Handling case when categories already exist
+        return JSONResponse(
+            status_code=400,
+            content={
+                "status_code": 400,
+                # Shows the existing categories
+                "message": response[0]["status"],
+                "data": None
+            }
+        )
+
+    # Check for errors in category creation
+    if any(resp["status_code"] != 201 for resp in response):
+        return JSONResponse(
+            status_code=400,
+            content={
+                "status_code": 400,
+                "message": "One or more categories could not be created.",
+                "data": None
+            }
+        )
+
+    # Return successful creation response
+    return JSONResponse(
+        status_code=201,
+        content={
+            "status_code": 201,
+            "message": "Categories created successfully.",
+            "data": response
+        }
+    )
 
 @router.get("/", response_model=Dict[str, Any])
 async def get_categories(cat_id: Optional[str] = None, name: Optional[str] = None, is_active: Optional[bool] = None, skip: int = 0, limit: int = 10, db: AsyncSession = Depends(get_db)):

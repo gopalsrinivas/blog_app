@@ -5292,3 +5292,527 @@ INFO 2024-09-22 12:59:43,444 root Application startup application...
 INFO 2024-09-22 12:59:43,481 root Shutting down application...
 INFO 2024-09-22 12:59:47,539 root Application startup application...
 INFO 2024-09-22 12:59:57,672 root Shutting down application...
+INFO 2024-09-22 13:00:02,837 root Application startup application...
+INFO 2024-09-22 13:01:51,926 sqlalchemy.engine.Engine select pg_catalog.version()
+INFO 2024-09-22 13:01:51,927 sqlalchemy.engine.Engine [raw sql] ()
+INFO 2024-09-22 13:01:51,931 sqlalchemy.engine.Engine select current_schema()
+INFO 2024-09-22 13:01:51,932 sqlalchemy.engine.Engine [raw sql] ()
+INFO 2024-09-22 13:01:51,934 sqlalchemy.engine.Engine show standard_conforming_strings
+INFO 2024-09-22 13:01:51,935 sqlalchemy.engine.Engine [raw sql] ()
+INFO 2024-09-22 13:01:51,936 sqlalchemy.engine.Engine BEGIN (implicit)
+INFO 2024-09-22 13:01:51,946 sqlalchemy.engine.Engine SELECT categories.id, categories.cat_id, categories.name, categories.is_active, categories.created_on, categories.updated_on 
+FROM categories 
+WHERE categories.name = $1::VARCHAR
+INFO 2024-09-22 13:01:51,948 sqlalchemy.engine.Engine [generated in 0.00151s] ('gopalam_1',)
+INFO 2024-09-22 13:01:51,955 sqlalchemy.engine.Engine SELECT categories.id, categories.cat_id, categories.name, categories.is_active, categories.created_on, categories.updated_on 
+FROM categories
+INFO 2024-09-22 13:01:51,956 sqlalchemy.engine.Engine [generated in 0.00126s] ()
+INFO 2024-09-22 13:01:51,963 sqlalchemy.engine.Engine INSERT INTO categories (id, cat_id, name, is_active, created_on, updated_on) VALUES (nextval('cat_id_seq'), $1::VARCHAR, $2::VARCHAR, $3::BOOLEAN, now(), $4::TIMESTAMP WITHOUT TIME ZONE) RETURNING categories.id, categories.created_on
+INFO 2024-09-22 13:01:51,963 sqlalchemy.engine.Engine [generated in 0.00099s] ('cat__032', 'gopalam_1', True, None)
+INFO 2024-09-22 13:01:52,083 sqlalchemy.engine.Engine COMMIT
+INFO 2024-09-22 13:01:52,092 sqlalchemy.engine.Engine BEGIN (implicit)
+INFO 2024-09-22 13:01:52,100 sqlalchemy.engine.Engine SELECT categories.id, categories.cat_id, categories.name, categories.is_active, categories.created_on, categories.updated_on 
+FROM categories 
+WHERE categories.id = $1::INTEGER
+INFO 2024-09-22 13:01:52,103 sqlalchemy.engine.Engine [generated in 0.00315s] (67,)
+INFO 2024-09-22 13:01:52,109 app.core.logging Created category: gopalam_1
+INFO 2024-09-22 13:01:52,111 sqlalchemy.engine.Engine SELECT categories.id, categories.cat_id, categories.name, categories.is_active, categories.created_on, categories.updated_on 
+FROM categories 
+WHERE categories.name = $1::VARCHAR
+INFO 2024-09-22 13:01:52,115 sqlalchemy.engine.Engine [cached since 0.1683s ago] ('gopalam_2',)
+INFO 2024-09-22 13:01:52,118 sqlalchemy.engine.Engine SELECT categories.id, categories.cat_id, categories.name, categories.is_active, categories.created_on, categories.updated_on 
+FROM categories
+INFO 2024-09-22 13:01:52,121 sqlalchemy.engine.Engine [cached since 0.1656s ago] ()
+INFO 2024-09-22 13:01:52,129 sqlalchemy.engine.Engine INSERT INTO categories (id, cat_id, name, is_active, created_on, updated_on) VALUES (nextval('cat_id_seq'), $1::VARCHAR, $2::VARCHAR, $3::BOOLEAN, now(), $4::TIMESTAMP WITHOUT TIME ZONE) RETURNING categories.id, categories.created_on
+INFO 2024-09-22 13:01:52,150 sqlalchemy.engine.Engine [cached since 0.1873s ago] ('cat__033', 'gopalam_2', True, None)
+INFO 2024-09-22 13:01:52,155 sqlalchemy.engine.Engine COMMIT
+INFO 2024-09-22 13:01:52,161 sqlalchemy.engine.Engine BEGIN (implicit)
+INFO 2024-09-22 13:01:52,163 sqlalchemy.engine.Engine SELECT categories.id, categories.cat_id, categories.name, categories.is_active, categories.created_on, categories.updated_on 
+FROM categories 
+WHERE categories.id = $1::INTEGER
+INFO 2024-09-22 13:01:52,165 sqlalchemy.engine.Engine [cached since 0.0657s ago] (68,)
+INFO 2024-09-22 13:01:52,169 app.core.logging Created category: gopalam_2
+INFO 2024-09-22 13:01:52,170 app.core.logging Categories created successfully.
+INFO 2024-09-22 13:01:52,171 sqlalchemy.engine.Engine ROLLBACK
+INFO 2024-09-22 13:02:10,783 sqlalchemy.engine.Engine BEGIN (implicit)
+INFO 2024-09-22 13:02:10,789 sqlalchemy.engine.Engine SELECT count(*) AS count_1 
+FROM (SELECT categories.id AS id, categories.cat_id AS cat_id, categories.name AS name, categories.is_active AS is_active, categories.created_on AS created_on, categories.updated_on AS updated_on 
+FROM categories 
+WHERE categories.name ILIKE $1::VARCHAR) AS anon_1
+INFO 2024-09-22 13:02:10,790 sqlalchemy.engine.Engine [generated in 0.00160s] ('%gopalam_1%',)
+INFO 2024-09-22 13:02:10,797 sqlalchemy.engine.Engine SELECT categories.id, categories.cat_id, categories.name, categories.is_active, categories.created_on, categories.updated_on 
+FROM categories 
+WHERE categories.name ILIKE $1::VARCHAR 
+ LIMIT $2::INTEGER OFFSET $3::INTEGER
+INFO 2024-09-22 13:02:10,799 sqlalchemy.engine.Engine [generated in 0.00149s] ('%gopalam_1%', 10, 0)
+INFO 2024-09-22 13:02:10,802 app.core.logging Categories retrieved successfully.
+INFO 2024-09-22 13:02:10,803 app.core.logging Successfully retrieved categories.
+INFO 2024-09-22 13:02:10,803 sqlalchemy.engine.Engine ROLLBACK
+INFO 2024-09-22 13:02:29,825 sqlalchemy.engine.Engine BEGIN (implicit)
+INFO 2024-09-22 13:02:29,827 sqlalchemy.engine.Engine SELECT count(*) AS count_1 
+FROM categories
+INFO 2024-09-22 13:02:29,828 sqlalchemy.engine.Engine [generated in 0.00117s] ()
+INFO 2024-09-22 13:02:29,834 sqlalchemy.engine.Engine SELECT categories.id, categories.cat_id, categories.name, categories.is_active, categories.created_on, categories.updated_on 
+FROM categories ORDER BY categories.id DESC 
+ LIMIT $1::INTEGER OFFSET $2::INTEGER
+INFO 2024-09-22 13:02:29,836 sqlalchemy.engine.Engine [generated in 0.00194s] (5, 0)
+INFO 2024-09-22 13:02:29,840 app.core.logging All categories retrieved successfully. Total: 33
+INFO 2024-09-22 13:02:29,841 app.core.logging Successfully retrieved all categories.
+INFO 2024-09-22 13:02:29,841 sqlalchemy.engine.Engine ROLLBACK
+INFO 2024-09-22 13:03:05,570 sqlalchemy.engine.Engine BEGIN (implicit)
+INFO 2024-09-22 13:03:05,572 sqlalchemy.engine.Engine SELECT categories.id, categories.cat_id, categories.name, categories.is_active, categories.created_on, categories.updated_on 
+FROM categories 
+WHERE categories.id = $1::INTEGER
+INFO 2024-09-22 13:03:05,574 sqlalchemy.engine.Engine [generated in 0.00156s] (44,)
+INFO 2024-09-22 13:03:05,577 app.core.logging Category retrieved successfully: erereample Category
+INFO 2024-09-22 13:03:05,578 sqlalchemy.engine.Engine ROLLBACK
+INFO 2024-09-22 13:04:00,836 sqlalchemy.engine.Engine BEGIN (implicit)
+INFO 2024-09-22 13:04:00,838 sqlalchemy.engine.Engine SELECT categories.id, categories.cat_id, categories.name, categories.is_active, categories.created_on, categories.updated_on 
+FROM categories 
+WHERE categories.id = $1::INTEGER
+INFO 2024-09-22 13:04:00,839 sqlalchemy.engine.Engine [cached since 55.27s ago] (50,)
+INFO 2024-09-22 13:04:00,846 sqlalchemy.engine.Engine UPDATE categories SET name=$1::VARCHAR, updated_on=$2::TIMESTAMP WITHOUT TIME ZONE WHERE categories.id = $3::INTEGER
+INFO 2024-09-22 13:04:00,847 sqlalchemy.engine.Engine [generated in 0.00128s] ('gopalsrinivas_updated', datetime.datetime(2024, 9, 22, 13, 4, 0, 842508), 50)
+INFO 2024-09-22 13:04:00,884 sqlalchemy.engine.Engine COMMIT
+INFO 2024-09-22 13:04:00,887 app.core.logging Category updated successfully: gopalsrinivas_updated
+INFO 2024-09-22 13:04:00,888 app.core.logging Category with ID 50 updated successfully.
+INFO 2024-09-22 13:04:28,029 sqlalchemy.engine.Engine BEGIN (implicit)
+INFO 2024-09-22 13:04:28,030 sqlalchemy.engine.Engine SELECT categories.id, categories.cat_id, categories.name, categories.is_active, categories.created_on, categories.updated_on 
+FROM categories 
+WHERE categories.id = $1::INTEGER
+INFO 2024-09-22 13:04:28,031 sqlalchemy.engine.Engine [cached since 82.46s ago] (50,)
+INFO 2024-09-22 13:04:28,037 sqlalchemy.engine.Engine UPDATE categories SET is_active=$1::BOOLEAN, updated_on=$2::TIMESTAMP WITHOUT TIME ZONE WHERE categories.id = $3::INTEGER
+INFO 2024-09-22 13:04:28,038 sqlalchemy.engine.Engine [generated in 0.00146s] (False, datetime.datetime(2024, 9, 22, 13, 4, 28, 35421), 50)
+INFO 2024-09-22 13:04:28,042 sqlalchemy.engine.Engine COMMIT
+INFO 2024-09-22 13:04:28,044 app.core.logging Category updated successfully: gopalsrinivas_updated
+INFO 2024-09-22 13:04:28,046 app.core.logging Category with ID 50 updated successfully.
+INFO 2024-09-22 13:04:51,829 sqlalchemy.engine.Engine BEGIN (implicit)
+INFO 2024-09-22 13:04:51,831 sqlalchemy.engine.Engine SELECT categories.id, categories.cat_id, categories.name, categories.is_active, categories.created_on, categories.updated_on 
+FROM categories 
+WHERE categories.id = $1::INTEGER
+INFO 2024-09-22 13:04:51,832 sqlalchemy.engine.Engine [cached since 106.3s ago] (50,)
+INFO 2024-09-22 13:04:51,836 sqlalchemy.engine.Engine UPDATE categories SET updated_on=$1::TIMESTAMP WITHOUT TIME ZONE WHERE categories.id = $2::INTEGER
+INFO 2024-09-22 13:04:51,837 sqlalchemy.engine.Engine [generated in 0.00114s] (datetime.datetime(2024, 9, 22, 13, 4, 51, 835256), 50)
+INFO 2024-09-22 13:04:51,840 sqlalchemy.engine.Engine COMMIT
+INFO 2024-09-22 13:04:52,596 app.core.logging Category updated successfully: gopalsrinivas_updated
+INFO 2024-09-22 13:04:52,597 app.core.logging Category with ID 50 updated successfully.
+INFO 2024-09-22 13:05:13,243 sqlalchemy.engine.Engine BEGIN (implicit)
+INFO 2024-09-22 13:05:13,245 sqlalchemy.engine.Engine SELECT categories.id, categories.cat_id, categories.name, categories.is_active, categories.created_on, categories.updated_on 
+FROM categories 
+WHERE categories.id = $1::INTEGER
+INFO 2024-09-22 13:05:13,247 sqlalchemy.engine.Engine [cached since 127.7s ago] (50,)
+INFO 2024-09-22 13:05:13,250 sqlalchemy.engine.Engine COMMIT
+INFO 2024-09-22 13:05:13,252 app.core.logging Category soft deleted successfully: gopalsrinivas_updated
+INFO 2024-09-22 13:05:13,252 app.core.logging Category with ID 50 soft deleted successfully.
+INFO 2024-09-22 13:05:28,338 sqlalchemy.engine.Engine BEGIN (implicit)
+INFO 2024-09-22 13:05:28,339 sqlalchemy.engine.Engine SELECT categories.id, categories.cat_id, categories.name, categories.is_active, categories.created_on, categories.updated_on 
+FROM categories 
+WHERE categories.id = $1::INTEGER
+INFO 2024-09-22 13:05:28,340 sqlalchemy.engine.Engine [cached since 142.8s ago] (50,)
+INFO 2024-09-22 13:05:28,342 sqlalchemy.engine.Engine UPDATE categories SET is_active=$1::BOOLEAN, updated_on=$2::TIMESTAMP WITHOUT TIME ZONE WHERE categories.id = $3::INTEGER
+INFO 2024-09-22 13:05:28,344 sqlalchemy.engine.Engine [cached since 60.31s ago] (True, datetime.datetime(2024, 9, 22, 13, 5, 28, 342255), 50)
+INFO 2024-09-22 13:05:28,346 sqlalchemy.engine.Engine COMMIT
+INFO 2024-09-22 13:05:28,349 app.core.logging Category updated successfully: gopalsrinivas_updated
+INFO 2024-09-22 13:05:28,349 app.core.logging Category with ID 50 updated successfully.
+INFO 2024-09-22 13:05:33,566 sqlalchemy.engine.Engine BEGIN (implicit)
+INFO 2024-09-22 13:05:33,567 sqlalchemy.engine.Engine SELECT categories.id, categories.cat_id, categories.name, categories.is_active, categories.created_on, categories.updated_on 
+FROM categories 
+WHERE categories.id = $1::INTEGER
+INFO 2024-09-22 13:05:33,569 sqlalchemy.engine.Engine [cached since 148s ago] (50,)
+INFO 2024-09-22 13:05:33,574 sqlalchemy.engine.Engine UPDATE categories SET is_active=$1::BOOLEAN, updated_on=now() WHERE categories.id = $2::INTEGER
+INFO 2024-09-22 13:05:33,575 sqlalchemy.engine.Engine [generated in 0.00146s] (False, 50)
+INFO 2024-09-22 13:05:33,578 sqlalchemy.engine.Engine COMMIT
+INFO 2024-09-22 13:05:34,053 app.core.logging Category soft deleted successfully: gopalsrinivas_updated
+INFO 2024-09-22 13:05:34,054 sqlalchemy.engine.Engine BEGIN (implicit)
+INFO 2024-09-22 13:05:34,059 sqlalchemy.engine.Engine SELECT categories.updated_on AS categories_updated_on 
+FROM categories 
+WHERE categories.id = $1::INTEGER
+INFO 2024-09-22 13:05:34,061 sqlalchemy.engine.Engine [generated in 0.00304s] (50,)
+ERROR 2024-09-22 13:05:34,064 app.core.logging Error soft deleting category: 1 validation error for CategoryModel
+updated_on
+  Error extracting attribute: MissingGreenlet: greenlet_spawn has not been called; can't call await_only() here. Was IO attempted in an unexpected place? (Background on this error at: https://sqlalche.me/e/20/xd2s) [type=get_attribute_error, input_value=<Category gopalsrinivas_u...4-09-21 21:33:21.354142>, input_type=Category]
+    For further information visit https://errors.pydantic.dev/2.8/v/get_attribute_error
+Traceback (most recent call last):
+  File "D:\Projects\Fast_API\blog_app\backend\app\services\categories.py", line 209, in soft_delete_category
+    "data": CategoryModel.from_orm(category)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\pydantic\main.py", line 1237, in from_orm
+    return cls.model_validate(obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\pydantic\main.py", line 568, in model_validate
+    return cls.__pydantic_validator__.validate_python(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+pydantic_core._pydantic_core.ValidationError: 1 validation error for CategoryModel
+updated_on
+  Error extracting attribute: MissingGreenlet: greenlet_spawn has not been called; can't call await_only() here. Was IO attempted in an unexpected place? (Background on this error at: https://sqlalche.me/e/20/xd2s) [type=get_attribute_error, input_value=<Category gopalsrinivas_u...4-09-21 21:33:21.354142>, input_type=Category]
+    For further information visit https://errors.pydantic.dev/2.8/v/get_attribute_error
+ERROR 2024-09-22 13:05:34,073 app.core.logging Failed to soft delete category with ID 50: Error soft deleting category: 1 validation error for CategoryModel
+updated_on
+  Error extracting attribute: MissingGreenlet: greenlet_spawn has not been called; can't call await_only() here. Was IO attempted in an unexpected place? (Background on this error at: https://sqlalche.me/e/20/xd2s) [type=get_attribute_error, input_value=<Category gopalsrinivas_u...4-09-21 21:33:21.354142>, input_type=Category]
+    For further information visit https://errors.pydantic.dev/2.8/v/get_attribute_error
+INFO 2024-09-22 13:05:34,074 sqlalchemy.engine.Engine ROLLBACK
+INFO 2024-09-22 13:16:54,198 root Shutting down application...
+INFO 2024-09-22 13:17:16,206 root Application startup application...
+INFO 2024-09-22 13:17:58,705 root Shutting down application...
+INFO 2024-09-22 13:18:15,228 root Application startup application...
+INFO 2024-09-22 13:19:04,101 root Shutting down application...
+INFO 2024-09-22 13:19:08,278 root Application startup application...
+INFO 2024-09-22 13:22:04,078 root Shutting down application...
+INFO 2024-09-22 13:22:08,569 root Application startup application...
+INFO 2024-09-22 13:22:09,103 root Shutting down application...
+INFO 2024-09-22 13:22:12,931 root Application startup application...
+INFO 2024-09-22 13:22:27,135 root Shutting down application...
+INFO 2024-09-22 13:22:32,147 root Application startup application...
+INFO 2024-09-22 13:26:26,770 root Shutting down application...
+INFO 2024-09-22 13:26:30,284 root Application startup application...
+INFO 2024-09-22 13:27:10,474 root Shutting down application...
+INFO 2024-09-22 13:27:15,162 root Application startup application...
+INFO 2024-09-22 13:31:17,244 sqlalchemy.engine.Engine select pg_catalog.version()
+INFO 2024-09-22 13:31:17,244 sqlalchemy.engine.Engine [raw sql] ()
+INFO 2024-09-22 13:31:17,248 sqlalchemy.engine.Engine select current_schema()
+INFO 2024-09-22 13:31:17,248 sqlalchemy.engine.Engine [raw sql] ()
+INFO 2024-09-22 13:31:17,252 sqlalchemy.engine.Engine show standard_conforming_strings
+INFO 2024-09-22 13:31:17,252 sqlalchemy.engine.Engine [raw sql] ()
+INFO 2024-09-22 13:31:17,254 sqlalchemy.engine.Engine BEGIN (implicit)
+INFO 2024-09-22 13:31:17,261 sqlalchemy.engine.Engine SELECT categories.id, categories.cat_id, categories.name, categories.is_active, categories.created_on, categories.updated_on 
+FROM categories 
+WHERE categories.name = $1::VARCHAR
+INFO 2024-09-22 13:31:17,262 sqlalchemy.engine.Engine [generated in 0.00113s] ('Sample Category 2',)
+INFO 2024-09-22 13:31:17,271 sqlalchemy.engine.Engine SELECT max(categories.cat_id) AS max_1 
+FROM categories
+INFO 2024-09-22 13:31:17,272 sqlalchemy.engine.Engine [generated in 0.00082s] ()
+INFO 2024-09-22 13:31:17,431 app.core.logging Generated new category ID: cat__034
+INFO 2024-09-22 13:31:17,436 sqlalchemy.engine.Engine INSERT INTO categories (cat_id, name, is_active, created_on, updated_on) VALUES ($1::VARCHAR, $2::VARCHAR, $3::BOOLEAN, now(), $4::TIMESTAMP WITHOUT TIME ZONE) RETURNING categories.id, categories.created_on
+INFO 2024-09-22 13:31:17,437 sqlalchemy.engine.Engine [generated in 0.00112s] ('cat__034', 'Sample Category 2', True, None)
+INFO 2024-09-22 13:31:17,492 sqlalchemy.engine.Engine COMMIT
+INFO 2024-09-22 13:31:17,524 sqlalchemy.engine.Engine BEGIN (implicit)
+INFO 2024-09-22 13:31:17,526 sqlalchemy.engine.Engine SELECT categories.id, categories.cat_id, categories.name, categories.is_active, categories.created_on, categories.updated_on 
+FROM categories 
+WHERE categories.id = $1::INTEGER
+INFO 2024-09-22 13:31:17,527 sqlalchemy.engine.Engine [generated in 0.00092s] (1,)
+INFO 2024-09-22 13:31:17,529 app.core.logging Successfully created category: Sample Category 2
+INFO 2024-09-22 13:31:17,529 app.core.logging Categories created successfully.
+INFO 2024-09-22 13:31:17,530 sqlalchemy.engine.Engine ROLLBACK
+INFO 2024-09-22 13:31:38,039 sqlalchemy.engine.Engine BEGIN (implicit)
+INFO 2024-09-22 13:31:38,040 sqlalchemy.engine.Engine SELECT categories.id, categories.cat_id, categories.name, categories.is_active, categories.created_on, categories.updated_on 
+FROM categories 
+WHERE categories.name = $1::VARCHAR
+INFO 2024-09-22 13:31:38,041 sqlalchemy.engine.Engine [cached since 20.78s ago] ('Sample Category 1',)
+WARNING 2024-09-22 13:31:38,042 app.core.logging Category 'Sample Category 1' already exists.
+INFO 2024-09-22 13:31:38,044 sqlalchemy.engine.Engine SELECT categories.id, categories.cat_id, categories.name, categories.is_active, categories.created_on, categories.updated_on 
+FROM categories 
+WHERE categories.name = $1::VARCHAR
+INFO 2024-09-22 13:31:38,045 sqlalchemy.engine.Engine [cached since 20.78s ago] ('Sample Category 2',)
+WARNING 2024-09-22 13:31:38,046 app.core.logging Category 'Sample Category 2' already exists.
+ERROR 2024-09-22 13:31:38,047 app.core.logging Failed to create one or more categories.
+INFO 2024-09-22 13:31:38,047 sqlalchemy.engine.Engine ROLLBACK
+INFO 2024-09-22 13:31:54,755 sqlalchemy.engine.Engine BEGIN (implicit)
+INFO 2024-09-22 13:31:54,756 sqlalchemy.engine.Engine SELECT categories.id, categories.cat_id, categories.name, categories.is_active, categories.created_on, categories.updated_on 
+FROM categories 
+WHERE categories.name = $1::VARCHAR
+INFO 2024-09-22 13:31:54,757 sqlalchemy.engine.Engine [cached since 37.5s ago] ('Sample Category 2',)
+WARNING 2024-09-22 13:31:54,759 app.core.logging Category 'Sample Category 2' already exists.
+INFO 2024-09-22 13:31:54,760 sqlalchemy.engine.Engine SELECT categories.id, categories.cat_id, categories.name, categories.is_active, categories.created_on, categories.updated_on 
+FROM categories 
+WHERE categories.name = $1::VARCHAR
+INFO 2024-09-22 13:31:54,761 sqlalchemy.engine.Engine [cached since 37.5s ago] ('Sample Category 3',)
+INFO 2024-09-22 13:31:54,763 sqlalchemy.engine.Engine SELECT max(categories.cat_id) AS max_1 
+FROM categories
+INFO 2024-09-22 13:31:54,764 sqlalchemy.engine.Engine [cached since 37.49s ago] ()
+INFO 2024-09-22 13:31:54,765 app.core.logging Generated new category ID: cat__035
+INFO 2024-09-22 13:31:54,766 sqlalchemy.engine.Engine INSERT INTO categories (cat_id, name, is_active, created_on, updated_on) VALUES ($1::VARCHAR, $2::VARCHAR, $3::BOOLEAN, now(), $4::TIMESTAMP WITHOUT TIME ZONE) RETURNING categories.id, categories.created_on
+INFO 2024-09-22 13:31:54,767 sqlalchemy.engine.Engine [cached since 37.33s ago] ('cat__035', 'Sample Category 3', True, None)
+INFO 2024-09-22 13:31:54,769 sqlalchemy.engine.Engine COMMIT
+INFO 2024-09-22 13:31:54,772 sqlalchemy.engine.Engine BEGIN (implicit)
+INFO 2024-09-22 13:31:54,773 sqlalchemy.engine.Engine SELECT categories.id, categories.cat_id, categories.name, categories.is_active, categories.created_on, categories.updated_on 
+FROM categories 
+WHERE categories.id = $1::INTEGER
+INFO 2024-09-22 13:31:54,774 sqlalchemy.engine.Engine [cached since 37.25s ago] (2,)
+INFO 2024-09-22 13:31:54,776 app.core.logging Successfully created category: Sample Category 3
+ERROR 2024-09-22 13:31:54,776 app.core.logging Failed to create one or more categories.
+INFO 2024-09-22 13:31:54,776 sqlalchemy.engine.Engine ROLLBACK
+INFO 2024-09-22 13:32:26,261 sqlalchemy.engine.Engine BEGIN (implicit)
+INFO 2024-09-22 13:32:26,263 sqlalchemy.engine.Engine SELECT categories.id, categories.cat_id, categories.name, categories.is_active, categories.created_on, categories.updated_on 
+FROM categories 
+WHERE categories.name = $1::VARCHAR
+INFO 2024-09-22 13:32:26,265 sqlalchemy.engine.Engine [cached since 69s ago] ('lasdkjflakdjfladjfajdfkjadlfjadlj09845924385982345',)
+INFO 2024-09-22 13:32:26,268 sqlalchemy.engine.Engine SELECT max(categories.cat_id) AS max_1 
+FROM categories
+INFO 2024-09-22 13:32:26,269 sqlalchemy.engine.Engine [cached since 69s ago] ()
+INFO 2024-09-22 13:32:26,271 app.core.logging Generated new category ID: cat__036
+INFO 2024-09-22 13:32:26,272 sqlalchemy.engine.Engine INSERT INTO categories (cat_id, name, is_active, created_on, updated_on) VALUES ($1::VARCHAR, $2::VARCHAR, $3::BOOLEAN, now(), $4::TIMESTAMP WITHOUT TIME ZONE) RETURNING categories.id, categories.created_on
+INFO 2024-09-22 13:32:26,274 sqlalchemy.engine.Engine [cached since 68.84s ago] ('cat__036', 'lasdkjflakdjfladjfajdfkjadlfjadlj09845924385982345', True, None)
+INFO 2024-09-22 13:32:26,277 sqlalchemy.engine.Engine COMMIT
+INFO 2024-09-22 13:32:26,750 sqlalchemy.engine.Engine BEGIN (implicit)
+INFO 2024-09-22 13:32:26,751 sqlalchemy.engine.Engine SELECT categories.id, categories.cat_id, categories.name, categories.is_active, categories.created_on, categories.updated_on 
+FROM categories 
+WHERE categories.id = $1::INTEGER
+INFO 2024-09-22 13:32:26,754 sqlalchemy.engine.Engine [cached since 69.23s ago] (3,)
+INFO 2024-09-22 13:32:26,757 app.core.logging Successfully created category: lasdkjflakdjfladjfajdfkjadlfjadlj09845924385982345
+INFO 2024-09-22 13:32:26,758 sqlalchemy.engine.Engine SELECT categories.id, categories.cat_id, categories.name, categories.is_active, categories.created_on, categories.updated_on 
+FROM categories 
+WHERE categories.name = $1::VARCHAR
+INFO 2024-09-22 13:32:26,759 sqlalchemy.engine.Engine [cached since 69.5s ago] ('iertpowriklrpotkwer05i45ik4ormknslfdgsrt0i-0o[pmvcknn',)
+INFO 2024-09-22 13:32:26,763 sqlalchemy.engine.Engine SELECT max(categories.cat_id) AS max_1 
+FROM categories
+INFO 2024-09-22 13:32:26,764 sqlalchemy.engine.Engine [cached since 69.49s ago] ()
+INFO 2024-09-22 13:32:26,767 app.core.logging Generated new category ID: cat__037
+INFO 2024-09-22 13:32:26,768 sqlalchemy.engine.Engine INSERT INTO categories (cat_id, name, is_active, created_on, updated_on) VALUES ($1::VARCHAR, $2::VARCHAR, $3::BOOLEAN, now(), $4::TIMESTAMP WITHOUT TIME ZONE) RETURNING categories.id, categories.created_on
+INFO 2024-09-22 13:32:26,769 sqlalchemy.engine.Engine [cached since 69.33s ago] ('cat__037', 'iertpowriklrpotkwer05i45ik4ormknslfdgsrt0i-0o[pmvcknn', True, None)
+INFO 2024-09-22 13:32:26,773 sqlalchemy.engine.Engine COMMIT
+INFO 2024-09-22 13:32:26,776 sqlalchemy.engine.Engine BEGIN (implicit)
+INFO 2024-09-22 13:32:26,778 sqlalchemy.engine.Engine SELECT categories.id, categories.cat_id, categories.name, categories.is_active, categories.created_on, categories.updated_on 
+FROM categories 
+WHERE categories.id = $1::INTEGER
+INFO 2024-09-22 13:32:26,780 sqlalchemy.engine.Engine [cached since 69.25s ago] (4,)
+INFO 2024-09-22 13:32:26,783 app.core.logging Successfully created category: iertpowriklrpotkwer05i45ik4ormknslfdgsrt0i-0o[pmvcknn
+INFO 2024-09-22 13:32:26,784 app.core.logging Categories created successfully.
+INFO 2024-09-22 13:32:26,784 sqlalchemy.engine.Engine ROLLBACK
+INFO 2024-09-22 13:32:37,397 sqlalchemy.engine.Engine BEGIN (implicit)
+INFO 2024-09-22 13:32:37,397 sqlalchemy.engine.Engine SELECT categories.id, categories.cat_id, categories.name, categories.is_active, categories.created_on, categories.updated_on 
+FROM categories 
+WHERE categories.name = $1::VARCHAR
+INFO 2024-09-22 13:32:37,398 sqlalchemy.engine.Engine [cached since 80.14s ago] ('lasdkjflakdjfladjfajdfkjadlfjadlj09845924385982345',)
+WARNING 2024-09-22 13:32:37,400 app.core.logging Category 'lasdkjflakdjfladjfajdfkjadlfjadlj09845924385982345' already exists.
+INFO 2024-09-22 13:32:37,400 sqlalchemy.engine.Engine SELECT categories.id, categories.cat_id, categories.name, categories.is_active, categories.created_on, categories.updated_on 
+FROM categories 
+WHERE categories.name = $1::VARCHAR
+INFO 2024-09-22 13:32:37,402 sqlalchemy.engine.Engine [cached since 80.14s ago] ('iertpowriklrpotkwer05i45ik4ormknslfdgsrt0i-0o[pmvcknn',)
+WARNING 2024-09-22 13:32:37,403 app.core.logging Category 'iertpowriklrpotkwer05i45ik4ormknslfdgsrt0i-0o[pmvcknn' already exists.
+ERROR 2024-09-22 13:32:37,403 app.core.logging Failed to create one or more categories.
+INFO 2024-09-22 13:32:37,404 sqlalchemy.engine.Engine ROLLBACK
+INFO 2024-09-22 13:35:55,154 root Shutting down application...
+INFO 2024-09-22 13:35:58,766 root Application startup application...
+INFO 2024-09-22 14:03:19,674 root Shutting down application...
+INFO 2024-09-22 14:03:34,042 root Application startup application...
+INFO 2024-09-22 14:03:34,044 root Shutting down application...
+INFO 2024-09-22 14:03:37,100 root Application startup application...
+INFO 2024-09-22 14:03:37,102 root Shutting down application...
+INFO 2024-09-22 14:03:40,568 root Application startup application...
+INFO 2024-09-22 14:03:41,834 sqlalchemy.engine.Engine select pg_catalog.version()
+INFO 2024-09-22 14:03:41,834 sqlalchemy.engine.Engine [raw sql] ()
+INFO 2024-09-22 14:03:41,836 sqlalchemy.engine.Engine select current_schema()
+INFO 2024-09-22 14:03:41,837 sqlalchemy.engine.Engine [raw sql] ()
+INFO 2024-09-22 14:03:41,838 sqlalchemy.engine.Engine show standard_conforming_strings
+INFO 2024-09-22 14:03:41,838 sqlalchemy.engine.Engine [raw sql] ()
+INFO 2024-09-22 14:03:41,840 sqlalchemy.engine.Engine BEGIN (implicit)
+INFO 2024-09-22 14:03:41,846 sqlalchemy.engine.Engine SELECT categories.id, categories.cat_id, categories.name, categories.is_active, categories.created_on, categories.updated_on 
+FROM categories 
+WHERE categories.name = $1::VARCHAR
+INFO 2024-09-22 14:03:41,846 sqlalchemy.engine.Engine [generated in 0.00085s] ('lasdkjflakdjfladjfajdfkjadlfjadlj09845924385982345',)
+INFO 2024-09-22 14:03:41,850 sqlalchemy.engine.Engine SELECT categories.id, categories.cat_id, categories.name, categories.is_active, categories.created_on, categories.updated_on 
+FROM categories 
+WHERE categories.name = $1::VARCHAR
+INFO 2024-09-22 14:03:41,851 sqlalchemy.engine.Engine [cached since 0.005984s ago] ('iertpowriklrpotkwer05i45ik4ormknslfdgsrt0i-0o[pmvcknn',)
+ERROR 2024-09-22 14:03:41,852 app.core.logging Failed to create one or more categories.
+INFO 2024-09-22 14:03:41,852 sqlalchemy.engine.Engine ROLLBACK
+INFO 2024-09-22 14:03:45,713 sqlalchemy.engine.Engine BEGIN (implicit)
+INFO 2024-09-22 14:03:45,714 sqlalchemy.engine.Engine SELECT categories.id, categories.cat_id, categories.name, categories.is_active, categories.created_on, categories.updated_on 
+FROM categories 
+WHERE categories.name = $1::VARCHAR
+INFO 2024-09-22 14:03:45,715 sqlalchemy.engine.Engine [cached since 3.869s ago] ('lasdkjflakdjfladjfajdfkjadlfjadlj09845924385982345',)
+INFO 2024-09-22 14:03:45,717 sqlalchemy.engine.Engine SELECT categories.id, categories.cat_id, categories.name, categories.is_active, categories.created_on, categories.updated_on 
+FROM categories 
+WHERE categories.name = $1::VARCHAR
+INFO 2024-09-22 14:03:45,717 sqlalchemy.engine.Engine [cached since 3.872s ago] ('iertpowriklrpotkwer05i45ik4ormknslfdgsrt0i-0o[pmvcknn',)
+ERROR 2024-09-22 14:03:45,719 app.core.logging Failed to create one or more categories.
+INFO 2024-09-22 14:03:45,719 sqlalchemy.engine.Engine ROLLBACK
+INFO 2024-09-22 14:03:46,283 sqlalchemy.engine.Engine BEGIN (implicit)
+INFO 2024-09-22 14:03:46,285 sqlalchemy.engine.Engine SELECT categories.id, categories.cat_id, categories.name, categories.is_active, categories.created_on, categories.updated_on 
+FROM categories 
+WHERE categories.name = $1::VARCHAR
+INFO 2024-09-22 14:03:46,285 sqlalchemy.engine.Engine [cached since 4.439s ago] ('lasdkjflakdjfladjfajdfkjadlfjadlj09845924385982345',)
+INFO 2024-09-22 14:03:46,287 sqlalchemy.engine.Engine SELECT categories.id, categories.cat_id, categories.name, categories.is_active, categories.created_on, categories.updated_on 
+FROM categories 
+WHERE categories.name = $1::VARCHAR
+INFO 2024-09-22 14:03:46,288 sqlalchemy.engine.Engine [cached since 4.442s ago] ('iertpowriklrpotkwer05i45ik4ormknslfdgsrt0i-0o[pmvcknn',)
+ERROR 2024-09-22 14:03:46,289 app.core.logging Failed to create one or more categories.
+INFO 2024-09-22 14:03:46,289 sqlalchemy.engine.Engine ROLLBACK
+INFO 2024-09-22 14:03:46,749 sqlalchemy.engine.Engine BEGIN (implicit)
+INFO 2024-09-22 14:03:46,749 sqlalchemy.engine.Engine SELECT categories.id, categories.cat_id, categories.name, categories.is_active, categories.created_on, categories.updated_on 
+FROM categories 
+WHERE categories.name = $1::VARCHAR
+INFO 2024-09-22 14:03:46,750 sqlalchemy.engine.Engine [cached since 4.905s ago] ('lasdkjflakdjfladjfajdfkjadlfjadlj09845924385982345',)
+INFO 2024-09-22 14:03:46,752 sqlalchemy.engine.Engine SELECT categories.id, categories.cat_id, categories.name, categories.is_active, categories.created_on, categories.updated_on 
+FROM categories 
+WHERE categories.name = $1::VARCHAR
+INFO 2024-09-22 14:03:46,754 sqlalchemy.engine.Engine [cached since 4.908s ago] ('iertpowriklrpotkwer05i45ik4ormknslfdgsrt0i-0o[pmvcknn',)
+ERROR 2024-09-22 14:03:46,755 app.core.logging Failed to create one or more categories.
+INFO 2024-09-22 14:03:46,755 sqlalchemy.engine.Engine ROLLBACK
+INFO 2024-09-22 14:03:46,954 sqlalchemy.engine.Engine BEGIN (implicit)
+INFO 2024-09-22 14:03:46,955 sqlalchemy.engine.Engine SELECT categories.id, categories.cat_id, categories.name, categories.is_active, categories.created_on, categories.updated_on 
+FROM categories 
+WHERE categories.name = $1::VARCHAR
+INFO 2024-09-22 14:03:46,955 sqlalchemy.engine.Engine [cached since 5.111s ago] ('lasdkjflakdjfladjfajdfkjadlfjadlj09845924385982345',)
+INFO 2024-09-22 14:03:46,957 sqlalchemy.engine.Engine SELECT categories.id, categories.cat_id, categories.name, categories.is_active, categories.created_on, categories.updated_on 
+FROM categories 
+WHERE categories.name = $1::VARCHAR
+INFO 2024-09-22 14:03:46,958 sqlalchemy.engine.Engine [cached since 5.113s ago] ('iertpowriklrpotkwer05i45ik4ormknslfdgsrt0i-0o[pmvcknn',)
+ERROR 2024-09-22 14:03:46,959 app.core.logging Failed to create one or more categories.
+INFO 2024-09-22 14:03:46,960 sqlalchemy.engine.Engine ROLLBACK
+INFO 2024-09-22 14:03:47,158 sqlalchemy.engine.Engine BEGIN (implicit)
+INFO 2024-09-22 14:03:47,159 sqlalchemy.engine.Engine SELECT categories.id, categories.cat_id, categories.name, categories.is_active, categories.created_on, categories.updated_on 
+FROM categories 
+WHERE categories.name = $1::VARCHAR
+INFO 2024-09-22 14:03:47,160 sqlalchemy.engine.Engine [cached since 5.315s ago] ('lasdkjflakdjfladjfajdfkjadlfjadlj09845924385982345',)
+INFO 2024-09-22 14:03:47,162 sqlalchemy.engine.Engine SELECT categories.id, categories.cat_id, categories.name, categories.is_active, categories.created_on, categories.updated_on 
+FROM categories 
+WHERE categories.name = $1::VARCHAR
+INFO 2024-09-22 14:03:47,162 sqlalchemy.engine.Engine [cached since 5.318s ago] ('iertpowriklrpotkwer05i45ik4ormknslfdgsrt0i-0o[pmvcknn',)
+ERROR 2024-09-22 14:03:47,164 app.core.logging Failed to create one or more categories.
+INFO 2024-09-22 14:03:47,165 sqlalchemy.engine.Engine ROLLBACK
+INFO 2024-09-22 14:03:47,372 sqlalchemy.engine.Engine BEGIN (implicit)
+INFO 2024-09-22 14:03:47,660 sqlalchemy.engine.Engine SELECT categories.id, categories.cat_id, categories.name, categories.is_active, categories.created_on, categories.updated_on 
+FROM categories 
+WHERE categories.name = $1::VARCHAR
+INFO 2024-09-22 14:03:47,661 sqlalchemy.engine.Engine [cached since 5.816s ago] ('lasdkjflakdjfladjfajdfkjadlfjadlj09845924385982345',)
+INFO 2024-09-22 14:03:47,664 sqlalchemy.engine.Engine SELECT categories.id, categories.cat_id, categories.name, categories.is_active, categories.created_on, categories.updated_on 
+FROM categories 
+WHERE categories.name = $1::VARCHAR
+INFO 2024-09-22 14:03:47,665 sqlalchemy.engine.Engine [cached since 5.82s ago] ('iertpowriklrpotkwer05i45ik4ormknslfdgsrt0i-0o[pmvcknn',)
+ERROR 2024-09-22 14:03:47,667 app.core.logging Failed to create one or more categories.
+INFO 2024-09-22 14:03:47,667 sqlalchemy.engine.Engine ROLLBACK
+INFO 2024-09-22 14:03:47,737 sqlalchemy.engine.Engine BEGIN (implicit)
+INFO 2024-09-22 14:03:47,738 sqlalchemy.engine.Engine SELECT categories.id, categories.cat_id, categories.name, categories.is_active, categories.created_on, categories.updated_on 
+FROM categories 
+WHERE categories.name = $1::VARCHAR
+INFO 2024-09-22 14:03:47,738 sqlalchemy.engine.Engine [cached since 5.893s ago] ('lasdkjflakdjfladjfajdfkjadlfjadlj09845924385982345',)
+INFO 2024-09-22 14:03:47,740 sqlalchemy.engine.Engine SELECT categories.id, categories.cat_id, categories.name, categories.is_active, categories.created_on, categories.updated_on 
+FROM categories 
+WHERE categories.name = $1::VARCHAR
+INFO 2024-09-22 14:03:47,741 sqlalchemy.engine.Engine [cached since 5.896s ago] ('iertpowriklrpotkwer05i45ik4ormknslfdgsrt0i-0o[pmvcknn',)
+ERROR 2024-09-22 14:03:47,742 app.core.logging Failed to create one or more categories.
+INFO 2024-09-22 14:03:47,743 sqlalchemy.engine.Engine ROLLBACK
+INFO 2024-09-22 14:06:56,488 root Shutting down application...
+INFO 2024-09-22 14:07:16,935 root Application startup application...
+INFO 2024-09-22 14:07:24,827 sqlalchemy.engine.Engine select pg_catalog.version()
+INFO 2024-09-22 14:07:24,827 sqlalchemy.engine.Engine [raw sql] ()
+INFO 2024-09-22 14:07:24,832 sqlalchemy.engine.Engine select current_schema()
+INFO 2024-09-22 14:07:24,832 sqlalchemy.engine.Engine [raw sql] ()
+INFO 2024-09-22 14:07:24,834 sqlalchemy.engine.Engine show standard_conforming_strings
+INFO 2024-09-22 14:07:24,835 sqlalchemy.engine.Engine [raw sql] ()
+INFO 2024-09-22 14:07:24,837 sqlalchemy.engine.Engine BEGIN (implicit)
+INFO 2024-09-22 14:07:24,847 sqlalchemy.engine.Engine SELECT categories.id, categories.cat_id, categories.name, categories.is_active, categories.created_on, categories.updated_on 
+FROM categories 
+WHERE categories.name = $1::VARCHAR
+INFO 2024-09-22 14:07:24,848 sqlalchemy.engine.Engine [generated in 0.00121s] ('lasdkjflakdjfladjfajdfkjadlfjadlj09845924385982345',)
+INFO 2024-09-22 14:07:24,858 sqlalchemy.engine.Engine SELECT categories.id, categories.cat_id, categories.name, categories.is_active, categories.created_on, categories.updated_on 
+FROM categories 
+WHERE categories.name = $1::VARCHAR
+INFO 2024-09-22 14:07:24,860 sqlalchemy.engine.Engine [cached since 0.01194s ago] ('iertpowriklrpotkwer05i45ik4ormknslfdgsrt0i-0o[pmvcknn',)
+ERROR 2024-09-22 14:07:24,861 app.core.logging Failed to create one or more categories.
+INFO 2024-09-22 14:07:24,862 sqlalchemy.engine.Engine ROLLBACK
+INFO 2024-09-22 14:11:56,439 root Shutting down application...
+INFO 2024-09-22 14:12:07,686 root Application startup application...
+INFO 2024-09-22 14:12:18,881 root Shutting down application...
+INFO 2024-09-22 14:12:22,315 root Application startup application...
+INFO 2024-09-22 14:12:25,139 root Shutting down application...
+INFO 2024-09-22 14:12:29,642 root Application startup application...
+INFO 2024-09-22 14:12:32,362 root Shutting down application...
+INFO 2024-09-22 14:12:36,107 root Application startup application...
+INFO 2024-09-22 14:12:36,109 root Shutting down application...
+INFO 2024-09-22 14:12:41,038 root Application startup application...
+INFO 2024-09-22 14:12:41,672 sqlalchemy.engine.Engine select pg_catalog.version()
+INFO 2024-09-22 14:12:41,673 sqlalchemy.engine.Engine [raw sql] ()
+INFO 2024-09-22 14:12:41,676 sqlalchemy.engine.Engine select current_schema()
+INFO 2024-09-22 14:12:41,676 sqlalchemy.engine.Engine [raw sql] ()
+INFO 2024-09-22 14:12:41,678 sqlalchemy.engine.Engine show standard_conforming_strings
+INFO 2024-09-22 14:12:41,679 sqlalchemy.engine.Engine [raw sql] ()
+INFO 2024-09-22 14:12:41,681 sqlalchemy.engine.Engine BEGIN (implicit)
+INFO 2024-09-22 14:12:41,688 sqlalchemy.engine.Engine SELECT categories.id, categories.cat_id, categories.name, categories.is_active, categories.created_on, categories.updated_on 
+FROM categories 
+WHERE categories.name = $1::VARCHAR
+INFO 2024-09-22 14:12:41,689 sqlalchemy.engine.Engine [generated in 0.00114s] ('lasdkjflakdjfladjfajdfkjadlfjadlj09845924385982345',)
+INFO 2024-09-22 14:12:41,694 sqlalchemy.engine.Engine SELECT categories.id, categories.cat_id, categories.name, categories.is_active, categories.created_on, categories.updated_on 
+FROM categories 
+WHERE categories.name = $1::VARCHAR
+INFO 2024-09-22 14:12:41,696 sqlalchemy.engine.Engine [cached since 0.007246s ago] ('iertpowriklrpotkwer05i45ik4ormknslfdgsrt0i-0o[pmvcknn',)
+INFO 2024-09-22 14:12:41,697 sqlalchemy.engine.Engine ROLLBACK
+INFO 2024-09-22 14:14:21,939 root Shutting down application...
+INFO 2024-09-22 14:14:25,970 root Application startup application...
+INFO 2024-09-22 14:14:36,594 sqlalchemy.engine.Engine select pg_catalog.version()
+INFO 2024-09-22 14:14:36,594 sqlalchemy.engine.Engine [raw sql] ()
+INFO 2024-09-22 14:14:36,597 sqlalchemy.engine.Engine select current_schema()
+INFO 2024-09-22 14:14:36,598 sqlalchemy.engine.Engine [raw sql] ()
+INFO 2024-09-22 14:14:36,599 sqlalchemy.engine.Engine show standard_conforming_strings
+INFO 2024-09-22 14:14:36,600 sqlalchemy.engine.Engine [raw sql] ()
+INFO 2024-09-22 14:14:36,602 sqlalchemy.engine.Engine BEGIN (implicit)
+INFO 2024-09-22 14:14:36,606 sqlalchemy.engine.Engine SELECT categories.id, categories.cat_id, categories.name, categories.is_active, categories.created_on, categories.updated_on 
+FROM categories 
+WHERE categories.name = $1::VARCHAR
+INFO 2024-09-22 14:14:36,607 sqlalchemy.engine.Engine [generated in 0.00098s] ('lasdkjflakdjfladjfajdfkjadlfjadlj09845924385982345',)
+INFO 2024-09-22 14:14:36,613 sqlalchemy.engine.Engine SELECT categories.id, categories.cat_id, categories.name, categories.is_active, categories.created_on, categories.updated_on 
+FROM categories 
+WHERE categories.name = $1::VARCHAR
+INFO 2024-09-22 14:14:36,614 sqlalchemy.engine.Engine [cached since 0.007289s ago] ('iertpowriklrpotkwer05i45ik4ormknslfdgsrt0i-0o[pmvcknn',)
+INFO 2024-09-22 14:14:36,615 sqlalchemy.engine.Engine ROLLBACK
+INFO 2024-09-22 14:15:39,764 sqlalchemy.engine.Engine BEGIN (implicit)
+INFO 2024-09-22 14:15:39,765 sqlalchemy.engine.Engine SELECT categories.id, categories.cat_id, categories.name, categories.is_active, categories.created_on, categories.updated_on 
+FROM categories 
+WHERE categories.name = $1::VARCHAR
+INFO 2024-09-22 14:15:39,766 sqlalchemy.engine.Engine [cached since 63.16s ago] ('lasdkjflakdjfladjfajdfkjadlfjadlj098459243859823453',)
+INFO 2024-09-22 14:15:39,769 sqlalchemy.engine.Engine SELECT categories.id, categories.cat_id, categories.name, categories.is_active, categories.created_on, categories.updated_on 
+FROM categories 
+WHERE categories.name = $1::VARCHAR
+INFO 2024-09-22 14:15:39,769 sqlalchemy.engine.Engine [cached since 63.16s ago] ('iertpowriklrpotkwer05i45ik4ormknslfdgsrt0i-0o[pmvcknn3',)
+INFO 2024-09-22 14:15:39,773 sqlalchemy.engine.Engine SELECT max(categories.cat_id) AS max_1 
+FROM categories
+INFO 2024-09-22 14:15:39,774 sqlalchemy.engine.Engine [generated in 0.00089s] ()
+INFO 2024-09-22 14:15:39,778 app.core.logging Generated new category ID: cat__038
+INFO 2024-09-22 14:15:39,784 sqlalchemy.engine.Engine INSERT INTO categories (cat_id, name, is_active, created_on, updated_on) VALUES ($1::VARCHAR, $2::VARCHAR, $3::BOOLEAN, now(), $4::TIMESTAMP WITHOUT TIME ZONE) RETURNING categories.id, categories.created_on
+INFO 2024-09-22 14:15:39,785 sqlalchemy.engine.Engine [generated in 0.00108s] ('cat__038', 'lasdkjflakdjfladjfajdfkjadlfjadlj098459243859823453', True, None)
+INFO 2024-09-22 14:15:39,788 sqlalchemy.engine.Engine COMMIT
+INFO 2024-09-22 14:15:39,793 sqlalchemy.engine.Engine BEGIN (implicit)
+INFO 2024-09-22 14:15:39,795 sqlalchemy.engine.Engine SELECT categories.id, categories.cat_id, categories.name, categories.is_active, categories.created_on, categories.updated_on 
+FROM categories 
+WHERE categories.id = $1::INTEGER
+INFO 2024-09-22 14:15:39,796 sqlalchemy.engine.Engine [generated in 0.00119s] (5,)
+INFO 2024-09-22 14:15:39,800 sqlalchemy.engine.Engine SELECT max(categories.cat_id) AS max_1 
+FROM categories
+INFO 2024-09-22 14:15:39,801 sqlalchemy.engine.Engine [cached since 0.02755s ago] ()
+INFO 2024-09-22 14:15:39,802 app.core.logging Generated new category ID: cat__039
+INFO 2024-09-22 14:15:39,802 sqlalchemy.engine.Engine INSERT INTO categories (cat_id, name, is_active, created_on, updated_on) VALUES ($1::VARCHAR, $2::VARCHAR, $3::BOOLEAN, now(), $4::TIMESTAMP WITHOUT TIME ZONE) RETURNING categories.id, categories.created_on
+INFO 2024-09-22 14:15:39,804 sqlalchemy.engine.Engine [cached since 0.01936s ago] ('cat__039', 'iertpowriklrpotkwer05i45ik4ormknslfdgsrt0i-0o[pmvcknn3', True, None)
+INFO 2024-09-22 14:15:39,805 sqlalchemy.engine.Engine COMMIT
+INFO 2024-09-22 14:15:39,807 sqlalchemy.engine.Engine BEGIN (implicit)
+INFO 2024-09-22 14:15:39,807 sqlalchemy.engine.Engine SELECT categories.id, categories.cat_id, categories.name, categories.is_active, categories.created_on, categories.updated_on 
+FROM categories 
+WHERE categories.id = $1::INTEGER
+INFO 2024-09-22 14:15:39,808 sqlalchemy.engine.Engine [cached since 0.01367s ago] (6,)
+INFO 2024-09-22 14:15:39,810 app.core.logging Categories created successfully.
+INFO 2024-09-22 14:15:39,811 sqlalchemy.engine.Engine ROLLBACK
+INFO 2024-09-22 14:16:01,365 sqlalchemy.engine.Engine BEGIN (implicit)
+INFO 2024-09-22 14:16:01,365 sqlalchemy.engine.Engine SELECT categories.id, categories.cat_id, categories.name, categories.is_active, categories.created_on, categories.updated_on 
+FROM categories 
+WHERE categories.name = $1::VARCHAR
+INFO 2024-09-22 14:16:01,366 sqlalchemy.engine.Engine [cached since 84.76s ago] ('lasdkjflakdjfladjfajdfkjadlfjadlj098459243859823453',)
+INFO 2024-09-22 14:16:01,368 sqlalchemy.engine.Engine SELECT categories.id, categories.cat_id, categories.name, categories.is_active, categories.created_on, categories.updated_on 
+FROM categories 
+WHERE categories.name = $1::VARCHAR
+INFO 2024-09-22 14:16:01,370 sqlalchemy.engine.Engine [cached since 84.76s ago] ('iertpowriklrpotkwer05i45ik4ormknslfdgsrt0i-0o[pmvcknn3',)
+INFO 2024-09-22 14:16:01,372 sqlalchemy.engine.Engine ROLLBACK
+INFO 2024-09-22 14:17:28,245 root Shutting down application...
+INFO 2024-09-22 14:17:33,102 root Application startup application...
+INFO 2024-09-22 14:17:35,910 sqlalchemy.engine.Engine select pg_catalog.version()
+INFO 2024-09-22 14:17:35,911 sqlalchemy.engine.Engine [raw sql] ()
+INFO 2024-09-22 14:17:35,915 sqlalchemy.engine.Engine select current_schema()
+INFO 2024-09-22 14:17:35,916 sqlalchemy.engine.Engine [raw sql] ()
+INFO 2024-09-22 14:17:35,919 sqlalchemy.engine.Engine show standard_conforming_strings
+INFO 2024-09-22 14:17:35,920 sqlalchemy.engine.Engine [raw sql] ()
+INFO 2024-09-22 14:17:35,924 sqlalchemy.engine.Engine BEGIN (implicit)
+INFO 2024-09-22 14:17:35,932 sqlalchemy.engine.Engine SELECT categories.id, categories.cat_id, categories.name, categories.is_active, categories.created_on, categories.updated_on 
+FROM categories 
+WHERE categories.name = $1::VARCHAR
+INFO 2024-09-22 14:17:35,934 sqlalchemy.engine.Engine [generated in 0.00259s] ('lasdkjflakdjfladjfajdfkjadlfjadlj098459243859823453',)
+INFO 2024-09-22 14:17:35,946 sqlalchemy.engine.Engine SELECT categories.id, categories.cat_id, categories.name, categories.is_active, categories.created_on, categories.updated_on 
+FROM categories 
+WHERE categories.name = $1::VARCHAR
+INFO 2024-09-22 14:17:35,946 sqlalchemy.engine.Engine [cached since 0.01413s ago] ('iertpowriklrpotkwer05i45ik4ormknslfdgsrt0i-0o[pmvcknn3',)
+INFO 2024-09-22 14:17:35,949 sqlalchemy.engine.Engine ROLLBACK
+INFO 2024-09-22 14:20:20,438 root Shutting down application...
+INFO 2024-09-22 14:20:25,367 root Application startup application...
+INFO 2024-09-22 14:20:27,874 root Shutting down application...
+INFO 2024-09-22 14:20:33,110 root Application startup application...
+INFO 2024-09-22 14:20:51,312 root Shutting down application...
+INFO 2024-09-22 14:20:54,206 root Application startup application...
+INFO 2024-09-22 14:20:57,566 root Shutting down application...

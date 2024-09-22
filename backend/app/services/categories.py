@@ -8,31 +8,51 @@ from app.core.logging import logger
 from datetime import datetime
 
 
-def generate_cat_id(category_count: int) -> str:
-    return f"cat__{str(category_count + 1).zfill(3)}"
-
-
 class CategoryService:
 
     @staticmethod
-    async def create_categories(db: AsyncSession, names: List[str], is_active: bool) -> List[Dict[str, Any]]:
+    async def generate_cat_id(db: AsyncSession) -> str:
+        try:
+            result = await db.execute(select(func.max(Category.cat_id)))
+            max_cat_id = result.scalar_one_or_none()
+
+            if max_cat_id is None:
+                next_number = 1
+            else:
+                next_number = int(max_cat_id.split('__')[1]) + 1
+
+            new_cat_id = f"cat__{next_number:03}"
+            logger.info(f"Generated new category ID: {new_cat_id}")
+            return new_cat_id
+        except Exception as e:
+            logger.error(f"Error generating category ID: {
+                         str(e)}", exc_info=True)
+            raise
+
+    @staticmethod
+    async def create_categories(db: AsyncSession, names: list[str], is_active: bool) -> list[dict[str, any]]:
         responses = []
+        existing_names = []
+
+        # Check for existing categories first
+        for name in names:
+            existing_category = await db.execute(select(Category).where(Category.name == name))
+            if existing_category.scalars().first():
+                existing_names.append(name)
+
+        # If there are existing categories, return an error response
+        if existing_names:
+            return [{
+                "status_code": 400,
+                "status": f"Categories already exist: {', '.join(existing_names)}",
+                "data": None
+            }]
+
+        # Create new categories for names that don't exist
         for name in names:
             try:
-                existing_category = await db.execute(
-                    select(Category).where(Category.name == name)
-                )
-                if existing_category.scalars().first():
-                    responses.append({"status_code": 400, "status": f"Category '{
-                                     name}' already exists.", "data": None})
-                    logger.warning(f"Category '{name}' already exists.")
-                    continue
-
-                result = await db.execute(select(Category))
-                category_count = len(result.scalars().all())
-
                 new_category = Category(
-                    cat_id=generate_cat_id(category_count),
+                    cat_id=await CategoryService.generate_cat_id(db),
                     name=name,
                     is_active=is_active
                 )
@@ -53,13 +73,15 @@ class CategoryService:
                         "id": new_category.id
                     }
                 })
-                logger.info(f"Created category: {new_category.name}")
 
             except Exception as e:
-                logger.error(f"Error creating category '{
-                             name}': {e}", exc_info=True)
-                responses.append({"status_code": 500, "status": f"Failed to create category '{
-                                 name}'.", "data": None})
+                logger.error(f"Failed to create category '{
+                             name}': {str(e)}", exc_info=True)
+                responses.append({
+                    "status_code": 500,
+                    "status": f"Failed to create category '{name}'.",
+                    "data": None
+                })
 
         return responses
 
