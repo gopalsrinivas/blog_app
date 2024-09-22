@@ -21,12 +21,11 @@ class CategoryService:
             else:
                 next_number = int(max_cat_id.split('__')[1]) + 1
 
-            new_cat_id = f"cat__{next_number:03}"
+            new_cat_id = f"cat__{next_number}"
             logger.info(f"Generated new category ID: {new_cat_id}")
             return new_cat_id
         except Exception as e:
-            logger.error(f"Error generating category ID: {
-                         str(e)}", exc_info=True)
+            logger.error(f"Error generating category ID: {str(e)}", exc_info=True)
             raise
 
     @staticmethod

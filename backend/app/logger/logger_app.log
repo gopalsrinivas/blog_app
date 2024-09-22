@@ -5816,3 +5816,967 @@ INFO 2024-09-22 14:20:33,110 root Application startup application...
 INFO 2024-09-22 14:20:51,312 root Shutting down application...
 INFO 2024-09-22 14:20:54,206 root Application startup application...
 INFO 2024-09-22 14:20:57,566 root Shutting down application...
+INFO 2024-09-22 14:21:00,744 root Application startup application...
+INFO 2024-09-22 14:21:08,503 sqlalchemy.engine.Engine select pg_catalog.version()
+INFO 2024-09-22 14:21:08,503 sqlalchemy.engine.Engine [raw sql] ()
+INFO 2024-09-22 14:21:08,507 sqlalchemy.engine.Engine select current_schema()
+INFO 2024-09-22 14:21:08,507 sqlalchemy.engine.Engine [raw sql] ()
+INFO 2024-09-22 14:21:08,509 sqlalchemy.engine.Engine show standard_conforming_strings
+INFO 2024-09-22 14:21:08,510 sqlalchemy.engine.Engine [raw sql] ()
+INFO 2024-09-22 14:21:08,513 sqlalchemy.engine.Engine BEGIN (implicit)
+INFO 2024-09-22 14:21:08,518 sqlalchemy.engine.Engine SELECT categories.id, categories.cat_id, categories.name, categories.is_active, categories.created_on, categories.updated_on 
+FROM categories 
+WHERE categories.name = $1::VARCHAR
+INFO 2024-09-22 14:21:08,519 sqlalchemy.engine.Engine [generated in 0.00117s] ('lasdkjflakdjfladjfajdfkjadlfjadlj098459243859823453',)
+INFO 2024-09-22 14:21:08,526 sqlalchemy.engine.Engine SELECT categories.id, categories.cat_id, categories.name, categories.is_active, categories.created_on, categories.updated_on 
+FROM categories 
+WHERE categories.name = $1::VARCHAR
+INFO 2024-09-22 14:21:08,527 sqlalchemy.engine.Engine [cached since 0.008724s ago] ('iertpowriklrpotkwer05i45ik4ormknslfdgsrt0i-0o[pmvcknn3',)
+INFO 2024-09-22 14:21:08,529 sqlalchemy.engine.Engine ROLLBACK
+INFO 2024-09-22 14:21:26,355 sqlalchemy.engine.Engine BEGIN (implicit)
+INFO 2024-09-22 14:21:26,356 sqlalchemy.engine.Engine SELECT categories.id, categories.cat_id, categories.name, categories.is_active, categories.created_on, categories.updated_on 
+FROM categories 
+WHERE categories.name = $1::VARCHAR
+INFO 2024-09-22 14:21:26,357 sqlalchemy.engine.Engine [cached since 17.84s ago] ('lasdkjflakdjfladjfajdfkjadlfjadlj098459243859823453e',)
+INFO 2024-09-22 14:21:26,359 sqlalchemy.engine.Engine SELECT categories.id, categories.cat_id, categories.name, categories.is_active, categories.created_on, categories.updated_on 
+FROM categories 
+WHERE categories.name = $1::VARCHAR
+INFO 2024-09-22 14:21:26,361 sqlalchemy.engine.Engine [cached since 17.84s ago] ('iertpowriklrpotkwer05i45ik4ormknslfdgsrt0i-0o[pmvcknn3e',)
+INFO 2024-09-22 14:21:26,367 sqlalchemy.engine.Engine SELECT max(categories.cat_id) AS max_1 
+FROM categories
+INFO 2024-09-22 14:21:26,368 sqlalchemy.engine.Engine [generated in 0.00119s] ()
+INFO 2024-09-22 14:21:26,373 app.core.logging Generated new category ID: cat__040
+INFO 2024-09-22 14:21:26,378 sqlalchemy.engine.Engine INSERT INTO categories (cat_id, name, is_active, created_on, updated_on) VALUES ($1::VARCHAR, $2::VARCHAR, $3::BOOLEAN, now(), $4::TIMESTAMP WITHOUT TIME ZONE) RETURNING categories.id, categories.created_on
+INFO 2024-09-22 14:21:26,379 sqlalchemy.engine.Engine [generated in 0.00136s] ('cat__040', 'lasdkjflakdjfladjfajdfkjadlfjadlj098459243859823453e', True, None)
+INFO 2024-09-22 14:21:26,385 sqlalchemy.engine.Engine COMMIT
+INFO 2024-09-22 14:21:26,418 sqlalchemy.engine.Engine BEGIN (implicit)
+INFO 2024-09-22 14:21:26,421 sqlalchemy.engine.Engine SELECT categories.id, categories.cat_id, categories.name, categories.is_active, categories.created_on, categories.updated_on 
+FROM categories 
+WHERE categories.id = $1::INTEGER
+INFO 2024-09-22 14:21:26,422 sqlalchemy.engine.Engine [generated in 0.00111s] (7,)
+INFO 2024-09-22 14:21:26,425 sqlalchemy.engine.Engine SELECT max(categories.cat_id) AS max_1 
+FROM categories
+INFO 2024-09-22 14:21:26,425 sqlalchemy.engine.Engine [cached since 0.05903s ago] ()
+INFO 2024-09-22 14:21:26,427 app.core.logging Generated new category ID: cat__041
+INFO 2024-09-22 14:21:26,429 sqlalchemy.engine.Engine INSERT INTO categories (cat_id, name, is_active, created_on, updated_on) VALUES ($1::VARCHAR, $2::VARCHAR, $3::BOOLEAN, now(), $4::TIMESTAMP WITHOUT TIME ZONE) RETURNING categories.id, categories.created_on
+INFO 2024-09-22 14:21:26,430 sqlalchemy.engine.Engine [cached since 0.05236s ago] ('cat__041', 'iertpowriklrpotkwer05i45ik4ormknslfdgsrt0i-0o[pmvcknn3e', True, None)
+INFO 2024-09-22 14:21:26,433 sqlalchemy.engine.Engine COMMIT
+INFO 2024-09-22 14:21:26,453 sqlalchemy.engine.Engine BEGIN (implicit)
+INFO 2024-09-22 14:21:26,455 sqlalchemy.engine.Engine SELECT categories.id, categories.cat_id, categories.name, categories.is_active, categories.created_on, categories.updated_on 
+FROM categories 
+WHERE categories.id = $1::INTEGER
+INFO 2024-09-22 14:21:26,456 sqlalchemy.engine.Engine [cached since 0.03577s ago] (8,)
+INFO 2024-09-22 14:21:26,459 sqlalchemy.engine.Engine ROLLBACK
+INFO 2024-09-22 14:21:33,118 sqlalchemy.engine.Engine BEGIN (implicit)
+INFO 2024-09-22 14:21:33,119 sqlalchemy.engine.Engine SELECT categories.id, categories.cat_id, categories.name, categories.is_active, categories.created_on, categories.updated_on 
+FROM categories 
+WHERE categories.name = $1::VARCHAR
+INFO 2024-09-22 14:21:33,120 sqlalchemy.engine.Engine [cached since 24.6s ago] ('lasdkjflakdjfladjfajdfkjadlfjadlj098459243859823453e',)
+INFO 2024-09-22 14:21:33,124 sqlalchemy.engine.Engine SELECT categories.id, categories.cat_id, categories.name, categories.is_active, categories.created_on, categories.updated_on 
+FROM categories 
+WHERE categories.name = $1::VARCHAR
+INFO 2024-09-22 14:21:33,125 sqlalchemy.engine.Engine [cached since 24.61s ago] ('iertpowriklrpotkwer05i45ik4ormknslfdgsrt0i-0o[pmvcknn3e',)
+INFO 2024-09-22 14:21:33,128 sqlalchemy.engine.Engine ROLLBACK
+INFO 2024-09-22 14:23:42,661 root Shutting down application...
+INFO 2024-09-22 14:24:40,352 root Application startup application...
+INFO 2024-09-22 14:25:49,684 root Shutting down application...
+INFO 2024-09-22 14:25:56,981 root Application startup application...
+INFO 2024-09-22 14:26:31,910 sqlalchemy.engine.Engine select pg_catalog.version()
+INFO 2024-09-22 14:26:31,910 sqlalchemy.engine.Engine [raw sql] ()
+INFO 2024-09-22 14:26:31,913 sqlalchemy.engine.Engine select current_schema()
+INFO 2024-09-22 14:26:31,913 sqlalchemy.engine.Engine [raw sql] ()
+INFO 2024-09-22 14:26:31,916 sqlalchemy.engine.Engine show standard_conforming_strings
+INFO 2024-09-22 14:26:31,916 sqlalchemy.engine.Engine [raw sql] ()
+INFO 2024-09-22 14:26:31,918 sqlalchemy.engine.Engine BEGIN (implicit)
+INFO 2024-09-22 14:26:31,923 sqlalchemy.engine.Engine SELECT categories.id, categories.cat_id, categories.name, categories.is_active, categories.created_on, categories.updated_on 
+FROM categories 
+WHERE categories.name = $1::VARCHAR
+INFO 2024-09-22 14:26:31,924 sqlalchemy.engine.Engine [generated in 0.00085s] ('Sample Category 1',)
+INFO 2024-09-22 14:26:31,929 sqlalchemy.engine.Engine SELECT categories.id, categories.cat_id, categories.name, categories.is_active, categories.created_on, categories.updated_on 
+FROM categories 
+WHERE categories.name = $1::VARCHAR
+INFO 2024-09-22 14:26:31,930 sqlalchemy.engine.Engine [cached since 0.006901s ago] ('Sample Category 2',)
+INFO 2024-09-22 14:26:31,933 sqlalchemy.engine.Engine SELECT max(categories.cat_id) AS max_1 
+FROM categories
+INFO 2024-09-22 14:26:31,933 sqlalchemy.engine.Engine [generated in 0.00061s] ()
+INFO 2024-09-22 14:26:31,935 app.core.logging Generated new category ID: cat__001
+INFO 2024-09-22 14:26:31,939 sqlalchemy.engine.Engine INSERT INTO categories (cat_id, name, is_active, created_on, updated_on) VALUES ($1::VARCHAR, $2::VARCHAR, $3::BOOLEAN, now(), $4::TIMESTAMP WITHOUT TIME ZONE) RETURNING categories.id, categories.created_on
+INFO 2024-09-22 14:26:31,940 sqlalchemy.engine.Engine [generated in 0.00083s] ('cat__001', 'Sample Category 1', True, None)
+INFO 2024-09-22 14:26:31,944 sqlalchemy.engine.Engine COMMIT
+INFO 2024-09-22 14:26:31,948 sqlalchemy.engine.Engine BEGIN (implicit)
+INFO 2024-09-22 14:26:31,950 sqlalchemy.engine.Engine SELECT categories.id, categories.cat_id, categories.name, categories.is_active, categories.created_on, categories.updated_on 
+FROM categories 
+WHERE categories.id = $1::INTEGER
+INFO 2024-09-22 14:26:31,950 sqlalchemy.engine.Engine [generated in 0.00092s] (1,)
+INFO 2024-09-22 14:26:31,953 sqlalchemy.engine.Engine SELECT max(categories.cat_id) AS max_1 
+FROM categories
+INFO 2024-09-22 14:26:31,954 sqlalchemy.engine.Engine [cached since 0.0206s ago] ()
+INFO 2024-09-22 14:26:31,955 app.core.logging Generated new category ID: cat__002
+INFO 2024-09-22 14:26:31,956 sqlalchemy.engine.Engine INSERT INTO categories (cat_id, name, is_active, created_on, updated_on) VALUES ($1::VARCHAR, $2::VARCHAR, $3::BOOLEAN, now(), $4::TIMESTAMP WITHOUT TIME ZONE) RETURNING categories.id, categories.created_on
+INFO 2024-09-22 14:26:31,956 sqlalchemy.engine.Engine [cached since 0.01696s ago] ('cat__002', 'Sample Category 2', True, None)
+INFO 2024-09-22 14:26:31,958 sqlalchemy.engine.Engine COMMIT
+INFO 2024-09-22 14:26:31,960 sqlalchemy.engine.Engine BEGIN (implicit)
+INFO 2024-09-22 14:26:31,961 sqlalchemy.engine.Engine SELECT categories.id, categories.cat_id, categories.name, categories.is_active, categories.created_on, categories.updated_on 
+FROM categories 
+WHERE categories.id = $1::INTEGER
+INFO 2024-09-22 14:26:31,962 sqlalchemy.engine.Engine [cached since 0.01214s ago] (2,)
+INFO 2024-09-22 14:26:31,964 sqlalchemy.engine.Engine ROLLBACK
+INFO 2024-09-22 16:18:06,665 root Shutting down application...
+INFO 2024-09-22 16:18:12,212 root Application startup application...
+INFO 2024-09-22 16:26:40,413 root Shutting down application...
+INFO 2024-09-22 16:26:53,050 root Application startup application...
+INFO 2024-09-22 16:26:55,772 root Shutting down application...
+INFO 2024-09-22 16:27:02,965 root Application startup application...
+INFO 2024-09-22 16:29:14,059 sqlalchemy.engine.Engine select pg_catalog.version()
+INFO 2024-09-22 16:29:14,060 sqlalchemy.engine.Engine [raw sql] ()
+INFO 2024-09-22 16:29:14,065 sqlalchemy.engine.Engine select current_schema()
+INFO 2024-09-22 16:29:14,066 sqlalchemy.engine.Engine [raw sql] ()
+INFO 2024-09-22 16:29:14,073 sqlalchemy.engine.Engine show standard_conforming_strings
+INFO 2024-09-22 16:29:14,074 sqlalchemy.engine.Engine [raw sql] ()
+INFO 2024-09-22 16:29:14,079 sqlalchemy.engine.Engine BEGIN (implicit)
+INFO 2024-09-22 16:29:14,089 sqlalchemy.engine.Engine SELECT categories.id, categories.cat_id, categories.name, categories.is_active, categories.created_on, categories.updated_on 
+FROM categories 
+WHERE categories.name = $1::VARCHAR
+INFO 2024-09-22 16:29:14,092 sqlalchemy.engine.Engine [generated in 0.00225s] ('Sample Category1 1',)
+INFO 2024-09-22 16:29:14,103 sqlalchemy.engine.Engine SELECT categories.id, categories.cat_id, categories.name, categories.is_active, categories.created_on, categories.updated_on 
+FROM categories 
+WHERE categories.name = $1::VARCHAR
+INFO 2024-09-22 16:29:14,104 sqlalchemy.engine.Engine [cached since 0.01489s ago] ('Sample Category1 2',)
+INFO 2024-09-22 16:29:14,112 sqlalchemy.engine.Engine SELECT max(categories.cat_id) AS max_1 
+FROM categories
+INFO 2024-09-22 16:29:14,113 sqlalchemy.engine.Engine [generated in 0.00120s] ()
+INFO 2024-09-22 16:29:14,117 app.core.logging Generated new category ID: cat__3
+INFO 2024-09-22 16:29:14,123 sqlalchemy.engine.Engine INSERT INTO categories (cat_id, name, is_active, created_on, updated_on) VALUES ($1::VARCHAR, $2::VARCHAR, $3::BOOLEAN, now(), $4::TIMESTAMP WITHOUT TIME ZONE) RETURNING categories.id, categories.created_on
+INFO 2024-09-22 16:29:14,125 sqlalchemy.engine.Engine [generated in 0.00151s] ('cat__3', 'Sample Category1 1', True, None)
+INFO 2024-09-22 16:29:14,131 sqlalchemy.engine.Engine COMMIT
+INFO 2024-09-22 16:29:14,151 sqlalchemy.engine.Engine BEGIN (implicit)
+INFO 2024-09-22 16:29:14,156 sqlalchemy.engine.Engine SELECT categories.id, categories.cat_id, categories.name, categories.is_active, categories.created_on, categories.updated_on 
+FROM categories 
+WHERE categories.id = $1::INTEGER
+INFO 2024-09-22 16:29:14,156 sqlalchemy.engine.Engine [generated in 0.00137s] (3,)
+INFO 2024-09-22 16:29:14,162 sqlalchemy.engine.Engine SELECT max(categories.cat_id) AS max_1 
+FROM categories
+INFO 2024-09-22 16:29:14,163 sqlalchemy.engine.Engine [cached since 0.05071s ago] ()
+INFO 2024-09-22 16:29:14,165 app.core.logging Generated new category ID: cat__4
+INFO 2024-09-22 16:29:14,166 sqlalchemy.engine.Engine INSERT INTO categories (cat_id, name, is_active, created_on, updated_on) VALUES ($1::VARCHAR, $2::VARCHAR, $3::BOOLEAN, now(), $4::TIMESTAMP WITHOUT TIME ZONE) RETURNING categories.id, categories.created_on
+INFO 2024-09-22 16:29:14,168 sqlalchemy.engine.Engine [cached since 0.04504s ago] ('cat__4', 'Sample Category1 2', True, None)
+INFO 2024-09-22 16:29:14,170 sqlalchemy.engine.Engine COMMIT
+INFO 2024-09-22 16:29:14,456 sqlalchemy.engine.Engine BEGIN (implicit)
+INFO 2024-09-22 16:29:14,458 sqlalchemy.engine.Engine SELECT categories.id, categories.cat_id, categories.name, categories.is_active, categories.created_on, categories.updated_on 
+FROM categories 
+WHERE categories.id = $1::INTEGER
+INFO 2024-09-22 16:29:14,459 sqlalchemy.engine.Engine [cached since 0.3039s ago] (4,)
+INFO 2024-09-22 16:29:14,463 sqlalchemy.engine.Engine ROLLBACK
+INFO 2024-09-22 16:30:10,638 root Shutting down application...
+INFO 2024-09-22 16:30:14,330 root Application startup application...
+INFO 2024-09-22 16:30:20,681 sqlalchemy.engine.Engine select pg_catalog.version()
+INFO 2024-09-22 16:30:20,682 sqlalchemy.engine.Engine [raw sql] ()
+INFO 2024-09-22 16:30:20,686 sqlalchemy.engine.Engine select current_schema()
+INFO 2024-09-22 16:30:20,686 sqlalchemy.engine.Engine [raw sql] ()
+INFO 2024-09-22 16:30:20,690 sqlalchemy.engine.Engine show standard_conforming_strings
+INFO 2024-09-22 16:30:20,690 sqlalchemy.engine.Engine [raw sql] ()
+INFO 2024-09-22 16:30:20,692 sqlalchemy.engine.Engine BEGIN (implicit)
+INFO 2024-09-22 16:30:20,699 sqlalchemy.engine.Engine SELECT categories.id, categories.cat_id, categories.name, categories.is_active, categories.created_on, categories.updated_on 
+FROM categories 
+WHERE categories.name = $1::VARCHAR
+INFO 2024-09-22 16:30:20,700 sqlalchemy.engine.Engine [generated in 0.00116s] ('Sample Category1 1',)
+INFO 2024-09-22 16:30:20,709 sqlalchemy.engine.Engine SELECT categories.id, categories.cat_id, categories.name, categories.is_active, categories.created_on, categories.updated_on 
+FROM categories 
+WHERE categories.name = $1::VARCHAR
+INFO 2024-09-22 16:30:20,710 sqlalchemy.engine.Engine [cached since 0.01073s ago] ('Sample Category1 2',)
+INFO 2024-09-22 16:30:20,712 sqlalchemy.engine.Engine ROLLBACK
+INFO 2024-09-22 16:30:38,033 sqlalchemy.engine.Engine BEGIN (implicit)
+INFO 2024-09-22 16:30:38,036 sqlalchemy.engine.Engine SELECT categories.id, categories.cat_id, categories.name, categories.is_active, categories.created_on, categories.updated_on 
+FROM categories 
+WHERE categories.name = $1::VARCHAR
+INFO 2024-09-22 16:30:38,037 sqlalchemy.engine.Engine [cached since 17.34s ago] ('Sample Category2 1',)
+INFO 2024-09-22 16:30:38,039 sqlalchemy.engine.Engine SELECT categories.id, categories.cat_id, categories.name, categories.is_active, categories.created_on, categories.updated_on 
+FROM categories 
+WHERE categories.name = $1::VARCHAR
+INFO 2024-09-22 16:30:38,040 sqlalchemy.engine.Engine [cached since 17.34s ago] ('Sample Category2 2',)
+INFO 2024-09-22 16:30:38,044 sqlalchemy.engine.Engine SELECT max(categories.cat_id) AS max_1 
+FROM categories
+INFO 2024-09-22 16:30:38,044 sqlalchemy.engine.Engine [generated in 0.00090s] ()
+INFO 2024-09-22 16:30:38,048 app.core.logging Generated new category ID: cat__0005
+INFO 2024-09-22 16:30:38,053 sqlalchemy.engine.Engine INSERT INTO categories (cat_id, name, is_active, created_on, updated_on) VALUES ($1::VARCHAR, $2::VARCHAR, $3::BOOLEAN, now(), $4::TIMESTAMP WITHOUT TIME ZONE) RETURNING categories.id, categories.created_on
+INFO 2024-09-22 16:30:38,054 sqlalchemy.engine.Engine [generated in 0.00083s] ('cat__0005', 'Sample Category2 1', True, None)
+INFO 2024-09-22 16:30:38,059 sqlalchemy.engine.Engine COMMIT
+INFO 2024-09-22 16:30:38,063 sqlalchemy.engine.Engine BEGIN (implicit)
+INFO 2024-09-22 16:30:38,065 sqlalchemy.engine.Engine SELECT categories.id, categories.cat_id, categories.name, categories.is_active, categories.created_on, categories.updated_on 
+FROM categories 
+WHERE categories.id = $1::INTEGER
+INFO 2024-09-22 16:30:38,066 sqlalchemy.engine.Engine [generated in 0.00106s] (5,)
+INFO 2024-09-22 16:30:38,069 sqlalchemy.engine.Engine SELECT max(categories.cat_id) AS max_1 
+FROM categories
+INFO 2024-09-22 16:30:38,070 sqlalchemy.engine.Engine [cached since 0.02556s ago] ()
+INFO 2024-09-22 16:30:38,072 app.core.logging Generated new category ID: cat__0005
+INFO 2024-09-22 16:30:38,073 sqlalchemy.engine.Engine INSERT INTO categories (cat_id, name, is_active, created_on, updated_on) VALUES ($1::VARCHAR, $2::VARCHAR, $3::BOOLEAN, now(), $4::TIMESTAMP WITHOUT TIME ZONE) RETURNING categories.id, categories.created_on
+INFO 2024-09-22 16:30:38,074 sqlalchemy.engine.Engine [cached since 0.02158s ago] ('cat__0005', 'Sample Category2 2', True, None)
+INFO 2024-09-22 16:30:38,077 sqlalchemy.engine.Engine ROLLBACK
+ERROR 2024-09-22 16:30:38,077 app.core.logging Failed to create category 'Sample Category2 2': (sqlalchemy.dialects.postgresql.asyncpg.IntegrityError) <class 'asyncpg.exceptions.UniqueViolationError'>: duplicate key value violates unique constraint "categories_cat_id_key"
+DETAIL:  Key (cat_id)=(cat__0005) already exists.
+[SQL: INSERT INTO categories (cat_id, name, is_active, created_on, updated_on) VALUES ($1::VARCHAR, $2::VARCHAR, $3::BOOLEAN, now(), $4::TIMESTAMP WITHOUT TIME ZONE) RETURNING categories.id, categories.created_on]
+[parameters: ('cat__0005', 'Sample Category2 2', True, None)]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\dialects\postgresql\asyncpg.py", line 538, in _prepare_and_execute
+    self._rows = deque(await prepared_stmt.fetch(*parameters))
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\asyncpg\prepared_stmt.py", line 176, in fetch
+    data = await self.__bind_execute(args, 0, timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\asyncpg\prepared_stmt.py", line 241, in __bind_execute
+    data, status, _ = await self.__do_execute(
+                      ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\asyncpg\prepared_stmt.py", line 230, in __do_execute
+    return await executor(protocol)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "asyncpg\protocol\protocol.pyx", line 207, in bind_execute
+asyncpg.exceptions.UniqueViolationError: duplicate key value violates unique constraint "categories_cat_id_key"
+DETAIL:  Key (cat_id)=(cat__0005) already exists.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\engine\base.py", line 1967, in _exec_single_context
+    self.dialect.do_execute(
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\engine\default.py", line 941, in do_execute
+    cursor.execute(statement, parameters)
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\dialects\postgresql\asyncpg.py", line 572, in execute
+    self._adapt_connection.await_(
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 132, in await_only
+    return current.parent.switch(awaitable)  # type: ignore[no-any-return,attr-defined] # noqa: E501
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 196, in greenlet_spawn
+    value = await result
+            ^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\dialects\postgresql\asyncpg.py", line 550, in _prepare_and_execute
+    self._handle_exception(error)
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\dialects\postgresql\asyncpg.py", line 501, in _handle_exception
+    self._adapt_connection._handle_exception(error)
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\dialects\postgresql\asyncpg.py", line 784, in _handle_exception
+    raise translated_error from error
+sqlalchemy.dialects.postgresql.asyncpg.AsyncAdapt_asyncpg_dbapi.IntegrityError: <class 'asyncpg.exceptions.UniqueViolationError'>: duplicate key value violates unique constraint "categories_cat_id_key"
+DETAIL:  Key (cat_id)=(cat__0005) already exists.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\Projects\Fast_API\blog_app\backend\app\services\categories.py", line 60, in create_categories
+    await db.commit()
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\ext\asyncio\session.py", line 1009, in commit
+    await greenlet_spawn(self.sync_session.commit)
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 203, in greenlet_spawn
+    result = context.switch(value)
+             ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\orm\session.py", line 2028, in commit
+    trans.commit(_to_root=True)
+  File "<string>", line 2, in commit
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\orm\state_changes.py", line 139, in _go
+    ret_value = fn(self, *arg, **kw)
+                ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\orm\session.py", line 1313, in commit
+    self._prepare_impl()
+  File "<string>", line 2, in _prepare_impl
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\orm\state_changes.py", line 139, in _go
+    ret_value = fn(self, *arg, **kw)
+                ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\orm\session.py", line 1288, in _prepare_impl
+    self.session.flush()
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\orm\session.py", line 4352, in flush
+    self._flush(objects)
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\orm\session.py", line 4487, in _flush
+    with util.safe_reraise():
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\util\langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\orm\session.py", line 4448, in _flush
+    flush_context.execute()
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\orm\unitofwork.py", line 466, in execute
+    rec.execute(self)
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\orm\unitofwork.py", line 642, in execute
+    util.preloaded.orm_persistence.save_obj(
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\orm\persistence.py", line 93, in save_obj
+    _emit_insert_statements(
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\orm\persistence.py", line 1233, in _emit_insert_statements
+    result = connection.execute(
+             ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\engine\base.py", line 1418, in execute
+    return meth(
+           ^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\sql\elements.py", line 515, in _execute_on_connection
+    return connection._execute_clauseelement(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\engine\base.py", line 1640, in _execute_clauseelement
+    ret = self._execute_context(
+          ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\engine\base.py", line 1846, in _execute_context
+    return self._exec_single_context(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\engine\base.py", line 1986, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\engine\base.py", line 2355, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\engine\base.py", line 1967, in _exec_single_context
+    self.dialect.do_execute(
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\engine\default.py", line 941, in do_execute
+    cursor.execute(statement, parameters)
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\dialects\postgresql\asyncpg.py", line 572, in execute
+    self._adapt_connection.await_(
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 132, in await_only
+    return current.parent.switch(awaitable)  # type: ignore[no-any-return,attr-defined] # noqa: E501
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 196, in greenlet_spawn
+    value = await result
+            ^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\dialects\postgresql\asyncpg.py", line 550, in _prepare_and_execute
+    self._handle_exception(error)
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\dialects\postgresql\asyncpg.py", line 501, in _handle_exception
+    self._adapt_connection._handle_exception(error)
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\dialects\postgresql\asyncpg.py", line 784, in _handle_exception
+    raise translated_error from error
+sqlalchemy.exc.IntegrityError: (sqlalchemy.dialects.postgresql.asyncpg.IntegrityError) <class 'asyncpg.exceptions.UniqueViolationError'>: duplicate key value violates unique constraint "categories_cat_id_key"
+DETAIL:  Key (cat_id)=(cat__0005) already exists.
+[SQL: INSERT INTO categories (cat_id, name, is_active, created_on, updated_on) VALUES ($1::VARCHAR, $2::VARCHAR, $3::BOOLEAN, now(), $4::TIMESTAMP WITHOUT TIME ZONE) RETURNING categories.id, categories.created_on]
+[parameters: ('cat__0005', 'Sample Category2 2', True, None)]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+INFO 2024-09-22 16:30:53,219 sqlalchemy.engine.Engine BEGIN (implicit)
+INFO 2024-09-22 16:30:53,220 sqlalchemy.engine.Engine SELECT categories.id, categories.cat_id, categories.name, categories.is_active, categories.created_on, categories.updated_on 
+FROM categories 
+WHERE categories.name = $1::VARCHAR
+INFO 2024-09-22 16:30:53,220 sqlalchemy.engine.Engine [cached since 32.52s ago] ('Sample Category345',)
+INFO 2024-09-22 16:30:53,223 sqlalchemy.engine.Engine SELECT categories.id, categories.cat_id, categories.name, categories.is_active, categories.created_on, categories.updated_on 
+FROM categories 
+WHERE categories.name = $1::VARCHAR
+INFO 2024-09-22 16:30:53,224 sqlalchemy.engine.Engine [cached since 32.52s ago] ('Sample Category7457',)
+INFO 2024-09-22 16:30:53,225 sqlalchemy.engine.Engine SELECT max(categories.cat_id) AS max_1 
+FROM categories
+INFO 2024-09-22 16:30:53,226 sqlalchemy.engine.Engine [cached since 15.18s ago] ()
+INFO 2024-09-22 16:30:53,228 app.core.logging Generated new category ID: cat__0005
+INFO 2024-09-22 16:30:53,229 sqlalchemy.engine.Engine INSERT INTO categories (cat_id, name, is_active, created_on, updated_on) VALUES ($1::VARCHAR, $2::VARCHAR, $3::BOOLEAN, now(), $4::TIMESTAMP WITHOUT TIME ZONE) RETURNING categories.id, categories.created_on
+INFO 2024-09-22 16:30:53,229 sqlalchemy.engine.Engine [cached since 15.18s ago] ('cat__0005', 'Sample Category345', True, None)
+INFO 2024-09-22 16:30:53,232 sqlalchemy.engine.Engine ROLLBACK
+ERROR 2024-09-22 16:30:53,234 app.core.logging Failed to create category 'Sample Category345': (sqlalchemy.dialects.postgresql.asyncpg.IntegrityError) <class 'asyncpg.exceptions.UniqueViolationError'>: duplicate key value violates unique constraint "categories_cat_id_key"
+DETAIL:  Key (cat_id)=(cat__0005) already exists.
+[SQL: INSERT INTO categories (cat_id, name, is_active, created_on, updated_on) VALUES ($1::VARCHAR, $2::VARCHAR, $3::BOOLEAN, now(), $4::TIMESTAMP WITHOUT TIME ZONE) RETURNING categories.id, categories.created_on]
+[parameters: ('cat__0005', 'Sample Category345', True, None)]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\dialects\postgresql\asyncpg.py", line 538, in _prepare_and_execute
+    self._rows = deque(await prepared_stmt.fetch(*parameters))
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\asyncpg\prepared_stmt.py", line 176, in fetch
+    data = await self.__bind_execute(args, 0, timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\asyncpg\prepared_stmt.py", line 241, in __bind_execute
+    data, status, _ = await self.__do_execute(
+                      ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\asyncpg\prepared_stmt.py", line 230, in __do_execute
+    return await executor(protocol)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "asyncpg\protocol\protocol.pyx", line 207, in bind_execute
+asyncpg.exceptions.UniqueViolationError: duplicate key value violates unique constraint "categories_cat_id_key"
+DETAIL:  Key (cat_id)=(cat__0005) already exists.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\engine\base.py", line 1967, in _exec_single_context
+    self.dialect.do_execute(
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\engine\default.py", line 941, in do_execute
+    cursor.execute(statement, parameters)
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\dialects\postgresql\asyncpg.py", line 572, in execute
+    self._adapt_connection.await_(
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 132, in await_only
+    return current.parent.switch(awaitable)  # type: ignore[no-any-return,attr-defined] # noqa: E501
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 196, in greenlet_spawn
+    value = await result
+            ^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\dialects\postgresql\asyncpg.py", line 550, in _prepare_and_execute
+    self._handle_exception(error)
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\dialects\postgresql\asyncpg.py", line 501, in _handle_exception
+    self._adapt_connection._handle_exception(error)
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\dialects\postgresql\asyncpg.py", line 784, in _handle_exception
+    raise translated_error from error
+sqlalchemy.dialects.postgresql.asyncpg.AsyncAdapt_asyncpg_dbapi.IntegrityError: <class 'asyncpg.exceptions.UniqueViolationError'>: duplicate key value violates unique constraint "categories_cat_id_key"
+DETAIL:  Key (cat_id)=(cat__0005) already exists.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\Projects\Fast_API\blog_app\backend\app\services\categories.py", line 60, in create_categories
+    await db.commit()
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\ext\asyncio\session.py", line 1009, in commit
+    await greenlet_spawn(self.sync_session.commit)
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 203, in greenlet_spawn
+    result = context.switch(value)
+             ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\orm\session.py", line 2028, in commit
+    trans.commit(_to_root=True)
+  File "<string>", line 2, in commit
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\orm\state_changes.py", line 139, in _go
+    ret_value = fn(self, *arg, **kw)
+                ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\orm\session.py", line 1313, in commit
+    self._prepare_impl()
+  File "<string>", line 2, in _prepare_impl
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\orm\state_changes.py", line 139, in _go
+    ret_value = fn(self, *arg, **kw)
+                ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\orm\session.py", line 1288, in _prepare_impl
+    self.session.flush()
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\orm\session.py", line 4352, in flush
+    self._flush(objects)
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\orm\session.py", line 4487, in _flush
+    with util.safe_reraise():
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\util\langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\orm\session.py", line 4448, in _flush
+    flush_context.execute()
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\orm\unitofwork.py", line 466, in execute
+    rec.execute(self)
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\orm\unitofwork.py", line 642, in execute
+    util.preloaded.orm_persistence.save_obj(
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\orm\persistence.py", line 93, in save_obj
+    _emit_insert_statements(
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\orm\persistence.py", line 1233, in _emit_insert_statements
+    result = connection.execute(
+             ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\engine\base.py", line 1418, in execute
+    return meth(
+           ^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\sql\elements.py", line 515, in _execute_on_connection
+    return connection._execute_clauseelement(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\engine\base.py", line 1640, in _execute_clauseelement
+    ret = self._execute_context(
+          ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\engine\base.py", line 1846, in _execute_context
+    return self._exec_single_context(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\engine\base.py", line 1986, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\engine\base.py", line 2355, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\engine\base.py", line 1967, in _exec_single_context
+    self.dialect.do_execute(
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\engine\default.py", line 941, in do_execute
+    cursor.execute(statement, parameters)
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\dialects\postgresql\asyncpg.py", line 572, in execute
+    self._adapt_connection.await_(
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 132, in await_only
+    return current.parent.switch(awaitable)  # type: ignore[no-any-return,attr-defined] # noqa: E501
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 196, in greenlet_spawn
+    value = await result
+            ^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\dialects\postgresql\asyncpg.py", line 550, in _prepare_and_execute
+    self._handle_exception(error)
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\dialects\postgresql\asyncpg.py", line 501, in _handle_exception
+    self._adapt_connection._handle_exception(error)
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\dialects\postgresql\asyncpg.py", line 784, in _handle_exception
+    raise translated_error from error
+sqlalchemy.exc.IntegrityError: (sqlalchemy.dialects.postgresql.asyncpg.IntegrityError) <class 'asyncpg.exceptions.UniqueViolationError'>: duplicate key value violates unique constraint "categories_cat_id_key"
+DETAIL:  Key (cat_id)=(cat__0005) already exists.
+[SQL: INSERT INTO categories (cat_id, name, is_active, created_on, updated_on) VALUES ($1::VARCHAR, $2::VARCHAR, $3::BOOLEAN, now(), $4::TIMESTAMP WITHOUT TIME ZONE) RETURNING categories.id, categories.created_on]
+[parameters: ('cat__0005', 'Sample Category345', True, None)]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+ERROR 2024-09-22 16:30:53,240 app.core.logging Error generating category ID: This Session's transaction has been rolled back due to a previous exception during flush. To begin a new transaction with this Session, first issue Session.rollback(). Original exception was: (sqlalchemy.dialects.postgresql.asyncpg.IntegrityError) <class 'asyncpg.exceptions.UniqueViolationError'>: duplicate key value violates unique constraint "categories_cat_id_key"
+DETAIL:  Key (cat_id)=(cat__0005) already exists.
+[SQL: INSERT INTO categories (cat_id, name, is_active, created_on, updated_on) VALUES ($1::VARCHAR, $2::VARCHAR, $3::BOOLEAN, now(), $4::TIMESTAMP WITHOUT TIME ZONE) RETURNING categories.id, categories.created_on]
+[parameters: ('cat__0005', 'Sample Category345', True, None)]
+(Background on this error at: https://sqlalche.me/e/20/gkpj) (Background on this error at: https://sqlalche.me/e/20/7s2a)
+Traceback (most recent call last):
+  File "D:\Projects\Fast_API\blog_app\backend\app\services\categories.py", line 16, in generate_cat_id
+    result = await db.execute(select(func.max(Category.cat_id)))
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\ext\asyncio\session.py", line 461, in execute
+    result = await greenlet_spawn(
+             ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 190, in greenlet_spawn
+    result = context.switch(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\orm\session.py", line 2362, in execute
+    return self._execute_internal(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\orm\session.py", line 2237, in _execute_internal
+    conn = self._connection_for_bind(bind)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\orm\session.py", line 2106, in _connection_for_bind
+    return trans._connection_for_bind(engine, execution_options)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<string>", line 2, in _connection_for_bind
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\orm\state_changes.py", line 103, in _go
+    self._raise_for_prerequisite_state(fn.__name__, current_state)
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\orm\session.py", line 973, in _raise_for_prerequisite_state
+    raise sa_exc.PendingRollbackError(
+sqlalchemy.exc.PendingRollbackError: This Session's transaction has been rolled back due to a previous exception during flush. To begin a new transaction with this Session, first issue Session.rollback(). Original exception was: (sqlalchemy.dialects.postgresql.asyncpg.IntegrityError) <class 'asyncpg.exceptions.UniqueViolationError'>: duplicate key value violates unique constraint "categories_cat_id_key"
+DETAIL:  Key (cat_id)=(cat__0005) already exists.
+[SQL: INSERT INTO categories (cat_id, name, is_active, created_on, updated_on) VALUES ($1::VARCHAR, $2::VARCHAR, $3::BOOLEAN, now(), $4::TIMESTAMP WITHOUT TIME ZONE) RETURNING categories.id, categories.created_on]
+[parameters: ('cat__0005', 'Sample Category345', True, None)]
+(Background on this error at: https://sqlalche.me/e/20/gkpj) (Background on this error at: https://sqlalche.me/e/20/7s2a)
+ERROR 2024-09-22 16:30:53,243 app.core.logging Failed to create category 'Sample Category7457': This Session's transaction has been rolled back due to a previous exception during flush. To begin a new transaction with this Session, first issue Session.rollback(). Original exception was: (sqlalchemy.dialects.postgresql.asyncpg.IntegrityError) <class 'asyncpg.exceptions.UniqueViolationError'>: duplicate key value violates unique constraint "categories_cat_id_key"
+DETAIL:  Key (cat_id)=(cat__0005) already exists.
+[SQL: INSERT INTO categories (cat_id, name, is_active, created_on, updated_on) VALUES ($1::VARCHAR, $2::VARCHAR, $3::BOOLEAN, now(), $4::TIMESTAMP WITHOUT TIME ZONE) RETURNING categories.id, categories.created_on]
+[parameters: ('cat__0005', 'Sample Category345', True, None)]
+(Background on this error at: https://sqlalche.me/e/20/gkpj) (Background on this error at: https://sqlalche.me/e/20/7s2a)
+Traceback (most recent call last):
+  File "D:\Projects\Fast_API\blog_app\backend\app\services\categories.py", line 54, in create_categories
+    cat_id=await CategoryService.generate_cat_id(db),
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\Fast_API\blog_app\backend\app\services\categories.py", line 16, in generate_cat_id
+    result = await db.execute(select(func.max(Category.cat_id)))
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\ext\asyncio\session.py", line 461, in execute
+    result = await greenlet_spawn(
+             ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 190, in greenlet_spawn
+    result = context.switch(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\orm\session.py", line 2362, in execute
+    return self._execute_internal(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\orm\session.py", line 2237, in _execute_internal
+    conn = self._connection_for_bind(bind)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\orm\session.py", line 2106, in _connection_for_bind
+    return trans._connection_for_bind(engine, execution_options)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<string>", line 2, in _connection_for_bind
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\orm\state_changes.py", line 103, in _go
+    self._raise_for_prerequisite_state(fn.__name__, current_state)
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\orm\session.py", line 973, in _raise_for_prerequisite_state
+    raise sa_exc.PendingRollbackError(
+sqlalchemy.exc.PendingRollbackError: This Session's transaction has been rolled back due to a previous exception during flush. To begin a new transaction with this Session, first issue Session.rollback(). Original exception was: (sqlalchemy.dialects.postgresql.asyncpg.IntegrityError) <class 'asyncpg.exceptions.UniqueViolationError'>: duplicate key value violates unique constraint "categories_cat_id_key"
+DETAIL:  Key (cat_id)=(cat__0005) already exists.
+[SQL: INSERT INTO categories (cat_id, name, is_active, created_on, updated_on) VALUES ($1::VARCHAR, $2::VARCHAR, $3::BOOLEAN, now(), $4::TIMESTAMP WITHOUT TIME ZONE) RETURNING categories.id, categories.created_on]
+[parameters: ('cat__0005', 'Sample Category345', True, None)]
+(Background on this error at: https://sqlalche.me/e/20/gkpj) (Background on this error at: https://sqlalche.me/e/20/7s2a)
+INFO 2024-09-22 16:31:10,921 sqlalchemy.engine.Engine BEGIN (implicit)
+INFO 2024-09-22 16:31:10,922 sqlalchemy.engine.Engine SELECT categories.id, categories.cat_id, categories.name, categories.is_active, categories.created_on, categories.updated_on 
+FROM categories 
+WHERE categories.name = $1::VARCHAR
+INFO 2024-09-22 16:31:10,923 sqlalchemy.engine.Engine [cached since 50.22s ago] ('ksjdlfkajsd',)
+INFO 2024-09-22 16:31:10,927 sqlalchemy.engine.Engine SELECT categories.id, categories.cat_id, categories.name, categories.is_active, categories.created_on, categories.updated_on 
+FROM categories 
+WHERE categories.name = $1::VARCHAR
+INFO 2024-09-22 16:31:10,928 sqlalchemy.engine.Engine [cached since 50.23s ago] ('lsjdklfjsdklfjjf',)
+INFO 2024-09-22 16:31:10,930 sqlalchemy.engine.Engine SELECT max(categories.cat_id) AS max_1 
+FROM categories
+INFO 2024-09-22 16:31:10,931 sqlalchemy.engine.Engine [cached since 32.89s ago] ()
+INFO 2024-09-22 16:31:10,932 app.core.logging Generated new category ID: cat__0005
+INFO 2024-09-22 16:31:10,934 sqlalchemy.engine.Engine INSERT INTO categories (cat_id, name, is_active, created_on, updated_on) VALUES ($1::VARCHAR, $2::VARCHAR, $3::BOOLEAN, now(), $4::TIMESTAMP WITHOUT TIME ZONE) RETURNING categories.id, categories.created_on
+INFO 2024-09-22 16:31:10,935 sqlalchemy.engine.Engine [cached since 32.88s ago] ('cat__0005', 'ksjdlfkajsd', True, None)
+INFO 2024-09-22 16:31:10,937 sqlalchemy.engine.Engine ROLLBACK
+ERROR 2024-09-22 16:31:10,939 app.core.logging Failed to create category 'ksjdlfkajsd': (sqlalchemy.dialects.postgresql.asyncpg.IntegrityError) <class 'asyncpg.exceptions.UniqueViolationError'>: duplicate key value violates unique constraint "categories_cat_id_key"
+DETAIL:  Key (cat_id)=(cat__0005) already exists.
+[SQL: INSERT INTO categories (cat_id, name, is_active, created_on, updated_on) VALUES ($1::VARCHAR, $2::VARCHAR, $3::BOOLEAN, now(), $4::TIMESTAMP WITHOUT TIME ZONE) RETURNING categories.id, categories.created_on]
+[parameters: ('cat__0005', 'ksjdlfkajsd', True, None)]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\dialects\postgresql\asyncpg.py", line 538, in _prepare_and_execute
+    self._rows = deque(await prepared_stmt.fetch(*parameters))
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\asyncpg\prepared_stmt.py", line 176, in fetch
+    data = await self.__bind_execute(args, 0, timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\asyncpg\prepared_stmt.py", line 241, in __bind_execute
+    data, status, _ = await self.__do_execute(
+                      ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\asyncpg\prepared_stmt.py", line 230, in __do_execute
+    return await executor(protocol)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "asyncpg\protocol\protocol.pyx", line 207, in bind_execute
+asyncpg.exceptions.UniqueViolationError: duplicate key value violates unique constraint "categories_cat_id_key"
+DETAIL:  Key (cat_id)=(cat__0005) already exists.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\engine\base.py", line 1967, in _exec_single_context
+    self.dialect.do_execute(
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\engine\default.py", line 941, in do_execute
+    cursor.execute(statement, parameters)
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\dialects\postgresql\asyncpg.py", line 572, in execute
+    self._adapt_connection.await_(
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 132, in await_only
+    return current.parent.switch(awaitable)  # type: ignore[no-any-return,attr-defined] # noqa: E501
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 196, in greenlet_spawn
+    value = await result
+            ^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\dialects\postgresql\asyncpg.py", line 550, in _prepare_and_execute
+    self._handle_exception(error)
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\dialects\postgresql\asyncpg.py", line 501, in _handle_exception
+    self._adapt_connection._handle_exception(error)
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\dialects\postgresql\asyncpg.py", line 784, in _handle_exception
+    raise translated_error from error
+sqlalchemy.dialects.postgresql.asyncpg.AsyncAdapt_asyncpg_dbapi.IntegrityError: <class 'asyncpg.exceptions.UniqueViolationError'>: duplicate key value violates unique constraint "categories_cat_id_key"
+DETAIL:  Key (cat_id)=(cat__0005) already exists.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\Projects\Fast_API\blog_app\backend\app\services\categories.py", line 60, in create_categories
+    await db.commit()
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\ext\asyncio\session.py", line 1009, in commit
+    await greenlet_spawn(self.sync_session.commit)
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 203, in greenlet_spawn
+    result = context.switch(value)
+             ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\orm\session.py", line 2028, in commit
+    trans.commit(_to_root=True)
+  File "<string>", line 2, in commit
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\orm\state_changes.py", line 139, in _go
+    ret_value = fn(self, *arg, **kw)
+                ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\orm\session.py", line 1313, in commit
+    self._prepare_impl()
+  File "<string>", line 2, in _prepare_impl
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\orm\state_changes.py", line 139, in _go
+    ret_value = fn(self, *arg, **kw)
+                ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\orm\session.py", line 1288, in _prepare_impl
+    self.session.flush()
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\orm\session.py", line 4352, in flush
+    self._flush(objects)
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\orm\session.py", line 4487, in _flush
+    with util.safe_reraise():
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\util\langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\orm\session.py", line 4448, in _flush
+    flush_context.execute()
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\orm\unitofwork.py", line 466, in execute
+    rec.execute(self)
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\orm\unitofwork.py", line 642, in execute
+    util.preloaded.orm_persistence.save_obj(
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\orm\persistence.py", line 93, in save_obj
+    _emit_insert_statements(
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\orm\persistence.py", line 1233, in _emit_insert_statements
+    result = connection.execute(
+             ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\engine\base.py", line 1418, in execute
+    return meth(
+           ^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\sql\elements.py", line 515, in _execute_on_connection
+    return connection._execute_clauseelement(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\engine\base.py", line 1640, in _execute_clauseelement
+    ret = self._execute_context(
+          ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\engine\base.py", line 1846, in _execute_context
+    return self._exec_single_context(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\engine\base.py", line 1986, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\engine\base.py", line 2355, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\engine\base.py", line 1967, in _exec_single_context
+    self.dialect.do_execute(
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\engine\default.py", line 941, in do_execute
+    cursor.execute(statement, parameters)
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\dialects\postgresql\asyncpg.py", line 572, in execute
+    self._adapt_connection.await_(
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 132, in await_only
+    return current.parent.switch(awaitable)  # type: ignore[no-any-return,attr-defined] # noqa: E501
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 196, in greenlet_spawn
+    value = await result
+            ^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\dialects\postgresql\asyncpg.py", line 550, in _prepare_and_execute
+    self._handle_exception(error)
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\dialects\postgresql\asyncpg.py", line 501, in _handle_exception
+    self._adapt_connection._handle_exception(error)
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\dialects\postgresql\asyncpg.py", line 784, in _handle_exception
+    raise translated_error from error
+sqlalchemy.exc.IntegrityError: (sqlalchemy.dialects.postgresql.asyncpg.IntegrityError) <class 'asyncpg.exceptions.UniqueViolationError'>: duplicate key value violates unique constraint "categories_cat_id_key"
+DETAIL:  Key (cat_id)=(cat__0005) already exists.
+[SQL: INSERT INTO categories (cat_id, name, is_active, created_on, updated_on) VALUES ($1::VARCHAR, $2::VARCHAR, $3::BOOLEAN, now(), $4::TIMESTAMP WITHOUT TIME ZONE) RETURNING categories.id, categories.created_on]
+[parameters: ('cat__0005', 'ksjdlfkajsd', True, None)]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+ERROR 2024-09-22 16:31:10,952 app.core.logging Error generating category ID: This Session's transaction has been rolled back due to a previous exception during flush. To begin a new transaction with this Session, first issue Session.rollback(). Original exception was: (sqlalchemy.dialects.postgresql.asyncpg.IntegrityError) <class 'asyncpg.exceptions.UniqueViolationError'>: duplicate key value violates unique constraint "categories_cat_id_key"
+DETAIL:  Key (cat_id)=(cat__0005) already exists.
+[SQL: INSERT INTO categories (cat_id, name, is_active, created_on, updated_on) VALUES ($1::VARCHAR, $2::VARCHAR, $3::BOOLEAN, now(), $4::TIMESTAMP WITHOUT TIME ZONE) RETURNING categories.id, categories.created_on]
+[parameters: ('cat__0005', 'ksjdlfkajsd', True, None)]
+(Background on this error at: https://sqlalche.me/e/20/gkpj) (Background on this error at: https://sqlalche.me/e/20/7s2a)
+Traceback (most recent call last):
+  File "D:\Projects\Fast_API\blog_app\backend\app\services\categories.py", line 16, in generate_cat_id
+    result = await db.execute(select(func.max(Category.cat_id)))
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\ext\asyncio\session.py", line 461, in execute
+    result = await greenlet_spawn(
+             ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 190, in greenlet_spawn
+    result = context.switch(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\orm\session.py", line 2362, in execute
+    return self._execute_internal(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\orm\session.py", line 2237, in _execute_internal
+    conn = self._connection_for_bind(bind)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\orm\session.py", line 2106, in _connection_for_bind
+    return trans._connection_for_bind(engine, execution_options)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<string>", line 2, in _connection_for_bind
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\orm\state_changes.py", line 103, in _go
+    self._raise_for_prerequisite_state(fn.__name__, current_state)
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\orm\session.py", line 973, in _raise_for_prerequisite_state
+    raise sa_exc.PendingRollbackError(
+sqlalchemy.exc.PendingRollbackError: This Session's transaction has been rolled back due to a previous exception during flush. To begin a new transaction with this Session, first issue Session.rollback(). Original exception was: (sqlalchemy.dialects.postgresql.asyncpg.IntegrityError) <class 'asyncpg.exceptions.UniqueViolationError'>: duplicate key value violates unique constraint "categories_cat_id_key"
+DETAIL:  Key (cat_id)=(cat__0005) already exists.
+[SQL: INSERT INTO categories (cat_id, name, is_active, created_on, updated_on) VALUES ($1::VARCHAR, $2::VARCHAR, $3::BOOLEAN, now(), $4::TIMESTAMP WITHOUT TIME ZONE) RETURNING categories.id, categories.created_on]
+[parameters: ('cat__0005', 'ksjdlfkajsd', True, None)]
+(Background on this error at: https://sqlalche.me/e/20/gkpj) (Background on this error at: https://sqlalche.me/e/20/7s2a)
+ERROR 2024-09-22 16:31:10,955 app.core.logging Failed to create category 'lsjdklfjsdklfjjf': This Session's transaction has been rolled back due to a previous exception during flush. To begin a new transaction with this Session, first issue Session.rollback(). Original exception was: (sqlalchemy.dialects.postgresql.asyncpg.IntegrityError) <class 'asyncpg.exceptions.UniqueViolationError'>: duplicate key value violates unique constraint "categories_cat_id_key"
+DETAIL:  Key (cat_id)=(cat__0005) already exists.
+[SQL: INSERT INTO categories (cat_id, name, is_active, created_on, updated_on) VALUES ($1::VARCHAR, $2::VARCHAR, $3::BOOLEAN, now(), $4::TIMESTAMP WITHOUT TIME ZONE) RETURNING categories.id, categories.created_on]
+[parameters: ('cat__0005', 'ksjdlfkajsd', True, None)]
+(Background on this error at: https://sqlalche.me/e/20/gkpj) (Background on this error at: https://sqlalche.me/e/20/7s2a)
+Traceback (most recent call last):
+  File "D:\Projects\Fast_API\blog_app\backend\app\services\categories.py", line 54, in create_categories
+    cat_id=await CategoryService.generate_cat_id(db),
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\Fast_API\blog_app\backend\app\services\categories.py", line 16, in generate_cat_id
+    result = await db.execute(select(func.max(Category.cat_id)))
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\ext\asyncio\session.py", line 461, in execute
+    result = await greenlet_spawn(
+             ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 190, in greenlet_spawn
+    result = context.switch(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\orm\session.py", line 2362, in execute
+    return self._execute_internal(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\orm\session.py", line 2237, in _execute_internal
+    conn = self._connection_for_bind(bind)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\orm\session.py", line 2106, in _connection_for_bind
+    return trans._connection_for_bind(engine, execution_options)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<string>", line 2, in _connection_for_bind
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\orm\state_changes.py", line 103, in _go
+    self._raise_for_prerequisite_state(fn.__name__, current_state)
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\orm\session.py", line 973, in _raise_for_prerequisite_state
+    raise sa_exc.PendingRollbackError(
+sqlalchemy.exc.PendingRollbackError: This Session's transaction has been rolled back due to a previous exception during flush. To begin a new transaction with this Session, first issue Session.rollback(). Original exception was: (sqlalchemy.dialects.postgresql.asyncpg.IntegrityError) <class 'asyncpg.exceptions.UniqueViolationError'>: duplicate key value violates unique constraint "categories_cat_id_key"
+DETAIL:  Key (cat_id)=(cat__0005) already exists.
+[SQL: INSERT INTO categories (cat_id, name, is_active, created_on, updated_on) VALUES ($1::VARCHAR, $2::VARCHAR, $3::BOOLEAN, now(), $4::TIMESTAMP WITHOUT TIME ZONE) RETURNING categories.id, categories.created_on]
+[parameters: ('cat__0005', 'ksjdlfkajsd', True, None)]
+(Background on this error at: https://sqlalche.me/e/20/gkpj) (Background on this error at: https://sqlalche.me/e/20/7s2a)
+INFO 2024-09-22 16:31:19,298 root Shutting down application...
+INFO 2024-09-22 16:31:30,771 root Application startup application...
+INFO 2024-09-22 16:31:47,609 sqlalchemy.engine.Engine select pg_catalog.version()
+INFO 2024-09-22 16:31:47,610 sqlalchemy.engine.Engine [raw sql] ()
+INFO 2024-09-22 16:31:47,613 sqlalchemy.engine.Engine select current_schema()
+INFO 2024-09-22 16:31:47,614 sqlalchemy.engine.Engine [raw sql] ()
+INFO 2024-09-22 16:31:47,617 sqlalchemy.engine.Engine show standard_conforming_strings
+INFO 2024-09-22 16:31:47,617 sqlalchemy.engine.Engine [raw sql] ()
+INFO 2024-09-22 16:31:47,619 sqlalchemy.engine.Engine BEGIN (implicit)
+INFO 2024-09-22 16:31:47,626 sqlalchemy.engine.Engine SELECT categories.id, categories.cat_id, categories.name, categories.is_active, categories.created_on, categories.updated_on 
+FROM categories 
+WHERE categories.name = $1::VARCHAR
+INFO 2024-09-22 16:31:47,629 sqlalchemy.engine.Engine [generated in 0.00152s] ('ksjdlfkajsd',)
+INFO 2024-09-22 16:31:47,638 sqlalchemy.engine.Engine SELECT categories.id, categories.cat_id, categories.name, categories.is_active, categories.created_on, categories.updated_on 
+FROM categories 
+WHERE categories.name = $1::VARCHAR
+INFO 2024-09-22 16:31:47,638 sqlalchemy.engine.Engine [cached since 0.01166s ago] ('lsjdklfjsdklfjjf',)
+INFO 2024-09-22 16:31:47,642 sqlalchemy.engine.Engine SELECT max(categories.cat_id) AS max_1 
+FROM categories
+INFO 2024-09-22 16:31:47,642 sqlalchemy.engine.Engine [generated in 0.00083s] ()
+INFO 2024-09-22 16:31:47,646 app.core.logging Generated new category ID: cat__5
+INFO 2024-09-22 16:31:47,650 sqlalchemy.engine.Engine INSERT INTO categories (cat_id, name, is_active, created_on, updated_on) VALUES ($1::VARCHAR, $2::VARCHAR, $3::BOOLEAN, now(), $4::TIMESTAMP WITHOUT TIME ZONE) RETURNING categories.id, categories.created_on
+INFO 2024-09-22 16:31:47,651 sqlalchemy.engine.Engine [generated in 0.00095s] ('cat__5', 'ksjdlfkajsd', True, None)
+INFO 2024-09-22 16:31:47,655 sqlalchemy.engine.Engine COMMIT
+INFO 2024-09-22 16:31:47,658 sqlalchemy.engine.Engine BEGIN (implicit)
+INFO 2024-09-22 16:31:47,661 sqlalchemy.engine.Engine SELECT categories.id, categories.cat_id, categories.name, categories.is_active, categories.created_on, categories.updated_on 
+FROM categories 
+WHERE categories.id = $1::INTEGER
+INFO 2024-09-22 16:31:47,662 sqlalchemy.engine.Engine [generated in 0.00110s] (9,)
+INFO 2024-09-22 16:31:47,665 sqlalchemy.engine.Engine SELECT max(categories.cat_id) AS max_1 
+FROM categories
+INFO 2024-09-22 16:31:47,667 sqlalchemy.engine.Engine [cached since 0.02456s ago] ()
+INFO 2024-09-22 16:31:47,669 app.core.logging Generated new category ID: cat__6
+INFO 2024-09-22 16:31:47,669 sqlalchemy.engine.Engine INSERT INTO categories (cat_id, name, is_active, created_on, updated_on) VALUES ($1::VARCHAR, $2::VARCHAR, $3::BOOLEAN, now(), $4::TIMESTAMP WITHOUT TIME ZONE) RETURNING categories.id, categories.created_on
+INFO 2024-09-22 16:31:47,670 sqlalchemy.engine.Engine [cached since 0.01956s ago] ('cat__6', 'lsjdklfjsdklfjjf', True, None)
+INFO 2024-09-22 16:31:47,671 sqlalchemy.engine.Engine COMMIT
+INFO 2024-09-22 16:31:47,674 sqlalchemy.engine.Engine BEGIN (implicit)
+INFO 2024-09-22 16:31:47,675 sqlalchemy.engine.Engine SELECT categories.id, categories.cat_id, categories.name, categories.is_active, categories.created_on, categories.updated_on 
+FROM categories 
+WHERE categories.id = $1::INTEGER
+INFO 2024-09-22 16:31:47,676 sqlalchemy.engine.Engine [cached since 0.01426s ago] (10,)
+INFO 2024-09-22 16:31:47,677 sqlalchemy.engine.Engine ROLLBACK
+INFO 2024-09-22 16:32:16,696 root Shutting down application...
+INFO 2024-09-22 16:32:21,523 root Application startup application...
+INFO 2024-09-22 16:32:21,597 sqlalchemy.engine.Engine select pg_catalog.version()
+INFO 2024-09-22 16:32:21,598 sqlalchemy.engine.Engine [raw sql] ()
+INFO 2024-09-22 16:32:21,601 sqlalchemy.engine.Engine select current_schema()
+INFO 2024-09-22 16:32:21,602 sqlalchemy.engine.Engine [raw sql] ()
+INFO 2024-09-22 16:32:21,606 sqlalchemy.engine.Engine show standard_conforming_strings
+INFO 2024-09-22 16:32:21,606 sqlalchemy.engine.Engine [raw sql] ()
+INFO 2024-09-22 16:32:21,609 sqlalchemy.engine.Engine BEGIN (implicit)
+INFO 2024-09-22 16:32:21,615 sqlalchemy.engine.Engine SELECT categories.id, categories.cat_id, categories.name, categories.is_active, categories.created_on, categories.updated_on 
+FROM categories 
+WHERE categories.name = $1::VARCHAR
+INFO 2024-09-22 16:32:21,616 sqlalchemy.engine.Engine [generated in 0.00105s] ('ksjdlfkajsd',)
+INFO 2024-09-22 16:32:21,625 sqlalchemy.engine.Engine SELECT categories.id, categories.cat_id, categories.name, categories.is_active, categories.created_on, categories.updated_on 
+FROM categories 
+WHERE categories.name = $1::VARCHAR
+INFO 2024-09-22 16:32:21,626 sqlalchemy.engine.Engine [cached since 0.01058s ago] ('lsjdklfjsdklfjjf',)
+INFO 2024-09-22 16:32:21,628 sqlalchemy.engine.Engine ROLLBACK
+INFO 2024-09-22 16:32:30,400 sqlalchemy.engine.Engine BEGIN (implicit)
+INFO 2024-09-22 16:32:30,401 sqlalchemy.engine.Engine SELECT categories.id, categories.cat_id, categories.name, categories.is_active, categories.created_on, categories.updated_on 
+FROM categories 
+WHERE categories.name = $1::VARCHAR
+INFO 2024-09-22 16:32:30,401 sqlalchemy.engine.Engine [cached since 8.786s ago] ('ksjdlfkajsdqwer',)
+INFO 2024-09-22 16:32:30,404 sqlalchemy.engine.Engine SELECT categories.id, categories.cat_id, categories.name, categories.is_active, categories.created_on, categories.updated_on 
+FROM categories 
+WHERE categories.name = $1::VARCHAR
+INFO 2024-09-22 16:32:30,405 sqlalchemy.engine.Engine [cached since 8.79s ago] ('lsjdklfjsdklfjjfqwerr',)
+INFO 2024-09-22 16:32:30,409 sqlalchemy.engine.Engine SELECT max(categories.cat_id) AS max_1 
+FROM categories
+INFO 2024-09-22 16:32:30,411 sqlalchemy.engine.Engine [generated in 0.00096s] ()
+INFO 2024-09-22 16:32:30,415 app.core.logging Generated new category ID: cat__07
+INFO 2024-09-22 16:32:30,418 sqlalchemy.engine.Engine INSERT INTO categories (cat_id, name, is_active, created_on, updated_on) VALUES ($1::VARCHAR, $2::VARCHAR, $3::BOOLEAN, now(), $4::TIMESTAMP WITHOUT TIME ZONE) RETURNING categories.id, categories.created_on
+INFO 2024-09-22 16:32:30,419 sqlalchemy.engine.Engine [generated in 0.00090s] ('cat__07', 'ksjdlfkajsdqwer', True, None)
+INFO 2024-09-22 16:32:30,423 sqlalchemy.engine.Engine COMMIT
+INFO 2024-09-22 16:32:30,427 sqlalchemy.engine.Engine BEGIN (implicit)
+INFO 2024-09-22 16:32:30,431 sqlalchemy.engine.Engine SELECT categories.id, categories.cat_id, categories.name, categories.is_active, categories.created_on, categories.updated_on 
+FROM categories 
+WHERE categories.id = $1::INTEGER
+INFO 2024-09-22 16:32:30,432 sqlalchemy.engine.Engine [generated in 0.00110s] (11,)
+INFO 2024-09-22 16:32:30,434 sqlalchemy.engine.Engine SELECT max(categories.cat_id) AS max_1 
+FROM categories
+INFO 2024-09-22 16:32:30,435 sqlalchemy.engine.Engine [cached since 0.02527s ago] ()
+INFO 2024-09-22 16:32:30,436 app.core.logging Generated new category ID: cat__07
+INFO 2024-09-22 16:32:30,436 sqlalchemy.engine.Engine INSERT INTO categories (cat_id, name, is_active, created_on, updated_on) VALUES ($1::VARCHAR, $2::VARCHAR, $3::BOOLEAN, now(), $4::TIMESTAMP WITHOUT TIME ZONE) RETURNING categories.id, categories.created_on
+INFO 2024-09-22 16:32:30,437 sqlalchemy.engine.Engine [cached since 0.01874s ago] ('cat__07', 'lsjdklfjsdklfjjfqwerr', True, None)
+INFO 2024-09-22 16:32:30,439 sqlalchemy.engine.Engine ROLLBACK
+ERROR 2024-09-22 16:32:30,441 app.core.logging Failed to create category 'lsjdklfjsdklfjjfqwerr': (sqlalchemy.dialects.postgresql.asyncpg.IntegrityError) <class 'asyncpg.exceptions.UniqueViolationError'>: duplicate key value violates unique constraint "categories_cat_id_key"
+DETAIL:  Key (cat_id)=(cat__07) already exists.
+[SQL: INSERT INTO categories (cat_id, name, is_active, created_on, updated_on) VALUES ($1::VARCHAR, $2::VARCHAR, $3::BOOLEAN, now(), $4::TIMESTAMP WITHOUT TIME ZONE) RETURNING categories.id, categories.created_on]
+[parameters: ('cat__07', 'lsjdklfjsdklfjjfqwerr', True, None)]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\dialects\postgresql\asyncpg.py", line 538, in _prepare_and_execute
+    self._rows = deque(await prepared_stmt.fetch(*parameters))
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\asyncpg\prepared_stmt.py", line 176, in fetch
+    data = await self.__bind_execute(args, 0, timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\asyncpg\prepared_stmt.py", line 241, in __bind_execute
+    data, status, _ = await self.__do_execute(
+                      ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\asyncpg\prepared_stmt.py", line 230, in __do_execute
+    return await executor(protocol)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "asyncpg\protocol\protocol.pyx", line 207, in bind_execute
+asyncpg.exceptions.UniqueViolationError: duplicate key value violates unique constraint "categories_cat_id_key"
+DETAIL:  Key (cat_id)=(cat__07) already exists.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\engine\base.py", line 1967, in _exec_single_context
+    self.dialect.do_execute(
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\engine\default.py", line 941, in do_execute
+    cursor.execute(statement, parameters)
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\dialects\postgresql\asyncpg.py", line 572, in execute
+    self._adapt_connection.await_(
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 132, in await_only
+    return current.parent.switch(awaitable)  # type: ignore[no-any-return,attr-defined] # noqa: E501
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 196, in greenlet_spawn
+    value = await result
+            ^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\dialects\postgresql\asyncpg.py", line 550, in _prepare_and_execute
+    self._handle_exception(error)
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\dialects\postgresql\asyncpg.py", line 501, in _handle_exception
+    self._adapt_connection._handle_exception(error)
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\dialects\postgresql\asyncpg.py", line 784, in _handle_exception
+    raise translated_error from error
+sqlalchemy.dialects.postgresql.asyncpg.AsyncAdapt_asyncpg_dbapi.IntegrityError: <class 'asyncpg.exceptions.UniqueViolationError'>: duplicate key value violates unique constraint "categories_cat_id_key"
+DETAIL:  Key (cat_id)=(cat__07) already exists.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\Projects\Fast_API\blog_app\backend\app\services\categories.py", line 60, in create_categories
+    await db.commit()
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\ext\asyncio\session.py", line 1009, in commit
+    await greenlet_spawn(self.sync_session.commit)
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 203, in greenlet_spawn
+    result = context.switch(value)
+             ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\orm\session.py", line 2028, in commit
+    trans.commit(_to_root=True)
+  File "<string>", line 2, in commit
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\orm\state_changes.py", line 139, in _go
+    ret_value = fn(self, *arg, **kw)
+                ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\orm\session.py", line 1313, in commit
+    self._prepare_impl()
+  File "<string>", line 2, in _prepare_impl
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\orm\state_changes.py", line 139, in _go
+    ret_value = fn(self, *arg, **kw)
+                ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\orm\session.py", line 1288, in _prepare_impl
+    self.session.flush()
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\orm\session.py", line 4352, in flush
+    self._flush(objects)
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\orm\session.py", line 4487, in _flush
+    with util.safe_reraise():
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\util\langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\orm\session.py", line 4448, in _flush
+    flush_context.execute()
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\orm\unitofwork.py", line 466, in execute
+    rec.execute(self)
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\orm\unitofwork.py", line 642, in execute
+    util.preloaded.orm_persistence.save_obj(
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\orm\persistence.py", line 93, in save_obj
+    _emit_insert_statements(
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\orm\persistence.py", line 1233, in _emit_insert_statements
+    result = connection.execute(
+             ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\engine\base.py", line 1418, in execute
+    return meth(
+           ^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\sql\elements.py", line 515, in _execute_on_connection
+    return connection._execute_clauseelement(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\engine\base.py", line 1640, in _execute_clauseelement
+    ret = self._execute_context(
+          ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\engine\base.py", line 1846, in _execute_context
+    return self._exec_single_context(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\engine\base.py", line 1986, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\engine\base.py", line 2355, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\engine\base.py", line 1967, in _exec_single_context
+    self.dialect.do_execute(
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\engine\default.py", line 941, in do_execute
+    cursor.execute(statement, parameters)
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\dialects\postgresql\asyncpg.py", line 572, in execute
+    self._adapt_connection.await_(
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 132, in await_only
+    return current.parent.switch(awaitable)  # type: ignore[no-any-return,attr-defined] # noqa: E501
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 196, in greenlet_spawn
+    value = await result
+            ^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\dialects\postgresql\asyncpg.py", line 550, in _prepare_and_execute
+    self._handle_exception(error)
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\dialects\postgresql\asyncpg.py", line 501, in _handle_exception
+    self._adapt_connection._handle_exception(error)
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\dialects\postgresql\asyncpg.py", line 784, in _handle_exception
+    raise translated_error from error
+sqlalchemy.exc.IntegrityError: (sqlalchemy.dialects.postgresql.asyncpg.IntegrityError) <class 'asyncpg.exceptions.UniqueViolationError'>: duplicate key value violates unique constraint "categories_cat_id_key"
+DETAIL:  Key (cat_id)=(cat__07) already exists.
+[SQL: INSERT INTO categories (cat_id, name, is_active, created_on, updated_on) VALUES ($1::VARCHAR, $2::VARCHAR, $3::BOOLEAN, now(), $4::TIMESTAMP WITHOUT TIME ZONE) RETURNING categories.id, categories.created_on]
+[parameters: ('cat__07', 'lsjdklfjsdklfjjfqwerr', True, None)]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+INFO 2024-09-22 16:32:36,059 root Shutting down application...
