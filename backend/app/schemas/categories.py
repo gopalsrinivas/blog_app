@@ -12,7 +12,6 @@ class CategoryModel(BaseModel):
     updated_on: Optional[datetime] = None
 
     class Config:
-        orm_mode = True
         from_attributes = True
         json_schema_extra = {
             "example": {
@@ -23,7 +22,7 @@ class CategoryModel(BaseModel):
 
 
 class CategoryCreateModel(BaseModel):
-    names: List[str]  # List for bulk insert
+    names: List[str]
     is_active: bool = True
 
     class Config:
