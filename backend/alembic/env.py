@@ -1,9 +1,19 @@
-from app.models.categories import Base
+from app.core.database import Base 
+from app.models.subcategories import Subcategory
+from app.models.categories import Category
+import sys
+import os
 from logging.config import fileConfig
 from sqlalchemy import pool
 from sqlalchemy.ext.asyncio import create_async_engine
 from alembic import context
 import asyncio
+
+# Add the project directory (one level up from alembic) to sys.path
+sys.path.insert(0, os.path.abspath(
+    os.path.join(os.path.dirname(__file__), '..')))
+
+# Import models after modifying the sys.path
 
 # Alembic config object
 config = context.config
@@ -11,7 +21,7 @@ config = context.config
 # Interpret the config file for Python logging.
 fileConfig(config.config_file_name)
 
-# Import your models' MetaData object for 'target_metadata'
+# MetaData object for 'autogenerate' support
 target_metadata = Base.metadata
 
 
@@ -30,7 +40,7 @@ def run_migrations_offline():
 
 
 def do_run_migrations(connection):
-    """Run the migrations with the provided connection."""
+    """Run migrations with the provided connection."""
     context.configure(connection=connection, target_metadata=target_metadata)
 
     with context.begin_transaction():
@@ -40,13 +50,11 @@ def do_run_migrations(connection):
 async def run_migrations_online():
     """Run migrations in 'online' mode."""
     connectable = create_async_engine(
-        # Ensure asyncpg or async dialect is used in the .ini file
         config.get_main_option("sqlalchemy.url"),
         poolclass=pool.NullPool,
     )
 
     async with connectable.connect() as connection:
-        # Make sure this syncs properly
         await connection.run_sync(do_run_migrations)
 
     await connectable.dispose()
@@ -55,5 +63,4 @@ async def run_migrations_online():
 if context.is_offline_mode():
     run_migrations_offline()
 else:
-    # Ensure that asyncio is used only when needed
     asyncio.run(run_migrations_online())

@@ -1,8 +1,5 @@
 from sqlalchemy import Column, String, Boolean, DateTime, Integer, func
-from sqlalchemy.orm import declarative_base
-from sqlalchemy.schema import Sequence
-
-Base = declarative_base()
+from app.core.database import Base
 
 
 class Category(Base):

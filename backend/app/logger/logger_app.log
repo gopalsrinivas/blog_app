@@ -6780,3 +6780,2054 @@ DETAIL:  Key (cat_id)=(cat__07) already exists.
 [parameters: ('cat__07', 'lsjdklfjsdklfjjfqwerr', True, None)]
 (Background on this error at: https://sqlalche.me/e/20/gkpj)
 INFO 2024-09-22 16:32:36,059 root Shutting down application...
+INFO 2024-09-22 16:32:42,338 root Application startup application...
+INFO 2024-09-22 16:32:51,639 sqlalchemy.engine.Engine select pg_catalog.version()
+INFO 2024-09-22 16:32:51,639 sqlalchemy.engine.Engine [raw sql] ()
+INFO 2024-09-22 16:32:51,646 sqlalchemy.engine.Engine select current_schema()
+INFO 2024-09-22 16:32:51,646 sqlalchemy.engine.Engine [raw sql] ()
+INFO 2024-09-22 16:32:51,651 sqlalchemy.engine.Engine show standard_conforming_strings
+INFO 2024-09-22 16:32:51,652 sqlalchemy.engine.Engine [raw sql] ()
+INFO 2024-09-22 16:32:51,656 sqlalchemy.engine.Engine BEGIN (implicit)
+INFO 2024-09-22 16:32:51,667 sqlalchemy.engine.Engine SELECT categories.id, categories.cat_id, categories.name, categories.is_active, categories.created_on, categories.updated_on 
+FROM categories 
+WHERE categories.name = $1::VARCHAR
+INFO 2024-09-22 16:32:51,669 sqlalchemy.engine.Engine [generated in 0.00156s] ('ksjdlfkajsdqwer',)
+INFO 2024-09-22 16:32:51,682 sqlalchemy.engine.Engine SELECT categories.id, categories.cat_id, categories.name, categories.is_active, categories.created_on, categories.updated_on 
+FROM categories 
+WHERE categories.name = $1::VARCHAR
+INFO 2024-09-22 16:32:51,685 sqlalchemy.engine.Engine [cached since 0.01637s ago] ('lsjdklfjsdklfjjfqwerr',)
+INFO 2024-09-22 16:32:51,687 sqlalchemy.engine.Engine ROLLBACK
+INFO 2024-09-23 19:42:26,120 root Application startup application...
+ERROR 2024-09-23 19:43:44,919 root Unexpected error: Multiple exceptions: [Errno 10061] Connect call failed ('::1', 5432, 0, 0), [Errno 10061] Connect call failed ('127.0.0.1', 5432)
+Traceback (most recent call last):
+  File "D:\Projects\Fast_API\blog_app\backend\app\core\database.py", line 19, in get_db
+    yield session
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\fastapi\routing.py", line 278, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\fastapi\routing.py", line 191, in run_endpoint_function
+    return await dependant.call(**values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\Fast_API\blog_app\backend\app\routers\categories.py", line 15, in create_category
+    response = await CategoryService.create_categories(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\Fast_API\blog_app\backend\app\services\categories.py", line 38, in create_categories
+    existing_category = await db.execute(select(Category).where(Category.name == name))
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\ext\asyncio\session.py", line 461, in execute
+    result = await greenlet_spawn(
+             ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 201, in greenlet_spawn
+    result = context.throw(*sys.exc_info())
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\orm\session.py", line 2362, in execute
+    return self._execute_internal(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\orm\session.py", line 2237, in _execute_internal
+    conn = self._connection_for_bind(bind)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\orm\session.py", line 2106, in _connection_for_bind
+    return trans._connection_for_bind(engine, execution_options)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<string>", line 2, in _connection_for_bind
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\orm\state_changes.py", line 139, in _go
+    ret_value = fn(self, *arg, **kw)
+                ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\orm\session.py", line 1189, in _connection_for_bind
+    conn = bind.connect()
+           ^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\engine\base.py", line 3278, in connect
+    return self._connection_cls(self)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\engine\base.py", line 146, in __init__
+    self._dbapi_connection = engine.raw_connection()
+                             ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\engine\base.py", line 3302, in raw_connection
+    return self.pool.connect()
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\pool\base.py", line 449, in connect
+    return _ConnectionFairy._checkout(self)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\pool\base.py", line 1263, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\pool\base.py", line 712, in checkout
+    rec = pool._do_get()
+          ^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\pool\impl.py", line 179, in _do_get
+    with util.safe_reraise():
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\util\langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\pool\impl.py", line 177, in _do_get
+    return self._create_connection()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\pool\base.py", line 390, in _create_connection
+    return _ConnectionRecord(self)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\pool\base.py", line 674, in __init__
+    self.__connect()
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\pool\base.py", line 900, in __connect
+    with util.safe_reraise():
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\util\langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\pool\base.py", line 896, in __connect
+    self.dbapi_connection = connection = pool._invoke_creator(self)
+                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\engine\create.py", line 643, in connect
+    return dialect.connect(*cargs, **cparams)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\engine\default.py", line 621, in connect
+    return self.loaded_dbapi.connect(*cargs, **cparams)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\dialects\postgresql\asyncpg.py", line 953, in connect
+    await_only(creator_fn(*arg, **kw)),
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 132, in await_only
+    return current.parent.switch(awaitable)  # type: ignore[no-any-return,attr-defined] # noqa: E501
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 196, in greenlet_spawn
+    value = await result
+            ^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\asyncpg\connection.py", line 2329, in connect
+    return await connect_utils._connect(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\asyncpg\connect_utils.py", line 1017, in _connect
+    raise last_error or exceptions.TargetServerAttributeNotMatched(
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\asyncpg\connect_utils.py", line 991, in _connect
+    conn = await _connect_addr(
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\asyncpg\connect_utils.py", line 828, in _connect_addr
+    return await __connect_addr(params, True, *args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\asyncpg\connect_utils.py", line 873, in __connect_addr
+    tr, pr = await connector
+             ^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\asyncpg\connect_utils.py", line 744, in _create_ssl_connection
+    tr, pr = await loop.create_connection(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\installed_software\anaconda3\envs\myenv3\Lib\asyncio\base_events.py", line 1130, in create_connection
+    raise OSError('Multiple exceptions: {}'.format(
+OSError: Multiple exceptions: [Errno 10061] Connect call failed ('::1', 5432, 0, 0), [Errno 10061] Connect call failed ('127.0.0.1', 5432)
+INFO 2024-09-23 19:48:11,294 sqlalchemy.engine.Engine select pg_catalog.version()
+INFO 2024-09-23 19:48:11,296 sqlalchemy.engine.Engine [raw sql] ()
+INFO 2024-09-23 19:48:11,359 sqlalchemy.engine.Engine select current_schema()
+INFO 2024-09-23 19:48:11,361 sqlalchemy.engine.Engine [raw sql] ()
+INFO 2024-09-23 19:48:11,371 sqlalchemy.engine.Engine show standard_conforming_strings
+INFO 2024-09-23 19:48:11,372 sqlalchemy.engine.Engine [raw sql] ()
+INFO 2024-09-23 19:48:11,377 sqlalchemy.engine.Engine BEGIN (implicit)
+INFO 2024-09-23 19:48:11,383 sqlalchemy.engine.Engine SELECT categories.id, categories.cat_id, categories.name, categories.is_active, categories.created_on, categories.updated_on 
+FROM categories 
+WHERE categories.name = $1::VARCHAR
+INFO 2024-09-23 19:48:11,384 sqlalchemy.engine.Engine [generated in 0.00158s] ('Sample Gopal_Category 1',)
+INFO 2024-09-23 19:48:11,656 sqlalchemy.engine.Engine SELECT categories.id, categories.cat_id, categories.name, categories.is_active, categories.created_on, categories.updated_on 
+FROM categories 
+WHERE categories.name = $1::VARCHAR
+INFO 2024-09-23 19:48:11,658 sqlalchemy.engine.Engine [cached since 0.2747s ago] ('Sample Gopal_Category 2',)
+INFO 2024-09-23 19:48:11,666 sqlalchemy.engine.Engine SELECT max(categories.cat_id) AS max_1 
+FROM categories
+INFO 2024-09-23 19:48:11,667 sqlalchemy.engine.Engine [generated in 0.00132s] ()
+INFO 2024-09-23 19:48:11,682 app.core.logging Generated new category ID: cat__7
+INFO 2024-09-23 19:48:11,693 sqlalchemy.engine.Engine INSERT INTO categories (cat_id, name, is_active, created_on, updated_on) VALUES ($1::VARCHAR, $2::VARCHAR, $3::BOOLEAN, now(), $4::TIMESTAMP WITHOUT TIME ZONE) RETURNING categories.id, categories.created_on
+INFO 2024-09-23 19:48:11,694 sqlalchemy.engine.Engine [generated in 0.00166s] ('cat__7', 'Sample Gopal_Category 1', True, None)
+INFO 2024-09-23 19:48:11,742 sqlalchemy.engine.Engine COMMIT
+INFO 2024-09-23 19:48:11,747 sqlalchemy.engine.Engine BEGIN (implicit)
+INFO 2024-09-23 19:48:11,751 sqlalchemy.engine.Engine SELECT categories.id, categories.cat_id, categories.name, categories.is_active, categories.created_on, categories.updated_on 
+FROM categories 
+WHERE categories.id = $1::INTEGER
+INFO 2024-09-23 19:48:11,752 sqlalchemy.engine.Engine [generated in 0.00165s] (13,)
+INFO 2024-09-23 19:48:11,761 sqlalchemy.engine.Engine SELECT max(categories.cat_id) AS max_1 
+FROM categories
+INFO 2024-09-23 19:48:11,761 sqlalchemy.engine.Engine [cached since 0.09525s ago] ()
+INFO 2024-09-23 19:48:11,763 app.core.logging Generated new category ID: cat__8
+INFO 2024-09-23 19:48:11,765 sqlalchemy.engine.Engine INSERT INTO categories (cat_id, name, is_active, created_on, updated_on) VALUES ($1::VARCHAR, $2::VARCHAR, $3::BOOLEAN, now(), $4::TIMESTAMP WITHOUT TIME ZONE) RETURNING categories.id, categories.created_on
+INFO 2024-09-23 19:48:11,766 sqlalchemy.engine.Engine [cached since 0.07414s ago] ('cat__8', 'Sample Gopal_Category 2', True, None)
+INFO 2024-09-23 19:48:11,770 sqlalchemy.engine.Engine COMMIT
+INFO 2024-09-23 19:48:11,773 sqlalchemy.engine.Engine BEGIN (implicit)
+INFO 2024-09-23 19:48:11,775 sqlalchemy.engine.Engine SELECT categories.id, categories.cat_id, categories.name, categories.is_active, categories.created_on, categories.updated_on 
+FROM categories 
+WHERE categories.id = $1::INTEGER
+INFO 2024-09-23 19:48:11,777 sqlalchemy.engine.Engine [cached since 0.02683s ago] (14,)
+INFO 2024-09-23 19:48:11,781 sqlalchemy.engine.Engine ROLLBACK
+INFO 2024-09-23 19:48:58,034 sqlalchemy.engine.Engine BEGIN (implicit)
+INFO 2024-09-23 19:48:58,041 sqlalchemy.engine.Engine SELECT count(*) AS count_1 
+FROM (SELECT categories.id AS id, categories.cat_id AS cat_id, categories.name AS name, categories.is_active AS is_active, categories.created_on AS created_on, categories.updated_on AS updated_on 
+FROM categories 
+WHERE categories.cat_id = $1::VARCHAR) AS anon_1
+INFO 2024-09-23 19:48:58,043 sqlalchemy.engine.Engine [generated in 0.00204s] ('cat__8',)
+INFO 2024-09-23 19:48:58,678 sqlalchemy.engine.Engine SELECT categories.id, categories.cat_id, categories.name, categories.is_active, categories.created_on, categories.updated_on 
+FROM categories 
+WHERE categories.cat_id = $1::VARCHAR 
+ LIMIT $2::INTEGER OFFSET $3::INTEGER
+INFO 2024-09-23 19:48:58,681 sqlalchemy.engine.Engine [generated in 0.00390s] ('cat__8', 10, 0)
+INFO 2024-09-23 19:48:58,690 app.core.logging Categories retrieved successfully.
+INFO 2024-09-23 19:48:58,691 app.core.logging Successfully retrieved categories.
+INFO 2024-09-23 19:48:58,694 sqlalchemy.engine.Engine ROLLBACK
+INFO 2024-09-23 19:49:15,811 sqlalchemy.engine.Engine BEGIN (implicit)
+INFO 2024-09-23 19:49:15,816 sqlalchemy.engine.Engine SELECT count(*) AS count_1 
+FROM (SELECT categories.id AS id, categories.cat_id AS cat_id, categories.name AS name, categories.is_active AS is_active, categories.created_on AS created_on, categories.updated_on AS updated_on 
+FROM categories 
+WHERE categories.cat_id = $1::VARCHAR AND categories.name ILIKE $2::VARCHAR) AS anon_1
+INFO 2024-09-23 19:49:15,819 sqlalchemy.engine.Engine [generated in 0.00363s] ('cat__8', '%Sample Gopal_%')
+INFO 2024-09-23 19:49:16,055 sqlalchemy.engine.Engine SELECT categories.id, categories.cat_id, categories.name, categories.is_active, categories.created_on, categories.updated_on 
+FROM categories 
+WHERE categories.cat_id = $1::VARCHAR AND categories.name ILIKE $2::VARCHAR 
+ LIMIT $3::INTEGER OFFSET $4::INTEGER
+INFO 2024-09-23 19:49:16,058 sqlalchemy.engine.Engine [generated in 0.00382s] ('cat__8', '%Sample Gopal_%', 10, 0)
+INFO 2024-09-23 19:49:16,064 app.core.logging Categories retrieved successfully.
+INFO 2024-09-23 19:49:16,065 app.core.logging Successfully retrieved categories.
+INFO 2024-09-23 19:49:16,066 sqlalchemy.engine.Engine ROLLBACK
+INFO 2024-09-23 19:49:34,453 sqlalchemy.engine.Engine BEGIN (implicit)
+INFO 2024-09-23 19:49:34,455 sqlalchemy.engine.Engine SELECT count(*) AS count_1 
+FROM (SELECT categories.id AS id, categories.cat_id AS cat_id, categories.name AS name, categories.is_active AS is_active, categories.created_on AS created_on, categories.updated_on AS updated_on 
+FROM categories 
+WHERE categories.cat_id = $1::VARCHAR AND categories.name ILIKE $2::VARCHAR) AS anon_1
+INFO 2024-09-23 19:49:34,458 sqlalchemy.engine.Engine [cached since 18.64s ago] ('cat__8', '%Sample Gopal%')
+INFO 2024-09-23 19:49:34,468 sqlalchemy.engine.Engine SELECT categories.id, categories.cat_id, categories.name, categories.is_active, categories.created_on, categories.updated_on 
+FROM categories 
+WHERE categories.cat_id = $1::VARCHAR AND categories.name ILIKE $2::VARCHAR 
+ LIMIT $3::INTEGER OFFSET $4::INTEGER
+INFO 2024-09-23 19:49:34,472 sqlalchemy.engine.Engine [generated in 0.00465s] ('cat__8', '%Sample Gopal%', 10, 0)
+INFO 2024-09-23 19:49:34,477 app.core.logging Categories retrieved successfully.
+INFO 2024-09-23 19:49:34,479 app.core.logging Successfully retrieved categories.
+INFO 2024-09-23 19:49:34,481 sqlalchemy.engine.Engine ROLLBACK
+INFO 2024-09-23 19:49:47,704 sqlalchemy.engine.Engine BEGIN (implicit)
+INFO 2024-09-23 19:49:47,707 sqlalchemy.engine.Engine SELECT count(*) AS count_1 
+FROM categories
+INFO 2024-09-23 19:49:47,708 sqlalchemy.engine.Engine [generated in 0.00120s] ()
+INFO 2024-09-23 19:49:47,714 sqlalchemy.engine.Engine SELECT categories.id, categories.cat_id, categories.name, categories.is_active, categories.created_on, categories.updated_on 
+FROM categories ORDER BY categories.id DESC 
+ LIMIT $1::INTEGER OFFSET $2::INTEGER
+INFO 2024-09-23 19:49:47,716 sqlalchemy.engine.Engine [generated in 0.00160s] (10, 0)
+INFO 2024-09-23 19:49:47,806 app.core.logging All categories retrieved successfully. Total: 10
+INFO 2024-09-23 19:49:47,808 app.core.logging Successfully retrieved all categories.
+INFO 2024-09-23 19:49:47,811 sqlalchemy.engine.Engine ROLLBACK
+INFO 2024-09-23 19:49:57,412 sqlalchemy.engine.Engine BEGIN (implicit)
+INFO 2024-09-23 19:49:57,413 sqlalchemy.engine.Engine SELECT count(*) AS count_1 
+FROM categories
+INFO 2024-09-23 19:49:57,414 sqlalchemy.engine.Engine [cached since 9.707s ago] ()
+INFO 2024-09-23 19:49:57,417 sqlalchemy.engine.Engine SELECT categories.id, categories.cat_id, categories.name, categories.is_active, categories.created_on, categories.updated_on 
+FROM categories ORDER BY categories.id DESC 
+ LIMIT $1::INTEGER OFFSET $2::INTEGER
+INFO 2024-09-23 19:49:57,418 sqlalchemy.engine.Engine [cached since 9.704s ago] (8, 0)
+INFO 2024-09-23 19:49:57,421 app.core.logging All categories retrieved successfully. Total: 10
+INFO 2024-09-23 19:49:57,421 app.core.logging Successfully retrieved all categories.
+INFO 2024-09-23 19:49:57,422 sqlalchemy.engine.Engine ROLLBACK
+INFO 2024-09-23 19:50:23,392 sqlalchemy.engine.Engine BEGIN (implicit)
+INFO 2024-09-23 19:50:23,395 sqlalchemy.engine.Engine SELECT categories.id, categories.cat_id, categories.name, categories.is_active, categories.created_on, categories.updated_on 
+FROM categories 
+WHERE categories.id = $1::INTEGER
+INFO 2024-09-23 19:50:23,399 sqlalchemy.engine.Engine [generated in 0.00373s] (1,)
+INFO 2024-09-23 19:50:23,407 app.core.logging Category retrieved successfully: Sample Category 1
+INFO 2024-09-23 19:50:23,409 sqlalchemy.engine.Engine ROLLBACK
+INFO 2024-09-23 19:50:29,431 sqlalchemy.engine.Engine BEGIN (implicit)
+INFO 2024-09-23 19:50:29,434 sqlalchemy.engine.Engine SELECT categories.id, categories.cat_id, categories.name, categories.is_active, categories.created_on, categories.updated_on 
+FROM categories 
+WHERE categories.id = $1::INTEGER
+INFO 2024-09-23 19:50:29,437 sqlalchemy.engine.Engine [cached since 6.042s ago] (2,)
+INFO 2024-09-23 19:50:29,443 app.core.logging Category retrieved successfully: Sample Category 2
+INFO 2024-09-23 19:50:29,445 sqlalchemy.engine.Engine ROLLBACK
+INFO 2024-09-23 19:50:59,125 sqlalchemy.engine.Engine BEGIN (implicit)
+INFO 2024-09-23 19:50:59,126 sqlalchemy.engine.Engine SELECT categories.id, categories.cat_id, categories.name, categories.is_active, categories.created_on, categories.updated_on 
+FROM categories 
+WHERE categories.id = $1::INTEGER
+INFO 2024-09-23 19:50:59,128 sqlalchemy.engine.Engine [cached since 35.73s ago] (1,)
+INFO 2024-09-23 19:50:59,421 sqlalchemy.engine.Engine UPDATE categories SET name=$1::VARCHAR, updated_on=$2::TIMESTAMP WITHOUT TIME ZONE WHERE categories.id = $3::INTEGER
+INFO 2024-09-23 19:50:59,423 sqlalchemy.engine.Engine [generated in 0.00255s] ('New Gopal Updated', datetime.datetime(2024, 9, 23, 19, 50, 59, 413743), 1)
+INFO 2024-09-23 19:50:59,513 sqlalchemy.engine.Engine COMMIT
+INFO 2024-09-23 19:50:59,520 app.core.logging Category updated successfully: New Gopal Updated
+INFO 2024-09-23 19:50:59,520 app.core.logging Category with ID 1 updated successfully.
+INFO 2024-09-23 19:54:39,677 root Shutting down application...
+INFO 2024-09-23 19:54:44,588 root Application startup application...
+INFO 2024-09-23 19:54:47,088 root Shutting down application...
+INFO 2024-09-23 19:54:52,618 root Application startup application...
+INFO 2024-09-23 20:01:13,966 root Shutting down application...
+INFO 2024-09-23 20:01:19,392 root Application startup application...
+INFO 2024-09-23 20:01:49,549 root Shutting down application...
+INFO 2024-09-23 20:01:54,311 root Application startup application...
+INFO 2024-09-23 20:02:24,298 root Shutting down application...
+INFO 2024-09-23 20:02:29,137 root Application startup application...
+INFO 2024-09-23 20:03:15,207 sqlalchemy.engine.Engine select pg_catalog.version()
+INFO 2024-09-23 20:03:15,208 sqlalchemy.engine.Engine [raw sql] ()
+INFO 2024-09-23 20:03:15,213 sqlalchemy.engine.Engine select current_schema()
+INFO 2024-09-23 20:03:15,214 sqlalchemy.engine.Engine [raw sql] ()
+INFO 2024-09-23 20:03:15,218 sqlalchemy.engine.Engine show standard_conforming_strings
+INFO 2024-09-23 20:03:15,219 sqlalchemy.engine.Engine [raw sql] ()
+INFO 2024-09-23 20:03:15,223 sqlalchemy.engine.Engine BEGIN (implicit)
+INFO 2024-09-23 20:03:15,234 sqlalchemy.engine.Engine SELECT subcategories.id, subcategories.category_id, subcategories.subcat_id, subcategories.name, subcategories.is_active, subcategories.created_on, subcategories.updated_on 
+FROM subcategories 
+WHERE subcategories.name IN ($1::VARCHAR, $2::VARCHAR)
+INFO 2024-09-23 20:03:15,236 sqlalchemy.engine.Engine [generated in 0.00228s] ('Sample Subcategory 1', 'Sample Subcategory 2')
+ERROR 2024-09-23 20:03:15,583 root Failed to create subcategory: (sqlalchemy.dialects.postgresql.asyncpg.ProgrammingError) <class 'asyncpg.exceptions.UndefinedTableError'>: relation "subcategories" does not exist
+[SQL: SELECT subcategories.id, subcategories.category_id, subcategories.subcat_id, subcategories.name, subcategories.is_active, subcategories.created_on, subcategories.updated_on 
+FROM subcategories 
+WHERE subcategories.name IN ($1::VARCHAR, $2::VARCHAR)]
+[parameters: ('Sample Subcategory 1', 'Sample Subcategory 2')]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\dialects\postgresql\asyncpg.py", line 514, in _prepare_and_execute
+    prepared_stmt, attributes = await adapt_connection._prepare(
+                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\dialects\postgresql\asyncpg.py", line 760, in _prepare
+    prepared_stmt = await self._connection.prepare(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\asyncpg\connection.py", line 636, in prepare
+    return await self._prepare(
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\asyncpg\connection.py", line 654, in _prepare
+    stmt = await self._get_statement(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\asyncpg\connection.py", line 433, in _get_statement
+    statement = await self._protocol.prepare(
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "asyncpg\protocol\protocol.pyx", line 166, in prepare
+asyncpg.exceptions.UndefinedTableError: relation "subcategories" does not exist
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\engine\base.py", line 1967, in _exec_single_context
+    self.dialect.do_execute(
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\engine\default.py", line 941, in do_execute
+    cursor.execute(statement, parameters)
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\dialects\postgresql\asyncpg.py", line 572, in execute
+    self._adapt_connection.await_(
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 132, in await_only
+    return current.parent.switch(awaitable)  # type: ignore[no-any-return,attr-defined] # noqa: E501
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 196, in greenlet_spawn
+    value = await result
+            ^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\dialects\postgresql\asyncpg.py", line 550, in _prepare_and_execute
+    self._handle_exception(error)
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\dialects\postgresql\asyncpg.py", line 501, in _handle_exception
+    self._adapt_connection._handle_exception(error)
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\dialects\postgresql\asyncpg.py", line 784, in _handle_exception
+    raise translated_error from error
+sqlalchemy.dialects.postgresql.asyncpg.AsyncAdapt_asyncpg_dbapi.ProgrammingError: <class 'asyncpg.exceptions.UndefinedTableError'>: relation "subcategories" does not exist
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\Projects\Fast_API\blog_app\backend\app\routers\subcategories.py", line 24, in create_subcategory_route
+    existing_subcategory = await db.execute(
+                           ^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\ext\asyncio\session.py", line 461, in execute
+    result = await greenlet_spawn(
+             ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 201, in greenlet_spawn
+    result = context.throw(*sys.exc_info())
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\orm\session.py", line 2362, in execute
+    return self._execute_internal(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\orm\session.py", line 2247, in _execute_internal
+    result: Result[Any] = compile_state_cls.orm_execute_statement(
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\orm\context.py", line 305, in orm_execute_statement
+    result = conn.execute(
+             ^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\engine\base.py", line 1418, in execute
+    return meth(
+           ^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\sql\elements.py", line 515, in _execute_on_connection
+    return connection._execute_clauseelement(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\engine\base.py", line 1640, in _execute_clauseelement
+    ret = self._execute_context(
+          ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\engine\base.py", line 1846, in _execute_context
+    return self._exec_single_context(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\engine\base.py", line 1986, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\engine\base.py", line 2355, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\engine\base.py", line 1967, in _exec_single_context
+    self.dialect.do_execute(
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\engine\default.py", line 941, in do_execute
+    cursor.execute(statement, parameters)
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\dialects\postgresql\asyncpg.py", line 572, in execute
+    self._adapt_connection.await_(
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 132, in await_only
+    return current.parent.switch(awaitable)  # type: ignore[no-any-return,attr-defined] # noqa: E501
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 196, in greenlet_spawn
+    value = await result
+            ^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\dialects\postgresql\asyncpg.py", line 550, in _prepare_and_execute
+    self._handle_exception(error)
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\dialects\postgresql\asyncpg.py", line 501, in _handle_exception
+    self._adapt_connection._handle_exception(error)
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\dialects\postgresql\asyncpg.py", line 784, in _handle_exception
+    raise translated_error from error
+sqlalchemy.exc.ProgrammingError: (sqlalchemy.dialects.postgresql.asyncpg.ProgrammingError) <class 'asyncpg.exceptions.UndefinedTableError'>: relation "subcategories" does not exist
+[SQL: SELECT subcategories.id, subcategories.category_id, subcategories.subcat_id, subcategories.name, subcategories.is_active, subcategories.created_on, subcategories.updated_on 
+FROM subcategories 
+WHERE subcategories.name IN ($1::VARCHAR, $2::VARCHAR)]
+[parameters: ('Sample Subcategory 1', 'Sample Subcategory 2')]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+INFO 2024-09-23 20:03:15,754 sqlalchemy.engine.Engine ROLLBACK
+ERROR 2024-09-23 20:03:15,755 root Unexpected error: 500: Failed to create subcategory
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\dialects\postgresql\asyncpg.py", line 514, in _prepare_and_execute
+    prepared_stmt, attributes = await adapt_connection._prepare(
+                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\dialects\postgresql\asyncpg.py", line 760, in _prepare
+    prepared_stmt = await self._connection.prepare(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\asyncpg\connection.py", line 636, in prepare
+    return await self._prepare(
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\asyncpg\connection.py", line 654, in _prepare
+    stmt = await self._get_statement(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\asyncpg\connection.py", line 433, in _get_statement
+    statement = await self._protocol.prepare(
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "asyncpg\protocol\protocol.pyx", line 166, in prepare
+asyncpg.exceptions.UndefinedTableError: relation "subcategories" does not exist
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\engine\base.py", line 1967, in _exec_single_context
+    self.dialect.do_execute(
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\engine\default.py", line 941, in do_execute
+    cursor.execute(statement, parameters)
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\dialects\postgresql\asyncpg.py", line 572, in execute
+    self._adapt_connection.await_(
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 132, in await_only
+    return current.parent.switch(awaitable)  # type: ignore[no-any-return,attr-defined] # noqa: E501
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 196, in greenlet_spawn
+    value = await result
+            ^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\dialects\postgresql\asyncpg.py", line 550, in _prepare_and_execute
+    self._handle_exception(error)
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\dialects\postgresql\asyncpg.py", line 501, in _handle_exception
+    self._adapt_connection._handle_exception(error)
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\dialects\postgresql\asyncpg.py", line 784, in _handle_exception
+    raise translated_error from error
+sqlalchemy.dialects.postgresql.asyncpg.AsyncAdapt_asyncpg_dbapi.ProgrammingError: <class 'asyncpg.exceptions.UndefinedTableError'>: relation "subcategories" does not exist
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\Projects\Fast_API\blog_app\backend\app\routers\subcategories.py", line 24, in create_subcategory_route
+    existing_subcategory = await db.execute(
+                           ^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\ext\asyncio\session.py", line 461, in execute
+    result = await greenlet_spawn(
+             ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 201, in greenlet_spawn
+    result = context.throw(*sys.exc_info())
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\orm\session.py", line 2362, in execute
+    return self._execute_internal(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\orm\session.py", line 2247, in _execute_internal
+    result: Result[Any] = compile_state_cls.orm_execute_statement(
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\orm\context.py", line 305, in orm_execute_statement
+    result = conn.execute(
+             ^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\engine\base.py", line 1418, in execute
+    return meth(
+           ^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\sql\elements.py", line 515, in _execute_on_connection
+    return connection._execute_clauseelement(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\engine\base.py", line 1640, in _execute_clauseelement
+    ret = self._execute_context(
+          ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\engine\base.py", line 1846, in _execute_context
+    return self._exec_single_context(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\engine\base.py", line 1986, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\engine\base.py", line 2355, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\engine\base.py", line 1967, in _exec_single_context
+    self.dialect.do_execute(
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\engine\default.py", line 941, in do_execute
+    cursor.execute(statement, parameters)
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\dialects\postgresql\asyncpg.py", line 572, in execute
+    self._adapt_connection.await_(
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 132, in await_only
+    return current.parent.switch(awaitable)  # type: ignore[no-any-return,attr-defined] # noqa: E501
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 196, in greenlet_spawn
+    value = await result
+            ^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\dialects\postgresql\asyncpg.py", line 550, in _prepare_and_execute
+    self._handle_exception(error)
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\dialects\postgresql\asyncpg.py", line 501, in _handle_exception
+    self._adapt_connection._handle_exception(error)
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\dialects\postgresql\asyncpg.py", line 784, in _handle_exception
+    raise translated_error from error
+sqlalchemy.exc.ProgrammingError: (sqlalchemy.dialects.postgresql.asyncpg.ProgrammingError) <class 'asyncpg.exceptions.UndefinedTableError'>: relation "subcategories" does not exist
+[SQL: SELECT subcategories.id, subcategories.category_id, subcategories.subcat_id, subcategories.name, subcategories.is_active, subcategories.created_on, subcategories.updated_on 
+FROM subcategories 
+WHERE subcategories.name IN ($1::VARCHAR, $2::VARCHAR)]
+[parameters: ('Sample Subcategory 1', 'Sample Subcategory 2')]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Projects\Fast_API\blog_app\backend\app\core\database.py", line 19, in get_db
+    yield session
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\fastapi\routing.py", line 278, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\fastapi\routing.py", line 191, in run_endpoint_function
+    return await dependant.call(**values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\Fast_API\blog_app\backend\app\routers\subcategories.py", line 42, in create_subcategory_route
+    raise HTTPException(
+fastapi.exceptions.HTTPException: 500: Failed to create subcategory
+INFO 2024-09-23 20:04:11,252 root Shutting down application...
+INFO 2024-09-23 20:04:17,432 root Application startup application...
+INFO 2024-09-23 20:04:21,231 root Shutting down application...
+INFO 2024-09-23 20:04:26,284 root Application startup application...
+INFO 2024-09-23 20:09:22,095 root Shutting down application...
+INFO 2024-09-23 20:09:28,081 root Application startup application...
+INFO 2024-09-23 20:11:38,703 root Shutting down application...
+INFO 2024-09-23 20:11:43,572 root Application startup application...
+INFO 2024-09-23 20:12:19,699 sqlalchemy.engine.Engine select pg_catalog.version()
+INFO 2024-09-23 20:12:19,701 sqlalchemy.engine.Engine [raw sql] ()
+INFO 2024-09-23 20:12:19,713 sqlalchemy.engine.Engine select current_schema()
+INFO 2024-09-23 20:12:19,714 sqlalchemy.engine.Engine [raw sql] ()
+INFO 2024-09-23 20:12:19,724 sqlalchemy.engine.Engine show standard_conforming_strings
+INFO 2024-09-23 20:12:19,726 sqlalchemy.engine.Engine [raw sql] ()
+INFO 2024-09-23 20:12:19,732 sqlalchemy.engine.Engine BEGIN (implicit)
+INFO 2024-09-23 20:12:19,743 sqlalchemy.engine.Engine SELECT subcategories.id, subcategories.category_id, subcategories.subcat_id, subcategories.name, subcategories.is_active, subcategories.created_on, subcategories.updated_on 
+FROM subcategories 
+WHERE subcategories.name IN ($1::VARCHAR, $2::VARCHAR)
+INFO 2024-09-23 20:12:19,746 sqlalchemy.engine.Engine [generated in 0.00219s] ('Sample Subcategory 1', 'Sample Subcategory 2')
+ERROR 2024-09-23 20:12:19,749 root Failed to create subcategory: (sqlalchemy.dialects.postgresql.asyncpg.ProgrammingError) <class 'asyncpg.exceptions.UndefinedTableError'>: relation "subcategories" does not exist
+[SQL: SELECT subcategories.id, subcategories.category_id, subcategories.subcat_id, subcategories.name, subcategories.is_active, subcategories.created_on, subcategories.updated_on 
+FROM subcategories 
+WHERE subcategories.name IN ($1::VARCHAR, $2::VARCHAR)]
+[parameters: ('Sample Subcategory 1', 'Sample Subcategory 2')]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\dialects\postgresql\asyncpg.py", line 514, in _prepare_and_execute
+    prepared_stmt, attributes = await adapt_connection._prepare(
+                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\dialects\postgresql\asyncpg.py", line 760, in _prepare
+    prepared_stmt = await self._connection.prepare(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\asyncpg\connection.py", line 636, in prepare
+    return await self._prepare(
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\asyncpg\connection.py", line 654, in _prepare
+    stmt = await self._get_statement(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\asyncpg\connection.py", line 433, in _get_statement
+    statement = await self._protocol.prepare(
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "asyncpg\protocol\protocol.pyx", line 166, in prepare
+asyncpg.exceptions.UndefinedTableError: relation "subcategories" does not exist
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\engine\base.py", line 1967, in _exec_single_context
+    self.dialect.do_execute(
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\engine\default.py", line 941, in do_execute
+    cursor.execute(statement, parameters)
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\dialects\postgresql\asyncpg.py", line 572, in execute
+    self._adapt_connection.await_(
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 132, in await_only
+    return current.parent.switch(awaitable)  # type: ignore[no-any-return,attr-defined] # noqa: E501
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 196, in greenlet_spawn
+    value = await result
+            ^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\dialects\postgresql\asyncpg.py", line 550, in _prepare_and_execute
+    self._handle_exception(error)
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\dialects\postgresql\asyncpg.py", line 501, in _handle_exception
+    self._adapt_connection._handle_exception(error)
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\dialects\postgresql\asyncpg.py", line 784, in _handle_exception
+    raise translated_error from error
+sqlalchemy.dialects.postgresql.asyncpg.AsyncAdapt_asyncpg_dbapi.ProgrammingError: <class 'asyncpg.exceptions.UndefinedTableError'>: relation "subcategories" does not exist
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\Projects\Fast_API\blog_app\backend\app\routers\subcategories.py", line 24, in create_subcategory_route
+    existing_subcategory = await db.execute(
+                           ^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\ext\asyncio\session.py", line 461, in execute
+    result = await greenlet_spawn(
+             ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 201, in greenlet_spawn
+    result = context.throw(*sys.exc_info())
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\orm\session.py", line 2362, in execute
+    return self._execute_internal(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\orm\session.py", line 2247, in _execute_internal
+    result: Result[Any] = compile_state_cls.orm_execute_statement(
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\orm\context.py", line 305, in orm_execute_statement
+    result = conn.execute(
+             ^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\engine\base.py", line 1418, in execute
+    return meth(
+           ^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\sql\elements.py", line 515, in _execute_on_connection
+    return connection._execute_clauseelement(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\engine\base.py", line 1640, in _execute_clauseelement
+    ret = self._execute_context(
+          ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\engine\base.py", line 1846, in _execute_context
+    return self._exec_single_context(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\engine\base.py", line 1986, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\engine\base.py", line 2355, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\engine\base.py", line 1967, in _exec_single_context
+    self.dialect.do_execute(
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\engine\default.py", line 941, in do_execute
+    cursor.execute(statement, parameters)
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\dialects\postgresql\asyncpg.py", line 572, in execute
+    self._adapt_connection.await_(
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 132, in await_only
+    return current.parent.switch(awaitable)  # type: ignore[no-any-return,attr-defined] # noqa: E501
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 196, in greenlet_spawn
+    value = await result
+            ^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\dialects\postgresql\asyncpg.py", line 550, in _prepare_and_execute
+    self._handle_exception(error)
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\dialects\postgresql\asyncpg.py", line 501, in _handle_exception
+    self._adapt_connection._handle_exception(error)
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\dialects\postgresql\asyncpg.py", line 784, in _handle_exception
+    raise translated_error from error
+sqlalchemy.exc.ProgrammingError: (sqlalchemy.dialects.postgresql.asyncpg.ProgrammingError) <class 'asyncpg.exceptions.UndefinedTableError'>: relation "subcategories" does not exist
+[SQL: SELECT subcategories.id, subcategories.category_id, subcategories.subcat_id, subcategories.name, subcategories.is_active, subcategories.created_on, subcategories.updated_on 
+FROM subcategories 
+WHERE subcategories.name IN ($1::VARCHAR, $2::VARCHAR)]
+[parameters: ('Sample Subcategory 1', 'Sample Subcategory 2')]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+INFO 2024-09-23 20:12:19,783 sqlalchemy.engine.Engine ROLLBACK
+ERROR 2024-09-23 20:12:19,785 root Unexpected error: 500: Failed to create subcategory
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\dialects\postgresql\asyncpg.py", line 514, in _prepare_and_execute
+    prepared_stmt, attributes = await adapt_connection._prepare(
+                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\dialects\postgresql\asyncpg.py", line 760, in _prepare
+    prepared_stmt = await self._connection.prepare(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\asyncpg\connection.py", line 636, in prepare
+    return await self._prepare(
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\asyncpg\connection.py", line 654, in _prepare
+    stmt = await self._get_statement(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\asyncpg\connection.py", line 433, in _get_statement
+    statement = await self._protocol.prepare(
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "asyncpg\protocol\protocol.pyx", line 166, in prepare
+asyncpg.exceptions.UndefinedTableError: relation "subcategories" does not exist
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\engine\base.py", line 1967, in _exec_single_context
+    self.dialect.do_execute(
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\engine\default.py", line 941, in do_execute
+    cursor.execute(statement, parameters)
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\dialects\postgresql\asyncpg.py", line 572, in execute
+    self._adapt_connection.await_(
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 132, in await_only
+    return current.parent.switch(awaitable)  # type: ignore[no-any-return,attr-defined] # noqa: E501
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 196, in greenlet_spawn
+    value = await result
+            ^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\dialects\postgresql\asyncpg.py", line 550, in _prepare_and_execute
+    self._handle_exception(error)
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\dialects\postgresql\asyncpg.py", line 501, in _handle_exception
+    self._adapt_connection._handle_exception(error)
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\dialects\postgresql\asyncpg.py", line 784, in _handle_exception
+    raise translated_error from error
+sqlalchemy.dialects.postgresql.asyncpg.AsyncAdapt_asyncpg_dbapi.ProgrammingError: <class 'asyncpg.exceptions.UndefinedTableError'>: relation "subcategories" does not exist
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\Projects\Fast_API\blog_app\backend\app\routers\subcategories.py", line 24, in create_subcategory_route
+    existing_subcategory = await db.execute(
+                           ^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\ext\asyncio\session.py", line 461, in execute
+    result = await greenlet_spawn(
+             ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 201, in greenlet_spawn
+    result = context.throw(*sys.exc_info())
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\orm\session.py", line 2362, in execute
+    return self._execute_internal(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\orm\session.py", line 2247, in _execute_internal
+    result: Result[Any] = compile_state_cls.orm_execute_statement(
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\orm\context.py", line 305, in orm_execute_statement
+    result = conn.execute(
+             ^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\engine\base.py", line 1418, in execute
+    return meth(
+           ^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\sql\elements.py", line 515, in _execute_on_connection
+    return connection._execute_clauseelement(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\engine\base.py", line 1640, in _execute_clauseelement
+    ret = self._execute_context(
+          ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\engine\base.py", line 1846, in _execute_context
+    return self._exec_single_context(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\engine\base.py", line 1986, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\engine\base.py", line 2355, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\engine\base.py", line 1967, in _exec_single_context
+    self.dialect.do_execute(
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\engine\default.py", line 941, in do_execute
+    cursor.execute(statement, parameters)
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\dialects\postgresql\asyncpg.py", line 572, in execute
+    self._adapt_connection.await_(
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 132, in await_only
+    return current.parent.switch(awaitable)  # type: ignore[no-any-return,attr-defined] # noqa: E501
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 196, in greenlet_spawn
+    value = await result
+            ^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\dialects\postgresql\asyncpg.py", line 550, in _prepare_and_execute
+    self._handle_exception(error)
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\dialects\postgresql\asyncpg.py", line 501, in _handle_exception
+    self._adapt_connection._handle_exception(error)
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\dialects\postgresql\asyncpg.py", line 784, in _handle_exception
+    raise translated_error from error
+sqlalchemy.exc.ProgrammingError: (sqlalchemy.dialects.postgresql.asyncpg.ProgrammingError) <class 'asyncpg.exceptions.UndefinedTableError'>: relation "subcategories" does not exist
+[SQL: SELECT subcategories.id, subcategories.category_id, subcategories.subcat_id, subcategories.name, subcategories.is_active, subcategories.created_on, subcategories.updated_on 
+FROM subcategories 
+WHERE subcategories.name IN ($1::VARCHAR, $2::VARCHAR)]
+[parameters: ('Sample Subcategory 1', 'Sample Subcategory 2')]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Projects\Fast_API\blog_app\backend\app\core\database.py", line 19, in get_db
+    yield session
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\fastapi\routing.py", line 278, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\fastapi\routing.py", line 191, in run_endpoint_function
+    return await dependant.call(**values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\Fast_API\blog_app\backend\app\routers\subcategories.py", line 41, in create_subcategory_route
+    raise HTTPException(
+fastapi.exceptions.HTTPException: 500: Failed to create subcategory
+INFO 2024-09-23 20:12:35,019 root Shutting down application...
+INFO 2024-09-23 20:13:31,810 root Application startup application...
+INFO 2024-09-23 20:14:03,583 sqlalchemy.engine.Engine select pg_catalog.version()
+INFO 2024-09-23 20:14:03,584 sqlalchemy.engine.Engine [raw sql] ()
+INFO 2024-09-23 20:14:03,589 sqlalchemy.engine.Engine select current_schema()
+INFO 2024-09-23 20:14:03,590 sqlalchemy.engine.Engine [raw sql] ()
+INFO 2024-09-23 20:14:03,595 sqlalchemy.engine.Engine show standard_conforming_strings
+INFO 2024-09-23 20:14:03,595 sqlalchemy.engine.Engine [raw sql] ()
+INFO 2024-09-23 20:14:03,598 sqlalchemy.engine.Engine BEGIN (implicit)
+INFO 2024-09-23 20:14:03,609 sqlalchemy.engine.Engine SELECT categories.id, categories.cat_id, categories.name, categories.is_active, categories.created_on, categories.updated_on 
+FROM categories 
+WHERE categories.name = $1::VARCHAR
+INFO 2024-09-23 20:14:03,610 sqlalchemy.engine.Engine [generated in 0.00258s] ('Sample Category 1dfddf',)
+INFO 2024-09-23 20:14:03,624 sqlalchemy.engine.Engine SELECT categories.id, categories.cat_id, categories.name, categories.is_active, categories.created_on, categories.updated_on 
+FROM categories 
+WHERE categories.name = $1::VARCHAR
+INFO 2024-09-23 20:14:03,625 sqlalchemy.engine.Engine [cached since 0.0176s ago] ('Sample Category 2sadfadfad',)
+INFO 2024-09-23 20:14:03,635 sqlalchemy.engine.Engine SELECT max(categories.cat_id) AS max_1 
+FROM categories
+INFO 2024-09-23 20:14:03,636 sqlalchemy.engine.Engine [generated in 0.00165s] ()
+INFO 2024-09-23 20:14:03,641 app.core.logging Generated new category ID: cat__9
+INFO 2024-09-23 20:14:03,651 sqlalchemy.engine.Engine INSERT INTO categories (cat_id, name, is_active, created_on, updated_on) VALUES ($1::VARCHAR, $2::VARCHAR, $3::BOOLEAN, now(), $4::TIMESTAMP WITHOUT TIME ZONE) RETURNING categories.id, categories.created_on
+INFO 2024-09-23 20:14:03,652 sqlalchemy.engine.Engine [generated in 0.00204s] ('cat__9', 'Sample Category 1dfddf', True, None)
+INFO 2024-09-23 20:14:03,677 sqlalchemy.engine.Engine COMMIT
+INFO 2024-09-23 20:14:03,684 sqlalchemy.engine.Engine BEGIN (implicit)
+INFO 2024-09-23 20:14:03,689 sqlalchemy.engine.Engine SELECT categories.id, categories.cat_id, categories.name, categories.is_active, categories.created_on, categories.updated_on 
+FROM categories 
+WHERE categories.id = $1::INTEGER
+INFO 2024-09-23 20:14:03,690 sqlalchemy.engine.Engine [generated in 0.00204s] (15,)
+INFO 2024-09-23 20:14:03,696 sqlalchemy.engine.Engine SELECT max(categories.cat_id) AS max_1 
+FROM categories
+INFO 2024-09-23 20:14:03,697 sqlalchemy.engine.Engine [cached since 0.06278s ago] ()
+INFO 2024-09-23 20:14:03,701 app.core.logging Generated new category ID: cat__10
+INFO 2024-09-23 20:14:03,703 sqlalchemy.engine.Engine INSERT INTO categories (cat_id, name, is_active, created_on, updated_on) VALUES ($1::VARCHAR, $2::VARCHAR, $3::BOOLEAN, now(), $4::TIMESTAMP WITHOUT TIME ZONE) RETURNING categories.id, categories.created_on
+INFO 2024-09-23 20:14:03,705 sqlalchemy.engine.Engine [cached since 0.05353s ago] ('cat__10', 'Sample Category 2sadfadfad', True, None)
+INFO 2024-09-23 20:14:03,708 sqlalchemy.engine.Engine COMMIT
+INFO 2024-09-23 20:14:03,712 sqlalchemy.engine.Engine BEGIN (implicit)
+INFO 2024-09-23 20:14:03,714 sqlalchemy.engine.Engine SELECT categories.id, categories.cat_id, categories.name, categories.is_active, categories.created_on, categories.updated_on 
+FROM categories 
+WHERE categories.id = $1::INTEGER
+INFO 2024-09-23 20:14:03,716 sqlalchemy.engine.Engine [cached since 0.02762s ago] (16,)
+INFO 2024-09-23 20:14:03,721 sqlalchemy.engine.Engine ROLLBACK
+INFO 2024-09-23 20:14:29,792 sqlalchemy.engine.Engine BEGIN (implicit)
+INFO 2024-09-23 20:14:29,797 sqlalchemy.engine.Engine SELECT subcategories.id, subcategories.category_id, subcategories.subcat_id, subcategories.name, subcategories.is_active, subcategories.created_on, subcategories.updated_on 
+FROM subcategories 
+WHERE subcategories.name IN ($1::VARCHAR, $2::VARCHAR)
+INFO 2024-09-23 20:14:29,798 sqlalchemy.engine.Engine [generated in 0.00186s] ('Sample Subcategory 1', 'Sample Subcategory 2')
+ERROR 2024-09-23 20:14:29,802 root Failed to create subcategory: (sqlalchemy.dialects.postgresql.asyncpg.ProgrammingError) <class 'asyncpg.exceptions.UndefinedTableError'>: relation "subcategories" does not exist
+[SQL: SELECT subcategories.id, subcategories.category_id, subcategories.subcat_id, subcategories.name, subcategories.is_active, subcategories.created_on, subcategories.updated_on 
+FROM subcategories 
+WHERE subcategories.name IN ($1::VARCHAR, $2::VARCHAR)]
+[parameters: ('Sample Subcategory 1', 'Sample Subcategory 2')]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\dialects\postgresql\asyncpg.py", line 514, in _prepare_and_execute
+    prepared_stmt, attributes = await adapt_connection._prepare(
+                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\dialects\postgresql\asyncpg.py", line 760, in _prepare
+    prepared_stmt = await self._connection.prepare(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\asyncpg\connection.py", line 636, in prepare
+    return await self._prepare(
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\asyncpg\connection.py", line 654, in _prepare
+    stmt = await self._get_statement(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\asyncpg\connection.py", line 433, in _get_statement
+    statement = await self._protocol.prepare(
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "asyncpg\protocol\protocol.pyx", line 166, in prepare
+asyncpg.exceptions.UndefinedTableError: relation "subcategories" does not exist
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\engine\base.py", line 1967, in _exec_single_context
+    self.dialect.do_execute(
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\engine\default.py", line 941, in do_execute
+    cursor.execute(statement, parameters)
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\dialects\postgresql\asyncpg.py", line 572, in execute
+    self._adapt_connection.await_(
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 132, in await_only
+    return current.parent.switch(awaitable)  # type: ignore[no-any-return,attr-defined] # noqa: E501
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 196, in greenlet_spawn
+    value = await result
+            ^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\dialects\postgresql\asyncpg.py", line 550, in _prepare_and_execute
+    self._handle_exception(error)
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\dialects\postgresql\asyncpg.py", line 501, in _handle_exception
+    self._adapt_connection._handle_exception(error)
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\dialects\postgresql\asyncpg.py", line 784, in _handle_exception
+    raise translated_error from error
+sqlalchemy.dialects.postgresql.asyncpg.AsyncAdapt_asyncpg_dbapi.ProgrammingError: <class 'asyncpg.exceptions.UndefinedTableError'>: relation "subcategories" does not exist
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\Projects\Fast_API\blog_app\backend\app\routers\subcategories.py", line 24, in create_subcategory_route
+    existing_subcategory = await db.execute(
+                           ^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\ext\asyncio\session.py", line 461, in execute
+    result = await greenlet_spawn(
+             ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 201, in greenlet_spawn
+    result = context.throw(*sys.exc_info())
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\orm\session.py", line 2362, in execute
+    return self._execute_internal(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\orm\session.py", line 2247, in _execute_internal
+    result: Result[Any] = compile_state_cls.orm_execute_statement(
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\orm\context.py", line 305, in orm_execute_statement
+    result = conn.execute(
+             ^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\engine\base.py", line 1418, in execute
+    return meth(
+           ^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\sql\elements.py", line 515, in _execute_on_connection
+    return connection._execute_clauseelement(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\engine\base.py", line 1640, in _execute_clauseelement
+    ret = self._execute_context(
+          ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\engine\base.py", line 1846, in _execute_context
+    return self._exec_single_context(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\engine\base.py", line 1986, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\engine\base.py", line 2355, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\engine\base.py", line 1967, in _exec_single_context
+    self.dialect.do_execute(
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\engine\default.py", line 941, in do_execute
+    cursor.execute(statement, parameters)
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\dialects\postgresql\asyncpg.py", line 572, in execute
+    self._adapt_connection.await_(
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 132, in await_only
+    return current.parent.switch(awaitable)  # type: ignore[no-any-return,attr-defined] # noqa: E501
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 196, in greenlet_spawn
+    value = await result
+            ^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\dialects\postgresql\asyncpg.py", line 550, in _prepare_and_execute
+    self._handle_exception(error)
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\dialects\postgresql\asyncpg.py", line 501, in _handle_exception
+    self._adapt_connection._handle_exception(error)
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\dialects\postgresql\asyncpg.py", line 784, in _handle_exception
+    raise translated_error from error
+sqlalchemy.exc.ProgrammingError: (sqlalchemy.dialects.postgresql.asyncpg.ProgrammingError) <class 'asyncpg.exceptions.UndefinedTableError'>: relation "subcategories" does not exist
+[SQL: SELECT subcategories.id, subcategories.category_id, subcategories.subcat_id, subcategories.name, subcategories.is_active, subcategories.created_on, subcategories.updated_on 
+FROM subcategories 
+WHERE subcategories.name IN ($1::VARCHAR, $2::VARCHAR)]
+[parameters: ('Sample Subcategory 1', 'Sample Subcategory 2')]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+INFO 2024-09-23 20:14:29,835 sqlalchemy.engine.Engine ROLLBACK
+ERROR 2024-09-23 20:14:29,838 root Unexpected error: 500: Failed to create subcategory
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\dialects\postgresql\asyncpg.py", line 514, in _prepare_and_execute
+    prepared_stmt, attributes = await adapt_connection._prepare(
+                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\dialects\postgresql\asyncpg.py", line 760, in _prepare
+    prepared_stmt = await self._connection.prepare(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\asyncpg\connection.py", line 636, in prepare
+    return await self._prepare(
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\asyncpg\connection.py", line 654, in _prepare
+    stmt = await self._get_statement(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\asyncpg\connection.py", line 433, in _get_statement
+    statement = await self._protocol.prepare(
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "asyncpg\protocol\protocol.pyx", line 166, in prepare
+asyncpg.exceptions.UndefinedTableError: relation "subcategories" does not exist
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\engine\base.py", line 1967, in _exec_single_context
+    self.dialect.do_execute(
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\engine\default.py", line 941, in do_execute
+    cursor.execute(statement, parameters)
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\dialects\postgresql\asyncpg.py", line 572, in execute
+    self._adapt_connection.await_(
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 132, in await_only
+    return current.parent.switch(awaitable)  # type: ignore[no-any-return,attr-defined] # noqa: E501
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 196, in greenlet_spawn
+    value = await result
+            ^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\dialects\postgresql\asyncpg.py", line 550, in _prepare_and_execute
+    self._handle_exception(error)
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\dialects\postgresql\asyncpg.py", line 501, in _handle_exception
+    self._adapt_connection._handle_exception(error)
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\dialects\postgresql\asyncpg.py", line 784, in _handle_exception
+    raise translated_error from error
+sqlalchemy.dialects.postgresql.asyncpg.AsyncAdapt_asyncpg_dbapi.ProgrammingError: <class 'asyncpg.exceptions.UndefinedTableError'>: relation "subcategories" does not exist
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\Projects\Fast_API\blog_app\backend\app\routers\subcategories.py", line 24, in create_subcategory_route
+    existing_subcategory = await db.execute(
+                           ^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\ext\asyncio\session.py", line 461, in execute
+    result = await greenlet_spawn(
+             ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 201, in greenlet_spawn
+    result = context.throw(*sys.exc_info())
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\orm\session.py", line 2362, in execute
+    return self._execute_internal(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\orm\session.py", line 2247, in _execute_internal
+    result: Result[Any] = compile_state_cls.orm_execute_statement(
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\orm\context.py", line 305, in orm_execute_statement
+    result = conn.execute(
+             ^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\engine\base.py", line 1418, in execute
+    return meth(
+           ^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\sql\elements.py", line 515, in _execute_on_connection
+    return connection._execute_clauseelement(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\engine\base.py", line 1640, in _execute_clauseelement
+    ret = self._execute_context(
+          ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\engine\base.py", line 1846, in _execute_context
+    return self._exec_single_context(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\engine\base.py", line 1986, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\engine\base.py", line 2355, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\engine\base.py", line 1967, in _exec_single_context
+    self.dialect.do_execute(
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\engine\default.py", line 941, in do_execute
+    cursor.execute(statement, parameters)
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\dialects\postgresql\asyncpg.py", line 572, in execute
+    self._adapt_connection.await_(
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 132, in await_only
+    return current.parent.switch(awaitable)  # type: ignore[no-any-return,attr-defined] # noqa: E501
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 196, in greenlet_spawn
+    value = await result
+            ^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\dialects\postgresql\asyncpg.py", line 550, in _prepare_and_execute
+    self._handle_exception(error)
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\dialects\postgresql\asyncpg.py", line 501, in _handle_exception
+    self._adapt_connection._handle_exception(error)
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\dialects\postgresql\asyncpg.py", line 784, in _handle_exception
+    raise translated_error from error
+sqlalchemy.exc.ProgrammingError: (sqlalchemy.dialects.postgresql.asyncpg.ProgrammingError) <class 'asyncpg.exceptions.UndefinedTableError'>: relation "subcategories" does not exist
+[SQL: SELECT subcategories.id, subcategories.category_id, subcategories.subcat_id, subcategories.name, subcategories.is_active, subcategories.created_on, subcategories.updated_on 
+FROM subcategories 
+WHERE subcategories.name IN ($1::VARCHAR, $2::VARCHAR)]
+[parameters: ('Sample Subcategory 1', 'Sample Subcategory 2')]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Projects\Fast_API\blog_app\backend\app\core\database.py", line 19, in get_db
+    yield session
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\fastapi\routing.py", line 278, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\fastapi\routing.py", line 191, in run_endpoint_function
+    return await dependant.call(**values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\Fast_API\blog_app\backend\app\routers\subcategories.py", line 41, in create_subcategory_route
+    raise HTTPException(
+fastapi.exceptions.HTTPException: 500: Failed to create subcategory
+INFO 2024-09-23 20:32:08,860 root Shutting down application...
+INFO 2024-09-23 20:32:19 root Application startup application...
+INFO 2024-09-23 20:33:58 root Shutting down application...
+INFO 2024-09-23 21:10:26 root Application startup application...
+INFO 2024-09-23 21:10:48 sqlalchemy.engine.Engine select pg_catalog.version()
+INFO 2024-09-23 21:10:48 sqlalchemy.engine.Engine [raw sql] ()
+INFO 2024-09-23 21:10:48 sqlalchemy.engine.Engine select current_schema()
+INFO 2024-09-23 21:10:48 sqlalchemy.engine.Engine [raw sql] ()
+INFO 2024-09-23 21:10:48 sqlalchemy.engine.Engine show standard_conforming_strings
+INFO 2024-09-23 21:10:48 sqlalchemy.engine.Engine [raw sql] ()
+INFO 2024-09-23 21:10:48 sqlalchemy.engine.Engine BEGIN (implicit)
+INFO 2024-09-23 21:10:48 sqlalchemy.engine.Engine SELECT categories.id, categories.cat_id, categories.name, categories.is_active, categories.created_on, categories.updated_on 
+FROM categories 
+WHERE categories.name = $1::VARCHAR
+INFO 2024-09-23 21:10:48 sqlalchemy.engine.Engine [generated in 0.00090s] ('Sample Category 1',)
+INFO 2024-09-23 21:10:48 sqlalchemy.engine.Engine SELECT categories.id, categories.cat_id, categories.name, categories.is_active, categories.created_on, categories.updated_on 
+FROM categories 
+WHERE categories.name = $1::VARCHAR
+INFO 2024-09-23 21:10:48 sqlalchemy.engine.Engine [cached since 0.007814s ago] ('Sample Category 2',)
+INFO 2024-09-23 21:10:48 sqlalchemy.engine.Engine SELECT max(categories.cat_id) AS max_1 
+FROM categories
+INFO 2024-09-23 21:10:48 sqlalchemy.engine.Engine [generated in 0.00073s] ()
+INFO 2024-09-23 21:10:48 app.core.logging Generated new category ID: cat__1
+INFO 2024-09-23 21:10:48 sqlalchemy.engine.Engine INSERT INTO categories (cat_id, name, is_active, created_on, updated_on) VALUES ($1::VARCHAR, $2::VARCHAR, $3::BOOLEAN, now(), $4::TIMESTAMP WITHOUT TIME ZONE) RETURNING categories.id, categories.created_on
+INFO 2024-09-23 21:10:48 sqlalchemy.engine.Engine [generated in 0.00091s] ('cat__1', 'Sample Category 1', True, None)
+INFO 2024-09-23 21:10:48 sqlalchemy.engine.Engine COMMIT
+INFO 2024-09-23 21:10:48 sqlalchemy.engine.Engine BEGIN (implicit)
+INFO 2024-09-23 21:10:48 sqlalchemy.engine.Engine SELECT categories.id, categories.cat_id, categories.name, categories.is_active, categories.created_on, categories.updated_on 
+FROM categories 
+WHERE categories.id = $1::INTEGER
+INFO 2024-09-23 21:10:48 sqlalchemy.engine.Engine [generated in 0.00105s] (1,)
+INFO 2024-09-23 21:10:48 sqlalchemy.engine.Engine SELECT max(categories.cat_id) AS max_1 
+FROM categories
+INFO 2024-09-23 21:10:48 sqlalchemy.engine.Engine [cached since 0.0217s ago] ()
+INFO 2024-09-23 21:10:48 app.core.logging Generated new category ID: cat__2
+INFO 2024-09-23 21:10:48 sqlalchemy.engine.Engine INSERT INTO categories (cat_id, name, is_active, created_on, updated_on) VALUES ($1::VARCHAR, $2::VARCHAR, $3::BOOLEAN, now(), $4::TIMESTAMP WITHOUT TIME ZONE) RETURNING categories.id, categories.created_on
+INFO 2024-09-23 21:10:48 sqlalchemy.engine.Engine [cached since 0.01895s ago] ('cat__2', 'Sample Category 2', True, None)
+INFO 2024-09-23 21:10:48 sqlalchemy.engine.Engine COMMIT
+INFO 2024-09-23 21:10:48 sqlalchemy.engine.Engine BEGIN (implicit)
+INFO 2024-09-23 21:10:48 sqlalchemy.engine.Engine SELECT categories.id, categories.cat_id, categories.name, categories.is_active, categories.created_on, categories.updated_on 
+FROM categories 
+WHERE categories.id = $1::INTEGER
+INFO 2024-09-23 21:10:48 sqlalchemy.engine.Engine [cached since 0.01545s ago] (2,)
+INFO 2024-09-23 21:10:48 sqlalchemy.engine.Engine ROLLBACK
+INFO 2024-09-23 21:11:06 sqlalchemy.engine.Engine BEGIN (implicit)
+INFO 2024-09-23 21:11:06 sqlalchemy.engine.Engine SELECT categories.id, categories.cat_id, categories.name, categories.is_active, categories.created_on, categories.updated_on 
+FROM categories 
+WHERE categories.name = $1::VARCHAR
+INFO 2024-09-23 21:11:06 sqlalchemy.engine.Engine [cached since 18.02s ago] ('Sample Category 1',)
+INFO 2024-09-23 21:11:06 sqlalchemy.engine.Engine SELECT categories.id, categories.cat_id, categories.name, categories.is_active, categories.created_on, categories.updated_on 
+FROM categories 
+WHERE categories.name = $1::VARCHAR
+INFO 2024-09-23 21:11:06 sqlalchemy.engine.Engine [cached since 18.02s ago] ('Sample Category 2',)
+INFO 2024-09-23 21:11:06 sqlalchemy.engine.Engine ROLLBACK
+INFO 2024-09-23 21:11:55 sqlalchemy.engine.Engine BEGIN (implicit)
+INFO 2024-09-23 21:11:55 sqlalchemy.engine.Engine SELECT categories.id, categories.cat_id, categories.name, categories.is_active, categories.created_on, categories.updated_on 
+FROM categories 
+WHERE categories.name = $1::VARCHAR
+INFO 2024-09-23 21:11:55 sqlalchemy.engine.Engine [cached since 66.86s ago] ('Sample Category 3',)
+INFO 2024-09-23 21:11:55 sqlalchemy.engine.Engine SELECT categories.id, categories.cat_id, categories.name, categories.is_active, categories.created_on, categories.updated_on 
+FROM categories 
+WHERE categories.name = $1::VARCHAR
+INFO 2024-09-23 21:11:55 sqlalchemy.engine.Engine [cached since 66.86s ago] ('Sample Category 4',)
+INFO 2024-09-23 21:11:55 sqlalchemy.engine.Engine SELECT categories.id, categories.cat_id, categories.name, categories.is_active, categories.created_on, categories.updated_on 
+FROM categories 
+WHERE categories.name = $1::VARCHAR
+INFO 2024-09-23 21:11:55 sqlalchemy.engine.Engine [cached since 66.86s ago] ('Sample Category 5',)
+INFO 2024-09-23 21:11:55 sqlalchemy.engine.Engine SELECT categories.id, categories.cat_id, categories.name, categories.is_active, categories.created_on, categories.updated_on 
+FROM categories 
+WHERE categories.name = $1::VARCHAR
+INFO 2024-09-23 21:11:55 sqlalchemy.engine.Engine [cached since 66.86s ago] ('Sample Category 6',)
+INFO 2024-09-23 21:11:55 sqlalchemy.engine.Engine SELECT max(categories.cat_id) AS max_1 
+FROM categories
+INFO 2024-09-23 21:11:55 sqlalchemy.engine.Engine [cached since 66.85s ago] ()
+INFO 2024-09-23 21:11:55 app.core.logging Generated new category ID: cat__3
+INFO 2024-09-23 21:11:55 sqlalchemy.engine.Engine INSERT INTO categories (cat_id, name, is_active, created_on, updated_on) VALUES ($1::VARCHAR, $2::VARCHAR, $3::BOOLEAN, now(), $4::TIMESTAMP WITHOUT TIME ZONE) RETURNING categories.id, categories.created_on
+INFO 2024-09-23 21:11:55 sqlalchemy.engine.Engine [cached since 66.85s ago] ('cat__3', 'Sample Category 3', True, None)
+INFO 2024-09-23 21:11:55 sqlalchemy.engine.Engine COMMIT
+INFO 2024-09-23 21:11:55 sqlalchemy.engine.Engine BEGIN (implicit)
+INFO 2024-09-23 21:11:55 sqlalchemy.engine.Engine SELECT categories.id, categories.cat_id, categories.name, categories.is_active, categories.created_on, categories.updated_on 
+FROM categories 
+WHERE categories.id = $1::INTEGER
+INFO 2024-09-23 21:11:55 sqlalchemy.engine.Engine [cached since 67.19s ago] (3,)
+INFO 2024-09-23 21:11:55 sqlalchemy.engine.Engine SELECT max(categories.cat_id) AS max_1 
+FROM categories
+INFO 2024-09-23 21:11:55 sqlalchemy.engine.Engine [cached since 67.21s ago] ()
+INFO 2024-09-23 21:11:55 app.core.logging Generated new category ID: cat__4
+INFO 2024-09-23 21:11:55 sqlalchemy.engine.Engine INSERT INTO categories (cat_id, name, is_active, created_on, updated_on) VALUES ($1::VARCHAR, $2::VARCHAR, $3::BOOLEAN, now(), $4::TIMESTAMP WITHOUT TIME ZONE) RETURNING categories.id, categories.created_on
+INFO 2024-09-23 21:11:55 sqlalchemy.engine.Engine [cached since 67.21s ago] ('cat__4', 'Sample Category 4', True, None)
+INFO 2024-09-23 21:11:55 sqlalchemy.engine.Engine COMMIT
+INFO 2024-09-23 21:11:55 sqlalchemy.engine.Engine BEGIN (implicit)
+INFO 2024-09-23 21:11:55 sqlalchemy.engine.Engine SELECT categories.id, categories.cat_id, categories.name, categories.is_active, categories.created_on, categories.updated_on 
+FROM categories 
+WHERE categories.id = $1::INTEGER
+INFO 2024-09-23 21:11:55 sqlalchemy.engine.Engine [cached since 67.21s ago] (4,)
+INFO 2024-09-23 21:11:55 sqlalchemy.engine.Engine SELECT max(categories.cat_id) AS max_1 
+FROM categories
+INFO 2024-09-23 21:11:55 sqlalchemy.engine.Engine [cached since 67.23s ago] ()
+INFO 2024-09-23 21:11:55 app.core.logging Generated new category ID: cat__5
+INFO 2024-09-23 21:11:55 sqlalchemy.engine.Engine INSERT INTO categories (cat_id, name, is_active, created_on, updated_on) VALUES ($1::VARCHAR, $2::VARCHAR, $3::BOOLEAN, now(), $4::TIMESTAMP WITHOUT TIME ZONE) RETURNING categories.id, categories.created_on
+INFO 2024-09-23 21:11:55 sqlalchemy.engine.Engine [cached since 67.22s ago] ('cat__5', 'Sample Category 5', True, None)
+INFO 2024-09-23 21:11:55 sqlalchemy.engine.Engine COMMIT
+INFO 2024-09-23 21:11:55 sqlalchemy.engine.Engine BEGIN (implicit)
+INFO 2024-09-23 21:11:55 sqlalchemy.engine.Engine SELECT categories.id, categories.cat_id, categories.name, categories.is_active, categories.created_on, categories.updated_on 
+FROM categories 
+WHERE categories.id = $1::INTEGER
+INFO 2024-09-23 21:11:55 sqlalchemy.engine.Engine [cached since 67.22s ago] (5,)
+INFO 2024-09-23 21:11:55 sqlalchemy.engine.Engine SELECT max(categories.cat_id) AS max_1 
+FROM categories
+INFO 2024-09-23 21:11:55 sqlalchemy.engine.Engine [cached since 67.24s ago] ()
+INFO 2024-09-23 21:11:55 app.core.logging Generated new category ID: cat__6
+INFO 2024-09-23 21:11:55 sqlalchemy.engine.Engine INSERT INTO categories (cat_id, name, is_active, created_on, updated_on) VALUES ($1::VARCHAR, $2::VARCHAR, $3::BOOLEAN, now(), $4::TIMESTAMP WITHOUT TIME ZONE) RETURNING categories.id, categories.created_on
+INFO 2024-09-23 21:11:55 sqlalchemy.engine.Engine [cached since 67.24s ago] ('cat__6', 'Sample Category 6', True, None)
+INFO 2024-09-23 21:11:55 sqlalchemy.engine.Engine COMMIT
+INFO 2024-09-23 21:11:55 sqlalchemy.engine.Engine BEGIN (implicit)
+INFO 2024-09-23 21:11:55 sqlalchemy.engine.Engine SELECT categories.id, categories.cat_id, categories.name, categories.is_active, categories.created_on, categories.updated_on 
+FROM categories 
+WHERE categories.id = $1::INTEGER
+INFO 2024-09-23 21:11:55 sqlalchemy.engine.Engine [cached since 67.26s ago] (6,)
+INFO 2024-09-23 21:11:55 sqlalchemy.engine.Engine ROLLBACK
+INFO 2024-09-23 21:12:41 sqlalchemy.engine.Engine BEGIN (implicit)
+INFO 2024-09-23 21:12:41 sqlalchemy.engine.Engine SELECT count(*) AS count_1 
+FROM categories
+INFO 2024-09-23 21:12:41 sqlalchemy.engine.Engine [generated in 0.00070s] ()
+INFO 2024-09-23 21:12:41 sqlalchemy.engine.Engine SELECT categories.id, categories.cat_id, categories.name, categories.is_active, categories.created_on, categories.updated_on 
+FROM categories ORDER BY categories.id DESC 
+ LIMIT $1::INTEGER OFFSET $2::INTEGER
+INFO 2024-09-23 21:12:41 sqlalchemy.engine.Engine [generated in 0.00115s] (10, 0)
+INFO 2024-09-23 21:12:41 app.core.logging All categories retrieved successfully. Total: 6
+INFO 2024-09-23 21:12:41 app.core.logging Successfully retrieved all categories.
+INFO 2024-09-23 21:12:41 sqlalchemy.engine.Engine ROLLBACK
+INFO 2024-09-23 21:12:58 sqlalchemy.engine.Engine BEGIN (implicit)
+INFO 2024-09-23 21:12:58 sqlalchemy.engine.Engine SELECT subcategories.id, subcategories.category_id, subcategories.subcat_id, subcategories.name, subcategories.is_active, subcategories.created_on, subcategories.updated_on 
+FROM subcategories 
+WHERE subcategories.name IN ($1::VARCHAR, $2::VARCHAR)
+INFO 2024-09-23 21:12:58 sqlalchemy.engine.Engine [generated in 0.00081s] ('Sample Subcategory 1', 'Sample Subcategory 2')
+INFO 2024-09-23 21:12:58 sqlalchemy.engine.Engine SELECT max(subcategories.subcat_id) AS max_1 
+FROM subcategories
+INFO 2024-09-23 21:12:58 sqlalchemy.engine.Engine [generated in 0.00055s] ()
+INFO 2024-09-23 21:12:58 sqlalchemy.engine.Engine INSERT INTO subcategories (category_id, subcat_id, name, is_active, created_on, updated_on) VALUES ($1::INTEGER, $2::VARCHAR, $3::VARCHAR, $4::BOOLEAN, now(), $5::TIMESTAMP WITHOUT TIME ZONE) RETURNING subcategories.id, subcategories.created_on
+INFO 2024-09-23 21:12:58 sqlalchemy.engine.Engine [generated in 0.00090s] (1, 'subcat__1', 'Sample Subcategory 1', True, None)
+INFO 2024-09-23 21:12:59 sqlalchemy.engine.Engine COMMIT
+INFO 2024-09-23 21:12:59 sqlalchemy.engine.Engine BEGIN (implicit)
+INFO 2024-09-23 21:12:59 sqlalchemy.engine.Engine SELECT subcategories.id, subcategories.category_id, subcategories.subcat_id, subcategories.name, subcategories.is_active, subcategories.created_on, subcategories.updated_on 
+FROM subcategories 
+WHERE subcategories.id = $1::INTEGER
+INFO 2024-09-23 21:12:59 sqlalchemy.engine.Engine [generated in 0.00117s] (1,)
+INFO 2024-09-23 21:12:59 root Subcategory created: Sample Subcategory 1
+INFO 2024-09-23 21:12:59 sqlalchemy.engine.Engine ROLLBACK
+ERROR 2024-09-23 21:12:59 root Unexpected error: Unable to serialize unknown type: <class 'app.models.subcategories.Subcategory'>
+Traceback (most recent call last):
+  File "D:\Projects\Fast_API\blog_app\backend\app\core\database.py", line 21, in get_db
+    yield session
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\fastapi\routing.py", line 296, in app
+    content = await serialize_response(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\fastapi\routing.py", line 160, in serialize_response
+    return field.serialize(
+           ^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\fastapi\_compat.py", line 149, in serialize
+    return self._type_adapter.dump_python(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\pydantic\type_adapter.py", line 142, in wrapped
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\pydantic\type_adapter.py", line 458, in dump_python
+    return self.serializer.to_python(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+pydantic_core._pydantic_core.PydanticSerializationError: Unable to serialize unknown type: <class 'app.models.subcategories.Subcategory'>
+INFO 2024-09-23 21:22:53 root Shutting down application...
+INFO 2024-09-23 21:22:56 root Application startup application...
+INFO 2024-09-23 21:22:56 root Shutting down application...
+INFO 2024-09-23 21:23:01 root Application startup application...
+INFO 2024-09-23 21:23:06 root Shutting down application...
+INFO 2024-09-23 21:23:10 root Application startup application...
+INFO 2024-09-23 21:23:15 root Shutting down application...
+INFO 2024-09-23 21:23:23 root Application startup application...
+INFO 2024-09-23 21:23:26 root Shutting down application...
+INFO 2024-09-23 21:23:33 root Application startup application...
+INFO 2024-09-23 21:24:17 root Shutting down application...
+INFO 2024-09-23 21:24:21 root Application startup application...
+INFO 2024-09-23 21:24:21 root Shutting down application...
+INFO 2024-09-23 21:24:25 root Application startup application...
+INFO 2024-09-23 21:24:25 root Shutting down application...
+INFO 2024-09-23 21:24:29 root Application startup application...
+INFO 2024-09-23 21:25:00 sqlalchemy.engine.Engine select pg_catalog.version()
+INFO 2024-09-23 21:25:00 sqlalchemy.engine.Engine [raw sql] ()
+INFO 2024-09-23 21:25:00 sqlalchemy.engine.Engine select current_schema()
+INFO 2024-09-23 21:25:00 sqlalchemy.engine.Engine [raw sql] ()
+INFO 2024-09-23 21:25:00 sqlalchemy.engine.Engine show standard_conforming_strings
+INFO 2024-09-23 21:25:00 sqlalchemy.engine.Engine [raw sql] ()
+INFO 2024-09-23 21:25:00 sqlalchemy.engine.Engine BEGIN (implicit)
+INFO 2024-09-23 21:25:00 sqlalchemy.engine.Engine SELECT subcategories.id, subcategories.category_id, subcategories.subcat_id, subcategories.name, subcategories.is_active, subcategories.created_on, subcategories.updated_on 
+FROM subcategories 
+WHERE subcategories.name IN ($1::VARCHAR, $2::VARCHAR)
+INFO 2024-09-23 21:25:00 sqlalchemy.engine.Engine [generated in 0.00119s] ('Sample Subcategory 1', 'Sample Subcategory 2')
+ERROR 2024-09-23 21:25:01 root HTTP error: Subcategory Name already exists
+INFO 2024-09-23 21:25:01 sqlalchemy.engine.Engine ROLLBACK
+ERROR 2024-09-23 21:25:01 root Unexpected error: 400: Subcategory Name already exists
+Traceback (most recent call last):
+  File "D:\Projects\Fast_API\blog_app\backend\app\core\database.py", line 21, in get_db
+    yield session
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\fastapi\routing.py", line 278, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\fastapi\routing.py", line 191, in run_endpoint_function
+    return await dependant.call(**values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\Fast_API\blog_app\backend\app\routers\subcategories.py", line 37, in create_subcategory_route
+    raise he
+  File "D:\Projects\Fast_API\blog_app\backend\app\routers\subcategories.py", line 28, in create_subcategory_route
+    raise HTTPException(status_code=400, detail="Subcategory Name already exists")
+fastapi.exceptions.HTTPException: 400: Subcategory Name already exists
+INFO 2024-09-23 21:25:17 sqlalchemy.engine.Engine BEGIN (implicit)
+INFO 2024-09-23 21:25:17 sqlalchemy.engine.Engine SELECT subcategories.id, subcategories.category_id, subcategories.subcat_id, subcategories.name, subcategories.is_active, subcategories.created_on, subcategories.updated_on 
+FROM subcategories 
+WHERE subcategories.name IN ($1::VARCHAR, $2::VARCHAR)
+INFO 2024-09-23 21:25:17 sqlalchemy.engine.Engine [cached since 16.88s ago] ('Sample Subcategory 2', 'Sample Subcategory 3')
+INFO 2024-09-23 21:25:17 sqlalchemy.engine.Engine SELECT max(subcategories.subcat_id) AS max_1 
+FROM subcategories
+INFO 2024-09-23 21:25:17 sqlalchemy.engine.Engine [generated in 0.00065s] ()
+INFO 2024-09-23 21:25:17 sqlalchemy.engine.Engine INSERT INTO subcategories (category_id, subcat_id, name, is_active, created_on, updated_on) VALUES ($1::INTEGER, $2::VARCHAR, $3::VARCHAR, $4::BOOLEAN, now(), $5::TIMESTAMP WITHOUT TIME ZONE) RETURNING subcategories.id, subcategories.created_on
+INFO 2024-09-23 21:25:17 sqlalchemy.engine.Engine [generated in 0.00116s] (1, 'subcat__2', 'Sample Subcategory 2', True, None)
+INFO 2024-09-23 21:25:17 sqlalchemy.engine.Engine COMMIT
+INFO 2024-09-23 21:25:17 sqlalchemy.engine.Engine BEGIN (implicit)
+INFO 2024-09-23 21:25:17 sqlalchemy.engine.Engine SELECT subcategories.id, subcategories.category_id, subcategories.subcat_id, subcategories.name, subcategories.is_active, subcategories.created_on, subcategories.updated_on 
+FROM subcategories 
+WHERE subcategories.id = $1::INTEGER
+INFO 2024-09-23 21:25:17 sqlalchemy.engine.Engine [generated in 0.00120s] (2,)
+INFO 2024-09-23 21:25:17 root Subcategory created: Sample Subcategory 2
+INFO 2024-09-23 21:25:17 sqlalchemy.engine.Engine ROLLBACK
+INFO 2024-09-23 21:32:20 root Shutting down application...
+INFO 2024-09-23 21:32:23 root Application startup application...
+INFO 2024-09-23 21:33:16 root Shutting down application...
+INFO 2024-09-23 21:33:20 root Application startup application...
+INFO 2024-09-23 21:33:39 sqlalchemy.engine.Engine select pg_catalog.version()
+INFO 2024-09-23 21:33:39 sqlalchemy.engine.Engine [raw sql] ()
+INFO 2024-09-23 21:33:39 sqlalchemy.engine.Engine select current_schema()
+INFO 2024-09-23 21:33:39 sqlalchemy.engine.Engine [raw sql] ()
+INFO 2024-09-23 21:33:39 sqlalchemy.engine.Engine show standard_conforming_strings
+INFO 2024-09-23 21:33:39 sqlalchemy.engine.Engine [raw sql] ()
+INFO 2024-09-23 21:33:39 sqlalchemy.engine.Engine BEGIN (implicit)
+INFO 2024-09-23 21:33:39 sqlalchemy.engine.Engine SELECT subcategories.id, subcategories.category_id, subcategories.subcat_id, subcategories.name, subcategories.is_active, subcategories.created_on, subcategories.updated_on 
+FROM subcategories 
+WHERE subcategories.name IN ($1::VARCHAR, $2::VARCHAR)
+INFO 2024-09-23 21:33:39 sqlalchemy.engine.Engine [generated in 0.00123s] ('Sample Subcategory 2', 'Sample Subcategory 3')
+ERROR 2024-09-23 21:33:39 root HTTP error: Subcategory name already exists
+INFO 2024-09-23 21:33:39 sqlalchemy.engine.Engine ROLLBACK
+ERROR 2024-09-23 21:33:39 root Unexpected error: 400: Subcategory name already exists
+Traceback (most recent call last):
+  File "D:\Projects\Fast_API\blog_app\backend\app\core\database.py", line 21, in get_db
+    yield session
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\fastapi\routing.py", line 278, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\fastapi\routing.py", line 191, in run_endpoint_function
+    return await dependant.call(**values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\Fast_API\blog_app\backend\app\routers\subcategories.py", line 43, in create_subcategory_route
+    raise he
+  File "D:\Projects\Fast_API\blog_app\backend\app\routers\subcategories.py", line 29, in create_subcategory_route
+    raise HTTPException(
+fastapi.exceptions.HTTPException: 400: Subcategory name already exists
+INFO 2024-09-23 21:35:35 sqlalchemy.engine.Engine BEGIN (implicit)
+INFO 2024-09-23 21:35:35 sqlalchemy.engine.Engine SELECT subcategories.id, subcategories.category_id, subcategories.subcat_id, subcategories.name, subcategories.is_active, subcategories.created_on, subcategories.updated_on 
+FROM subcategories 
+WHERE subcategories.name IN ($1::VARCHAR, $2::VARCHAR, $3::VARCHAR, $4::VARCHAR)
+INFO 2024-09-23 21:35:35 sqlalchemy.engine.Engine [cached since 115.4s ago] ('Sample Subcategory 3', 'Sample Subcategory 4', 'Sample Subcategory 5', 'Sample Subcategory 6')
+INFO 2024-09-23 21:35:35 sqlalchemy.engine.Engine SELECT max(subcategories.subcat_id) AS max_1 
+FROM subcategories
+INFO 2024-09-23 21:35:35 sqlalchemy.engine.Engine [generated in 0.00079s] ()
+INFO 2024-09-23 21:35:35 sqlalchemy.engine.Engine INSERT INTO subcategories (category_id, subcat_id, name, is_active, created_on, updated_on) VALUES ($1::INTEGER, $2::VARCHAR, $3::VARCHAR, $4::BOOLEAN, now(), $5::TIMESTAMP WITHOUT TIME ZONE) RETURNING subcategories.id, subcategories.created_on
+INFO 2024-09-23 21:35:35 sqlalchemy.engine.Engine [generated in 0.00103s] (1, 'subcat__3', 'Sample Subcategory 3', True, None)
+INFO 2024-09-23 21:35:35 sqlalchemy.engine.Engine SELECT max(subcategories.subcat_id) AS max_1 
+FROM subcategories
+INFO 2024-09-23 21:35:35 sqlalchemy.engine.Engine [cached since 0.01428s ago] ()
+INFO 2024-09-23 21:35:35 sqlalchemy.engine.Engine INSERT INTO subcategories (category_id, subcat_id, name, is_active, created_on, updated_on) VALUES ($1::INTEGER, $2::VARCHAR, $3::VARCHAR, $4::BOOLEAN, now(), $5::TIMESTAMP WITHOUT TIME ZONE) RETURNING subcategories.id, subcategories.created_on
+INFO 2024-09-23 21:35:35 sqlalchemy.engine.Engine [cached since 0.008842s ago] (1, 'subcat__4', 'Sample Subcategory 4', True, None)
+INFO 2024-09-23 21:35:35 sqlalchemy.engine.Engine SELECT max(subcategories.subcat_id) AS max_1 
+FROM subcategories
+INFO 2024-09-23 21:35:35 sqlalchemy.engine.Engine [cached since 0.01977s ago] ()
+INFO 2024-09-23 21:35:35 sqlalchemy.engine.Engine INSERT INTO subcategories (category_id, subcat_id, name, is_active, created_on, updated_on) VALUES ($1::INTEGER, $2::VARCHAR, $3::VARCHAR, $4::BOOLEAN, now(), $5::TIMESTAMP WITHOUT TIME ZONE) RETURNING subcategories.id, subcategories.created_on
+INFO 2024-09-23 21:35:35 sqlalchemy.engine.Engine [cached since 0.01512s ago] (1, 'subcat__5', 'Sample Subcategory 5', True, None)
+INFO 2024-09-23 21:35:35 sqlalchemy.engine.Engine SELECT max(subcategories.subcat_id) AS max_1 
+FROM subcategories
+INFO 2024-09-23 21:35:35 sqlalchemy.engine.Engine [cached since 0.02731s ago] ()
+INFO 2024-09-23 21:35:35 sqlalchemy.engine.Engine INSERT INTO subcategories (category_id, subcat_id, name, is_active, created_on, updated_on) VALUES ($1::INTEGER, $2::VARCHAR, $3::VARCHAR, $4::BOOLEAN, now(), $5::TIMESTAMP WITHOUT TIME ZONE) RETURNING subcategories.id, subcategories.created_on
+INFO 2024-09-23 21:35:35 sqlalchemy.engine.Engine [cached since 0.02202s ago] (1, 'subcat__6', 'Sample Subcategory 6', True, None)
+INFO 2024-09-23 21:35:35 sqlalchemy.engine.Engine COMMIT
+INFO 2024-09-23 21:35:35 sqlalchemy.engine.Engine BEGIN (implicit)
+INFO 2024-09-23 21:35:35 sqlalchemy.engine.Engine SELECT subcategories.id, subcategories.category_id, subcategories.subcat_id, subcategories.name, subcategories.is_active, subcategories.created_on, subcategories.updated_on 
+FROM subcategories 
+WHERE subcategories.id = $1::INTEGER
+INFO 2024-09-23 21:35:35 sqlalchemy.engine.Engine [generated in 0.00117s] (3,)
+INFO 2024-09-23 21:35:35 sqlalchemy.engine.Engine SELECT subcategories.id, subcategories.category_id, subcategories.subcat_id, subcategories.name, subcategories.is_active, subcategories.created_on, subcategories.updated_on 
+FROM subcategories 
+WHERE subcategories.id = $1::INTEGER
+INFO 2024-09-23 21:35:35 sqlalchemy.engine.Engine [cached since 0.005349s ago] (4,)
+INFO 2024-09-23 21:35:35 sqlalchemy.engine.Engine SELECT subcategories.id, subcategories.category_id, subcategories.subcat_id, subcategories.name, subcategories.is_active, subcategories.created_on, subcategories.updated_on 
+FROM subcategories 
+WHERE subcategories.id = $1::INTEGER
+INFO 2024-09-23 21:35:35 sqlalchemy.engine.Engine [cached since 0.007758s ago] (5,)
+INFO 2024-09-23 21:35:35 sqlalchemy.engine.Engine SELECT subcategories.id, subcategories.category_id, subcategories.subcat_id, subcategories.name, subcategories.is_active, subcategories.created_on, subcategories.updated_on 
+FROM subcategories 
+WHERE subcategories.id = $1::INTEGER
+INFO 2024-09-23 21:35:35 sqlalchemy.engine.Engine [cached since 0.01016s ago] (6,)
+INFO 2024-09-23 21:35:35 root 4 subcategories created.
+INFO 2024-09-23 21:35:35 sqlalchemy.engine.Engine ROLLBACK
+INFO 2024-09-23 21:35:53 sqlalchemy.engine.Engine BEGIN (implicit)
+INFO 2024-09-23 21:35:53 sqlalchemy.engine.Engine SELECT subcategories.id, subcategories.category_id, subcategories.subcat_id, subcategories.name, subcategories.is_active, subcategories.created_on, subcategories.updated_on 
+FROM subcategories 
+WHERE subcategories.name IN ($1::VARCHAR, $2::VARCHAR, $3::VARCHAR, $4::VARCHAR)
+INFO 2024-09-23 21:35:53 sqlalchemy.engine.Engine [cached since 134s ago] ('Sample Subcategory 3', 'Sample Subcategory 4', 'Sample Subcategory 5', 'Sample Subcategory 6')
+ERROR 2024-09-23 21:35:53 root HTTP error: Subcategory name already exists
+INFO 2024-09-23 21:35:53 sqlalchemy.engine.Engine ROLLBACK
+ERROR 2024-09-23 21:35:53 root Unexpected error: 400: Subcategory name already exists
+Traceback (most recent call last):
+  File "D:\Projects\Fast_API\blog_app\backend\app\core\database.py", line 21, in get_db
+    yield session
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\fastapi\routing.py", line 278, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\fastapi\routing.py", line 191, in run_endpoint_function
+    return await dependant.call(**values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\Fast_API\blog_app\backend\app\routers\subcategories.py", line 43, in create_subcategory_route
+    raise he
+  File "D:\Projects\Fast_API\blog_app\backend\app\routers\subcategories.py", line 29, in create_subcategory_route
+    raise HTTPException(
+fastapi.exceptions.HTTPException: 400: Subcategory name already exists
+INFO 2024-09-23 21:37:03 root Shutting down application...
+INFO 2024-09-23 21:37:06 root Application startup application...
+INFO 2024-09-23 21:37:13 root Shutting down application...
+INFO 2024-09-23 21:37:17 root Application startup application...
+INFO 2024-09-23 21:45:42 root Shutting down application...
+INFO 2024-09-23 21:45:47 root Application startup application...
+INFO 2024-09-23 21:46:12 root Shutting down application...
+INFO 2024-09-23 21:46:16 root Application startup application...
+INFO 2024-09-23 21:46:18 root Shutting down application...
+INFO 2024-09-23 21:46:22 root Application startup application...
+INFO 2024-09-23 21:46:26 root Shutting down application...
+INFO 2024-09-23 21:46:29 root Application startup application...
+INFO 2024-09-23 21:47:30 root Shutting down application...
+INFO 2024-09-23 21:47:33 root Application startup application...
+INFO 2024-09-23 21:47:35 root Shutting down application...
+INFO 2024-09-23 21:47:38 root Application startup application...
+INFO 2024-09-23 21:48:26 root Shutting down application...
+INFO 2024-09-23 21:48:28 root Application startup application...
+INFO 2024-09-23 21:48:42 root Shutting down application...
+INFO 2024-09-23 21:48:45 root Application startup application...
+INFO 2024-09-23 21:49:04 sqlalchemy.engine.Engine select pg_catalog.version()
+INFO 2024-09-23 21:49:04 sqlalchemy.engine.Engine [raw sql] ()
+INFO 2024-09-23 21:49:04 sqlalchemy.engine.Engine select current_schema()
+INFO 2024-09-23 21:49:04 sqlalchemy.engine.Engine [raw sql] ()
+INFO 2024-09-23 21:49:04 sqlalchemy.engine.Engine show standard_conforming_strings
+INFO 2024-09-23 21:49:04 sqlalchemy.engine.Engine [raw sql] ()
+INFO 2024-09-23 21:49:04 sqlalchemy.engine.Engine BEGIN (implicit)
+INFO 2024-09-23 21:49:04 sqlalchemy.engine.Engine SELECT subcategories.name 
+FROM subcategories 
+WHERE subcategories.name IN ($1::VARCHAR, $2::VARCHAR, $3::VARCHAR, $4::VARCHAR)
+INFO 2024-09-23 21:49:04 sqlalchemy.engine.Engine [generated in 0.00106s] ('Sample Subcategory 3', 'Sample Subcategory 4', 'Sample Subcategory 5', 'Sample Subcategory 6')
+ERROR 2024-09-23 21:49:04 root HTTP error: Subcategory names already exist: Sample Subcategory 3, Sample Subcategory 4, Sample Subcategory 5, Sample Subcategory 6
+INFO 2024-09-23 21:49:04 sqlalchemy.engine.Engine ROLLBACK
+ERROR 2024-09-23 21:49:04 root Unexpected error: 400: Subcategory names already exist: Sample Subcategory 3, Sample Subcategory 4, Sample Subcategory 5, Sample Subcategory 6
+Traceback (most recent call last):
+  File "D:\Projects\Fast_API\blog_app\backend\app\core\database.py", line 21, in get_db
+    yield session
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\fastapi\routing.py", line 278, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\fastapi\routing.py", line 191, in run_endpoint_function
+    return await dependant.call(**values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\Fast_API\blog_app\backend\app\routers\subcategories.py", line 41, in create_subcategory_route
+    raise he
+  File "D:\Projects\Fast_API\blog_app\backend\app\routers\subcategories.py", line 27, in create_subcategory_route
+    raise HTTPException(
+fastapi.exceptions.HTTPException: 400: Subcategory names already exist: Sample Subcategory 3, Sample Subcategory 4, Sample Subcategory 5, Sample Subcategory 6
+INFO 2024-09-23 21:58:18 sqlalchemy.engine.Engine BEGIN (implicit)
+INFO 2024-09-23 21:58:18 sqlalchemy.engine.Engine SELECT subcategories.id AS subcategories_id, subcategories.category_id AS subcategories_category_id, subcategories.subcat_id AS subcategories_subcat_id, subcategories.name AS subcategories_name, subcategories.is_active AS subcategories_is_active, subcategories.created_on AS subcategories_created_on, subcategories.updated_on AS subcategories_updated_on 
+FROM subcategories 
+WHERE subcategories.id = $1::INTEGER
+INFO 2024-09-23 21:58:18 sqlalchemy.engine.Engine [generated in 0.00098s] (1,)
+INFO 2024-09-23 21:58:18 root Subcategory retrieved: Sample Subcategory 1
+INFO 2024-09-23 21:58:18 sqlalchemy.engine.Engine ROLLBACK
+ERROR 2024-09-23 21:58:18 root Unexpected error: Unable to serialize unknown type: <class 'app.models.subcategories.Subcategory'>
+Traceback (most recent call last):
+  File "D:\Projects\Fast_API\blog_app\backend\app\core\database.py", line 21, in get_db
+    yield session
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\fastapi\routing.py", line 296, in app
+    content = await serialize_response(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\fastapi\routing.py", line 160, in serialize_response
+    return field.serialize(
+           ^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\fastapi\_compat.py", line 149, in serialize
+    return self._type_adapter.dump_python(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\pydantic\type_adapter.py", line 142, in wrapped
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\pydantic\type_adapter.py", line 458, in dump_python
+    return self.serializer.to_python(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+pydantic_core._pydantic_core.PydanticSerializationError: Unable to serialize unknown type: <class 'app.models.subcategories.Subcategory'>
+INFO 2024-09-23 22:03:06 root Shutting down application...
+INFO 2024-09-23 22:03:13 root Application startup application...
+INFO 2024-09-23 22:14:18 root Shutting down application...
+INFO 2024-09-23 22:15:50 root Application startup application...
+INFO 2024-09-23 22:15:55 root Shutting down application...
+INFO 2024-09-23 22:16:00 root Application startup application...
+INFO 2024-09-23 22:16:11 root Shutting down application...
+INFO 2024-09-23 22:16:27 root Application startup application...
+INFO 2024-09-23 22:21:23 root Shutting down application...
+INFO 2024-09-23 22:28:17 root Application startup application...
+INFO 2024-09-23 22:28:50 root Shutting down application...
+INFO 2024-09-23 22:28:55 root Application startup application...
+INFO 2024-09-23 22:29:38 root Shutting down application...
+INFO 2024-09-23 22:29:43 root Application startup application...
+INFO 2024-09-23 22:30:19 root Shutting down application...
+INFO 2024-09-23 22:30:25 root Application startup application...
+INFO 2024-09-23 22:30:46 root Shutting down application...
+INFO 2024-09-23 22:30:53 root Application startup application...
+INFO 2024-09-23 22:31:40 sqlalchemy.engine.Engine select pg_catalog.version()
+INFO 2024-09-23 22:31:40 sqlalchemy.engine.Engine [raw sql] ()
+INFO 2024-09-23 22:31:40 sqlalchemy.engine.Engine select current_schema()
+INFO 2024-09-23 22:31:40 sqlalchemy.engine.Engine [raw sql] ()
+INFO 2024-09-23 22:31:40 sqlalchemy.engine.Engine show standard_conforming_strings
+INFO 2024-09-23 22:31:40 sqlalchemy.engine.Engine [raw sql] ()
+INFO 2024-09-23 22:31:40 sqlalchemy.engine.Engine BEGIN (implicit)
+INFO 2024-09-23 22:31:40 sqlalchemy.engine.Engine SELECT subcategories.id, subcategories.category_id, subcategories.subcat_id, subcategories.name, subcategories.is_active, subcategories.created_on, subcategories.updated_on 
+FROM subcategories ORDER BY subcategories.id DESC 
+ LIMIT $1::INTEGER OFFSET $2::INTEGER
+INFO 2024-09-23 22:31:40 sqlalchemy.engine.Engine [generated in 0.00329s] (3, 0)
+ERROR 2024-09-23 22:31:40 root Failed to fetch subcategories: 'method' object is not iterable
+INFO 2024-09-23 22:31:40 sqlalchemy.engine.Engine ROLLBACK
+ERROR 2024-09-23 22:31:40 root Unexpected error: 500: Failed to fetch subcategories
+Traceback (most recent call last):
+  File "D:\Projects\Fast_API\blog_app\backend\app\routers\subcategories.py", line 55, in get_subcategories_route
+    "data": [SubcategoryModel.from_orm(subcat) for subcat in subcategories]
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: 'method' object is not iterable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Projects\Fast_API\blog_app\backend\app\core\database.py", line 21, in get_db
+    yield session
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\fastapi\routing.py", line 278, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\fastapi\routing.py", line 191, in run_endpoint_function
+    return await dependant.call(**values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\Fast_API\blog_app\backend\app\routers\subcategories.py", line 60, in get_subcategories_route
+    raise HTTPException(
+fastapi.exceptions.HTTPException: 500: Failed to fetch subcategories
+INFO 2024-09-23 22:37:19 root Shutting down application...
+INFO 2024-09-23 22:37:24 root Application startup application...
+INFO 2024-09-23 22:37:24 root Shutting down application...
+INFO 2024-09-23 22:37:29 root Application startup application...
+INFO 2024-09-23 22:37:35 root Shutting down application...
+INFO 2024-09-23 22:37:41 root Application startup application...
+INFO 2024-09-23 22:37:41 root Shutting down application...
+INFO 2024-09-23 22:37:46 root Application startup application...
+INFO 2024-09-23 22:38:08 root Shutting down application...
+INFO 2024-09-23 22:38:13 root Application startup application...
+INFO 2024-09-23 22:38:16 root Shutting down application...
+INFO 2024-09-23 22:38:21 root Application startup application...
+INFO 2024-09-23 22:38:21 root Shutting down application...
+INFO 2024-09-23 22:38:26 root Application startup application...
+INFO 2024-09-23 22:38:50 sqlalchemy.engine.Engine select pg_catalog.version()
+INFO 2024-09-23 22:38:50 sqlalchemy.engine.Engine [raw sql] ()
+INFO 2024-09-23 22:38:50 sqlalchemy.engine.Engine select current_schema()
+INFO 2024-09-23 22:38:50 sqlalchemy.engine.Engine [raw sql] ()
+INFO 2024-09-23 22:38:50 sqlalchemy.engine.Engine show standard_conforming_strings
+INFO 2024-09-23 22:38:50 sqlalchemy.engine.Engine [raw sql] ()
+INFO 2024-09-23 22:38:50 sqlalchemy.engine.Engine BEGIN (implicit)
+INFO 2024-09-23 22:38:50 sqlalchemy.engine.Engine SELECT subcategories.id, subcategories.category_id, subcategories.subcat_id, subcategories.name, subcategories.is_active, subcategories.created_on, subcategories.updated_on 
+FROM subcategories ORDER BY subcategories.id DESC 
+ LIMIT $1::INTEGER OFFSET $2::INTEGER
+INFO 2024-09-23 22:38:50 sqlalchemy.engine.Engine [generated in 0.00175s] (3, 0)
+INFO 2024-09-23 22:38:50 root Successfully retrieved all categories.
+INFO 2024-09-23 22:38:50 sqlalchemy.engine.Engine ROLLBACK
+INFO 2024-09-23 22:42:23 root Shutting down application...
+INFO 2024-09-23 22:42:28 root Application startup application...
+INFO 2024-09-23 22:42:30 root Shutting down application...
+INFO 2024-09-23 22:42:36 root Application startup application...
+INFO 2024-09-23 22:42:36 root Shutting down application...
+INFO 2024-09-23 22:42:41 root Application startup application...
+INFO 2024-09-23 22:42:41 root Shutting down application...
+INFO 2024-09-23 22:42:54 root Application startup application...
+INFO 2024-09-23 22:42:54 root Shutting down application...
+INFO 2024-09-23 22:43:00 root Application startup application...
+INFO 2024-09-23 22:43:00 root Shutting down application...
+INFO 2024-09-23 22:43:11 root Application startup application...
+INFO 2024-09-23 22:43:11 root Shutting down application...
+INFO 2024-09-23 22:43:17 root Application startup application...
+INFO 2024-09-23 22:43:17 root Shutting down application...
+INFO 2024-09-23 22:43:23 root Application startup application...
+INFO 2024-09-23 22:43:45 root Shutting down application...
+INFO 2024-09-23 22:45:55 root Application startup application...
+INFO 2024-09-23 22:46:31 sqlalchemy.engine.Engine select pg_catalog.version()
+INFO 2024-09-23 22:46:31 sqlalchemy.engine.Engine [raw sql] ()
+INFO 2024-09-23 22:46:31 sqlalchemy.engine.Engine select current_schema()
+INFO 2024-09-23 22:46:31 sqlalchemy.engine.Engine [raw sql] ()
+INFO 2024-09-23 22:46:31 sqlalchemy.engine.Engine show standard_conforming_strings
+INFO 2024-09-23 22:46:31 sqlalchemy.engine.Engine [raw sql] ()
+INFO 2024-09-23 22:46:31 sqlalchemy.engine.Engine BEGIN (implicit)
+INFO 2024-09-23 22:46:31 sqlalchemy.engine.Engine SELECT subcategories.id, subcategories.category_id, subcategories.subcat_id, subcategories.name, subcategories.is_active, subcategories.created_on, subcategories.updated_on 
+FROM subcategories ORDER BY subcategories.id DESC 
+ LIMIT $1::INTEGER OFFSET $2::INTEGER
+INFO 2024-09-23 22:46:31 sqlalchemy.engine.Engine [generated in 0.00158s] (3, 0)
+INFO 2024-09-23 22:46:31 sqlalchemy.engine.Engine SELECT count(subcategories.id) AS count_1 
+FROM subcategories
+INFO 2024-09-23 22:46:31 sqlalchemy.engine.Engine [generated in 0.00136s] ()
+INFO 2024-09-23 22:46:31 root Successfully retrieved all categories.
+ERROR 2024-09-23 22:46:31 root Failed to fetch subcategories: 1 validation error for SubcategoryModel
+  Input should be a valid dictionary or object to extract fields from [type=model_attributes_type, input_value=[<Subcategory Sample Subc...-09-23 21:35:35.332145>], input_type=list]
+    For further information visit https://errors.pydantic.dev/2.8/v/model_attributes_type
+INFO 2024-09-23 22:46:31 sqlalchemy.engine.Engine ROLLBACK
+ERROR 2024-09-23 22:46:31 root Unexpected error: 500: Failed to fetch subcategories
+Traceback (most recent call last):
+  File "D:\Projects\Fast_API\blog_app\backend\app\routers\subcategories.py", line 60, in get_subcategories_route
+    "data": [SubcategoryModel.from_orm(subcat) for subcat in subcategories]
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\pydantic\main.py", line 1237, in from_orm
+    return cls.model_validate(obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\pydantic\main.py", line 568, in model_validate
+    return cls.__pydantic_validator__.validate_python(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+pydantic_core._pydantic_core.ValidationError: 1 validation error for SubcategoryModel
+  Input should be a valid dictionary or object to extract fields from [type=model_attributes_type, input_value=[<Subcategory Sample Subc...-09-23 21:35:35.332145>], input_type=list]
+    For further information visit https://errors.pydantic.dev/2.8/v/model_attributes_type
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Projects\Fast_API\blog_app\backend\app\core\database.py", line 21, in get_db
+    yield session
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\fastapi\routing.py", line 278, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\fastapi\routing.py", line 191, in run_endpoint_function
+    return await dependant.call(**values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\Fast_API\blog_app\backend\app\routers\subcategories.py", line 65, in get_subcategories_route
+    raise HTTPException(
+fastapi.exceptions.HTTPException: 500: Failed to fetch subcategories
+INFO 2024-09-23 22:47:13 root Shutting down application...
+INFO 2024-09-23 22:47:20 root Application startup application...
+INFO 2024-09-23 22:47:20 root Shutting down application...
+INFO 2024-09-23 22:47:24 root Application startup application...
+INFO 2024-09-23 22:47:38 root Shutting down application...
+INFO 2024-09-23 22:47:43 root Application startup application...
+INFO 2024-09-23 22:47:44 root Shutting down application...
+INFO 2024-09-23 22:47:49 root Application startup application...
+INFO 2024-09-23 22:48:00 sqlalchemy.engine.Engine select pg_catalog.version()
+INFO 2024-09-23 22:48:00 sqlalchemy.engine.Engine [raw sql] ()
+INFO 2024-09-23 22:48:00 sqlalchemy.engine.Engine select current_schema()
+INFO 2024-09-23 22:48:00 sqlalchemy.engine.Engine [raw sql] ()
+INFO 2024-09-23 22:48:00 sqlalchemy.engine.Engine show standard_conforming_strings
+INFO 2024-09-23 22:48:00 sqlalchemy.engine.Engine [raw sql] ()
+INFO 2024-09-23 22:48:00 sqlalchemy.engine.Engine BEGIN (implicit)
+INFO 2024-09-23 22:48:00 sqlalchemy.engine.Engine SELECT subcategories.id, subcategories.category_id, subcategories.subcat_id, subcategories.name, subcategories.is_active, subcategories.created_on, subcategories.updated_on 
+FROM subcategories ORDER BY subcategories.id DESC 
+ LIMIT $1::INTEGER OFFSET $2::INTEGER
+INFO 2024-09-23 22:48:00 sqlalchemy.engine.Engine [generated in 0.00152s] (3, 0)
+INFO 2024-09-23 22:48:00 sqlalchemy.engine.Engine SELECT count(subcategories.id) AS count_1 
+FROM subcategories
+INFO 2024-09-23 22:48:00 sqlalchemy.engine.Engine [generated in 0.00139s] ()
+INFO 2024-09-23 22:48:00 root Successfully retrieved all categories.
+INFO 2024-09-23 22:48:00 sqlalchemy.engine.Engine ROLLBACK
+INFO 2024-09-23 22:48:18 sqlalchemy.engine.Engine BEGIN (implicit)
+INFO 2024-09-23 22:48:18 sqlalchemy.engine.Engine SELECT subcategories.id, subcategories.category_id, subcategories.subcat_id, subcategories.name, subcategories.is_active, subcategories.created_on, subcategories.updated_on 
+FROM subcategories ORDER BY subcategories.id DESC 
+ LIMIT $1::INTEGER OFFSET $2::INTEGER
+INFO 2024-09-23 22:48:18 sqlalchemy.engine.Engine [cached since 17.6s ago] (13, 0)
+INFO 2024-09-23 22:48:18 sqlalchemy.engine.Engine SELECT count(subcategories.id) AS count_1 
+FROM subcategories
+INFO 2024-09-23 22:48:18 sqlalchemy.engine.Engine [cached since 17.59s ago] ()
+INFO 2024-09-23 22:48:18 root Successfully retrieved all categories.
+INFO 2024-09-23 22:48:18 sqlalchemy.engine.Engine ROLLBACK
+INFO 2024-09-23 22:48:59 root Shutting down application...
+INFO 2024-09-23 22:49:02 root Application startup application...
+INFO 2024-09-23 22:49:24 root Shutting down application...
+INFO 2024-09-23 22:49:27 root Application startup application...
+INFO 2024-09-23 22:49:34 root Shutting down application...
+INFO 2024-09-23 22:49:51 root Application startup application...
+INFO 2024-09-23 22:50:11 root Shutting down application...
+INFO 2024-09-23 22:50:13 root Application startup application...
+INFO 2024-09-23 22:50:30 root Shutting down application...
+INFO 2024-09-23 22:50:34 root Application startup application...
+INFO 2024-09-23 22:50:41 sqlalchemy.engine.Engine select pg_catalog.version()
+INFO 2024-09-23 22:50:41 sqlalchemy.engine.Engine [raw sql] ()
+INFO 2024-09-23 22:50:41 sqlalchemy.engine.Engine select current_schema()
+INFO 2024-09-23 22:50:41 sqlalchemy.engine.Engine [raw sql] ()
+INFO 2024-09-23 22:50:41 sqlalchemy.engine.Engine show standard_conforming_strings
+INFO 2024-09-23 22:50:41 sqlalchemy.engine.Engine [raw sql] ()
+INFO 2024-09-23 22:50:41 sqlalchemy.engine.Engine BEGIN (implicit)
+INFO 2024-09-23 22:50:41 sqlalchemy.engine.Engine SELECT subcategories.id AS subcategories_id, subcategories.category_id AS subcategories_category_id, subcategories.subcat_id AS subcategories_subcat_id, subcategories.name AS subcategories_name, subcategories.is_active AS subcategories_is_active, subcategories.created_on AS subcategories_created_on, subcategories.updated_on AS subcategories_updated_on 
+FROM subcategories 
+WHERE subcategories.id = $1::INTEGER
+INFO 2024-09-23 22:50:41 sqlalchemy.engine.Engine [generated in 0.00122s] (1,)
+INFO 2024-09-23 22:50:41 root Subcategory retrieved: Sample Subcategory 1
+INFO 2024-09-23 22:50:41 sqlalchemy.engine.Engine ROLLBACK
+ERROR 2024-09-23 22:50:41 root Unexpected error: Unable to serialize unknown type: <class 'app.models.subcategories.Subcategory'>
+Traceback (most recent call last):
+  File "D:\Projects\Fast_API\blog_app\backend\app\core\database.py", line 21, in get_db
+    yield session
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\fastapi\routing.py", line 296, in app
+    content = await serialize_response(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\fastapi\routing.py", line 160, in serialize_response
+    return field.serialize(
+           ^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\fastapi\_compat.py", line 149, in serialize
+    return self._type_adapter.dump_python(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\pydantic\type_adapter.py", line 142, in wrapped
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\pydantic\type_adapter.py", line 458, in dump_python
+    return self.serializer.to_python(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+pydantic_core._pydantic_core.PydanticSerializationError: Unable to serialize unknown type: <class 'app.models.subcategories.Subcategory'>
+INFO 2024-09-23 22:52:23 root Shutting down application...
+INFO 2024-09-23 22:52:26 root Application startup application...
+INFO 2024-09-23 22:52:32 root Shutting down application...
+INFO 2024-09-23 22:52:35 root Application startup application...
+INFO 2024-09-23 22:52:41 root Shutting down application...
+INFO 2024-09-23 22:52:44 root Application startup application...
+INFO 2024-09-23 22:53:32 sqlalchemy.engine.Engine select pg_catalog.version()
+INFO 2024-09-23 22:53:32 sqlalchemy.engine.Engine [raw sql] ()
+INFO 2024-09-23 22:53:32 sqlalchemy.engine.Engine select current_schema()
+INFO 2024-09-23 22:53:32 sqlalchemy.engine.Engine [raw sql] ()
+INFO 2024-09-23 22:53:32 sqlalchemy.engine.Engine show standard_conforming_strings
+INFO 2024-09-23 22:53:32 sqlalchemy.engine.Engine [raw sql] ()
+INFO 2024-09-23 22:53:32 sqlalchemy.engine.Engine BEGIN (implicit)
+INFO 2024-09-23 22:53:32 sqlalchemy.engine.Engine SELECT subcategories.id AS subcategories_id, subcategories.category_id AS subcategories_category_id, subcategories.subcat_id AS subcategories_subcat_id, subcategories.name AS subcategories_name, subcategories.is_active AS subcategories_is_active, subcategories.created_on AS subcategories_created_on, subcategories.updated_on AS subcategories_updated_on 
+FROM subcategories 
+WHERE subcategories.id = $1::INTEGER
+INFO 2024-09-23 22:53:32 sqlalchemy.engine.Engine [generated in 0.00140s] (1,)
+INFO 2024-09-23 22:53:32 root Subcategory retrieved: Sample Subcategory 1
+INFO 2024-09-23 22:53:32 sqlalchemy.engine.Engine ROLLBACK
+INFO 2024-09-23 22:53:48 sqlalchemy.engine.Engine BEGIN (implicit)
+INFO 2024-09-23 22:53:48 sqlalchemy.engine.Engine SELECT subcategories.id AS subcategories_id, subcategories.category_id AS subcategories_category_id, subcategories.subcat_id AS subcategories_subcat_id, subcategories.name AS subcategories_name, subcategories.is_active AS subcategories_is_active, subcategories.created_on AS subcategories_created_on, subcategories.updated_on AS subcategories_updated_on 
+FROM subcategories 
+WHERE subcategories.id = $1::INTEGER
+INFO 2024-09-23 22:53:48 sqlalchemy.engine.Engine [cached since 16.44s ago] (3,)
+INFO 2024-09-23 22:53:48 root Subcategory retrieved: Sample Subcategory 3
+INFO 2024-09-23 22:53:48 sqlalchemy.engine.Engine ROLLBACK
+INFO 2024-09-23 22:54:29 root Shutting down application...
+INFO 2024-09-23 22:54:32 root Application startup application...
+INFO 2024-09-23 22:55:33 root Shutting down application...
+INFO 2024-09-23 22:56:08 root Application startup application...
+INFO 2024-09-23 22:56:08 root Shutting down application...
+INFO 2024-09-23 22:56:11 root Application startup application...
+INFO 2024-09-23 22:57:05 root Shutting down application...
+INFO 2024-09-23 22:57:08 root Application startup application...
+INFO 2024-09-23 22:57:14 sqlalchemy.engine.Engine select pg_catalog.version()
+INFO 2024-09-23 22:57:14 sqlalchemy.engine.Engine [raw sql] ()
+INFO 2024-09-23 22:57:14 sqlalchemy.engine.Engine select current_schema()
+INFO 2024-09-23 22:57:14 sqlalchemy.engine.Engine [raw sql] ()
+INFO 2024-09-23 22:57:14 sqlalchemy.engine.Engine show standard_conforming_strings
+INFO 2024-09-23 22:57:14 sqlalchemy.engine.Engine [raw sql] ()
+INFO 2024-09-23 22:57:14 sqlalchemy.engine.Engine BEGIN (implicit)
+INFO 2024-09-23 22:57:14 sqlalchemy.engine.Engine SELECT subcategories.id AS subcategories_id, subcategories.category_id AS subcategories_category_id, subcategories.subcat_id AS subcategories_subcat_id, subcategories.name AS subcategories_name, subcategories.is_active AS subcategories_is_active, subcategories.created_on AS subcategories_created_on, subcategories.updated_on AS subcategories_updated_on 
+FROM subcategories 
+WHERE subcategories.id = $1::INTEGER
+INFO 2024-09-23 22:57:14 sqlalchemy.engine.Engine [generated in 0.00101s] (3,)
+INFO 2024-09-23 22:57:14 root Subcategory retrieved: Sample Subcategory 3
+INFO 2024-09-23 22:57:14 sqlalchemy.engine.Engine ROLLBACK
+ERROR 2024-09-23 23:02:13 root Failed to update subcategory: name 'get_subcategory' is not defined
+Traceback (most recent call last):
+  File "D:\Projects\Fast_API\blog_app\backend\app\routers\subcategories.py", line 96, in update_subcategory_route
+    updated_subcategory = await update_subcategory(db, subcategory_id, subcategory_data)
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\Fast_API\blog_app\backend\app\services\subcategories.py", line 60, in update_subcategory
+    subcategory = await get_subcategory(db, subcategory_id)
+                        ^^^^^^^^^^^^^^^
+NameError: name 'get_subcategory' is not defined. Did you mean: 'create_subcategory'?
+ERROR 2024-09-23 23:02:13 root Unexpected error: 500: Failed to update subcategory
+Traceback (most recent call last):
+  File "D:\Projects\Fast_API\blog_app\backend\app\routers\subcategories.py", line 96, in update_subcategory_route
+    updated_subcategory = await update_subcategory(db, subcategory_id, subcategory_data)
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\Fast_API\blog_app\backend\app\services\subcategories.py", line 60, in update_subcategory
+    subcategory = await get_subcategory(db, subcategory_id)
+                        ^^^^^^^^^^^^^^^
+NameError: name 'get_subcategory' is not defined. Did you mean: 'create_subcategory'?
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Projects\Fast_API\blog_app\backend\app\core\database.py", line 21, in get_db
+    yield session
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\fastapi\routing.py", line 278, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\fastapi\routing.py", line 191, in run_endpoint_function
+    return await dependant.call(**values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\Fast_API\blog_app\backend\app\routers\subcategories.py", line 108, in update_subcategory_route
+    raise HTTPException(
+fastapi.exceptions.HTTPException: 500: Failed to update subcategory
+INFO 2024-09-23 23:03:43 root Shutting down application...
+INFO 2024-09-23 23:03:46 root Application startup application...
+INFO 2024-09-23 23:03:59 root Shutting down application...
+INFO 2024-09-23 23:04:03 root Application startup application...
+ERROR 2024-09-23 23:04:14 root Failed to update subcategory: name 'get_subcategory' is not defined
+Traceback (most recent call last):
+  File "D:\Projects\Fast_API\blog_app\backend\app\routers\subcategories.py", line 95, in update_subcategory_route
+    updated_subcategory = await update_subcategory(db, subcategory_id, subcategory_data)
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\Fast_API\blog_app\backend\app\services\subcategories.py", line 60, in update_subcategory
+    subcategory = await get_subcategory(db, subcategory_id)
+                        ^^^^^^^^^^^^^^^
+NameError: name 'get_subcategory' is not defined. Did you mean: 'create_subcategory'?
+ERROR 2024-09-23 23:04:14 root Unexpected error: 500: Failed to update subcategory
+Traceback (most recent call last):
+  File "D:\Projects\Fast_API\blog_app\backend\app\routers\subcategories.py", line 95, in update_subcategory_route
+    updated_subcategory = await update_subcategory(db, subcategory_id, subcategory_data)
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\Fast_API\blog_app\backend\app\services\subcategories.py", line 60, in update_subcategory
+    subcategory = await get_subcategory(db, subcategory_id)
+                        ^^^^^^^^^^^^^^^
+NameError: name 'get_subcategory' is not defined. Did you mean: 'create_subcategory'?
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Projects\Fast_API\blog_app\backend\app\core\database.py", line 21, in get_db
+    yield session
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\fastapi\routing.py", line 278, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\fastapi\routing.py", line 191, in run_endpoint_function
+    return await dependant.call(**values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\Fast_API\blog_app\backend\app\routers\subcategories.py", line 111, in update_subcategory_route
+    raise HTTPException(
+fastapi.exceptions.HTTPException: 500: Failed to update subcategory
+INFO 2024-09-23 23:04:41 root Shutting down application...
+INFO 2024-09-23 23:04:44 root Application startup application...
+INFO 2024-09-23 23:04:54 sqlalchemy.engine.Engine select pg_catalog.version()
+INFO 2024-09-23 23:04:54 sqlalchemy.engine.Engine [raw sql] ()
+INFO 2024-09-23 23:04:54 sqlalchemy.engine.Engine select current_schema()
+INFO 2024-09-23 23:04:54 sqlalchemy.engine.Engine [raw sql] ()
+INFO 2024-09-23 23:04:54 sqlalchemy.engine.Engine show standard_conforming_strings
+INFO 2024-09-23 23:04:54 sqlalchemy.engine.Engine [raw sql] ()
+INFO 2024-09-23 23:04:54 sqlalchemy.engine.Engine BEGIN (implicit)
+INFO 2024-09-23 23:04:54 sqlalchemy.engine.Engine SELECT subcategories.id AS subcategories_id, subcategories.category_id AS subcategories_category_id, subcategories.subcat_id AS subcategories_subcat_id, subcategories.name AS subcategories_name, subcategories.is_active AS subcategories_is_active, subcategories.created_on AS subcategories_created_on, subcategories.updated_on AS subcategories_updated_on 
+FROM subcategories 
+WHERE subcategories.id = $1::INTEGER
+INFO 2024-09-23 23:04:54 sqlalchemy.engine.Engine [generated in 0.00120s] (1,)
+INFO 2024-09-23 23:04:54 sqlalchemy.engine.Engine UPDATE subcategories SET name=$1::VARCHAR, updated_on=now() WHERE subcategories.id = $2::INTEGER
+INFO 2024-09-23 23:04:54 sqlalchemy.engine.Engine [generated in 0.00067s] ('Subcategory 1', 1)
+INFO 2024-09-23 23:04:54 sqlalchemy.engine.Engine COMMIT
+INFO 2024-09-23 23:04:54 sqlalchemy.engine.Engine BEGIN (implicit)
+INFO 2024-09-23 23:04:54 sqlalchemy.engine.Engine SELECT subcategories.id, subcategories.category_id, subcategories.subcat_id, subcategories.name, subcategories.is_active, subcategories.created_on, subcategories.updated_on 
+FROM subcategories 
+WHERE subcategories.id = $1::INTEGER
+INFO 2024-09-23 23:04:54 sqlalchemy.engine.Engine [generated in 0.00100s] (1,)
+INFO 2024-09-23 23:04:54 root Subcategory updated: Subcategory 1
+INFO 2024-09-23 23:04:54 sqlalchemy.engine.Engine ROLLBACK
+ERROR 2024-09-23 23:04:54 root Unexpected error: Unable to serialize unknown type: <class 'app.models.subcategories.Subcategory'>
+Traceback (most recent call last):
+  File "D:\Projects\Fast_API\blog_app\backend\app\core\database.py", line 21, in get_db
+    yield session
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\fastapi\routing.py", line 296, in app
+    content = await serialize_response(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\fastapi\routing.py", line 160, in serialize_response
+    return field.serialize(
+           ^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\fastapi\_compat.py", line 149, in serialize
+    return self._type_adapter.dump_python(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\pydantic\type_adapter.py", line 142, in wrapped
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\pydantic\type_adapter.py", line 458, in dump_python
+    return self.serializer.to_python(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+pydantic_core._pydantic_core.PydanticSerializationError: Unable to serialize unknown type: <class 'app.models.subcategories.Subcategory'>
+INFO 2024-09-23 23:05:27 root Shutting down application...
+INFO 2024-09-23 23:05:31 root Application startup application...
+ERROR 2024-09-23 23:05:42 root Failed to update subcategory: name 'get_subcategory' is not defined
+Traceback (most recent call last):
+  File "D:\Projects\Fast_API\blog_app\backend\app\routers\subcategories.py", line 95, in update_subcategory_route
+    updated_subcategory = await update_subcategory(db, subcategory_id, subcategory_data)
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\Fast_API\blog_app\backend\app\services\subcategories.py", line 60, in update_subcategory
+    subcategory = await get_subcategory(db, subcategory_id)
+                        ^^^^^^^^^^^^^^^
+NameError: name 'get_subcategory' is not defined. Did you mean: 'create_subcategory'?
+ERROR 2024-09-23 23:05:42 root Unexpected error: 500: Failed to update subcategory
+Traceback (most recent call last):
+  File "D:\Projects\Fast_API\blog_app\backend\app\routers\subcategories.py", line 95, in update_subcategory_route
+    updated_subcategory = await update_subcategory(db, subcategory_id, subcategory_data)
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\Fast_API\blog_app\backend\app\services\subcategories.py", line 60, in update_subcategory
+    subcategory = await get_subcategory(db, subcategory_id)
+                        ^^^^^^^^^^^^^^^
+NameError: name 'get_subcategory' is not defined. Did you mean: 'create_subcategory'?
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Projects\Fast_API\blog_app\backend\app\core\database.py", line 21, in get_db
+    yield session
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\fastapi\routing.py", line 278, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\fastapi\routing.py", line 191, in run_endpoint_function
+    return await dependant.call(**values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\Fast_API\blog_app\backend\app\routers\subcategories.py", line 111, in update_subcategory_route
+    raise HTTPException(
+fastapi.exceptions.HTTPException: 500: Failed to update subcategory
+INFO 2024-09-23 23:09:12 root Shutting down application...
+INFO 2024-09-23 23:09:15 root Application startup application...
+INFO 2024-09-23 23:09:23 sqlalchemy.engine.Engine select pg_catalog.version()
+INFO 2024-09-23 23:09:23 sqlalchemy.engine.Engine [raw sql] ()
+INFO 2024-09-23 23:09:23 sqlalchemy.engine.Engine select current_schema()
+INFO 2024-09-23 23:09:23 sqlalchemy.engine.Engine [raw sql] ()
+INFO 2024-09-23 23:09:23 sqlalchemy.engine.Engine show standard_conforming_strings
+INFO 2024-09-23 23:09:23 sqlalchemy.engine.Engine [raw sql] ()
+INFO 2024-09-23 23:09:23 sqlalchemy.engine.Engine BEGIN (implicit)
+INFO 2024-09-23 23:09:23 sqlalchemy.engine.Engine SELECT subcategories.id AS subcategories_id, subcategories.category_id AS subcategories_category_id, subcategories.subcat_id AS subcategories_subcat_id, subcategories.name AS subcategories_name, subcategories.is_active AS subcategories_is_active, subcategories.created_on AS subcategories_created_on, subcategories.updated_on AS subcategories_updated_on 
+FROM subcategories 
+WHERE subcategories.id = $1::INTEGER
+INFO 2024-09-23 23:09:23 sqlalchemy.engine.Engine [generated in 0.00109s] (1,)
+INFO 2024-09-23 23:09:23 sqlalchemy.engine.Engine COMMIT
+INFO 2024-09-23 23:09:23 sqlalchemy.engine.Engine BEGIN (implicit)
+INFO 2024-09-23 23:09:23 sqlalchemy.engine.Engine SELECT subcategories.id, subcategories.category_id, subcategories.subcat_id, subcategories.name, subcategories.is_active, subcategories.created_on, subcategories.updated_on 
+FROM subcategories 
+WHERE subcategories.id = $1::INTEGER
+INFO 2024-09-23 23:09:23 sqlalchemy.engine.Engine [generated in 0.00093s] (1,)
+INFO 2024-09-23 23:09:23 root Subcategory updated: Subcategory 1
+INFO 2024-09-23 23:09:23 sqlalchemy.engine.Engine ROLLBACK
+ERROR 2024-09-23 23:09:23 root Unexpected error: Unable to serialize unknown type: <class 'app.models.subcategories.Subcategory'>
+Traceback (most recent call last):
+  File "D:\Projects\Fast_API\blog_app\backend\app\core\database.py", line 21, in get_db
+    yield session
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\fastapi\routing.py", line 296, in app
+    content = await serialize_response(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\fastapi\routing.py", line 160, in serialize_response
+    return field.serialize(
+           ^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\fastapi\_compat.py", line 149, in serialize
+    return self._type_adapter.dump_python(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\pydantic\type_adapter.py", line 142, in wrapped
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\pydantic\type_adapter.py", line 458, in dump_python
+    return self.serializer.to_python(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+pydantic_core._pydantic_core.PydanticSerializationError: Unable to serialize unknown type: <class 'app.models.subcategories.Subcategory'>
+INFO 2024-09-23 23:13:41 root Shutting down application...
+INFO 2024-09-23 23:13:44 root Application startup application...
+INFO 2024-09-23 23:14:29 root Shutting down application...
+INFO 2024-09-23 23:14:34 root Application startup application...
+INFO 2024-09-23 23:14:44 sqlalchemy.engine.Engine select pg_catalog.version()
+INFO 2024-09-23 23:14:44 sqlalchemy.engine.Engine [raw sql] ()
+INFO 2024-09-23 23:14:44 sqlalchemy.engine.Engine select current_schema()
+INFO 2024-09-23 23:14:44 sqlalchemy.engine.Engine [raw sql] ()
+INFO 2024-09-23 23:14:44 sqlalchemy.engine.Engine show standard_conforming_strings
+INFO 2024-09-23 23:14:44 sqlalchemy.engine.Engine [raw sql] ()
+INFO 2024-09-23 23:14:44 sqlalchemy.engine.Engine BEGIN (implicit)
+INFO 2024-09-23 23:14:44 sqlalchemy.engine.Engine SELECT subcategories.id AS subcategories_id, subcategories.category_id AS subcategories_category_id, subcategories.subcat_id AS subcategories_subcat_id, subcategories.name AS subcategories_name, subcategories.is_active AS subcategories_is_active, subcategories.created_on AS subcategories_created_on, subcategories.updated_on AS subcategories_updated_on 
+FROM subcategories 
+WHERE subcategories.id = $1::INTEGER
+INFO 2024-09-23 23:14:44 sqlalchemy.engine.Engine [generated in 0.00124s] (1,)
+INFO 2024-09-23 23:14:44 sqlalchemy.engine.Engine COMMIT
+INFO 2024-09-23 23:14:44 sqlalchemy.engine.Engine BEGIN (implicit)
+INFO 2024-09-23 23:14:44 sqlalchemy.engine.Engine SELECT subcategories.id, subcategories.category_id, subcategories.subcat_id, subcategories.name, subcategories.is_active, subcategories.created_on, subcategories.updated_on 
+FROM subcategories 
+WHERE subcategories.id = $1::INTEGER
+INFO 2024-09-23 23:14:44 sqlalchemy.engine.Engine [generated in 0.00112s] (1,)
+INFO 2024-09-23 23:14:44 root Subcategory with ID 1 updated successfully.
+INFO 2024-09-23 23:14:44 root Subcategory updated: Subcategory 1
+INFO 2024-09-23 23:14:44 sqlalchemy.engine.Engine ROLLBACK
+INFO 2024-09-23 23:16:14 sqlalchemy.engine.Engine BEGIN (implicit)
+INFO 2024-09-23 23:16:14 sqlalchemy.engine.Engine SELECT subcategories.id AS subcategories_id, subcategories.category_id AS subcategories_category_id, subcategories.subcat_id AS subcategories_subcat_id, subcategories.name AS subcategories_name, subcategories.is_active AS subcategories_is_active, subcategories.created_on AS subcategories_created_on, subcategories.updated_on AS subcategories_updated_on 
+FROM subcategories 
+WHERE subcategories.id = $1::INTEGER
+INFO 2024-09-23 23:16:14 sqlalchemy.engine.Engine [cached since 89.56s ago] (1,)
+INFO 2024-09-23 23:16:14 sqlalchemy.engine.Engine UPDATE subcategories SET category_id=$1::INTEGER, updated_on=now() WHERE subcategories.id = $2::INTEGER
+INFO 2024-09-23 23:16:14 sqlalchemy.engine.Engine [generated in 0.00077s] (2, 1)
+INFO 2024-09-23 23:16:14 sqlalchemy.engine.Engine COMMIT
+INFO 2024-09-23 23:16:14 sqlalchemy.engine.Engine BEGIN (implicit)
+INFO 2024-09-23 23:16:14 sqlalchemy.engine.Engine SELECT subcategories.id, subcategories.category_id, subcategories.subcat_id, subcategories.name, subcategories.is_active, subcategories.created_on, subcategories.updated_on 
+FROM subcategories 
+WHERE subcategories.id = $1::INTEGER
+INFO 2024-09-23 23:16:14 sqlalchemy.engine.Engine [cached since 89.82s ago] (1,)
+INFO 2024-09-23 23:16:14 root Subcategory with ID 1 updated successfully.
+INFO 2024-09-23 23:16:14 root Subcategory updated: Subcategory 1
+INFO 2024-09-23 23:16:14 sqlalchemy.engine.Engine ROLLBACK
+INFO 2024-09-23 23:16:34 sqlalchemy.engine.Engine BEGIN (implicit)
+INFO 2024-09-23 23:16:34 sqlalchemy.engine.Engine SELECT subcategories.id AS subcategories_id, subcategories.category_id AS subcategories_category_id, subcategories.subcat_id AS subcategories_subcat_id, subcategories.name AS subcategories_name, subcategories.is_active AS subcategories_is_active, subcategories.created_on AS subcategories_created_on, subcategories.updated_on AS subcategories_updated_on 
+FROM subcategories 
+WHERE subcategories.id = $1::INTEGER
+INFO 2024-09-23 23:16:34 sqlalchemy.engine.Engine [cached since 109.5s ago] (1,)
+INFO 2024-09-23 23:16:34 sqlalchemy.engine.Engine UPDATE subcategories SET is_active=$1::BOOLEAN, updated_on=now() WHERE subcategories.id = $2::INTEGER
+INFO 2024-09-23 23:16:34 sqlalchemy.engine.Engine [generated in 0.00086s] (False, 1)
+INFO 2024-09-23 23:16:34 sqlalchemy.engine.Engine COMMIT
+INFO 2024-09-23 23:16:34 sqlalchemy.engine.Engine BEGIN (implicit)
+INFO 2024-09-23 23:16:34 sqlalchemy.engine.Engine SELECT subcategories.id, subcategories.category_id, subcategories.subcat_id, subcategories.name, subcategories.is_active, subcategories.created_on, subcategories.updated_on 
+FROM subcategories 
+WHERE subcategories.id = $1::INTEGER
+INFO 2024-09-23 23:16:34 sqlalchemy.engine.Engine [cached since 109.5s ago] (1,)
+INFO 2024-09-23 23:16:34 root Subcategory with ID 1 updated successfully.
+INFO 2024-09-23 23:16:34 root Subcategory updated: Subcategory 1
+INFO 2024-09-23 23:16:34 sqlalchemy.engine.Engine ROLLBACK
+INFO 2024-09-23 23:17:03 sqlalchemy.engine.Engine BEGIN (implicit)
+INFO 2024-09-23 23:17:03 sqlalchemy.engine.Engine SELECT subcategories.id AS subcategories_id, subcategories.category_id AS subcategories_category_id, subcategories.subcat_id AS subcategories_subcat_id, subcategories.name AS subcategories_name, subcategories.is_active AS subcategories_is_active, subcategories.created_on AS subcategories_created_on, subcategories.updated_on AS subcategories_updated_on 
+FROM subcategories 
+WHERE subcategories.id = $1::INTEGER
+INFO 2024-09-23 23:17:03 sqlalchemy.engine.Engine [cached since 138.3s ago] (1,)
+INFO 2024-09-23 23:17:03 sqlalchemy.engine.Engine UPDATE subcategories SET is_active=$1::BOOLEAN, updated_on=now() WHERE subcategories.id = $2::INTEGER
+INFO 2024-09-23 23:17:03 sqlalchemy.engine.Engine [cached since 28.8s ago] (True, 1)
+INFO 2024-09-23 23:17:03 sqlalchemy.engine.Engine COMMIT
+INFO 2024-09-23 23:17:03 sqlalchemy.engine.Engine BEGIN (implicit)
+INFO 2024-09-23 23:17:03 sqlalchemy.engine.Engine SELECT subcategories.id, subcategories.category_id, subcategories.subcat_id, subcategories.name, subcategories.is_active, subcategories.created_on, subcategories.updated_on 
+FROM subcategories 
+WHERE subcategories.id = $1::INTEGER
+INFO 2024-09-23 23:17:03 sqlalchemy.engine.Engine [cached since 138.3s ago] (1,)
+INFO 2024-09-23 23:17:03 root Subcategory with ID 1 updated successfully.
+INFO 2024-09-23 23:17:03 root Subcategory updated: Subcategory 1
+INFO 2024-09-23 23:17:03 sqlalchemy.engine.Engine ROLLBACK
+INFO 2024-09-23 23:20:48 root Shutting down application...
+INFO 2024-09-23 23:21:48 root Application startup application...
+INFO 2024-09-23 23:22:56 root Shutting down application...
+INFO 2024-09-23 23:22:59 root Application startup application...
+INFO 2024-09-23 23:23:48 root Shutting down application...
+INFO 2024-09-23 23:23:51 root Application startup application...
+INFO 2024-09-23 23:24:18 sqlalchemy.engine.Engine select pg_catalog.version()
+INFO 2024-09-23 23:24:18 sqlalchemy.engine.Engine [raw sql] ()
+INFO 2024-09-23 23:24:18 sqlalchemy.engine.Engine select current_schema()
+INFO 2024-09-23 23:24:18 sqlalchemy.engine.Engine [raw sql] ()
+INFO 2024-09-23 23:24:18 sqlalchemy.engine.Engine show standard_conforming_strings
+INFO 2024-09-23 23:24:18 sqlalchemy.engine.Engine [raw sql] ()
+INFO 2024-09-23 23:24:18 sqlalchemy.engine.Engine BEGIN (implicit)
+INFO 2024-09-23 23:24:18 sqlalchemy.engine.Engine SELECT subcategories.id, subcategories.category_id, subcategories.subcat_id, subcategories.name, subcategories.is_active, subcategories.created_on, subcategories.updated_on 
+FROM subcategories 
+WHERE subcategories.is_active = true ORDER BY subcategories.id DESC 
+ LIMIT $1::INTEGER OFFSET $2::INTEGER
+INFO 2024-09-23 23:24:18 sqlalchemy.engine.Engine [generated in 0.00115s] (3, 0)
+INFO 2024-09-23 23:24:18 sqlalchemy.engine.Engine SELECT count(subcategories.id) AS count_1 
+FROM subcategories
+INFO 2024-09-23 23:24:18 sqlalchemy.engine.Engine [generated in 0.00077s] ()
+INFO 2024-09-23 23:24:18 root Successfully retrieved all categories.
+INFO 2024-09-23 23:24:18 sqlalchemy.engine.Engine ROLLBACK
+INFO 2024-09-23 23:24:32 sqlalchemy.engine.Engine BEGIN (implicit)
+INFO 2024-09-23 23:24:32 sqlalchemy.engine.Engine SELECT subcategories.id AS subcategories_id, subcategories.category_id AS subcategories_category_id, subcategories.subcat_id AS subcategories_subcat_id, subcategories.name AS subcategories_name, subcategories.is_active AS subcategories_is_active, subcategories.created_on AS subcategories_created_on, subcategories.updated_on AS subcategories_updated_on 
+FROM subcategories 
+WHERE subcategories.id = $1::INTEGER
+INFO 2024-09-23 23:24:32 sqlalchemy.engine.Engine [generated in 0.00110s] (1,)
+INFO 2024-09-23 23:24:32 root Subcategory retrieved: Subcategory 1
+INFO 2024-09-23 23:24:32 sqlalchemy.engine.Engine ROLLBACK
+INFO 2024-09-23 23:25:45 sqlalchemy.engine.Engine BEGIN (implicit)
+INFO 2024-09-23 23:25:45 sqlalchemy.engine.Engine SELECT subcategories.id AS subcategories_id, subcategories.category_id AS subcategories_category_id, subcategories.subcat_id AS subcategories_subcat_id, subcategories.name AS subcategories_name, subcategories.is_active AS subcategories_is_active, subcategories.created_on AS subcategories_created_on, subcategories.updated_on AS subcategories_updated_on 
+FROM subcategories 
+WHERE subcategories.id = $1::INTEGER
+INFO 2024-09-23 23:25:45 sqlalchemy.engine.Engine [cached since 73.02s ago] (1,)
+INFO 2024-09-23 23:25:45 sqlalchemy.engine.Engine UPDATE subcategories SET name=$1::VARCHAR, updated_on=now() WHERE subcategories.id = $2::INTEGER
+INFO 2024-09-23 23:25:45 sqlalchemy.engine.Engine [generated in 0.00064s] ('Subcategory updated', 1)
+INFO 2024-09-23 23:25:45 sqlalchemy.engine.Engine COMMIT
+INFO 2024-09-23 23:25:45 sqlalchemy.engine.Engine BEGIN (implicit)
+INFO 2024-09-23 23:25:45 sqlalchemy.engine.Engine SELECT subcategories.id, subcategories.category_id, subcategories.subcat_id, subcategories.name, subcategories.is_active, subcategories.created_on, subcategories.updated_on 
+FROM subcategories 
+WHERE subcategories.id = $1::INTEGER
+INFO 2024-09-23 23:25:45 sqlalchemy.engine.Engine [generated in 0.00093s] (1,)
+INFO 2024-09-23 23:25:45 root Subcategory with ID 1 updated successfully.
+INFO 2024-09-23 23:25:45 root Subcategory updated: Subcategory updated
+INFO 2024-09-23 23:25:45 sqlalchemy.engine.Engine ROLLBACK
+INFO 2024-09-23 23:27:03 root Shutting down application...
+INFO 2024-09-23 23:27:17 root Application startup application...
+INFO 2024-09-23 23:27:25 root Shutting down application...
+INFO 2024-09-23 23:27:28 root Application startup application...
+INFO 2024-09-23 23:27:35 sqlalchemy.engine.Engine select pg_catalog.version()
+INFO 2024-09-23 23:27:35 sqlalchemy.engine.Engine [raw sql] ()
+INFO 2024-09-23 23:27:35 sqlalchemy.engine.Engine select current_schema()
+INFO 2024-09-23 23:27:35 sqlalchemy.engine.Engine [raw sql] ()
+INFO 2024-09-23 23:27:35 sqlalchemy.engine.Engine show standard_conforming_strings
+INFO 2024-09-23 23:27:35 sqlalchemy.engine.Engine [raw sql] ()
+INFO 2024-09-23 23:27:35 sqlalchemy.engine.Engine BEGIN (implicit)
+INFO 2024-09-23 23:27:35 sqlalchemy.engine.Engine SELECT subcategories.id AS subcategories_id, subcategories.category_id AS subcategories_category_id, subcategories.subcat_id AS subcategories_subcat_id, subcategories.name AS subcategories_name, subcategories.is_active AS subcategories_is_active, subcategories.created_on AS subcategories_created_on, subcategories.updated_on AS subcategories_updated_on 
+FROM subcategories 
+WHERE subcategories.id = $1::INTEGER
+INFO 2024-09-23 23:27:35 sqlalchemy.engine.Engine [generated in 0.00109s] (1,)
+INFO 2024-09-23 23:27:35 sqlalchemy.engine.Engine COMMIT
+INFO 2024-09-23 23:27:35 sqlalchemy.engine.Engine BEGIN (implicit)
+INFO 2024-09-23 23:27:35 sqlalchemy.engine.Engine SELECT subcategories.id, subcategories.category_id, subcategories.subcat_id, subcategories.name, subcategories.is_active, subcategories.created_on, subcategories.updated_on 
+FROM subcategories 
+WHERE subcategories.id = $1::INTEGER
+INFO 2024-09-23 23:27:35 sqlalchemy.engine.Engine [generated in 0.00092s] (1,)
+INFO 2024-09-23 23:27:35 root Subcategory with ID 1 updated successfully.
+INFO 2024-09-23 23:27:35 root Subcategory updated: Subcategory updated
+INFO 2024-09-23 23:27:35 sqlalchemy.engine.Engine ROLLBACK
+INFO 2024-09-23 23:28:16 sqlalchemy.engine.Engine BEGIN (implicit)
+INFO 2024-09-23 23:28:16 sqlalchemy.engine.Engine SELECT subcategories.id AS subcategories_id, subcategories.category_id AS subcategories_category_id, subcategories.subcat_id AS subcategories_subcat_id, subcategories.name AS subcategories_name, subcategories.is_active AS subcategories_is_active, subcategories.created_on AS subcategories_created_on, subcategories.updated_on AS subcategories_updated_on 
+FROM subcategories 
+WHERE subcategories.id = $1::INTEGER
+INFO 2024-09-23 23:28:16 sqlalchemy.engine.Engine [cached since 40.5s ago] (1,)
+INFO 2024-09-23 23:28:16 sqlalchemy.engine.Engine UPDATE subcategories SET is_active=$1::BOOLEAN, updated_on=now() WHERE subcategories.id = $2::INTEGER
+INFO 2024-09-23 23:28:16 sqlalchemy.engine.Engine [generated in 0.00085s] (False, 1)
+INFO 2024-09-23 23:28:16 sqlalchemy.engine.Engine COMMIT
+INFO 2024-09-23 23:28:16 sqlalchemy.engine.Engine BEGIN (implicit)
+INFO 2024-09-23 23:28:16 sqlalchemy.engine.Engine SELECT subcategories.id, subcategories.category_id, subcategories.subcat_id, subcategories.name, subcategories.is_active, subcategories.created_on, subcategories.updated_on 
+FROM subcategories 
+WHERE subcategories.id = $1::INTEGER
+INFO 2024-09-23 23:28:16 sqlalchemy.engine.Engine [cached since 40.5s ago] (1,)
+INFO 2024-09-23 23:28:16 root Subcategory soft deleted with ID: 1
+INFO 2024-09-23 23:28:16 sqlalchemy.engine.Engine ROLLBACK
+INFO 2024-09-23 23:32:44 root Shutting down application...

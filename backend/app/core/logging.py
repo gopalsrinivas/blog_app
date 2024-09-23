@@ -18,23 +18,34 @@ LOGGING_CONFIG = {
         "default": {
             "format": "{levelname} {asctime} {name} {message}",
             "style": "{",
-        }
+            "datefmt": "%Y-%m-%d %H:%M:%S",  # Adding date and time format
+        },
+        "error_formatter": {  # Separate formatter for error logs
+            "format": "{levelname} {asctime} {name} {message}",
+            "style": "{",
+            "datefmt": "%Y-%m-%d %H:%M:%S",  # Adding date and time for error logs
+        },
     },
     "handlers": {
         "file": {
-            "level": "INFO",
+            "level": "DEBUG",  # Change to DEBUG for detailed logs
             "class": "logging.FileHandler",
             "filename": log_file_path,
             "formatter": "default",
-        }
+        },
+        "error_file": {
+            "level": "ERROR",  # Dedicated handler for error logs
+            "class": "logging.FileHandler",
+            "filename": os.path.join(log_dir, "error_app.log"),
+            "formatter": "error_formatter",  # Using error_formatter
+        },
     },
     "root": {
-        "handlers": ["file"],
-        "level": "INFO",
+        "handlers": ["file", "error_file"],
+        "level": "DEBUG",  # Change to DEBUG for detailed logs
     },
 }
 
 # Apply the logging configuration
 dictConfig(LOGGING_CONFIG)
 logger = logging.getLogger(__name__)
-
