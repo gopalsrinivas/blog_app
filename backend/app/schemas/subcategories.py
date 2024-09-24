@@ -40,3 +40,8 @@ class SubcategoryUpdateModel(BaseModel):
     category_id: Optional[int] = None
     name: Optional[str] = None
     is_active: Optional[bool] = None
+
+
+class SubcategoryListResponseModel(BaseModel):
+    subcategories: List[SubcategoryModel]
+    total_records: int

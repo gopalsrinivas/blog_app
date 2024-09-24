@@ -6,11 +6,7 @@ from app.models.subcategories import Subcategory
 from app.schemas.subcategories import SubcategoryModel, SubcategoryCreateModel, SubcategoryUpdateModel
 from app.core.database import get_db
 from app.services.subcategories import (
-    create_subcategory,
-    get_all_subcategories,
-    get_subcategory_by_id,
-    update_subcategory,
-    soft_delete_subcategory
+    create_subcategory, get_all_subcategories, get_subcategory_by_id, update_subcategory, soft_delete_subcategory, get_subcategories_by_category_id
 )
 from app.core.logging import logging
 
@@ -87,7 +83,7 @@ async def get_subcategory_by_id_route(subcategory_id: int, db: AsyncSession = De
             status_code=500, detail="Failed to fetch subcategory")
 
 
-@router.put("/{subcategory_id}", response_model=dict)
+@router.put("/{subcategory_id}", response_model=dict, summary="Update a Subcategory by ID")
 async def update_subcategory_route(
     subcategory_id: int, subcategory_data: SubcategoryUpdateModel, db: AsyncSession = Depends(get_db)
 ):
@@ -115,7 +111,7 @@ async def update_subcategory_route(
             status_code=500, detail="Failed to update subcategory")
         
         
-@router.delete("/{subcategory_id}", response_model=dict)
+@router.delete("/{subcategory_id}", response_model=dict, summary="Delete a Subcategory by ID")
 async def delete_subcategory_route(subcategory_id: int, db: AsyncSession = Depends(get_db)):
     try:
         updated_subcategory = await soft_delete_subcategory(db, subcategory_id)
@@ -135,3 +131,52 @@ async def delete_subcategory_route(subcategory_id: int, db: AsyncSession = Depen
                       str(e)}", exc_info=True)
         raise HTTPException(
             status_code=500, detail="Failed to soft delete subcategory")
+
+
+@router.get("/categories/{category_id}/subcategories", response_model=dict)
+async def get_subcategories_for_category(
+    category_id: int,
+    skip: int = 0,
+    limit: int = 10,
+    db: AsyncSession = Depends(get_db)
+):
+    try:
+        # Fetch subcategories
+        result = await get_subcategories_by_category_id(db, category_id, skip, limit)
+
+        # Check if subcategories were found
+        if not result["subcategories"]:
+            logging.warning(
+                f"No subcategories found for category ID {category_id}.")
+            raise HTTPException(
+                status_code=404, detail="No subcategories found for this category."
+            )
+
+        # Return the response with the category details and subcategories
+        return {
+            "status_code": 200,
+            "message":"Subcategory retrieved successfully",
+            "category_id": result["category_id"],
+            "cat_id": result["cat_id"],
+            "category_name": result["category_name"],
+            "total_records": result["total_records"],
+            "data": [
+                {
+                    "id": sub.id,
+                    "name": sub.name,
+                    "subcat_id": sub.subcat_id,
+                    "is_active": sub.is_active
+                }
+                for sub in result["subcategories"]
+            ]
+        }
+
+    except HTTPException as e:
+        logging.error(f"HTTPException: {
+                      e.detail} (Category ID: {category_id})")
+        raise e
+    except Exception as e:
+        logging.error(f"Unexpected error in fetching subcategories for category ID {
+                      category_id}: {str(e)}", exc_info=True)
+        raise HTTPException(
+            status_code=500, detail="Failed to fetch subcategories for the category.")

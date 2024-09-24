@@ -4,6 +4,7 @@ from fastapi import HTTPException
 from app.models.subcategories import Subcategory
 from app.schemas.subcategories import SubcategoryCreateModel, SubcategoryUpdateModel
 from app.core.logging import logging
+from app.models.categories import *
 
 
 async def generate_subcat_id(db: AsyncSession) -> str:
@@ -134,3 +135,49 @@ async def soft_delete_subcategory(db: AsyncSession, subcategory_id: int):
                       subcategory_id}: {str(e)}", exc_info=True)
         raise HTTPException(
             status_code=500, detail="Failed to soft delete subcategory")
+
+
+async def get_subcategories_by_category_id(db: AsyncSession, category_id: int, skip: int = 0, limit: int = 10):
+    try:
+        # Check if the category exists
+        category_result = await db.execute(select(Category).where(Category.id == category_id))
+        category = category_result.scalar_one_or_none()
+        if not category:
+            logging.warning(f"Category with ID {category_id} not found.")
+            raise HTTPException(status_code=404, detail="Category not found.")
+
+        # Get subcategories for the given category_id and count total records
+        subcategories_result = await db.execute(
+            select(Subcategory)
+            .where(Subcategory.category_id == category_id, Subcategory.is_active == True)
+            .offset(skip)
+            .limit(limit)
+        )
+        subcategories = subcategories_result.scalars().all()
+
+        if not subcategories:
+            logging.info(f"No active subcategories found for category ID {
+                         category_id}.")
+
+        total_count_result = await db.execute(
+            select(func.count(Subcategory.id))
+            .where(Subcategory.category_id == category_id, Subcategory.is_active == True)
+        )
+        total_count = total_count_result.scalar()
+
+        logging.info(f"Retrieved {len(subcategories)
+                                  } subcategories for category ID {category_id}.")
+
+        return {
+            "category_id": category.id,
+            "cat_id": category.cat_id,
+            "category_name": category.name,
+            "subcategories": subcategories,
+            "total_records": total_count
+        }
+
+    except Exception as e:
+        logging.error(f"Error fetching subcategories for category ID {
+                      category_id}: {str(e)}", exc_info=True)
+        raise HTTPException(
+            status_code=500, detail="Failed to fetch subcategories for the category.")
