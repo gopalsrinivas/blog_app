@@ -9,16 +9,15 @@ from app.models.categories import *
 
 async def generate_subcat_id(db: AsyncSession) -> str:
     try:
-        result = await db.execute(select(func.max(Subcategory.subcat_id)))
-        max_subcat_id = result.scalar_one_or_none()
-        next_number = 1 if max_subcat_id is None else int(
-            max_subcat_id.split('__')[1]) + 1
-        return f"subcat__{next_number}"
+        # Get the last inserted Subcategory ID
+        result = await db.execute(select(func.max(Subcategory.id)))
+        max_id = result.scalar_one_or_none()
+        new_id = (max_id + 1) if max_id is not None else 1
+        return f"subcat_{new_id}"
     except Exception as e:
         logging.error(f"Error generating subcategory ID: {str(e)}")
         raise HTTPException(
             status_code=500, detail="Error generating subcategory ID")
-
 
 async def create_subcategory(db: AsyncSession, subcategory_data: SubcategoryCreateModel):
     try:
@@ -46,7 +45,6 @@ async def create_subcategory(db: AsyncSession, subcategory_data: SubcategoryCrea
                       str(e)}", exc_info=True)
         raise HTTPException(
             status_code=500, detail="Failed to create subcategories")
-
 
 async def get_all_subcategories(db: AsyncSession, skip: int = 0, limit: int = 10):
     try:
@@ -131,15 +129,11 @@ async def soft_delete_subcategory(db: AsyncSession, subcategory_id: int):
                      subcategory_id} soft deleted successfully.")
         return subcategory
     except Exception as e:
-        logging.error(f"Failed to soft delete subcategory with ID {
-                      subcategory_id}: {str(e)}", exc_info=True)
-        raise HTTPException(
-            status_code=500, detail="Failed to soft delete subcategory")
-
+        logging.error(f"Failed to soft delete subcategory with ID {subcategory_id}: {str(e)}", exc_info=True)
+        raise HTTPException(status_code=500, detail="Failed to soft delete subcategory")
 
 async def get_subcategories_by_category_id(db: AsyncSession, category_id: int, skip: int = 0, limit: int = 10):
     try:
-        # Check if the category exists
         category_result = await db.execute(select(Category).where(Category.id == category_id))
         category = category_result.scalar_one_or_none()
         if not category:

@@ -4,10 +4,10 @@ from app.core.database import Base
 class Subcategory(Base):
     __tablename__ = 'subcategories'
 
-    id = Column(Integer, primary_key=True)
+    id = Column(Integer, primary_key=True, autoincrement=True)
     category_id = Column(Integer, ForeignKey('categories.id'), nullable=True)
-    subcat_id = Column(String, nullable=False, unique=True)
-    name = Column(String, nullable=False, unique=True)
+    subcat_id = Column(String(50), nullable=False, unique=True)
+    name = Column(String(255), nullable=False, unique=True)
     is_active = Column(Boolean, default=True)
     created_on = Column(DateTime, default=func.now(), nullable=False)
     updated_on = Column(DateTime, onupdate=func.now())

@@ -2,7 +2,6 @@ from pydantic import BaseModel
 from datetime import datetime
 from typing import List, Optional
 
-
 class CategoryModel(BaseModel):
     id: int
     cat_id: str
@@ -19,10 +18,10 @@ class CategoryModel(BaseModel):
                 "is_active": True
             }
         }
+
 class CategoryCreateModel(BaseModel):
     names: List[str]
     is_active: bool = True
-
     class Config:
         json_schema_extra = {
             "example": {

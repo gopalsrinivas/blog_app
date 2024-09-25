@@ -12,7 +12,6 @@ from app.core.logging import logging
 
 router = APIRouter()
 
-
 @router.post("/", response_model=dict, summary="Create new Subcategories")
 async def create_subcategory_route(
     subcategory_data: SubcategoryCreateModel, db: AsyncSession = Depends(get_db)

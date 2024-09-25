@@ -1998,3 +1998,2684 @@ Traceback (most recent call last):
   File "D:\Projects\Fast_API\blog_app\backend\app\services\subcategories.py", line 181, in get_subcategories_by_category_id
     raise HTTPException(
 fastapi.exceptions.HTTPException: 500: Failed to fetch subcategories for the category.
+ERROR 2024-09-24 11:24:03 root HTTPException: No subcategories found for this category. (Category ID: 3)
+ERROR 2024-09-24 11:24:03 root Unexpected error: 404: No subcategories found for this category.
+Traceback (most recent call last):
+  File "D:\Projects\Fast_API\blog_app\backend\app\core\database.py", line 21, in get_db
+    yield session
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\fastapi\routing.py", line 278, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\fastapi\routing.py", line 191, in run_endpoint_function
+    return await dependant.call(**values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\Fast_API\blog_app\backend\app\routers\subcategories.py", line 177, in get_subcategories_for_category
+    raise e
+  File "D:\Projects\Fast_API\blog_app\backend\app\routers\subcategories.py", line 151, in get_subcategories_for_category
+    raise HTTPException(
+fastapi.exceptions.HTTPException: 404: No subcategories found for this category.
+ERROR 2024-09-24 15:12:03 root HTTP error: Category not found
+Traceback (most recent call last):
+  File "D:\Projects\Fast_API\blog_app\backend\app\routers\categories.py", line 68, in get_category_by_id_route
+    raise HTTPException(status_code=404, detail="Category not found")
+fastapi.exceptions.HTTPException: 404: Category not found
+ERROR 2024-09-24 15:12:03 root Unexpected error: 404: Category not found
+Traceback (most recent call last):
+  File "D:\Projects\Fast_API\blog_app\backend\app\core\database.py", line 21, in get_db
+    yield session
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\fastapi\routing.py", line 278, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\fastapi\routing.py", line 191, in run_endpoint_function
+    return await dependant.call(**values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\Fast_API\blog_app\backend\app\routers\categories.py", line 78, in get_category_by_id_route
+    raise he  # Re-raise HTTPException to avoid logging it twice
+    ^^^^^^^^
+  File "D:\Projects\Fast_API\blog_app\backend\app\routers\categories.py", line 68, in get_category_by_id_route
+    raise HTTPException(status_code=404, detail="Category not found")
+fastapi.exceptions.HTTPException: 404: Category not found
+ERROR 2024-09-24 19:01:42 root Error retrieving category: Multiple exceptions: [Errno 10061] Connect call failed ('::1', 5432, 0, 0), [Errno 10061] Connect call failed ('127.0.0.1', 5432)
+Traceback (most recent call last):
+  File "D:\Projects\Fast_API\blog_app\backend\app\services\categories.py", line 159, in get_category_by_search
+    result = await db.execute(query)
+             ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\ext\asyncio\session.py", line 461, in execute
+    result = await greenlet_spawn(
+             ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 201, in greenlet_spawn
+    result = context.throw(*sys.exc_info())
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\orm\session.py", line 2362, in execute
+    return self._execute_internal(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\orm\session.py", line 2237, in _execute_internal
+    conn = self._connection_for_bind(bind)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\orm\session.py", line 2106, in _connection_for_bind
+    return trans._connection_for_bind(engine, execution_options)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<string>", line 2, in _connection_for_bind
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\orm\state_changes.py", line 139, in _go
+    ret_value = fn(self, *arg, **kw)
+                ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\orm\session.py", line 1189, in _connection_for_bind
+    conn = bind.connect()
+           ^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\engine\base.py", line 3278, in connect
+    return self._connection_cls(self)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\engine\base.py", line 146, in __init__
+    self._dbapi_connection = engine.raw_connection()
+                             ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\engine\base.py", line 3302, in raw_connection
+    return self.pool.connect()
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\pool\base.py", line 449, in connect
+    return _ConnectionFairy._checkout(self)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\pool\base.py", line 1263, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\pool\base.py", line 712, in checkout
+    rec = pool._do_get()
+          ^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\pool\impl.py", line 179, in _do_get
+    with util.safe_reraise():
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\util\langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\pool\impl.py", line 177, in _do_get
+    return self._create_connection()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\pool\base.py", line 390, in _create_connection
+    return _ConnectionRecord(self)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\pool\base.py", line 674, in __init__
+    self.__connect()
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\pool\base.py", line 900, in __connect
+    with util.safe_reraise():
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\util\langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\pool\base.py", line 896, in __connect
+    self.dbapi_connection = connection = pool._invoke_creator(self)
+                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\engine\create.py", line 643, in connect
+    return dialect.connect(*cargs, **cparams)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\engine\default.py", line 621, in connect
+    return self.loaded_dbapi.connect(*cargs, **cparams)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\dialects\postgresql\asyncpg.py", line 953, in connect
+    await_only(creator_fn(*arg, **kw)),
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 132, in await_only
+    return current.parent.switch(awaitable)  # type: ignore[no-any-return,attr-defined] # noqa: E501
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 196, in greenlet_spawn
+    value = await result
+            ^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\asyncpg\connection.py", line 2329, in connect
+    return await connect_utils._connect(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\asyncpg\connect_utils.py", line 1017, in _connect
+    raise last_error or exceptions.TargetServerAttributeNotMatched(
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\asyncpg\connect_utils.py", line 991, in _connect
+    conn = await _connect_addr(
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\asyncpg\connect_utils.py", line 828, in _connect_addr
+    return await __connect_addr(params, True, *args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\asyncpg\connect_utils.py", line 873, in __connect_addr
+    tr, pr = await connector
+             ^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\asyncpg\connect_utils.py", line 744, in _create_ssl_connection
+    tr, pr = await loop.create_connection(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\installed_software\anaconda3\envs\myenv3\Lib\asyncio\base_events.py", line 1130, in create_connection
+    raise OSError('Multiple exceptions: {}'.format(
+OSError: Multiple exceptions: [Errno 10061] Connect call failed ('::1', 5432, 0, 0), [Errno 10061] Connect call failed ('127.0.0.1', 5432)
+ERROR 2024-09-24 19:01:43 root HTTP error: Error retrieving category
+ERROR 2024-09-24 19:01:43 root Unexpected error: 500: Error retrieving category
+Traceback (most recent call last):
+  File "D:\Projects\Fast_API\blog_app\backend\app\services\categories.py", line 159, in get_category_by_search
+    result = await db.execute(query)
+             ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\ext\asyncio\session.py", line 461, in execute
+    result = await greenlet_spawn(
+             ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 201, in greenlet_spawn
+    result = context.throw(*sys.exc_info())
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\orm\session.py", line 2362, in execute
+    return self._execute_internal(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\orm\session.py", line 2237, in _execute_internal
+    conn = self._connection_for_bind(bind)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\orm\session.py", line 2106, in _connection_for_bind
+    return trans._connection_for_bind(engine, execution_options)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<string>", line 2, in _connection_for_bind
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\orm\state_changes.py", line 139, in _go
+    ret_value = fn(self, *arg, **kw)
+                ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\orm\session.py", line 1189, in _connection_for_bind
+    conn = bind.connect()
+           ^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\engine\base.py", line 3278, in connect
+    return self._connection_cls(self)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\engine\base.py", line 146, in __init__
+    self._dbapi_connection = engine.raw_connection()
+                             ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\engine\base.py", line 3302, in raw_connection
+    return self.pool.connect()
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\pool\base.py", line 449, in connect
+    return _ConnectionFairy._checkout(self)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\pool\base.py", line 1263, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\pool\base.py", line 712, in checkout
+    rec = pool._do_get()
+          ^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\pool\impl.py", line 179, in _do_get
+    with util.safe_reraise():
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\util\langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\pool\impl.py", line 177, in _do_get
+    return self._create_connection()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\pool\base.py", line 390, in _create_connection
+    return _ConnectionRecord(self)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\pool\base.py", line 674, in __init__
+    self.__connect()
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\pool\base.py", line 900, in __connect
+    with util.safe_reraise():
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\util\langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\pool\base.py", line 896, in __connect
+    self.dbapi_connection = connection = pool._invoke_creator(self)
+                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\engine\create.py", line 643, in connect
+    return dialect.connect(*cargs, **cparams)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\engine\default.py", line 621, in connect
+    return self.loaded_dbapi.connect(*cargs, **cparams)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\dialects\postgresql\asyncpg.py", line 953, in connect
+    await_only(creator_fn(*arg, **kw)),
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 132, in await_only
+    return current.parent.switch(awaitable)  # type: ignore[no-any-return,attr-defined] # noqa: E501
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 196, in greenlet_spawn
+    value = await result
+            ^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\asyncpg\connection.py", line 2329, in connect
+    return await connect_utils._connect(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\asyncpg\connect_utils.py", line 1017, in _connect
+    raise last_error or exceptions.TargetServerAttributeNotMatched(
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\asyncpg\connect_utils.py", line 991, in _connect
+    conn = await _connect_addr(
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\asyncpg\connect_utils.py", line 828, in _connect_addr
+    return await __connect_addr(params, True, *args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\asyncpg\connect_utils.py", line 873, in __connect_addr
+    tr, pr = await connector
+             ^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\asyncpg\connect_utils.py", line 744, in _create_ssl_connection
+    tr, pr = await loop.create_connection(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\installed_software\anaconda3\envs\myenv3\Lib\asyncio\base_events.py", line 1130, in create_connection
+    raise OSError('Multiple exceptions: {}'.format(
+OSError: Multiple exceptions: [Errno 10061] Connect call failed ('::1', 5432, 0, 0), [Errno 10061] Connect call failed ('127.0.0.1', 5432)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Projects\Fast_API\blog_app\backend\app\core\database.py", line 21, in get_db
+    yield session
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\fastapi\routing.py", line 278, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\fastapi\routing.py", line 191, in run_endpoint_function
+    return await dependant.call(**values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\Fast_API\blog_app\backend\app\routers\categories.py", line 156, in search_category
+    raise he
+  File "D:\Projects\Fast_API\blog_app\backend\app\routers\categories.py", line 144, in search_category
+    category = await get_category_by_search(db, category_id=category_id, name=name, is_active=is_active)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\Fast_API\blog_app\backend\app\services\categories.py", line 171, in get_category_by_search
+    raise HTTPException(
+fastapi.exceptions.HTTPException: 500: Error retrieving category
+ERROR 2024-09-24 19:30:28 root HTTP error: Category not found
+ERROR 2024-09-24 19:30:28 root Unexpected error: 404: Category not found
+Traceback (most recent call last):
+  File "D:\Projects\Fast_API\blog_app\backend\app\core\database.py", line 21, in get_db
+    yield session
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\fastapi\routing.py", line 278, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\fastapi\routing.py", line 191, in run_endpoint_function
+    return await dependant.call(**values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\Fast_API\blog_app\backend\app\routers\categories.py", line 156, in search_category
+    raise he
+  File "D:\Projects\Fast_API\blog_app\backend\app\routers\categories.py", line 146, in search_category
+    raise HTTPException(status_code=404, detail="Category not found")
+fastapi.exceptions.HTTPException: 404: Category not found
+ERROR 2024-09-24 19:51:39 root Failed to create categories: (sqlalchemy.dialects.postgresql.asyncpg.IntegrityError) <class 'asyncpg.exceptions.UniqueViolationError'>: duplicate key value violates unique constraint "categories_cat_id_key"
+DETAIL:  Key (cat_id)=(cat__10) already exists.
+[SQL: INSERT INTO categories (cat_id, name, is_active, created_on, updated_on) VALUES ($1::VARCHAR, $2::VARCHAR, $3::BOOLEAN, now(), $4::TIMESTAMP WITHOUT TIME ZONE) RETURNING categories.id, categories.created_on]
+[parameters: ('cat__10', '1Sample Category 2', True, None)]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\dialects\postgresql\asyncpg.py", line 538, in _prepare_and_execute
+    self._rows = deque(await prepared_stmt.fetch(*parameters))
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\asyncpg\prepared_stmt.py", line 176, in fetch
+    data = await self.__bind_execute(args, 0, timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\asyncpg\prepared_stmt.py", line 241, in __bind_execute
+    data, status, _ = await self.__do_execute(
+                      ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\asyncpg\prepared_stmt.py", line 230, in __do_execute
+    return await executor(protocol)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "asyncpg\protocol\protocol.pyx", line 207, in bind_execute
+asyncpg.exceptions.UniqueViolationError: duplicate key value violates unique constraint "categories_cat_id_key"
+DETAIL:  Key (cat_id)=(cat__10) already exists.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\engine\base.py", line 1967, in _exec_single_context
+    self.dialect.do_execute(
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\engine\default.py", line 941, in do_execute
+    cursor.execute(statement, parameters)
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\dialects\postgresql\asyncpg.py", line 572, in execute
+    self._adapt_connection.await_(
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 132, in await_only
+    return current.parent.switch(awaitable)  # type: ignore[no-any-return,attr-defined] # noqa: E501
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 196, in greenlet_spawn
+    value = await result
+            ^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\dialects\postgresql\asyncpg.py", line 550, in _prepare_and_execute
+    self._handle_exception(error)
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\dialects\postgresql\asyncpg.py", line 501, in _handle_exception
+    self._adapt_connection._handle_exception(error)
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\dialects\postgresql\asyncpg.py", line 784, in _handle_exception
+    raise translated_error from error
+sqlalchemy.dialects.postgresql.asyncpg.AsyncAdapt_asyncpg_dbapi.IntegrityError: <class 'asyncpg.exceptions.UniqueViolationError'>: duplicate key value violates unique constraint "categories_cat_id_key"
+DETAIL:  Key (cat_id)=(cat__10) already exists.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\Projects\Fast_API\blog_app\backend\app\services\categories.py", line 39, in create_category
+    await db.commit()
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\ext\asyncio\session.py", line 1009, in commit
+    await greenlet_spawn(self.sync_session.commit)
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 203, in greenlet_spawn
+    result = context.switch(value)
+             ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\orm\session.py", line 2028, in commit
+    trans.commit(_to_root=True)
+  File "<string>", line 2, in commit
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\orm\state_changes.py", line 139, in _go
+    ret_value = fn(self, *arg, **kw)
+                ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\orm\session.py", line 1313, in commit
+    self._prepare_impl()
+  File "<string>", line 2, in _prepare_impl
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\orm\state_changes.py", line 139, in _go
+    ret_value = fn(self, *arg, **kw)
+                ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\orm\session.py", line 1288, in _prepare_impl
+    self.session.flush()
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\orm\session.py", line 4352, in flush
+    self._flush(objects)
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\orm\session.py", line 4487, in _flush
+    with util.safe_reraise():
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\util\langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\orm\session.py", line 4448, in _flush
+    flush_context.execute()
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\orm\unitofwork.py", line 466, in execute
+    rec.execute(self)
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\orm\unitofwork.py", line 642, in execute
+    util.preloaded.orm_persistence.save_obj(
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\orm\persistence.py", line 93, in save_obj
+    _emit_insert_statements(
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\orm\persistence.py", line 1233, in _emit_insert_statements
+    result = connection.execute(
+             ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\engine\base.py", line 1418, in execute
+    return meth(
+           ^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\sql\elements.py", line 515, in _execute_on_connection
+    return connection._execute_clauseelement(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\engine\base.py", line 1640, in _execute_clauseelement
+    ret = self._execute_context(
+          ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\engine\base.py", line 1846, in _execute_context
+    return self._exec_single_context(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\engine\base.py", line 1986, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\engine\base.py", line 2355, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\engine\base.py", line 1967, in _exec_single_context
+    self.dialect.do_execute(
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\engine\default.py", line 941, in do_execute
+    cursor.execute(statement, parameters)
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\dialects\postgresql\asyncpg.py", line 572, in execute
+    self._adapt_connection.await_(
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 132, in await_only
+    return current.parent.switch(awaitable)  # type: ignore[no-any-return,attr-defined] # noqa: E501
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 196, in greenlet_spawn
+    value = await result
+            ^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\dialects\postgresql\asyncpg.py", line 550, in _prepare_and_execute
+    self._handle_exception(error)
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\dialects\postgresql\asyncpg.py", line 501, in _handle_exception
+    self._adapt_connection._handle_exception(error)
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\dialects\postgresql\asyncpg.py", line 784, in _handle_exception
+    raise translated_error from error
+sqlalchemy.exc.IntegrityError: (sqlalchemy.dialects.postgresql.asyncpg.IntegrityError) <class 'asyncpg.exceptions.UniqueViolationError'>: duplicate key value violates unique constraint "categories_cat_id_key"
+DETAIL:  Key (cat_id)=(cat__10) already exists.
+[SQL: INSERT INTO categories (cat_id, name, is_active, created_on, updated_on) VALUES ($1::VARCHAR, $2::VARCHAR, $3::BOOLEAN, now(), $4::TIMESTAMP WITHOUT TIME ZONE) RETURNING categories.id, categories.created_on]
+[parameters: ('cat__10', '1Sample Category 2', True, None)]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+ERROR 2024-09-24 19:51:39 root HTTP error: Failed to create categories
+ERROR 2024-09-24 19:51:39 root Unexpected error: 500: Failed to create categories
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\dialects\postgresql\asyncpg.py", line 538, in _prepare_and_execute
+    self._rows = deque(await prepared_stmt.fetch(*parameters))
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\asyncpg\prepared_stmt.py", line 176, in fetch
+    data = await self.__bind_execute(args, 0, timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\asyncpg\prepared_stmt.py", line 241, in __bind_execute
+    data, status, _ = await self.__do_execute(
+                      ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\asyncpg\prepared_stmt.py", line 230, in __do_execute
+    return await executor(protocol)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "asyncpg\protocol\protocol.pyx", line 207, in bind_execute
+asyncpg.exceptions.UniqueViolationError: duplicate key value violates unique constraint "categories_cat_id_key"
+DETAIL:  Key (cat_id)=(cat__10) already exists.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\engine\base.py", line 1967, in _exec_single_context
+    self.dialect.do_execute(
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\engine\default.py", line 941, in do_execute
+    cursor.execute(statement, parameters)
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\dialects\postgresql\asyncpg.py", line 572, in execute
+    self._adapt_connection.await_(
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 132, in await_only
+    return current.parent.switch(awaitable)  # type: ignore[no-any-return,attr-defined] # noqa: E501
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 196, in greenlet_spawn
+    value = await result
+            ^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\dialects\postgresql\asyncpg.py", line 550, in _prepare_and_execute
+    self._handle_exception(error)
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\dialects\postgresql\asyncpg.py", line 501, in _handle_exception
+    self._adapt_connection._handle_exception(error)
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\dialects\postgresql\asyncpg.py", line 784, in _handle_exception
+    raise translated_error from error
+sqlalchemy.dialects.postgresql.asyncpg.AsyncAdapt_asyncpg_dbapi.IntegrityError: <class 'asyncpg.exceptions.UniqueViolationError'>: duplicate key value violates unique constraint "categories_cat_id_key"
+DETAIL:  Key (cat_id)=(cat__10) already exists.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\Projects\Fast_API\blog_app\backend\app\services\categories.py", line 39, in create_category
+    await db.commit()
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\ext\asyncio\session.py", line 1009, in commit
+    await greenlet_spawn(self.sync_session.commit)
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 203, in greenlet_spawn
+    result = context.switch(value)
+             ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\orm\session.py", line 2028, in commit
+    trans.commit(_to_root=True)
+  File "<string>", line 2, in commit
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\orm\state_changes.py", line 139, in _go
+    ret_value = fn(self, *arg, **kw)
+                ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\orm\session.py", line 1313, in commit
+    self._prepare_impl()
+  File "<string>", line 2, in _prepare_impl
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\orm\state_changes.py", line 139, in _go
+    ret_value = fn(self, *arg, **kw)
+                ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\orm\session.py", line 1288, in _prepare_impl
+    self.session.flush()
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\orm\session.py", line 4352, in flush
+    self._flush(objects)
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\orm\session.py", line 4487, in _flush
+    with util.safe_reraise():
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\util\langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\orm\session.py", line 4448, in _flush
+    flush_context.execute()
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\orm\unitofwork.py", line 466, in execute
+    rec.execute(self)
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\orm\unitofwork.py", line 642, in execute
+    util.preloaded.orm_persistence.save_obj(
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\orm\persistence.py", line 93, in save_obj
+    _emit_insert_statements(
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\orm\persistence.py", line 1233, in _emit_insert_statements
+    result = connection.execute(
+             ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\engine\base.py", line 1418, in execute
+    return meth(
+           ^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\sql\elements.py", line 515, in _execute_on_connection
+    return connection._execute_clauseelement(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\engine\base.py", line 1640, in _execute_clauseelement
+    ret = self._execute_context(
+          ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\engine\base.py", line 1846, in _execute_context
+    return self._exec_single_context(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\engine\base.py", line 1986, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\engine\base.py", line 2355, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\engine\base.py", line 1967, in _exec_single_context
+    self.dialect.do_execute(
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\engine\default.py", line 941, in do_execute
+    cursor.execute(statement, parameters)
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\dialects\postgresql\asyncpg.py", line 572, in execute
+    self._adapt_connection.await_(
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 132, in await_only
+    return current.parent.switch(awaitable)  # type: ignore[no-any-return,attr-defined] # noqa: E501
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 196, in greenlet_spawn
+    value = await result
+            ^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\dialects\postgresql\asyncpg.py", line 550, in _prepare_and_execute
+    self._handle_exception(error)
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\dialects\postgresql\asyncpg.py", line 501, in _handle_exception
+    self._adapt_connection._handle_exception(error)
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\dialects\postgresql\asyncpg.py", line 784, in _handle_exception
+    raise translated_error from error
+sqlalchemy.exc.IntegrityError: (sqlalchemy.dialects.postgresql.asyncpg.IntegrityError) <class 'asyncpg.exceptions.UniqueViolationError'>: duplicate key value violates unique constraint "categories_cat_id_key"
+DETAIL:  Key (cat_id)=(cat__10) already exists.
+[SQL: INSERT INTO categories (cat_id, name, is_active, created_on, updated_on) VALUES ($1::VARCHAR, $2::VARCHAR, $3::BOOLEAN, now(), $4::TIMESTAMP WITHOUT TIME ZONE) RETURNING categories.id, categories.created_on]
+[parameters: ('cat__10', '1Sample Category 2', True, None)]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Projects\Fast_API\blog_app\backend\app\core\database.py", line 21, in get_db
+    yield session
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\fastapi\routing.py", line 278, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\fastapi\routing.py", line 191, in run_endpoint_function
+    return await dependant.call(**values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\Fast_API\blog_app\backend\app\routers\categories.py", line 35, in create_category_route
+    raise he
+  File "D:\Projects\Fast_API\blog_app\backend\app\routers\categories.py", line 25, in create_category_route
+    new_categories = await create_category(db, category_data)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\Fast_API\blog_app\backend\app\services\categories.py", line 47, in create_category
+    raise HTTPException(
+fastapi.exceptions.HTTPException: 500: Failed to create categories
+ERROR 2024-09-24 19:52:19 root Failed to create categories: (sqlalchemy.dialects.postgresql.asyncpg.IntegrityError) <class 'asyncpg.exceptions.UniqueViolationError'>: duplicate key value violates unique constraint "categories_cat_id_key"
+DETAIL:  Key (cat_id)=(cat__10) already exists.
+[SQL: INSERT INTO categories (cat_id, name, is_active, created_on, updated_on) VALUES ($1::VARCHAR, $2::VARCHAR, $3::BOOLEAN, now(), $4::TIMESTAMP WITHOUT TIME ZONE) RETURNING categories.id, categories.created_on]
+[parameters: ('cat__10', 'Gopala', True, None)]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\dialects\postgresql\asyncpg.py", line 538, in _prepare_and_execute
+    self._rows = deque(await prepared_stmt.fetch(*parameters))
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\asyncpg\prepared_stmt.py", line 176, in fetch
+    data = await self.__bind_execute(args, 0, timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\asyncpg\prepared_stmt.py", line 241, in __bind_execute
+    data, status, _ = await self.__do_execute(
+                      ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\asyncpg\prepared_stmt.py", line 230, in __do_execute
+    return await executor(protocol)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "asyncpg\protocol\protocol.pyx", line 207, in bind_execute
+asyncpg.exceptions.UniqueViolationError: duplicate key value violates unique constraint "categories_cat_id_key"
+DETAIL:  Key (cat_id)=(cat__10) already exists.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\engine\base.py", line 1967, in _exec_single_context
+    self.dialect.do_execute(
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\engine\default.py", line 941, in do_execute
+    cursor.execute(statement, parameters)
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\dialects\postgresql\asyncpg.py", line 572, in execute
+    self._adapt_connection.await_(
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 132, in await_only
+    return current.parent.switch(awaitable)  # type: ignore[no-any-return,attr-defined] # noqa: E501
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 196, in greenlet_spawn
+    value = await result
+            ^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\dialects\postgresql\asyncpg.py", line 550, in _prepare_and_execute
+    self._handle_exception(error)
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\dialects\postgresql\asyncpg.py", line 501, in _handle_exception
+    self._adapt_connection._handle_exception(error)
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\dialects\postgresql\asyncpg.py", line 784, in _handle_exception
+    raise translated_error from error
+sqlalchemy.dialects.postgresql.asyncpg.AsyncAdapt_asyncpg_dbapi.IntegrityError: <class 'asyncpg.exceptions.UniqueViolationError'>: duplicate key value violates unique constraint "categories_cat_id_key"
+DETAIL:  Key (cat_id)=(cat__10) already exists.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\Projects\Fast_API\blog_app\backend\app\services\categories.py", line 39, in create_category
+    await db.commit()
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\ext\asyncio\session.py", line 1009, in commit
+    await greenlet_spawn(self.sync_session.commit)
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 203, in greenlet_spawn
+    result = context.switch(value)
+             ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\orm\session.py", line 2028, in commit
+    trans.commit(_to_root=True)
+  File "<string>", line 2, in commit
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\orm\state_changes.py", line 139, in _go
+    ret_value = fn(self, *arg, **kw)
+                ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\orm\session.py", line 1313, in commit
+    self._prepare_impl()
+  File "<string>", line 2, in _prepare_impl
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\orm\state_changes.py", line 139, in _go
+    ret_value = fn(self, *arg, **kw)
+                ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\orm\session.py", line 1288, in _prepare_impl
+    self.session.flush()
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\orm\session.py", line 4352, in flush
+    self._flush(objects)
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\orm\session.py", line 4487, in _flush
+    with util.safe_reraise():
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\util\langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\orm\session.py", line 4448, in _flush
+    flush_context.execute()
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\orm\unitofwork.py", line 466, in execute
+    rec.execute(self)
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\orm\unitofwork.py", line 642, in execute
+    util.preloaded.orm_persistence.save_obj(
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\orm\persistence.py", line 93, in save_obj
+    _emit_insert_statements(
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\orm\persistence.py", line 1233, in _emit_insert_statements
+    result = connection.execute(
+             ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\engine\base.py", line 1418, in execute
+    return meth(
+           ^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\sql\elements.py", line 515, in _execute_on_connection
+    return connection._execute_clauseelement(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\engine\base.py", line 1640, in _execute_clauseelement
+    ret = self._execute_context(
+          ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\engine\base.py", line 1846, in _execute_context
+    return self._exec_single_context(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\engine\base.py", line 1986, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\engine\base.py", line 2355, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\engine\base.py", line 1967, in _exec_single_context
+    self.dialect.do_execute(
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\engine\default.py", line 941, in do_execute
+    cursor.execute(statement, parameters)
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\dialects\postgresql\asyncpg.py", line 572, in execute
+    self._adapt_connection.await_(
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 132, in await_only
+    return current.parent.switch(awaitable)  # type: ignore[no-any-return,attr-defined] # noqa: E501
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 196, in greenlet_spawn
+    value = await result
+            ^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\dialects\postgresql\asyncpg.py", line 550, in _prepare_and_execute
+    self._handle_exception(error)
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\dialects\postgresql\asyncpg.py", line 501, in _handle_exception
+    self._adapt_connection._handle_exception(error)
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\dialects\postgresql\asyncpg.py", line 784, in _handle_exception
+    raise translated_error from error
+sqlalchemy.exc.IntegrityError: (sqlalchemy.dialects.postgresql.asyncpg.IntegrityError) <class 'asyncpg.exceptions.UniqueViolationError'>: duplicate key value violates unique constraint "categories_cat_id_key"
+DETAIL:  Key (cat_id)=(cat__10) already exists.
+[SQL: INSERT INTO categories (cat_id, name, is_active, created_on, updated_on) VALUES ($1::VARCHAR, $2::VARCHAR, $3::BOOLEAN, now(), $4::TIMESTAMP WITHOUT TIME ZONE) RETURNING categories.id, categories.created_on]
+[parameters: ('cat__10', 'Gopala', True, None)]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+ERROR 2024-09-24 19:52:19 root HTTP error: Failed to create categories
+ERROR 2024-09-24 19:52:19 root Unexpected error: 500: Failed to create categories
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\dialects\postgresql\asyncpg.py", line 538, in _prepare_and_execute
+    self._rows = deque(await prepared_stmt.fetch(*parameters))
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\asyncpg\prepared_stmt.py", line 176, in fetch
+    data = await self.__bind_execute(args, 0, timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\asyncpg\prepared_stmt.py", line 241, in __bind_execute
+    data, status, _ = await self.__do_execute(
+                      ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\asyncpg\prepared_stmt.py", line 230, in __do_execute
+    return await executor(protocol)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "asyncpg\protocol\protocol.pyx", line 207, in bind_execute
+asyncpg.exceptions.UniqueViolationError: duplicate key value violates unique constraint "categories_cat_id_key"
+DETAIL:  Key (cat_id)=(cat__10) already exists.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\engine\base.py", line 1967, in _exec_single_context
+    self.dialect.do_execute(
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\engine\default.py", line 941, in do_execute
+    cursor.execute(statement, parameters)
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\dialects\postgresql\asyncpg.py", line 572, in execute
+    self._adapt_connection.await_(
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 132, in await_only
+    return current.parent.switch(awaitable)  # type: ignore[no-any-return,attr-defined] # noqa: E501
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 196, in greenlet_spawn
+    value = await result
+            ^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\dialects\postgresql\asyncpg.py", line 550, in _prepare_and_execute
+    self._handle_exception(error)
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\dialects\postgresql\asyncpg.py", line 501, in _handle_exception
+    self._adapt_connection._handle_exception(error)
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\dialects\postgresql\asyncpg.py", line 784, in _handle_exception
+    raise translated_error from error
+sqlalchemy.dialects.postgresql.asyncpg.AsyncAdapt_asyncpg_dbapi.IntegrityError: <class 'asyncpg.exceptions.UniqueViolationError'>: duplicate key value violates unique constraint "categories_cat_id_key"
+DETAIL:  Key (cat_id)=(cat__10) already exists.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\Projects\Fast_API\blog_app\backend\app\services\categories.py", line 39, in create_category
+    await db.commit()
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\ext\asyncio\session.py", line 1009, in commit
+    await greenlet_spawn(self.sync_session.commit)
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 203, in greenlet_spawn
+    result = context.switch(value)
+             ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\orm\session.py", line 2028, in commit
+    trans.commit(_to_root=True)
+  File "<string>", line 2, in commit
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\orm\state_changes.py", line 139, in _go
+    ret_value = fn(self, *arg, **kw)
+                ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\orm\session.py", line 1313, in commit
+    self._prepare_impl()
+  File "<string>", line 2, in _prepare_impl
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\orm\state_changes.py", line 139, in _go
+    ret_value = fn(self, *arg, **kw)
+                ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\orm\session.py", line 1288, in _prepare_impl
+    self.session.flush()
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\orm\session.py", line 4352, in flush
+    self._flush(objects)
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\orm\session.py", line 4487, in _flush
+    with util.safe_reraise():
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\util\langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\orm\session.py", line 4448, in _flush
+    flush_context.execute()
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\orm\unitofwork.py", line 466, in execute
+    rec.execute(self)
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\orm\unitofwork.py", line 642, in execute
+    util.preloaded.orm_persistence.save_obj(
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\orm\persistence.py", line 93, in save_obj
+    _emit_insert_statements(
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\orm\persistence.py", line 1233, in _emit_insert_statements
+    result = connection.execute(
+             ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\engine\base.py", line 1418, in execute
+    return meth(
+           ^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\sql\elements.py", line 515, in _execute_on_connection
+    return connection._execute_clauseelement(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\engine\base.py", line 1640, in _execute_clauseelement
+    ret = self._execute_context(
+          ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\engine\base.py", line 1846, in _execute_context
+    return self._exec_single_context(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\engine\base.py", line 1986, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\engine\base.py", line 2355, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\engine\base.py", line 1967, in _exec_single_context
+    self.dialect.do_execute(
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\engine\default.py", line 941, in do_execute
+    cursor.execute(statement, parameters)
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\dialects\postgresql\asyncpg.py", line 572, in execute
+    self._adapt_connection.await_(
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 132, in await_only
+    return current.parent.switch(awaitable)  # type: ignore[no-any-return,attr-defined] # noqa: E501
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 196, in greenlet_spawn
+    value = await result
+            ^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\dialects\postgresql\asyncpg.py", line 550, in _prepare_and_execute
+    self._handle_exception(error)
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\dialects\postgresql\asyncpg.py", line 501, in _handle_exception
+    self._adapt_connection._handle_exception(error)
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\dialects\postgresql\asyncpg.py", line 784, in _handle_exception
+    raise translated_error from error
+sqlalchemy.exc.IntegrityError: (sqlalchemy.dialects.postgresql.asyncpg.IntegrityError) <class 'asyncpg.exceptions.UniqueViolationError'>: duplicate key value violates unique constraint "categories_cat_id_key"
+DETAIL:  Key (cat_id)=(cat__10) already exists.
+[SQL: INSERT INTO categories (cat_id, name, is_active, created_on, updated_on) VALUES ($1::VARCHAR, $2::VARCHAR, $3::BOOLEAN, now(), $4::TIMESTAMP WITHOUT TIME ZONE) RETURNING categories.id, categories.created_on]
+[parameters: ('cat__10', 'Gopala', True, None)]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Projects\Fast_API\blog_app\backend\app\core\database.py", line 21, in get_db
+    yield session
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\fastapi\routing.py", line 278, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\fastapi\routing.py", line 191, in run_endpoint_function
+    return await dependant.call(**values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\Fast_API\blog_app\backend\app\routers\categories.py", line 35, in create_category_route
+    raise he
+  File "D:\Projects\Fast_API\blog_app\backend\app\routers\categories.py", line 25, in create_category_route
+    new_categories = await create_category(db, category_data)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\Fast_API\blog_app\backend\app\services\categories.py", line 47, in create_category
+    raise HTTPException(
+fastapi.exceptions.HTTPException: 500: Failed to create categories
+ERROR 2024-09-24 20:02:31 root Failed to create categories: (sqlalchemy.dialects.postgresql.asyncpg.IntegrityError) <class 'asyncpg.exceptions.UniqueViolationError'>: duplicate key value violates unique constraint "categories_cat_id_key"
+DETAIL:  Key (cat_id)=(cat__10) already exists.
+[SQL: INSERT INTO categories (cat_id, name, is_active, created_on, updated_on) VALUES ($1::VARCHAR, $2::VARCHAR, $3::BOOLEAN, now(), $4::TIMESTAMP WITHOUT TIME ZONE) RETURNING categories.id, categories.created_on]
+[parameters: ('cat__10', 'Sample Categoryadsfadf2', True, None)]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\dialects\postgresql\asyncpg.py", line 538, in _prepare_and_execute
+    self._rows = deque(await prepared_stmt.fetch(*parameters))
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\asyncpg\prepared_stmt.py", line 176, in fetch
+    data = await self.__bind_execute(args, 0, timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\asyncpg\prepared_stmt.py", line 241, in __bind_execute
+    data, status, _ = await self.__do_execute(
+                      ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\asyncpg\prepared_stmt.py", line 230, in __do_execute
+    return await executor(protocol)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "asyncpg\protocol\protocol.pyx", line 207, in bind_execute
+asyncpg.exceptions.UniqueViolationError: duplicate key value violates unique constraint "categories_cat_id_key"
+DETAIL:  Key (cat_id)=(cat__10) already exists.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\engine\base.py", line 1967, in _exec_single_context
+    self.dialect.do_execute(
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\engine\default.py", line 941, in do_execute
+    cursor.execute(statement, parameters)
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\dialects\postgresql\asyncpg.py", line 572, in execute
+    self._adapt_connection.await_(
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 132, in await_only
+    return current.parent.switch(awaitable)  # type: ignore[no-any-return,attr-defined] # noqa: E501
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 196, in greenlet_spawn
+    value = await result
+            ^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\dialects\postgresql\asyncpg.py", line 550, in _prepare_and_execute
+    self._handle_exception(error)
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\dialects\postgresql\asyncpg.py", line 501, in _handle_exception
+    self._adapt_connection._handle_exception(error)
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\dialects\postgresql\asyncpg.py", line 784, in _handle_exception
+    raise translated_error from error
+sqlalchemy.dialects.postgresql.asyncpg.AsyncAdapt_asyncpg_dbapi.IntegrityError: <class 'asyncpg.exceptions.UniqueViolationError'>: duplicate key value violates unique constraint "categories_cat_id_key"
+DETAIL:  Key (cat_id)=(cat__10) already exists.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\Projects\Fast_API\blog_app\backend\app\services\categories.py", line 39, in create_category
+    await db.commit()
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\ext\asyncio\session.py", line 1009, in commit
+    await greenlet_spawn(self.sync_session.commit)
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 203, in greenlet_spawn
+    result = context.switch(value)
+             ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\orm\session.py", line 2028, in commit
+    trans.commit(_to_root=True)
+  File "<string>", line 2, in commit
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\orm\state_changes.py", line 139, in _go
+    ret_value = fn(self, *arg, **kw)
+                ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\orm\session.py", line 1313, in commit
+    self._prepare_impl()
+  File "<string>", line 2, in _prepare_impl
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\orm\state_changes.py", line 139, in _go
+    ret_value = fn(self, *arg, **kw)
+                ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\orm\session.py", line 1288, in _prepare_impl
+    self.session.flush()
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\orm\session.py", line 4352, in flush
+    self._flush(objects)
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\orm\session.py", line 4487, in _flush
+    with util.safe_reraise():
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\util\langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\orm\session.py", line 4448, in _flush
+    flush_context.execute()
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\orm\unitofwork.py", line 466, in execute
+    rec.execute(self)
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\orm\unitofwork.py", line 642, in execute
+    util.preloaded.orm_persistence.save_obj(
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\orm\persistence.py", line 93, in save_obj
+    _emit_insert_statements(
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\orm\persistence.py", line 1233, in _emit_insert_statements
+    result = connection.execute(
+             ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\engine\base.py", line 1418, in execute
+    return meth(
+           ^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\sql\elements.py", line 515, in _execute_on_connection
+    return connection._execute_clauseelement(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\engine\base.py", line 1640, in _execute_clauseelement
+    ret = self._execute_context(
+          ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\engine\base.py", line 1846, in _execute_context
+    return self._exec_single_context(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\engine\base.py", line 1986, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\engine\base.py", line 2355, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\engine\base.py", line 1967, in _exec_single_context
+    self.dialect.do_execute(
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\engine\default.py", line 941, in do_execute
+    cursor.execute(statement, parameters)
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\dialects\postgresql\asyncpg.py", line 572, in execute
+    self._adapt_connection.await_(
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 132, in await_only
+    return current.parent.switch(awaitable)  # type: ignore[no-any-return,attr-defined] # noqa: E501
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 196, in greenlet_spawn
+    value = await result
+            ^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\dialects\postgresql\asyncpg.py", line 550, in _prepare_and_execute
+    self._handle_exception(error)
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\dialects\postgresql\asyncpg.py", line 501, in _handle_exception
+    self._adapt_connection._handle_exception(error)
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\dialects\postgresql\asyncpg.py", line 784, in _handle_exception
+    raise translated_error from error
+sqlalchemy.exc.IntegrityError: (sqlalchemy.dialects.postgresql.asyncpg.IntegrityError) <class 'asyncpg.exceptions.UniqueViolationError'>: duplicate key value violates unique constraint "categories_cat_id_key"
+DETAIL:  Key (cat_id)=(cat__10) already exists.
+[SQL: INSERT INTO categories (cat_id, name, is_active, created_on, updated_on) VALUES ($1::VARCHAR, $2::VARCHAR, $3::BOOLEAN, now(), $4::TIMESTAMP WITHOUT TIME ZONE) RETURNING categories.id, categories.created_on]
+[parameters: ('cat__10', 'Sample Categoryadsfadf2', True, None)]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+ERROR 2024-09-24 20:02:31 root HTTP error: Failed to create categories
+ERROR 2024-09-24 20:02:31 root Unexpected error: 500: Failed to create categories
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\dialects\postgresql\asyncpg.py", line 538, in _prepare_and_execute
+    self._rows = deque(await prepared_stmt.fetch(*parameters))
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\asyncpg\prepared_stmt.py", line 176, in fetch
+    data = await self.__bind_execute(args, 0, timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\asyncpg\prepared_stmt.py", line 241, in __bind_execute
+    data, status, _ = await self.__do_execute(
+                      ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\asyncpg\prepared_stmt.py", line 230, in __do_execute
+    return await executor(protocol)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "asyncpg\protocol\protocol.pyx", line 207, in bind_execute
+asyncpg.exceptions.UniqueViolationError: duplicate key value violates unique constraint "categories_cat_id_key"
+DETAIL:  Key (cat_id)=(cat__10) already exists.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\engine\base.py", line 1967, in _exec_single_context
+    self.dialect.do_execute(
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\engine\default.py", line 941, in do_execute
+    cursor.execute(statement, parameters)
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\dialects\postgresql\asyncpg.py", line 572, in execute
+    self._adapt_connection.await_(
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 132, in await_only
+    return current.parent.switch(awaitable)  # type: ignore[no-any-return,attr-defined] # noqa: E501
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 196, in greenlet_spawn
+    value = await result
+            ^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\dialects\postgresql\asyncpg.py", line 550, in _prepare_and_execute
+    self._handle_exception(error)
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\dialects\postgresql\asyncpg.py", line 501, in _handle_exception
+    self._adapt_connection._handle_exception(error)
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\dialects\postgresql\asyncpg.py", line 784, in _handle_exception
+    raise translated_error from error
+sqlalchemy.dialects.postgresql.asyncpg.AsyncAdapt_asyncpg_dbapi.IntegrityError: <class 'asyncpg.exceptions.UniqueViolationError'>: duplicate key value violates unique constraint "categories_cat_id_key"
+DETAIL:  Key (cat_id)=(cat__10) already exists.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\Projects\Fast_API\blog_app\backend\app\services\categories.py", line 39, in create_category
+    await db.commit()
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\ext\asyncio\session.py", line 1009, in commit
+    await greenlet_spawn(self.sync_session.commit)
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 203, in greenlet_spawn
+    result = context.switch(value)
+             ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\orm\session.py", line 2028, in commit
+    trans.commit(_to_root=True)
+  File "<string>", line 2, in commit
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\orm\state_changes.py", line 139, in _go
+    ret_value = fn(self, *arg, **kw)
+                ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\orm\session.py", line 1313, in commit
+    self._prepare_impl()
+  File "<string>", line 2, in _prepare_impl
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\orm\state_changes.py", line 139, in _go
+    ret_value = fn(self, *arg, **kw)
+                ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\orm\session.py", line 1288, in _prepare_impl
+    self.session.flush()
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\orm\session.py", line 4352, in flush
+    self._flush(objects)
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\orm\session.py", line 4487, in _flush
+    with util.safe_reraise():
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\util\langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\orm\session.py", line 4448, in _flush
+    flush_context.execute()
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\orm\unitofwork.py", line 466, in execute
+    rec.execute(self)
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\orm\unitofwork.py", line 642, in execute
+    util.preloaded.orm_persistence.save_obj(
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\orm\persistence.py", line 93, in save_obj
+    _emit_insert_statements(
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\orm\persistence.py", line 1233, in _emit_insert_statements
+    result = connection.execute(
+             ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\engine\base.py", line 1418, in execute
+    return meth(
+           ^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\sql\elements.py", line 515, in _execute_on_connection
+    return connection._execute_clauseelement(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\engine\base.py", line 1640, in _execute_clauseelement
+    ret = self._execute_context(
+          ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\engine\base.py", line 1846, in _execute_context
+    return self._exec_single_context(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\engine\base.py", line 1986, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\engine\base.py", line 2355, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\engine\base.py", line 1967, in _exec_single_context
+    self.dialect.do_execute(
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\engine\default.py", line 941, in do_execute
+    cursor.execute(statement, parameters)
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\dialects\postgresql\asyncpg.py", line 572, in execute
+    self._adapt_connection.await_(
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 132, in await_only
+    return current.parent.switch(awaitable)  # type: ignore[no-any-return,attr-defined] # noqa: E501
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 196, in greenlet_spawn
+    value = await result
+            ^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\dialects\postgresql\asyncpg.py", line 550, in _prepare_and_execute
+    self._handle_exception(error)
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\dialects\postgresql\asyncpg.py", line 501, in _handle_exception
+    self._adapt_connection._handle_exception(error)
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\dialects\postgresql\asyncpg.py", line 784, in _handle_exception
+    raise translated_error from error
+sqlalchemy.exc.IntegrityError: (sqlalchemy.dialects.postgresql.asyncpg.IntegrityError) <class 'asyncpg.exceptions.UniqueViolationError'>: duplicate key value violates unique constraint "categories_cat_id_key"
+DETAIL:  Key (cat_id)=(cat__10) already exists.
+[SQL: INSERT INTO categories (cat_id, name, is_active, created_on, updated_on) VALUES ($1::VARCHAR, $2::VARCHAR, $3::BOOLEAN, now(), $4::TIMESTAMP WITHOUT TIME ZONE) RETURNING categories.id, categories.created_on]
+[parameters: ('cat__10', 'Sample Categoryadsfadf2', True, None)]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Projects\Fast_API\blog_app\backend\app\core\database.py", line 21, in get_db
+    yield session
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\fastapi\routing.py", line 278, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\fastapi\routing.py", line 191, in run_endpoint_function
+    return await dependant.call(**values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\Fast_API\blog_app\backend\app\routers\categories.py", line 35, in create_category_route
+    raise he
+  File "D:\Projects\Fast_API\blog_app\backend\app\routers\categories.py", line 25, in create_category_route
+    new_categories = await create_category(db, category_data)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\Fast_API\blog_app\backend\app\services\categories.py", line 47, in create_category
+    raise HTTPException(
+fastapi.exceptions.HTTPException: 500: Failed to create categories
+ERROR 2024-09-24 20:08:13 root Error generating category ID: (raised as a result of Query-invoked autoflush; consider using a session.no_autoflush block if this flush is occurring prematurely)
+(sqlalchemy.dialects.postgresql.asyncpg.IntegrityError) <class 'asyncpg.exceptions.UniqueViolationError'>: duplicate key value violates unique constraint "categories_cat_id_key"
+DETAIL:  Key (cat_id)=(cat__10) already exists.
+[SQL: INSERT INTO categories (cat_id, name, is_active, created_on, updated_on) VALUES ($1::VARCHAR, $2::VARCHAR, $3::BOOLEAN, now(), $4::TIMESTAMP WITHOUT TIME ZONE) RETURNING categories.id, categories.created_on]
+[parameters: ('cat__10', 'Sample Category 11', True, None)]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+ERROR 2024-09-24 20:08:13 root Failed to create categories: 500: Error generating category ID
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\dialects\postgresql\asyncpg.py", line 538, in _prepare_and_execute
+    self._rows = deque(await prepared_stmt.fetch(*parameters))
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\asyncpg\prepared_stmt.py", line 176, in fetch
+    data = await self.__bind_execute(args, 0, timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\asyncpg\prepared_stmt.py", line 241, in __bind_execute
+    data, status, _ = await self.__do_execute(
+                      ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\asyncpg\prepared_stmt.py", line 230, in __do_execute
+    return await executor(protocol)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "asyncpg\protocol\protocol.pyx", line 207, in bind_execute
+asyncpg.exceptions.UniqueViolationError: duplicate key value violates unique constraint "categories_cat_id_key"
+DETAIL:  Key (cat_id)=(cat__10) already exists.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\engine\base.py", line 1967, in _exec_single_context
+    self.dialect.do_execute(
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\engine\default.py", line 941, in do_execute
+    cursor.execute(statement, parameters)
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\dialects\postgresql\asyncpg.py", line 572, in execute
+    self._adapt_connection.await_(
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 132, in await_only
+    return current.parent.switch(awaitable)  # type: ignore[no-any-return,attr-defined] # noqa: E501
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 196, in greenlet_spawn
+    value = await result
+            ^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\dialects\postgresql\asyncpg.py", line 550, in _prepare_and_execute
+    self._handle_exception(error)
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\dialects\postgresql\asyncpg.py", line 501, in _handle_exception
+    self._adapt_connection._handle_exception(error)
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\dialects\postgresql\asyncpg.py", line 784, in _handle_exception
+    raise translated_error from error
+sqlalchemy.dialects.postgresql.asyncpg.AsyncAdapt_asyncpg_dbapi.IntegrityError: <class 'asyncpg.exceptions.UniqueViolationError'>: duplicate key value violates unique constraint "categories_cat_id_key"
+DETAIL:  Key (cat_id)=(cat__10) already exists.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\Projects\Fast_API\blog_app\backend\app\services\categories.py", line 13, in generate_cat_id
+    result = await db.execute(select(func.max(Category.cat_id)))
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\ext\asyncio\session.py", line 461, in execute
+    result = await greenlet_spawn(
+             ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 203, in greenlet_spawn
+    result = context.switch(value)
+             ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\orm\session.py", line 2362, in execute
+    return self._execute_internal(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\orm\session.py", line 2226, in _execute_internal
+    ) = compile_state_cls.orm_pre_session_exec(
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\orm\context.py", line 561, in orm_pre_session_exec
+    session._autoflush()
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\orm\session.py", line 3061, in _autoflush
+    raise e.with_traceback(sys.exc_info()[2])
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\orm\session.py", line 3050, in _autoflush
+    self.flush()
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\orm\session.py", line 4352, in flush
+    self._flush(objects)
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\orm\session.py", line 4487, in _flush
+    with util.safe_reraise():
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\util\langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\orm\session.py", line 4448, in _flush
+    flush_context.execute()
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\orm\unitofwork.py", line 466, in execute
+    rec.execute(self)
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\orm\unitofwork.py", line 642, in execute
+    util.preloaded.orm_persistence.save_obj(
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\orm\persistence.py", line 93, in save_obj
+    _emit_insert_statements(
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\orm\persistence.py", line 1233, in _emit_insert_statements
+    result = connection.execute(
+             ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\engine\base.py", line 1418, in execute
+    return meth(
+           ^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\sql\elements.py", line 515, in _execute_on_connection
+    return connection._execute_clauseelement(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\engine\base.py", line 1640, in _execute_clauseelement
+    ret = self._execute_context(
+          ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\engine\base.py", line 1846, in _execute_context
+    return self._exec_single_context(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\engine\base.py", line 1986, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\engine\base.py", line 2355, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\engine\base.py", line 1967, in _exec_single_context
+    self.dialect.do_execute(
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\engine\default.py", line 941, in do_execute
+    cursor.execute(statement, parameters)
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\dialects\postgresql\asyncpg.py", line 572, in execute
+    self._adapt_connection.await_(
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 132, in await_only
+    return current.parent.switch(awaitable)  # type: ignore[no-any-return,attr-defined] # noqa: E501
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 196, in greenlet_spawn
+    value = await result
+            ^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\dialects\postgresql\asyncpg.py", line 550, in _prepare_and_execute
+    self._handle_exception(error)
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\dialects\postgresql\asyncpg.py", line 501, in _handle_exception
+    self._adapt_connection._handle_exception(error)
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\dialects\postgresql\asyncpg.py", line 784, in _handle_exception
+    raise translated_error from error
+sqlalchemy.exc.IntegrityError: (raised as a result of Query-invoked autoflush; consider using a session.no_autoflush block if this flush is occurring prematurely)
+(sqlalchemy.dialects.postgresql.asyncpg.IntegrityError) <class 'asyncpg.exceptions.UniqueViolationError'>: duplicate key value violates unique constraint "categories_cat_id_key"
+DETAIL:  Key (cat_id)=(cat__10) already exists.
+[SQL: INSERT INTO categories (cat_id, name, is_active, created_on, updated_on) VALUES ($1::VARCHAR, $2::VARCHAR, $3::BOOLEAN, now(), $4::TIMESTAMP WITHOUT TIME ZONE) RETURNING categories.id, categories.created_on]
+[parameters: ('cat__10', 'Sample Category 11', True, None)]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Projects\Fast_API\blog_app\backend\app\services\categories.py", line 30, in create_category
+    new_cat_id = await generate_cat_id(db)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\Fast_API\blog_app\backend\app\services\categories.py", line 22, in generate_cat_id
+    raise HTTPException(
+fastapi.exceptions.HTTPException: 500: Error generating category ID
+ERROR 2024-09-24 20:08:13 root HTTP error: Failed to create categories
+ERROR 2024-09-24 20:08:13 root Unexpected error: 500: Failed to create categories
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\dialects\postgresql\asyncpg.py", line 538, in _prepare_and_execute
+    self._rows = deque(await prepared_stmt.fetch(*parameters))
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\asyncpg\prepared_stmt.py", line 176, in fetch
+    data = await self.__bind_execute(args, 0, timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\asyncpg\prepared_stmt.py", line 241, in __bind_execute
+    data, status, _ = await self.__do_execute(
+                      ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\asyncpg\prepared_stmt.py", line 230, in __do_execute
+    return await executor(protocol)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "asyncpg\protocol\protocol.pyx", line 207, in bind_execute
+asyncpg.exceptions.UniqueViolationError: duplicate key value violates unique constraint "categories_cat_id_key"
+DETAIL:  Key (cat_id)=(cat__10) already exists.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\engine\base.py", line 1967, in _exec_single_context
+    self.dialect.do_execute(
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\engine\default.py", line 941, in do_execute
+    cursor.execute(statement, parameters)
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\dialects\postgresql\asyncpg.py", line 572, in execute
+    self._adapt_connection.await_(
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 132, in await_only
+    return current.parent.switch(awaitable)  # type: ignore[no-any-return,attr-defined] # noqa: E501
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 196, in greenlet_spawn
+    value = await result
+            ^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\dialects\postgresql\asyncpg.py", line 550, in _prepare_and_execute
+    self._handle_exception(error)
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\dialects\postgresql\asyncpg.py", line 501, in _handle_exception
+    self._adapt_connection._handle_exception(error)
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\dialects\postgresql\asyncpg.py", line 784, in _handle_exception
+    raise translated_error from error
+sqlalchemy.dialects.postgresql.asyncpg.AsyncAdapt_asyncpg_dbapi.IntegrityError: <class 'asyncpg.exceptions.UniqueViolationError'>: duplicate key value violates unique constraint "categories_cat_id_key"
+DETAIL:  Key (cat_id)=(cat__10) already exists.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\Projects\Fast_API\blog_app\backend\app\services\categories.py", line 13, in generate_cat_id
+    result = await db.execute(select(func.max(Category.cat_id)))
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\ext\asyncio\session.py", line 461, in execute
+    result = await greenlet_spawn(
+             ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 203, in greenlet_spawn
+    result = context.switch(value)
+             ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\orm\session.py", line 2362, in execute
+    return self._execute_internal(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\orm\session.py", line 2226, in _execute_internal
+    ) = compile_state_cls.orm_pre_session_exec(
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\orm\context.py", line 561, in orm_pre_session_exec
+    session._autoflush()
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\orm\session.py", line 3061, in _autoflush
+    raise e.with_traceback(sys.exc_info()[2])
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\orm\session.py", line 3050, in _autoflush
+    self.flush()
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\orm\session.py", line 4352, in flush
+    self._flush(objects)
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\orm\session.py", line 4487, in _flush
+    with util.safe_reraise():
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\util\langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\orm\session.py", line 4448, in _flush
+    flush_context.execute()
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\orm\unitofwork.py", line 466, in execute
+    rec.execute(self)
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\orm\unitofwork.py", line 642, in execute
+    util.preloaded.orm_persistence.save_obj(
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\orm\persistence.py", line 93, in save_obj
+    _emit_insert_statements(
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\orm\persistence.py", line 1233, in _emit_insert_statements
+    result = connection.execute(
+             ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\engine\base.py", line 1418, in execute
+    return meth(
+           ^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\sql\elements.py", line 515, in _execute_on_connection
+    return connection._execute_clauseelement(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\engine\base.py", line 1640, in _execute_clauseelement
+    ret = self._execute_context(
+          ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\engine\base.py", line 1846, in _execute_context
+    return self._exec_single_context(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\engine\base.py", line 1986, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\engine\base.py", line 2355, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\engine\base.py", line 1967, in _exec_single_context
+    self.dialect.do_execute(
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\engine\default.py", line 941, in do_execute
+    cursor.execute(statement, parameters)
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\dialects\postgresql\asyncpg.py", line 572, in execute
+    self._adapt_connection.await_(
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 132, in await_only
+    return current.parent.switch(awaitable)  # type: ignore[no-any-return,attr-defined] # noqa: E501
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 196, in greenlet_spawn
+    value = await result
+            ^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\dialects\postgresql\asyncpg.py", line 550, in _prepare_and_execute
+    self._handle_exception(error)
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\dialects\postgresql\asyncpg.py", line 501, in _handle_exception
+    self._adapt_connection._handle_exception(error)
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\dialects\postgresql\asyncpg.py", line 784, in _handle_exception
+    raise translated_error from error
+sqlalchemy.exc.IntegrityError: (raised as a result of Query-invoked autoflush; consider using a session.no_autoflush block if this flush is occurring prematurely)
+(sqlalchemy.dialects.postgresql.asyncpg.IntegrityError) <class 'asyncpg.exceptions.UniqueViolationError'>: duplicate key value violates unique constraint "categories_cat_id_key"
+DETAIL:  Key (cat_id)=(cat__10) already exists.
+[SQL: INSERT INTO categories (cat_id, name, is_active, created_on, updated_on) VALUES ($1::VARCHAR, $2::VARCHAR, $3::BOOLEAN, now(), $4::TIMESTAMP WITHOUT TIME ZONE) RETURNING categories.id, categories.created_on]
+[parameters: ('cat__10', 'Sample Category 11', True, None)]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Projects\Fast_API\blog_app\backend\app\services\categories.py", line 30, in create_category
+    new_cat_id = await generate_cat_id(db)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\Fast_API\blog_app\backend\app\services\categories.py", line 22, in generate_cat_id
+    raise HTTPException(
+fastapi.exceptions.HTTPException: 500: Error generating category ID
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Projects\Fast_API\blog_app\backend\app\core\database.py", line 21, in get_db
+    yield session
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\fastapi\routing.py", line 278, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\fastapi\routing.py", line 191, in run_endpoint_function
+    return await dependant.call(**values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\Fast_API\blog_app\backend\app\routers\categories.py", line 35, in create_category_route
+    raise he
+  File "D:\Projects\Fast_API\blog_app\backend\app\routers\categories.py", line 25, in create_category_route
+    new_categories = await create_category(db, category_data)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\Fast_API\blog_app\backend\app\services\categories.py", line 47, in create_category
+    raise HTTPException(
+fastapi.exceptions.HTTPException: 500: Failed to create categories
+ERROR 2024-09-24 20:27:35 root Error generating category ID: (raised as a result of Query-invoked autoflush; consider using a session.no_autoflush block if this flush is occurring prematurely)
+(sqlalchemy.dialects.postgresql.asyncpg.IntegrityError) <class 'asyncpg.exceptions.UniqueViolationError'>: duplicate key value violates unique constraint "categories_cat_id_key"
+DETAIL:  Key (cat_id)=(cat__10) already exists.
+[SQL: INSERT INTO categories (cat_id, name, is_active, created_on, updated_on) VALUES ($1::VARCHAR, $2::VARCHAR, $3::BOOLEAN, now(), $4::TIMESTAMP WITHOUT TIME ZONE) RETURNING categories.id, categories.created_on]
+[parameters: ('cat__10', 'Sample Category 11', True, None)]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+ERROR 2024-09-24 20:27:35 root Failed to create categories: 500: Error generating category ID
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\dialects\postgresql\asyncpg.py", line 538, in _prepare_and_execute
+    self._rows = deque(await prepared_stmt.fetch(*parameters))
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\asyncpg\prepared_stmt.py", line 176, in fetch
+    data = await self.__bind_execute(args, 0, timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\asyncpg\prepared_stmt.py", line 241, in __bind_execute
+    data, status, _ = await self.__do_execute(
+                      ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\asyncpg\prepared_stmt.py", line 230, in __do_execute
+    return await executor(protocol)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "asyncpg\protocol\protocol.pyx", line 207, in bind_execute
+asyncpg.exceptions.UniqueViolationError: duplicate key value violates unique constraint "categories_cat_id_key"
+DETAIL:  Key (cat_id)=(cat__10) already exists.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\engine\base.py", line 1967, in _exec_single_context
+    self.dialect.do_execute(
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\engine\default.py", line 941, in do_execute
+    cursor.execute(statement, parameters)
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\dialects\postgresql\asyncpg.py", line 572, in execute
+    self._adapt_connection.await_(
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 132, in await_only
+    return current.parent.switch(awaitable)  # type: ignore[no-any-return,attr-defined] # noqa: E501
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 196, in greenlet_spawn
+    value = await result
+            ^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\dialects\postgresql\asyncpg.py", line 550, in _prepare_and_execute
+    self._handle_exception(error)
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\dialects\postgresql\asyncpg.py", line 501, in _handle_exception
+    self._adapt_connection._handle_exception(error)
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\dialects\postgresql\asyncpg.py", line 784, in _handle_exception
+    raise translated_error from error
+sqlalchemy.dialects.postgresql.asyncpg.AsyncAdapt_asyncpg_dbapi.IntegrityError: <class 'asyncpg.exceptions.UniqueViolationError'>: duplicate key value violates unique constraint "categories_cat_id_key"
+DETAIL:  Key (cat_id)=(cat__10) already exists.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\Projects\Fast_API\blog_app\backend\app\services\categories.py", line 13, in generate_cat_id
+    result = await db.execute(select(func.max(Category.cat_id)))
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\ext\asyncio\session.py", line 461, in execute
+    result = await greenlet_spawn(
+             ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 203, in greenlet_spawn
+    result = context.switch(value)
+             ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\orm\session.py", line 2362, in execute
+    return self._execute_internal(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\orm\session.py", line 2226, in _execute_internal
+    ) = compile_state_cls.orm_pre_session_exec(
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\orm\context.py", line 561, in orm_pre_session_exec
+    session._autoflush()
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\orm\session.py", line 3061, in _autoflush
+    raise e.with_traceback(sys.exc_info()[2])
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\orm\session.py", line 3050, in _autoflush
+    self.flush()
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\orm\session.py", line 4352, in flush
+    self._flush(objects)
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\orm\session.py", line 4487, in _flush
+    with util.safe_reraise():
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\util\langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\orm\session.py", line 4448, in _flush
+    flush_context.execute()
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\orm\unitofwork.py", line 466, in execute
+    rec.execute(self)
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\orm\unitofwork.py", line 642, in execute
+    util.preloaded.orm_persistence.save_obj(
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\orm\persistence.py", line 93, in save_obj
+    _emit_insert_statements(
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\orm\persistence.py", line 1233, in _emit_insert_statements
+    result = connection.execute(
+             ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\engine\base.py", line 1418, in execute
+    return meth(
+           ^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\sql\elements.py", line 515, in _execute_on_connection
+    return connection._execute_clauseelement(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\engine\base.py", line 1640, in _execute_clauseelement
+    ret = self._execute_context(
+          ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\engine\base.py", line 1846, in _execute_context
+    return self._exec_single_context(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\engine\base.py", line 1986, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\engine\base.py", line 2355, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\engine\base.py", line 1967, in _exec_single_context
+    self.dialect.do_execute(
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\engine\default.py", line 941, in do_execute
+    cursor.execute(statement, parameters)
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\dialects\postgresql\asyncpg.py", line 572, in execute
+    self._adapt_connection.await_(
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 132, in await_only
+    return current.parent.switch(awaitable)  # type: ignore[no-any-return,attr-defined] # noqa: E501
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 196, in greenlet_spawn
+    value = await result
+            ^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\dialects\postgresql\asyncpg.py", line 550, in _prepare_and_execute
+    self._handle_exception(error)
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\dialects\postgresql\asyncpg.py", line 501, in _handle_exception
+    self._adapt_connection._handle_exception(error)
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\dialects\postgresql\asyncpg.py", line 784, in _handle_exception
+    raise translated_error from error
+sqlalchemy.exc.IntegrityError: (raised as a result of Query-invoked autoflush; consider using a session.no_autoflush block if this flush is occurring prematurely)
+(sqlalchemy.dialects.postgresql.asyncpg.IntegrityError) <class 'asyncpg.exceptions.UniqueViolationError'>: duplicate key value violates unique constraint "categories_cat_id_key"
+DETAIL:  Key (cat_id)=(cat__10) already exists.
+[SQL: INSERT INTO categories (cat_id, name, is_active, created_on, updated_on) VALUES ($1::VARCHAR, $2::VARCHAR, $3::BOOLEAN, now(), $4::TIMESTAMP WITHOUT TIME ZONE) RETURNING categories.id, categories.created_on]
+[parameters: ('cat__10', 'Sample Category 11', True, None)]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Projects\Fast_API\blog_app\backend\app\services\categories.py", line 30, in create_category
+    new_cat_id = await generate_cat_id(db)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\Fast_API\blog_app\backend\app\services\categories.py", line 22, in generate_cat_id
+    raise HTTPException(
+fastapi.exceptions.HTTPException: 500: Error generating category ID
+ERROR 2024-09-24 20:27:35 root HTTP error: Failed to create categories
+ERROR 2024-09-24 20:27:35 root Unexpected error: 500: Failed to create categories
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\dialects\postgresql\asyncpg.py", line 538, in _prepare_and_execute
+    self._rows = deque(await prepared_stmt.fetch(*parameters))
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\asyncpg\prepared_stmt.py", line 176, in fetch
+    data = await self.__bind_execute(args, 0, timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\asyncpg\prepared_stmt.py", line 241, in __bind_execute
+    data, status, _ = await self.__do_execute(
+                      ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\asyncpg\prepared_stmt.py", line 230, in __do_execute
+    return await executor(protocol)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "asyncpg\protocol\protocol.pyx", line 207, in bind_execute
+asyncpg.exceptions.UniqueViolationError: duplicate key value violates unique constraint "categories_cat_id_key"
+DETAIL:  Key (cat_id)=(cat__10) already exists.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\engine\base.py", line 1967, in _exec_single_context
+    self.dialect.do_execute(
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\engine\default.py", line 941, in do_execute
+    cursor.execute(statement, parameters)
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\dialects\postgresql\asyncpg.py", line 572, in execute
+    self._adapt_connection.await_(
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 132, in await_only
+    return current.parent.switch(awaitable)  # type: ignore[no-any-return,attr-defined] # noqa: E501
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 196, in greenlet_spawn
+    value = await result
+            ^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\dialects\postgresql\asyncpg.py", line 550, in _prepare_and_execute
+    self._handle_exception(error)
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\dialects\postgresql\asyncpg.py", line 501, in _handle_exception
+    self._adapt_connection._handle_exception(error)
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\dialects\postgresql\asyncpg.py", line 784, in _handle_exception
+    raise translated_error from error
+sqlalchemy.dialects.postgresql.asyncpg.AsyncAdapt_asyncpg_dbapi.IntegrityError: <class 'asyncpg.exceptions.UniqueViolationError'>: duplicate key value violates unique constraint "categories_cat_id_key"
+DETAIL:  Key (cat_id)=(cat__10) already exists.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\Projects\Fast_API\blog_app\backend\app\services\categories.py", line 13, in generate_cat_id
+    result = await db.execute(select(func.max(Category.cat_id)))
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\ext\asyncio\session.py", line 461, in execute
+    result = await greenlet_spawn(
+             ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 203, in greenlet_spawn
+    result = context.switch(value)
+             ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\orm\session.py", line 2362, in execute
+    return self._execute_internal(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\orm\session.py", line 2226, in _execute_internal
+    ) = compile_state_cls.orm_pre_session_exec(
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\orm\context.py", line 561, in orm_pre_session_exec
+    session._autoflush()
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\orm\session.py", line 3061, in _autoflush
+    raise e.with_traceback(sys.exc_info()[2])
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\orm\session.py", line 3050, in _autoflush
+    self.flush()
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\orm\session.py", line 4352, in flush
+    self._flush(objects)
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\orm\session.py", line 4487, in _flush
+    with util.safe_reraise():
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\util\langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\orm\session.py", line 4448, in _flush
+    flush_context.execute()
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\orm\unitofwork.py", line 466, in execute
+    rec.execute(self)
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\orm\unitofwork.py", line 642, in execute
+    util.preloaded.orm_persistence.save_obj(
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\orm\persistence.py", line 93, in save_obj
+    _emit_insert_statements(
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\orm\persistence.py", line 1233, in _emit_insert_statements
+    result = connection.execute(
+             ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\engine\base.py", line 1418, in execute
+    return meth(
+           ^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\sql\elements.py", line 515, in _execute_on_connection
+    return connection._execute_clauseelement(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\engine\base.py", line 1640, in _execute_clauseelement
+    ret = self._execute_context(
+          ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\engine\base.py", line 1846, in _execute_context
+    return self._exec_single_context(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\engine\base.py", line 1986, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\engine\base.py", line 2355, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\engine\base.py", line 1967, in _exec_single_context
+    self.dialect.do_execute(
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\engine\default.py", line 941, in do_execute
+    cursor.execute(statement, parameters)
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\dialects\postgresql\asyncpg.py", line 572, in execute
+    self._adapt_connection.await_(
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 132, in await_only
+    return current.parent.switch(awaitable)  # type: ignore[no-any-return,attr-defined] # noqa: E501
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 196, in greenlet_spawn
+    value = await result
+            ^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\dialects\postgresql\asyncpg.py", line 550, in _prepare_and_execute
+    self._handle_exception(error)
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\dialects\postgresql\asyncpg.py", line 501, in _handle_exception
+    self._adapt_connection._handle_exception(error)
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\dialects\postgresql\asyncpg.py", line 784, in _handle_exception
+    raise translated_error from error
+sqlalchemy.exc.IntegrityError: (raised as a result of Query-invoked autoflush; consider using a session.no_autoflush block if this flush is occurring prematurely)
+(sqlalchemy.dialects.postgresql.asyncpg.IntegrityError) <class 'asyncpg.exceptions.UniqueViolationError'>: duplicate key value violates unique constraint "categories_cat_id_key"
+DETAIL:  Key (cat_id)=(cat__10) already exists.
+[SQL: INSERT INTO categories (cat_id, name, is_active, created_on, updated_on) VALUES ($1::VARCHAR, $2::VARCHAR, $3::BOOLEAN, now(), $4::TIMESTAMP WITHOUT TIME ZONE) RETURNING categories.id, categories.created_on]
+[parameters: ('cat__10', 'Sample Category 11', True, None)]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Projects\Fast_API\blog_app\backend\app\services\categories.py", line 30, in create_category
+    new_cat_id = await generate_cat_id(db)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\Fast_API\blog_app\backend\app\services\categories.py", line 22, in generate_cat_id
+    raise HTTPException(
+fastapi.exceptions.HTTPException: 500: Error generating category ID
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Projects\Fast_API\blog_app\backend\app\core\database.py", line 21, in get_db
+    yield session
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\fastapi\routing.py", line 278, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\fastapi\routing.py", line 191, in run_endpoint_function
+    return await dependant.call(**values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\Fast_API\blog_app\backend\app\routers\categories.py", line 35, in create_category_route
+    raise he
+  File "D:\Projects\Fast_API\blog_app\backend\app\routers\categories.py", line 25, in create_category_route
+    new_categories = await create_category(db, category_data)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\Fast_API\blog_app\backend\app\services\categories.py", line 47, in create_category
+    raise HTTPException(
+fastapi.exceptions.HTTPException: 500: Failed to create categories
+ERROR 2024-09-24 20:29:34 root Error generating category ID: (raised as a result of Query-invoked autoflush; consider using a session.no_autoflush block if this flush is occurring prematurely)
+(sqlalchemy.dialects.postgresql.asyncpg.IntegrityError) <class 'asyncpg.exceptions.UniqueViolationError'>: duplicate key value violates unique constraint "categories_cat_id_key"
+DETAIL:  Key (cat_id)=(cat__10) already exists.
+[SQL: INSERT INTO categories (cat_id, name, is_active, created_on, updated_on) VALUES ($1::VARCHAR, $2::VARCHAR, $3::BOOLEAN, now(), $4::TIMESTAMP WITHOUT TIME ZONE) RETURNING categories.id, categories.created_on]
+[parameters: ('cat__10', 'Sample Category 11', True, None)]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+ERROR 2024-09-24 20:29:34 root Failed to create categories: 500: Error generating category ID
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\dialects\postgresql\asyncpg.py", line 538, in _prepare_and_execute
+    self._rows = deque(await prepared_stmt.fetch(*parameters))
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\asyncpg\prepared_stmt.py", line 176, in fetch
+    data = await self.__bind_execute(args, 0, timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\asyncpg\prepared_stmt.py", line 241, in __bind_execute
+    data, status, _ = await self.__do_execute(
+                      ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\asyncpg\prepared_stmt.py", line 230, in __do_execute
+    return await executor(protocol)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "asyncpg\protocol\protocol.pyx", line 207, in bind_execute
+asyncpg.exceptions.UniqueViolationError: duplicate key value violates unique constraint "categories_cat_id_key"
+DETAIL:  Key (cat_id)=(cat__10) already exists.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\engine\base.py", line 1967, in _exec_single_context
+    self.dialect.do_execute(
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\engine\default.py", line 941, in do_execute
+    cursor.execute(statement, parameters)
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\dialects\postgresql\asyncpg.py", line 572, in execute
+    self._adapt_connection.await_(
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 132, in await_only
+    return current.parent.switch(awaitable)  # type: ignore[no-any-return,attr-defined] # noqa: E501
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 196, in greenlet_spawn
+    value = await result
+            ^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\dialects\postgresql\asyncpg.py", line 550, in _prepare_and_execute
+    self._handle_exception(error)
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\dialects\postgresql\asyncpg.py", line 501, in _handle_exception
+    self._adapt_connection._handle_exception(error)
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\dialects\postgresql\asyncpg.py", line 784, in _handle_exception
+    raise translated_error from error
+sqlalchemy.dialects.postgresql.asyncpg.AsyncAdapt_asyncpg_dbapi.IntegrityError: <class 'asyncpg.exceptions.UniqueViolationError'>: duplicate key value violates unique constraint "categories_cat_id_key"
+DETAIL:  Key (cat_id)=(cat__10) already exists.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\Projects\Fast_API\blog_app\backend\app\services\categories.py", line 13, in generate_cat_id
+    result = await db.execute(select(func.max(Category.cat_id)))
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\ext\asyncio\session.py", line 461, in execute
+    result = await greenlet_spawn(
+             ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 203, in greenlet_spawn
+    result = context.switch(value)
+             ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\orm\session.py", line 2362, in execute
+    return self._execute_internal(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\orm\session.py", line 2226, in _execute_internal
+    ) = compile_state_cls.orm_pre_session_exec(
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\orm\context.py", line 561, in orm_pre_session_exec
+    session._autoflush()
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\orm\session.py", line 3061, in _autoflush
+    raise e.with_traceback(sys.exc_info()[2])
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\orm\session.py", line 3050, in _autoflush
+    self.flush()
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\orm\session.py", line 4352, in flush
+    self._flush(objects)
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\orm\session.py", line 4487, in _flush
+    with util.safe_reraise():
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\util\langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\orm\session.py", line 4448, in _flush
+    flush_context.execute()
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\orm\unitofwork.py", line 466, in execute
+    rec.execute(self)
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\orm\unitofwork.py", line 642, in execute
+    util.preloaded.orm_persistence.save_obj(
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\orm\persistence.py", line 93, in save_obj
+    _emit_insert_statements(
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\orm\persistence.py", line 1233, in _emit_insert_statements
+    result = connection.execute(
+             ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\engine\base.py", line 1418, in execute
+    return meth(
+           ^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\sql\elements.py", line 515, in _execute_on_connection
+    return connection._execute_clauseelement(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\engine\base.py", line 1640, in _execute_clauseelement
+    ret = self._execute_context(
+          ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\engine\base.py", line 1846, in _execute_context
+    return self._exec_single_context(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\engine\base.py", line 1986, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\engine\base.py", line 2355, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\engine\base.py", line 1967, in _exec_single_context
+    self.dialect.do_execute(
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\engine\default.py", line 941, in do_execute
+    cursor.execute(statement, parameters)
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\dialects\postgresql\asyncpg.py", line 572, in execute
+    self._adapt_connection.await_(
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 132, in await_only
+    return current.parent.switch(awaitable)  # type: ignore[no-any-return,attr-defined] # noqa: E501
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 196, in greenlet_spawn
+    value = await result
+            ^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\dialects\postgresql\asyncpg.py", line 550, in _prepare_and_execute
+    self._handle_exception(error)
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\dialects\postgresql\asyncpg.py", line 501, in _handle_exception
+    self._adapt_connection._handle_exception(error)
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\dialects\postgresql\asyncpg.py", line 784, in _handle_exception
+    raise translated_error from error
+sqlalchemy.exc.IntegrityError: (raised as a result of Query-invoked autoflush; consider using a session.no_autoflush block if this flush is occurring prematurely)
+(sqlalchemy.dialects.postgresql.asyncpg.IntegrityError) <class 'asyncpg.exceptions.UniqueViolationError'>: duplicate key value violates unique constraint "categories_cat_id_key"
+DETAIL:  Key (cat_id)=(cat__10) already exists.
+[SQL: INSERT INTO categories (cat_id, name, is_active, created_on, updated_on) VALUES ($1::VARCHAR, $2::VARCHAR, $3::BOOLEAN, now(), $4::TIMESTAMP WITHOUT TIME ZONE) RETURNING categories.id, categories.created_on]
+[parameters: ('cat__10', 'Sample Category 11', True, None)]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Projects\Fast_API\blog_app\backend\app\services\categories.py", line 30, in create_category
+    new_cat_id = await generate_cat_id(db)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\Fast_API\blog_app\backend\app\services\categories.py", line 22, in generate_cat_id
+    raise HTTPException(
+fastapi.exceptions.HTTPException: 500: Error generating category ID
+ERROR 2024-09-24 20:29:35 root HTTP error: Failed to create categories
+ERROR 2024-09-24 20:29:35 root Unexpected error: 500: Failed to create categories
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\dialects\postgresql\asyncpg.py", line 538, in _prepare_and_execute
+    self._rows = deque(await prepared_stmt.fetch(*parameters))
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\asyncpg\prepared_stmt.py", line 176, in fetch
+    data = await self.__bind_execute(args, 0, timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\asyncpg\prepared_stmt.py", line 241, in __bind_execute
+    data, status, _ = await self.__do_execute(
+                      ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\asyncpg\prepared_stmt.py", line 230, in __do_execute
+    return await executor(protocol)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "asyncpg\protocol\protocol.pyx", line 207, in bind_execute
+asyncpg.exceptions.UniqueViolationError: duplicate key value violates unique constraint "categories_cat_id_key"
+DETAIL:  Key (cat_id)=(cat__10) already exists.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\engine\base.py", line 1967, in _exec_single_context
+    self.dialect.do_execute(
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\engine\default.py", line 941, in do_execute
+    cursor.execute(statement, parameters)
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\dialects\postgresql\asyncpg.py", line 572, in execute
+    self._adapt_connection.await_(
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 132, in await_only
+    return current.parent.switch(awaitable)  # type: ignore[no-any-return,attr-defined] # noqa: E501
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 196, in greenlet_spawn
+    value = await result
+            ^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\dialects\postgresql\asyncpg.py", line 550, in _prepare_and_execute
+    self._handle_exception(error)
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\dialects\postgresql\asyncpg.py", line 501, in _handle_exception
+    self._adapt_connection._handle_exception(error)
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\dialects\postgresql\asyncpg.py", line 784, in _handle_exception
+    raise translated_error from error
+sqlalchemy.dialects.postgresql.asyncpg.AsyncAdapt_asyncpg_dbapi.IntegrityError: <class 'asyncpg.exceptions.UniqueViolationError'>: duplicate key value violates unique constraint "categories_cat_id_key"
+DETAIL:  Key (cat_id)=(cat__10) already exists.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\Projects\Fast_API\blog_app\backend\app\services\categories.py", line 13, in generate_cat_id
+    result = await db.execute(select(func.max(Category.cat_id)))
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\ext\asyncio\session.py", line 461, in execute
+    result = await greenlet_spawn(
+             ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 203, in greenlet_spawn
+    result = context.switch(value)
+             ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\orm\session.py", line 2362, in execute
+    return self._execute_internal(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\orm\session.py", line 2226, in _execute_internal
+    ) = compile_state_cls.orm_pre_session_exec(
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\orm\context.py", line 561, in orm_pre_session_exec
+    session._autoflush()
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\orm\session.py", line 3061, in _autoflush
+    raise e.with_traceback(sys.exc_info()[2])
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\orm\session.py", line 3050, in _autoflush
+    self.flush()
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\orm\session.py", line 4352, in flush
+    self._flush(objects)
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\orm\session.py", line 4487, in _flush
+    with util.safe_reraise():
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\util\langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\orm\session.py", line 4448, in _flush
+    flush_context.execute()
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\orm\unitofwork.py", line 466, in execute
+    rec.execute(self)
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\orm\unitofwork.py", line 642, in execute
+    util.preloaded.orm_persistence.save_obj(
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\orm\persistence.py", line 93, in save_obj
+    _emit_insert_statements(
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\orm\persistence.py", line 1233, in _emit_insert_statements
+    result = connection.execute(
+             ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\engine\base.py", line 1418, in execute
+    return meth(
+           ^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\sql\elements.py", line 515, in _execute_on_connection
+    return connection._execute_clauseelement(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\engine\base.py", line 1640, in _execute_clauseelement
+    ret = self._execute_context(
+          ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\engine\base.py", line 1846, in _execute_context
+    return self._exec_single_context(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\engine\base.py", line 1986, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\engine\base.py", line 2355, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\engine\base.py", line 1967, in _exec_single_context
+    self.dialect.do_execute(
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\engine\default.py", line 941, in do_execute
+    cursor.execute(statement, parameters)
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\dialects\postgresql\asyncpg.py", line 572, in execute
+    self._adapt_connection.await_(
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 132, in await_only
+    return current.parent.switch(awaitable)  # type: ignore[no-any-return,attr-defined] # noqa: E501
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 196, in greenlet_spawn
+    value = await result
+            ^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\dialects\postgresql\asyncpg.py", line 550, in _prepare_and_execute
+    self._handle_exception(error)
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\dialects\postgresql\asyncpg.py", line 501, in _handle_exception
+    self._adapt_connection._handle_exception(error)
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\dialects\postgresql\asyncpg.py", line 784, in _handle_exception
+    raise translated_error from error
+sqlalchemy.exc.IntegrityError: (raised as a result of Query-invoked autoflush; consider using a session.no_autoflush block if this flush is occurring prematurely)
+(sqlalchemy.dialects.postgresql.asyncpg.IntegrityError) <class 'asyncpg.exceptions.UniqueViolationError'>: duplicate key value violates unique constraint "categories_cat_id_key"
+DETAIL:  Key (cat_id)=(cat__10) already exists.
+[SQL: INSERT INTO categories (cat_id, name, is_active, created_on, updated_on) VALUES ($1::VARCHAR, $2::VARCHAR, $3::BOOLEAN, now(), $4::TIMESTAMP WITHOUT TIME ZONE) RETURNING categories.id, categories.created_on]
+[parameters: ('cat__10', 'Sample Category 11', True, None)]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Projects\Fast_API\blog_app\backend\app\services\categories.py", line 30, in create_category
+    new_cat_id = await generate_cat_id(db)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\Fast_API\blog_app\backend\app\services\categories.py", line 22, in generate_cat_id
+    raise HTTPException(
+fastapi.exceptions.HTTPException: 500: Error generating category ID
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Projects\Fast_API\blog_app\backend\app\core\database.py", line 21, in get_db
+    yield session
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\fastapi\routing.py", line 278, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\fastapi\routing.py", line 191, in run_endpoint_function
+    return await dependant.call(**values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\Fast_API\blog_app\backend\app\routers\categories.py", line 35, in create_category_route
+    raise he
+  File "D:\Projects\Fast_API\blog_app\backend\app\routers\categories.py", line 25, in create_category_route
+    new_categories = await create_category(db, category_data)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\Fast_API\blog_app\backend\app\services\categories.py", line 47, in create_category
+    raise HTTPException(
+fastapi.exceptions.HTTPException: 500: Failed to create categories
+ERROR 2024-09-24 20:39:59 root Error generating category ID: object NoneType can't be used in 'await' expression
+ERROR 2024-09-24 20:39:59 root Failed to create categories: 500: Error generating category ID
+Traceback (most recent call last):
+  File "D:\Projects\Fast_API\blog_app\backend\app\services\categories.py", line 14, in generate_cat_id
+    await db.expire_all()
+TypeError: object NoneType can't be used in 'await' expression
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Projects\Fast_API\blog_app\backend\app\services\categories.py", line 32, in create_category
+    new_cat_id = await generate_cat_id(db)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\Fast_API\blog_app\backend\app\services\categories.py", line 24, in generate_cat_id
+    raise HTTPException(
+fastapi.exceptions.HTTPException: 500: Error generating category ID
+ERROR 2024-09-24 20:39:59 root HTTP error: Failed to create categories
+ERROR 2024-09-24 20:39:59 root Unexpected error: 500: Failed to create categories
+Traceback (most recent call last):
+  File "D:\Projects\Fast_API\blog_app\backend\app\services\categories.py", line 14, in generate_cat_id
+    await db.expire_all()
+TypeError: object NoneType can't be used in 'await' expression
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Projects\Fast_API\blog_app\backend\app\services\categories.py", line 32, in create_category
+    new_cat_id = await generate_cat_id(db)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\Fast_API\blog_app\backend\app\services\categories.py", line 24, in generate_cat_id
+    raise HTTPException(
+fastapi.exceptions.HTTPException: 500: Error generating category ID
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Projects\Fast_API\blog_app\backend\app\core\database.py", line 21, in get_db
+    yield session
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\fastapi\routing.py", line 278, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\fastapi\routing.py", line 191, in run_endpoint_function
+    return await dependant.call(**values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\Fast_API\blog_app\backend\app\routers\categories.py", line 35, in create_category_route
+    raise he
+  File "D:\Projects\Fast_API\blog_app\backend\app\routers\categories.py", line 25, in create_category_route
+    new_categories = await create_category(db, category_data)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\Fast_API\blog_app\backend\app\services\categories.py", line 49, in create_category
+    raise HTTPException(
+fastapi.exceptions.HTTPException: 500: Failed to create categories
+ERROR 2024-09-24 21:26:04 root Error generating category ID: object NoneType can't be used in 'await' expression
+ERROR 2024-09-24 21:26:04 root Failed to create categories: 500: Error generating category ID
+Traceback (most recent call last):
+  File "D:\Projects\Fast_API\blog_app\backend\app\services\categories.py", line 14, in generate_cat_id
+    await db.expire_all()
+TypeError: object NoneType can't be used in 'await' expression
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Projects\Fast_API\blog_app\backend\app\services\categories.py", line 32, in create_category
+    new_cat_id = await generate_cat_id(db)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\Fast_API\blog_app\backend\app\services\categories.py", line 24, in generate_cat_id
+    raise HTTPException(
+fastapi.exceptions.HTTPException: 500: Error generating category ID
+ERROR 2024-09-24 21:26:05 root HTTP error: Failed to create categories
+ERROR 2024-09-24 21:26:05 root Unexpected error: 500: Failed to create categories
+Traceback (most recent call last):
+  File "D:\Projects\Fast_API\blog_app\backend\app\services\categories.py", line 14, in generate_cat_id
+    await db.expire_all()
+TypeError: object NoneType can't be used in 'await' expression
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Projects\Fast_API\blog_app\backend\app\services\categories.py", line 32, in create_category
+    new_cat_id = await generate_cat_id(db)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\Fast_API\blog_app\backend\app\services\categories.py", line 24, in generate_cat_id
+    raise HTTPException(
+fastapi.exceptions.HTTPException: 500: Error generating category ID
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Projects\Fast_API\blog_app\backend\app\core\database.py", line 21, in get_db
+    yield session
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\fastapi\routing.py", line 278, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\fastapi\routing.py", line 191, in run_endpoint_function
+    return await dependant.call(**values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\Fast_API\blog_app\backend\app\routers\categories.py", line 35, in create_category_route
+    raise he
+  File "D:\Projects\Fast_API\blog_app\backend\app\routers\categories.py", line 25, in create_category_route
+    new_categories = await create_category(db, category_data)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\Fast_API\blog_app\backend\app\services\categories.py", line 49, in create_category
+    raise HTTPException(
+fastapi.exceptions.HTTPException: 500: Failed to create categories
+ERROR 2024-09-24 21:28:18 root Error generating category ID: object NoneType can't be used in 'await' expression
+ERROR 2024-09-24 21:28:18 root Failed to create categories: 500: Error generating category ID
+Traceback (most recent call last):
+  File "D:\Projects\Fast_API\blog_app\backend\app\services\categories.py", line 14, in generate_cat_id
+    await db.expire_all()
+TypeError: object NoneType can't be used in 'await' expression
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Projects\Fast_API\blog_app\backend\app\services\categories.py", line 32, in create_category
+    new_cat_id = await generate_cat_id(db)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\Fast_API\blog_app\backend\app\services\categories.py", line 24, in generate_cat_id
+    raise HTTPException(
+fastapi.exceptions.HTTPException: 500: Error generating category ID
+ERROR 2024-09-24 21:28:18 root HTTP error: Failed to create categories
+ERROR 2024-09-24 21:28:18 root Unexpected error: 500: Failed to create categories
+Traceback (most recent call last):
+  File "D:\Projects\Fast_API\blog_app\backend\app\services\categories.py", line 14, in generate_cat_id
+    await db.expire_all()
+TypeError: object NoneType can't be used in 'await' expression
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Projects\Fast_API\blog_app\backend\app\services\categories.py", line 32, in create_category
+    new_cat_id = await generate_cat_id(db)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\Fast_API\blog_app\backend\app\services\categories.py", line 24, in generate_cat_id
+    raise HTTPException(
+fastapi.exceptions.HTTPException: 500: Error generating category ID
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Projects\Fast_API\blog_app\backend\app\core\database.py", line 21, in get_db
+    yield session
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\fastapi\routing.py", line 278, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\fastapi\routing.py", line 191, in run_endpoint_function
+    return await dependant.call(**values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\Fast_API\blog_app\backend\app\routers\categories.py", line 35, in create_category_route
+    raise he
+  File "D:\Projects\Fast_API\blog_app\backend\app\routers\categories.py", line 25, in create_category_route
+    new_categories = await create_category(db, category_data)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\Fast_API\blog_app\backend\app\services\categories.py", line 49, in create_category
+    raise HTTPException(
+fastapi.exceptions.HTTPException: 500: Failed to create categories
+ERROR 2024-09-24 21:28:39 root Error generating category ID: object NoneType can't be used in 'await' expression
+ERROR 2024-09-24 21:28:39 root Failed to create categories: 500: Error generating category ID
+Traceback (most recent call last):
+  File "D:\Projects\Fast_API\blog_app\backend\app\services\categories.py", line 14, in generate_cat_id
+    await db.expire_all()
+TypeError: object NoneType can't be used in 'await' expression
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Projects\Fast_API\blog_app\backend\app\services\categories.py", line 32, in create_category
+    new_cat_id = await generate_cat_id(db)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\Fast_API\blog_app\backend\app\services\categories.py", line 24, in generate_cat_id
+    raise HTTPException(
+fastapi.exceptions.HTTPException: 500: Error generating category ID
+ERROR 2024-09-24 21:28:39 root HTTP error: Failed to create categories
+ERROR 2024-09-24 21:28:39 root Unexpected error: 500: Failed to create categories
+Traceback (most recent call last):
+  File "D:\Projects\Fast_API\blog_app\backend\app\services\categories.py", line 14, in generate_cat_id
+    await db.expire_all()
+TypeError: object NoneType can't be used in 'await' expression
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Projects\Fast_API\blog_app\backend\app\services\categories.py", line 32, in create_category
+    new_cat_id = await generate_cat_id(db)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\Fast_API\blog_app\backend\app\services\categories.py", line 24, in generate_cat_id
+    raise HTTPException(
+fastapi.exceptions.HTTPException: 500: Error generating category ID
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Projects\Fast_API\blog_app\backend\app\core\database.py", line 21, in get_db
+    yield session
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\fastapi\routing.py", line 278, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\fastapi\routing.py", line 191, in run_endpoint_function
+    return await dependant.call(**values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\Fast_API\blog_app\backend\app\routers\categories.py", line 35, in create_category_route
+    raise he
+  File "D:\Projects\Fast_API\blog_app\backend\app\routers\categories.py", line 25, in create_category_route
+    new_categories = await create_category(db, category_data)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\Fast_API\blog_app\backend\app\services\categories.py", line 49, in create_category
+    raise HTTPException(
+fastapi.exceptions.HTTPException: 500: Failed to create categories
+ERROR 2024-09-24 21:51:37 root Unexpected error: 'AsyncSession' object is not callable
+Traceback (most recent call last):
+  File "D:\Projects\Fast_API\blog_app\backend\app\core\database.py", line 24, in get_db
+    async with session() as s:  # Use session as a context manager
+               ^^^^^^^^^
+TypeError: 'AsyncSession' object is not callable
+ERROR 2024-09-24 21:52:33 root Error generating category ID: object NoneType can't be used in 'await' expression
+ERROR 2024-09-24 21:52:33 root Failed to create categories: 500: Error generating category ID
+Traceback (most recent call last):
+  File "D:\Projects\Fast_API\blog_app\backend\app\services\categories.py", line 14, in generate_cat_id
+    await db.expire_all()
+TypeError: object NoneType can't be used in 'await' expression
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Projects\Fast_API\blog_app\backend\app\services\categories.py", line 32, in create_category
+    new_cat_id = await generate_cat_id(db)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\Fast_API\blog_app\backend\app\services\categories.py", line 24, in generate_cat_id
+    raise HTTPException(
+fastapi.exceptions.HTTPException: 500: Error generating category ID
+ERROR 2024-09-24 21:52:33 root HTTP error: Failed to create categories
+ERROR 2024-09-24 21:52:33 root Unexpected error: 500: Failed to create categories
+Traceback (most recent call last):
+  File "D:\Projects\Fast_API\blog_app\backend\app\services\categories.py", line 14, in generate_cat_id
+    await db.expire_all()
+TypeError: object NoneType can't be used in 'await' expression
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Projects\Fast_API\blog_app\backend\app\services\categories.py", line 32, in create_category
+    new_cat_id = await generate_cat_id(db)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\Fast_API\blog_app\backend\app\services\categories.py", line 24, in generate_cat_id
+    raise HTTPException(
+fastapi.exceptions.HTTPException: 500: Error generating category ID
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Projects\Fast_API\blog_app\backend\app\core\database.py", line 21, in get_db
+    yield session
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\fastapi\routing.py", line 278, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\fastapi\routing.py", line 191, in run_endpoint_function
+    return await dependant.call(**values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\Fast_API\blog_app\backend\app\routers\categories.py", line 35, in create_category_route
+    raise he
+  File "D:\Projects\Fast_API\blog_app\backend\app\routers\categories.py", line 25, in create_category_route
+    new_categories = await create_category(db, category_data)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\Fast_API\blog_app\backend\app\services\categories.py", line 49, in create_category
+    raise HTTPException(
+fastapi.exceptions.HTTPException: 500: Failed to create categories
+ERROR 2024-09-24 21:53:30 root Error generating category ID: list index out of range
+ERROR 2024-09-24 21:53:30 root Failed to create categories: 500: Error generating category ID
+Traceback (most recent call last):
+  File "D:\Projects\Fast_API\blog_app\backend\app\services\categories.py", line 18, in generate_cat_id
+    next_number = int(max_cat_id.split('__')[1]) + 1
+                      ~~~~~~~~~~~~~~~~~~~~~~^^^
+IndexError: list index out of range
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Projects\Fast_API\blog_app\backend\app\services\categories.py", line 30, in create_category
+    new_cat_id = await generate_cat_id(db)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\Fast_API\blog_app\backend\app\services\categories.py", line 22, in generate_cat_id
+    raise HTTPException(
+fastapi.exceptions.HTTPException: 500: Error generating category ID
+ERROR 2024-09-24 21:53:30 root HTTP error: Failed to create categories
+ERROR 2024-09-24 21:53:30 root Unexpected error: 500: Failed to create categories
+Traceback (most recent call last):
+  File "D:\Projects\Fast_API\blog_app\backend\app\services\categories.py", line 18, in generate_cat_id
+    next_number = int(max_cat_id.split('__')[1]) + 1
+                      ~~~~~~~~~~~~~~~~~~~~~~^^^
+IndexError: list index out of range
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Projects\Fast_API\blog_app\backend\app\services\categories.py", line 30, in create_category
+    new_cat_id = await generate_cat_id(db)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\Fast_API\blog_app\backend\app\services\categories.py", line 22, in generate_cat_id
+    raise HTTPException(
+fastapi.exceptions.HTTPException: 500: Error generating category ID
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Projects\Fast_API\blog_app\backend\app\core\database.py", line 21, in get_db
+    yield session
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\fastapi\routing.py", line 278, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\fastapi\routing.py", line 191, in run_endpoint_function
+    return await dependant.call(**values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\Fast_API\blog_app\backend\app\routers\categories.py", line 35, in create_category_route
+    raise he
+  File "D:\Projects\Fast_API\blog_app\backend\app\routers\categories.py", line 25, in create_category_route
+    new_categories = await create_category(db, category_data)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\Fast_API\blog_app\backend\app\services\categories.py", line 47, in create_category
+    raise HTTPException(
+fastapi.exceptions.HTTPException: 500: Failed to create categories
+ERROR 2024-09-24 22:11:40 root Error generating category ID: Invalid category ID format
+ERROR 2024-09-24 22:11:40 root Failed to create categories: 500: Error generating category ID
+Traceback (most recent call last):
+  File "D:\Projects\Fast_API\blog_app\backend\app\services\categories.py", line 20, in generate_cat_id
+    raise ValueError("Invalid category ID format")
+ValueError: Invalid category ID format
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Projects\Fast_API\blog_app\backend\app\services\categories.py", line 33, in create_category
+    new_cat_id = await generate_cat_id(db)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\Fast_API\blog_app\backend\app\services\categories.py", line 25, in generate_cat_id
+    raise HTTPException(
+fastapi.exceptions.HTTPException: 500: Error generating category ID
+ERROR 2024-09-24 22:11:40 root HTTP error: Failed to create categories
+ERROR 2024-09-24 22:11:40 root Unexpected error: 500: Failed to create categories
+Traceback (most recent call last):
+  File "D:\Projects\Fast_API\blog_app\backend\app\services\categories.py", line 20, in generate_cat_id
+    raise ValueError("Invalid category ID format")
+ValueError: Invalid category ID format
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Projects\Fast_API\blog_app\backend\app\services\categories.py", line 33, in create_category
+    new_cat_id = await generate_cat_id(db)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\Fast_API\blog_app\backend\app\services\categories.py", line 25, in generate_cat_id
+    raise HTTPException(
+fastapi.exceptions.HTTPException: 500: Error generating category ID
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Projects\Fast_API\blog_app\backend\app\core\database.py", line 21, in get_db
+    yield session
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\fastapi\routing.py", line 278, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\fastapi\routing.py", line 191, in run_endpoint_function
+    return await dependant.call(**values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\Fast_API\blog_app\backend\app\routers\categories.py", line 36, in create_category_route
+    raise he
+  File "D:\Projects\Fast_API\blog_app\backend\app\routers\categories.py", line 26, in create_category_route
+    new_categories = await create_category(db, category_data)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\Fast_API\blog_app\backend\app\services\categories.py", line 49, in create_category
+    raise HTTPException(
+fastapi.exceptions.HTTPException: 500: Failed to create categories
+ERROR 2024-09-24 22:44:29 root HTTP error: Category names already exist: Sample Category 1, Sample Category 2
+ERROR 2024-09-24 22:44:29 root Unexpected error: 400: Category names already exist: Sample Category 1, Sample Category 2
+Traceback (most recent call last):
+  File "D:\Projects\Fast_API\blog_app\backend\app\core\database.py", line 21, in get_db
+    yield session
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\fastapi\routing.py", line 278, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\fastapi\routing.py", line 191, in run_endpoint_function
+    return await dependant.call(**values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\Fast_API\blog_app\backend\app\routers\categories.py", line 34, in create_category_route
+    raise he
+  File "D:\Projects\Fast_API\blog_app\backend\app\routers\categories.py", line 20, in create_category_route
+    raise HTTPException(
+fastapi.exceptions.HTTPException: 400: Category names already exist: Sample Category 1, Sample Category 2
+ERROR 2024-09-25 10:28:05 root Error generating subcategory ID: (raised as a result of Query-invoked autoflush; consider using a session.no_autoflush block if this flush is occurring prematurely)
+(sqlalchemy.dialects.postgresql.asyncpg.IntegrityError) <class 'asyncpg.exceptions.UniqueViolationError'>: duplicate key value violates unique constraint "subcategories_subcat_id_key"
+DETAIL:  Key (subcat_id)=(subcat__10) already exists.
+[SQL: INSERT INTO subcategories (category_id, subcat_id, name, is_active, created_on, updated_on) VALUES ($1::INTEGER, $2::VARCHAR, $3::VARCHAR, $4::BOOLEAN, now(), $5::TIMESTAMP WITHOUT TIME ZONE) RETURNING subcategories.id, subcategories.created_on]
+[parameters: (1, 'subcat__10', 'Sample Subcategory 11', True, None)]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+ERROR 2024-09-25 10:28:05 root Failed to create subcategories: 500: Error generating subcategory ID
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\dialects\postgresql\asyncpg.py", line 538, in _prepare_and_execute
+    self._rows = deque(await prepared_stmt.fetch(*parameters))
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\asyncpg\prepared_stmt.py", line 176, in fetch
+    data = await self.__bind_execute(args, 0, timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\asyncpg\prepared_stmt.py", line 241, in __bind_execute
+    data, status, _ = await self.__do_execute(
+                      ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\asyncpg\prepared_stmt.py", line 230, in __do_execute
+    return await executor(protocol)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "asyncpg\protocol\protocol.pyx", line 207, in bind_execute
+asyncpg.exceptions.UniqueViolationError: duplicate key value violates unique constraint "subcategories_subcat_id_key"
+DETAIL:  Key (subcat_id)=(subcat__10) already exists.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\engine\base.py", line 1967, in _exec_single_context
+    self.dialect.do_execute(
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\engine\default.py", line 941, in do_execute
+    cursor.execute(statement, parameters)
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\dialects\postgresql\asyncpg.py", line 572, in execute
+    self._adapt_connection.await_(
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 132, in await_only
+    return current.parent.switch(awaitable)  # type: ignore[no-any-return,attr-defined] # noqa: E501
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 196, in greenlet_spawn
+    value = await result
+            ^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\dialects\postgresql\asyncpg.py", line 550, in _prepare_and_execute
+    self._handle_exception(error)
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\dialects\postgresql\asyncpg.py", line 501, in _handle_exception
+    self._adapt_connection._handle_exception(error)
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\dialects\postgresql\asyncpg.py", line 784, in _handle_exception
+    raise translated_error from error
+sqlalchemy.dialects.postgresql.asyncpg.AsyncAdapt_asyncpg_dbapi.IntegrityError: <class 'asyncpg.exceptions.UniqueViolationError'>: duplicate key value violates unique constraint "subcategories_subcat_id_key"
+DETAIL:  Key (subcat_id)=(subcat__10) already exists.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\Projects\Fast_API\blog_app\backend\app\services\subcategories.py", line 12, in generate_subcat_id
+    result = await db.execute(select(func.max(Subcategory.subcat_id)))
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\ext\asyncio\session.py", line 461, in execute
+    result = await greenlet_spawn(
+             ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 203, in greenlet_spawn
+    result = context.switch(value)
+             ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\orm\session.py", line 2362, in execute
+    return self._execute_internal(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\orm\session.py", line 2226, in _execute_internal
+    ) = compile_state_cls.orm_pre_session_exec(
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\orm\context.py", line 561, in orm_pre_session_exec
+    session._autoflush()
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\orm\session.py", line 3061, in _autoflush
+    raise e.with_traceback(sys.exc_info()[2])
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\orm\session.py", line 3050, in _autoflush
+    self.flush()
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\orm\session.py", line 4352, in flush
+    self._flush(objects)
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\orm\session.py", line 4487, in _flush
+    with util.safe_reraise():
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\util\langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\orm\session.py", line 4448, in _flush
+    flush_context.execute()
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\orm\unitofwork.py", line 466, in execute
+    rec.execute(self)
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\orm\unitofwork.py", line 642, in execute
+    util.preloaded.orm_persistence.save_obj(
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\orm\persistence.py", line 93, in save_obj
+    _emit_insert_statements(
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\orm\persistence.py", line 1233, in _emit_insert_statements
+    result = connection.execute(
+             ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\engine\base.py", line 1418, in execute
+    return meth(
+           ^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\sql\elements.py", line 515, in _execute_on_connection
+    return connection._execute_clauseelement(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\engine\base.py", line 1640, in _execute_clauseelement
+    ret = self._execute_context(
+          ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\engine\base.py", line 1846, in _execute_context
+    return self._exec_single_context(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\engine\base.py", line 1986, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\engine\base.py", line 2355, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\engine\base.py", line 1967, in _exec_single_context
+    self.dialect.do_execute(
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\engine\default.py", line 941, in do_execute
+    cursor.execute(statement, parameters)
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\dialects\postgresql\asyncpg.py", line 572, in execute
+    self._adapt_connection.await_(
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 132, in await_only
+    return current.parent.switch(awaitable)  # type: ignore[no-any-return,attr-defined] # noqa: E501
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 196, in greenlet_spawn
+    value = await result
+            ^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\dialects\postgresql\asyncpg.py", line 550, in _prepare_and_execute
+    self._handle_exception(error)
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\dialects\postgresql\asyncpg.py", line 501, in _handle_exception
+    self._adapt_connection._handle_exception(error)
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\dialects\postgresql\asyncpg.py", line 784, in _handle_exception
+    raise translated_error from error
+sqlalchemy.exc.IntegrityError: (raised as a result of Query-invoked autoflush; consider using a session.no_autoflush block if this flush is occurring prematurely)
+(sqlalchemy.dialects.postgresql.asyncpg.IntegrityError) <class 'asyncpg.exceptions.UniqueViolationError'>: duplicate key value violates unique constraint "subcategories_subcat_id_key"
+DETAIL:  Key (subcat_id)=(subcat__10) already exists.
+[SQL: INSERT INTO subcategories (category_id, subcat_id, name, is_active, created_on, updated_on) VALUES ($1::INTEGER, $2::VARCHAR, $3::VARCHAR, $4::BOOLEAN, now(), $5::TIMESTAMP WITHOUT TIME ZONE) RETURNING subcategories.id, subcategories.created_on]
+[parameters: (1, 'subcat__10', 'Sample Subcategory 11', True, None)]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Projects\Fast_API\blog_app\backend\app\services\subcategories.py", line 27, in create_subcategory
+    new_subcat_id = await generate_subcat_id(db)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\Fast_API\blog_app\backend\app\services\subcategories.py", line 19, in generate_subcat_id
+    raise HTTPException(
+fastapi.exceptions.HTTPException: 500: Error generating subcategory ID
+ERROR 2024-09-25 10:28:05 root HTTP error: Failed to create subcategories
+ERROR 2024-09-25 10:28:05 root Unexpected error: 500: Failed to create subcategories
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\dialects\postgresql\asyncpg.py", line 538, in _prepare_and_execute
+    self._rows = deque(await prepared_stmt.fetch(*parameters))
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\asyncpg\prepared_stmt.py", line 176, in fetch
+    data = await self.__bind_execute(args, 0, timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\asyncpg\prepared_stmt.py", line 241, in __bind_execute
+    data, status, _ = await self.__do_execute(
+                      ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\asyncpg\prepared_stmt.py", line 230, in __do_execute
+    return await executor(protocol)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "asyncpg\protocol\protocol.pyx", line 207, in bind_execute
+asyncpg.exceptions.UniqueViolationError: duplicate key value violates unique constraint "subcategories_subcat_id_key"
+DETAIL:  Key (subcat_id)=(subcat__10) already exists.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\engine\base.py", line 1967, in _exec_single_context
+    self.dialect.do_execute(
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\engine\default.py", line 941, in do_execute
+    cursor.execute(statement, parameters)
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\dialects\postgresql\asyncpg.py", line 572, in execute
+    self._adapt_connection.await_(
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 132, in await_only
+    return current.parent.switch(awaitable)  # type: ignore[no-any-return,attr-defined] # noqa: E501
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 196, in greenlet_spawn
+    value = await result
+            ^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\dialects\postgresql\asyncpg.py", line 550, in _prepare_and_execute
+    self._handle_exception(error)
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\dialects\postgresql\asyncpg.py", line 501, in _handle_exception
+    self._adapt_connection._handle_exception(error)
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\dialects\postgresql\asyncpg.py", line 784, in _handle_exception
+    raise translated_error from error
+sqlalchemy.dialects.postgresql.asyncpg.AsyncAdapt_asyncpg_dbapi.IntegrityError: <class 'asyncpg.exceptions.UniqueViolationError'>: duplicate key value violates unique constraint "subcategories_subcat_id_key"
+DETAIL:  Key (subcat_id)=(subcat__10) already exists.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\Projects\Fast_API\blog_app\backend\app\services\subcategories.py", line 12, in generate_subcat_id
+    result = await db.execute(select(func.max(Subcategory.subcat_id)))
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\ext\asyncio\session.py", line 461, in execute
+    result = await greenlet_spawn(
+             ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 203, in greenlet_spawn
+    result = context.switch(value)
+             ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\orm\session.py", line 2362, in execute
+    return self._execute_internal(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\orm\session.py", line 2226, in _execute_internal
+    ) = compile_state_cls.orm_pre_session_exec(
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\orm\context.py", line 561, in orm_pre_session_exec
+    session._autoflush()
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\orm\session.py", line 3061, in _autoflush
+    raise e.with_traceback(sys.exc_info()[2])
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\orm\session.py", line 3050, in _autoflush
+    self.flush()
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\orm\session.py", line 4352, in flush
+    self._flush(objects)
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\orm\session.py", line 4487, in _flush
+    with util.safe_reraise():
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\util\langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\orm\session.py", line 4448, in _flush
+    flush_context.execute()
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\orm\unitofwork.py", line 466, in execute
+    rec.execute(self)
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\orm\unitofwork.py", line 642, in execute
+    util.preloaded.orm_persistence.save_obj(
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\orm\persistence.py", line 93, in save_obj
+    _emit_insert_statements(
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\orm\persistence.py", line 1233, in _emit_insert_statements
+    result = connection.execute(
+             ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\engine\base.py", line 1418, in execute
+    return meth(
+           ^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\sql\elements.py", line 515, in _execute_on_connection
+    return connection._execute_clauseelement(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\engine\base.py", line 1640, in _execute_clauseelement
+    ret = self._execute_context(
+          ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\engine\base.py", line 1846, in _execute_context
+    return self._exec_single_context(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\engine\base.py", line 1986, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\engine\base.py", line 2355, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\engine\base.py", line 1967, in _exec_single_context
+    self.dialect.do_execute(
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\engine\default.py", line 941, in do_execute
+    cursor.execute(statement, parameters)
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\dialects\postgresql\asyncpg.py", line 572, in execute
+    self._adapt_connection.await_(
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 132, in await_only
+    return current.parent.switch(awaitable)  # type: ignore[no-any-return,attr-defined] # noqa: E501
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 196, in greenlet_spawn
+    value = await result
+            ^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\dialects\postgresql\asyncpg.py", line 550, in _prepare_and_execute
+    self._handle_exception(error)
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\dialects\postgresql\asyncpg.py", line 501, in _handle_exception
+    self._adapt_connection._handle_exception(error)
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\sqlalchemy\dialects\postgresql\asyncpg.py", line 784, in _handle_exception
+    raise translated_error from error
+sqlalchemy.exc.IntegrityError: (raised as a result of Query-invoked autoflush; consider using a session.no_autoflush block if this flush is occurring prematurely)
+(sqlalchemy.dialects.postgresql.asyncpg.IntegrityError) <class 'asyncpg.exceptions.UniqueViolationError'>: duplicate key value violates unique constraint "subcategories_subcat_id_key"
+DETAIL:  Key (subcat_id)=(subcat__10) already exists.
+[SQL: INSERT INTO subcategories (category_id, subcat_id, name, is_active, created_on, updated_on) VALUES ($1::INTEGER, $2::VARCHAR, $3::VARCHAR, $4::BOOLEAN, now(), $5::TIMESTAMP WITHOUT TIME ZONE) RETURNING subcategories.id, subcategories.created_on]
+[parameters: (1, 'subcat__10', 'Sample Subcategory 11', True, None)]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Projects\Fast_API\blog_app\backend\app\services\subcategories.py", line 27, in create_subcategory
+    new_subcat_id = await generate_subcat_id(db)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\Fast_API\blog_app\backend\app\services\subcategories.py", line 19, in generate_subcat_id
+    raise HTTPException(
+fastapi.exceptions.HTTPException: 500: Error generating subcategory ID
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Projects\Fast_API\blog_app\backend\app\core\database.py", line 21, in get_db
+    yield session
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\fastapi\routing.py", line 278, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\fastapi\routing.py", line 191, in run_endpoint_function
+    return await dependant.call(**values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\Fast_API\blog_app\backend\app\routers\subcategories.py", line 37, in create_subcategory_route
+    raise he
+  File "D:\Projects\Fast_API\blog_app\backend\app\routers\subcategories.py", line 27, in create_subcategory_route
+    new_subcategories = await create_subcategory(db, subcategory_data)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\Fast_API\blog_app\backend\app\services\subcategories.py", line 47, in create_subcategory
+    raise HTTPException(
+fastapi.exceptions.HTTPException: 500: Failed to create subcategories
+ERROR 2024-09-25 11:33:23 root Failed to fetch subcategory: 404: Subcategory not found
+ERROR 2024-09-25 11:33:23 root Unexpected error: 500: Failed to fetch subcategory
+Traceback (most recent call last):
+  File "D:\Projects\Fast_API\blog_app\backend\app\routers\subcategories.py", line 70, in get_subcategory_by_id_route
+    raise HTTPException(
+fastapi.exceptions.HTTPException: 404: Subcategory not found
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Projects\Fast_API\blog_app\backend\app\core\database.py", line 21, in get_db
+    yield session
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\fastapi\routing.py", line 278, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\fastapi\routing.py", line 191, in run_endpoint_function
+    return await dependant.call(**values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\Fast_API\blog_app\backend\app\routers\subcategories.py", line 81, in get_subcategory_by_id_route
+    raise HTTPException(
+fastapi.exceptions.HTTPException: 500: Failed to fetch subcategory
+ERROR 2024-09-25 11:33:31 root Failed to fetch subcategory: 404: Subcategory not found
+ERROR 2024-09-25 11:33:31 root Unexpected error: 500: Failed to fetch subcategory
+Traceback (most recent call last):
+  File "D:\Projects\Fast_API\blog_app\backend\app\routers\subcategories.py", line 70, in get_subcategory_by_id_route
+    raise HTTPException(
+fastapi.exceptions.HTTPException: 404: Subcategory not found
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Projects\Fast_API\blog_app\backend\app\core\database.py", line 21, in get_db
+    yield session
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\fastapi\routing.py", line 278, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\fastapi\routing.py", line 191, in run_endpoint_function
+    return await dependant.call(**values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\Fast_API\blog_app\backend\app\routers\subcategories.py", line 81, in get_subcategory_by_id_route
+    raise HTTPException(
+fastapi.exceptions.HTTPException: 500: Failed to fetch subcategory
