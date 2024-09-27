@@ -6,7 +6,6 @@ from app.schemas.subcategories import SubcategoryCreateModel, SubcategoryUpdateM
 from app.core.logging import logging
 from app.models.categories import *
 
-
 async def generate_subcat_id(db: AsyncSession) -> str:
     try:
         # Get the last inserted Subcategory ID
@@ -118,7 +117,7 @@ async def soft_delete_subcategory(db: AsyncSession, subcategory_id: int):
         if not subcategory:
             logging.warning(f"Subcategory with ID {
                             subcategory_id} not found for soft delete.")
-            return False
+            return None
 
         # Set is_active to False for soft delete
         subcategory.is_active = False

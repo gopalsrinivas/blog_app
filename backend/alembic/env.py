@@ -1,6 +1,7 @@
 from app.core.database import Base 
 from app.models.subcategories import Subcategory
 from app.models.categories import Category
+from app.models.blog import Blog
 import sys
 import os
 from logging.config import fileConfig

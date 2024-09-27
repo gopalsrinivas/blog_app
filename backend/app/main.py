@@ -11,7 +11,7 @@ from app.core.config import settings
 from app.routers.categories import router
 from app.models.categories import *
 from app.core.logging import logging
-from app.routers import categories,subcategories
+from app.routers import categories,subcategories,blog
 
 
 app = FastAPI(title="FastAPI Blog Application", docs_url="/api_v1/docs", redoc_url="/api_v1/redoc")
@@ -19,6 +19,7 @@ app = FastAPI(title="FastAPI Blog Application", docs_url="/api_v1/docs", redoc_u
 
 app.include_router(categories.router, prefix="/api/categories", tags=["categories"])
 app.include_router(subcategories.router, prefix="/api/subcategories", tags=["Subcategories"])
+app.include_router(blog.router, prefix="/api/blog", tags=["blog"])
 
 @app.on_event("startup")
 async def startup_event():
