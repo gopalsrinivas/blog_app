@@ -10794,3 +10794,304 @@ Traceback (most recent call last):
   File "D:\Projects\Fast_API\blog_app\backend\app\routers\blog.py", line 199, in delete_blog_detail_route
     raise HTTPException(
 fastapi.exceptions.HTTPException: 500: Failed to soft delete blog detail
+ERROR 2024-09-27 23:10:35 root Unexpected error occurred: 400: Blog title already exists
+Traceback (most recent call last):
+  File "D:\Projects\Fast_API\blog_app\backend\app\services\blog.py", line 60, in create_blog
+    raise HTTPException(
+fastapi.exceptions.HTTPException: 400: Blog title already exists
+ERROR 2024-09-27 23:10:35 root HTTP error while creating blog: An unexpected error occurred: 400: Blog title already exists
+ERROR 2024-09-27 23:10:35 root Unexpected error: 500: An unexpected error occurred: 400: Blog title already exists
+Traceback (most recent call last):
+  File "D:\Projects\Fast_API\blog_app\backend\app\services\blog.py", line 60, in create_blog
+    raise HTTPException(
+fastapi.exceptions.HTTPException: 400: Blog title already exists
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Projects\Fast_API\blog_app\backend\app\core\database.py", line 21, in get_db
+    yield session
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\fastapi\routing.py", line 278, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\fastapi\routing.py", line 191, in run_endpoint_function
+    return await dependant.call(**values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\Fast_API\blog_app\backend\app\routers\blog.py", line 69, in create_blog_api
+    raise http_exc
+  File "D:\Projects\Fast_API\blog_app\backend\app\routers\blog.py", line 30, in create_blog_api
+    new_blog = await create_blog(db, {
+               ^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\Fast_API\blog_app\backend\app\services\blog.py", line 100, in create_blog
+    raise HTTPException(
+fastapi.exceptions.HTTPException: 500: An unexpected error occurred: 400: Blog title already exists
+ERROR 2024-09-27 23:13:08 root Unexpected error occurred: 400: Blog title already exists
+Traceback (most recent call last):
+  File "D:\Projects\Fast_API\blog_app\backend\app\services\blog.py", line 60, in create_blog
+    raise HTTPException(
+fastapi.exceptions.HTTPException: 400: Blog title already exists
+ERROR 2024-09-27 23:13:08 root HTTP error while creating blog: An unexpected error occurred: 400: Blog title already exists
+ERROR 2024-09-27 23:13:08 root Unexpected error: 500: An unexpected error occurred: 400: Blog title already exists
+Traceback (most recent call last):
+  File "D:\Projects\Fast_API\blog_app\backend\app\services\blog.py", line 60, in create_blog
+    raise HTTPException(
+fastapi.exceptions.HTTPException: 400: Blog title already exists
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Projects\Fast_API\blog_app\backend\app\core\database.py", line 21, in get_db
+    yield session
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\fastapi\routing.py", line 278, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\fastapi\routing.py", line 191, in run_endpoint_function
+    return await dependant.call(**values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\Fast_API\blog_app\backend\app\routers\blog.py", line 73, in create_blog_api
+    raise http_exc
+  File "D:\Projects\Fast_API\blog_app\backend\app\routers\blog.py", line 30, in create_blog_api
+    new_blog = await create_blog(db, {
+               ^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\Fast_API\blog_app\backend\app\services\blog.py", line 100, in create_blog
+    raise HTTPException(
+fastapi.exceptions.HTTPException: 500: An unexpected error occurred: 400: Blog title already exists
+ERROR 2024-09-27 23:25:17 root Unexpected error occurred: cannot access local variable 'new_blog' where it is not associated with a value
+Traceback (most recent call last):
+  File "D:\Projects\Fast_API\blog_app\backend\app\routers\blog.py", line 38, in create_blog_api
+    new_blog_id = new_blog.id
+                  ^^^^^^^^
+UnboundLocalError: cannot access local variable 'new_blog' where it is not associated with a value
+ERROR 2024-09-27 23:25:17 root Unexpected error: 500: An unexpected error occurred: cannot access local variable 'new_blog' where it is not associated with a value
+Traceback (most recent call last):
+  File "D:\Projects\Fast_API\blog_app\backend\app\routers\blog.py", line 38, in create_blog_api
+    new_blog_id = new_blog.id
+                  ^^^^^^^^
+UnboundLocalError: cannot access local variable 'new_blog' where it is not associated with a value
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Projects\Fast_API\blog_app\backend\app\core\database.py", line 21, in get_db
+    yield session
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\fastapi\routing.py", line 278, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\fastapi\routing.py", line 191, in run_endpoint_function
+    return await dependant.call(**values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\Fast_API\blog_app\backend\app\routers\blog.py", line 71, in create_blog_api
+    raise HTTPException(
+fastapi.exceptions.HTTPException: 500: An unexpected error occurred: cannot access local variable 'new_blog' where it is not associated with a value
+ERROR 2024-09-27 23:35:41 root Failed to fetch Blog details: 'int' object has no attribute 'category_id'
+ERROR 2024-09-27 23:35:41 root Unexpected error: 500: Failed to fetch Blog details
+Traceback (most recent call last):
+  File "D:\Projects\Fast_API\blog_app\backend\app\routers\blog.py", line 123, in get_blog_by_id_route
+    "category_id": blog_detail.category_id,
+                   ^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'int' object has no attribute 'category_id'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Projects\Fast_API\blog_app\backend\app\core\database.py", line 21, in get_db
+    yield session
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\fastapi\routing.py", line 278, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\fastapi\routing.py", line 191, in run_endpoint_function
+    return await dependant.call(**values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\Fast_API\blog_app\backend\app\routers\blog.py", line 144, in get_blog_by_id_route
+    raise HTTPException(
+fastapi.exceptions.HTTPException: 500: Failed to fetch Blog details
+ERROR 2024-09-27 23:39:20 root Error retrieving blog detail with ID 77: 404: Blog with ID 77 not found
+Traceback (most recent call last):
+  File "D:\Projects\Fast_API\blog_app\backend\app\services\blog.py", line 184, in get_blog_detail_by_id
+    raise HTTPException(status_code=404, detail=f"Blog with ID {
+fastapi.exceptions.HTTPException: 404: Blog with ID 77 not found
+ERROR 2024-09-27 23:39:20 root Failed to fetch Blog details: 500: Error retrieving Blog
+ERROR 2024-09-27 23:39:20 root Unexpected error: 500: Failed to fetch Blog details
+Traceback (most recent call last):
+  File "D:\Projects\Fast_API\blog_app\backend\app\services\blog.py", line 184, in get_blog_detail_by_id
+    raise HTTPException(status_code=404, detail=f"Blog with ID {
+fastapi.exceptions.HTTPException: 404: Blog with ID 77 not found
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Projects\Fast_API\blog_app\backend\app\routers\blog.py", line 119, in get_blog_by_id_route
+    blog_detail = await get_blog_detail_by_id(db, blog_detail_id)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\Fast_API\blog_app\backend\app\services\blog.py", line 193, in get_blog_detail_by_id
+    raise HTTPException(status_code=500, detail="Error retrieving Blog")
+fastapi.exceptions.HTTPException: 500: Error retrieving Blog
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Projects\Fast_API\blog_app\backend\app\core\database.py", line 21, in get_db
+    yield session
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\fastapi\routing.py", line 278, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\fastapi\routing.py", line 191, in run_endpoint_function
+    return await dependant.call(**values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\Fast_API\blog_app\backend\app\routers\blog.py", line 144, in get_blog_by_id_route
+    raise HTTPException(
+fastapi.exceptions.HTTPException: 500: Failed to fetch Blog details
+ERROR 2024-09-27 23:44:48 root Error retrieving blog detail with ID 77: 404: Blog with ID 77 not found
+Traceback (most recent call last):
+  File "D:\Projects\Fast_API\blog_app\backend\app\services\blog.py", line 183, in get_blog_detail_by_id
+    raise HTTPException(status_code=404, detail=f"Blog with ID {
+fastapi.exceptions.HTTPException: 404: Blog with ID 77 not found
+ERROR 2024-09-27 23:44:48 root HTTP error occurred: Error retrieving Blog
+ERROR 2024-09-27 23:44:48 root Unexpected error: 500: Error retrieving Blog
+Traceback (most recent call last):
+  File "D:\Projects\Fast_API\blog_app\backend\app\services\blog.py", line 183, in get_blog_detail_by_id
+    raise HTTPException(status_code=404, detail=f"Blog with ID {
+fastapi.exceptions.HTTPException: 404: Blog with ID 77 not found
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Projects\Fast_API\blog_app\backend\app\core\database.py", line 21, in get_db
+    yield session
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\fastapi\routing.py", line 278, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\fastapi\routing.py", line 191, in run_endpoint_function
+    return await dependant.call(**values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\Fast_API\blog_app\backend\app\routers\blog.py", line 144, in get_blog_by_id_route
+    raise http_exc  # Reraise the HTTPException for FastAPI to handle
+    ^^^^^^^^^^^^^^
+  File "D:\Projects\Fast_API\blog_app\backend\app\routers\blog.py", line 119, in get_blog_by_id_route
+    blog_detail = await get_blog_detail_by_id(db, blog_detail_id)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\Fast_API\blog_app\backend\app\services\blog.py", line 192, in get_blog_detail_by_id
+    raise HTTPException(status_code=500, detail="Error retrieving Blog")
+fastapi.exceptions.HTTPException: 500: Error retrieving Blog
+ERROR 2024-09-27 23:46:48 root Failed to fetch Blog details: 'int' object has no attribute 'category_id'
+ERROR 2024-09-27 23:46:48 root Unexpected error: 500: Failed to fetch Blog details
+Traceback (most recent call last):
+  File "D:\Projects\Fast_API\blog_app\backend\app\routers\blog.py", line 123, in get_blog_by_id_route
+    "category_id": blog_detail.category_id,
+                   ^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'int' object has no attribute 'category_id'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Projects\Fast_API\blog_app\backend\app\core\database.py", line 21, in get_db
+    yield session
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\fastapi\routing.py", line 278, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\fastapi\routing.py", line 191, in run_endpoint_function
+    return await dependant.call(**values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\Fast_API\blog_app\backend\app\routers\blog.py", line 147, in get_blog_by_id_route
+    raise HTTPException(
+fastapi.exceptions.HTTPException: 500: Failed to fetch Blog details
+ERROR 2024-09-27 23:50:35 root Error retrieving blog detail with ID 76: 'int' object has no attribute 'is_active'
+Traceback (most recent call last):
+  File "D:\Projects\Fast_API\blog_app\backend\app\services\blog.py", line 188, in get_blog_detail_by_id
+    if not blog_detail.is_active:
+           ^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'int' object has no attribute 'is_active'
+ERROR 2024-09-27 23:50:35 root HTTP error occurred: Error retrieving Blog
+ERROR 2024-09-27 23:50:35 root Unexpected error: 500: Error retrieving Blog
+Traceback (most recent call last):
+  File "D:\Projects\Fast_API\blog_app\backend\app\services\blog.py", line 188, in get_blog_detail_by_id
+    if not blog_detail.is_active:
+           ^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'int' object has no attribute 'is_active'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Projects\Fast_API\blog_app\backend\app\core\database.py", line 21, in get_db
+    yield session
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\fastapi\routing.py", line 278, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\fastapi\routing.py", line 191, in run_endpoint_function
+    return await dependant.call(**values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\Fast_API\blog_app\backend\app\routers\blog.py", line 144, in get_blog_by_id_route
+    raise http_exc  # Reraise the HTTPException for FastAPI to handle
+    ^^^^^^^^^^^^^^
+  File "D:\Projects\Fast_API\blog_app\backend\app\routers\blog.py", line 119, in get_blog_by_id_route
+    blog_detail = await get_blog_detail_by_id(db, blog_detail_id)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\Fast_API\blog_app\backend\app\services\blog.py", line 205, in get_blog_detail_by_id
+    raise HTTPException(status_code=500, detail="Error retrieving Blog")
+fastapi.exceptions.HTTPException: 500: Error retrieving Blog
+ERROR 2024-09-27 23:56:17 root Failed to fetch Blog details: 'dict' object has no attribute 'category_id'
+ERROR 2024-09-27 23:56:17 root Unexpected error: 500: Failed to fetch Blog details
+Traceback (most recent call last):
+  File "D:\Projects\Fast_API\blog_app\backend\app\routers\blog.py", line 123, in get_blog_by_id_route
+    "category_id": blog_detail.category_id,
+                   ^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'dict' object has no attribute 'category_id'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Projects\Fast_API\blog_app\backend\app\core\database.py", line 21, in get_db
+    yield session
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\fastapi\routing.py", line 278, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\fastapi\routing.py", line 191, in run_endpoint_function
+    return await dependant.call(**values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\Fast_API\blog_app\backend\app\routers\blog.py", line 147, in get_blog_by_id_route
+    logging.error(f"Failed to fetch Blog details: {str(e)}")
+fastapi.exceptions.HTTPException: 500: Failed to fetch Blog details
+ERROR 2024-09-28 00:03:24 root Failed to fetch Blog details: 'dict' object has no attribute 'category_id'
+ERROR 2024-09-28 00:03:24 root Unexpected error: 500: Failed to fetch Blog details
+Traceback (most recent call last):
+  File "D:\Projects\Fast_API\blog_app\backend\app\routers\blog.py", line 123, in get_blog_by_id_route
+AttributeError: 'dict' object has no attribute 'category_id'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Projects\Fast_API\blog_app\backend\app\core\database.py", line 21, in get_db
+    yield session
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\fastapi\routing.py", line 278, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\fastapi\routing.py", line 191, in run_endpoint_function
+    return await dependant.call(**values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\Fast_API\blog_app\backend\app\routers\blog.py", line 147, in get_blog_by_id_route
+    blog_data = BlogUpdateModel(
+        ^^^^^^^^^^^^^^^^^^^^^^^^
+fastapi.exceptions.HTTPException: 500: Failed to fetch Blog details
+ERROR 2024-09-28 00:06:56 root Failed to fetch Blog details: 'dict' object has no attribute 'category_id'
+ERROR 2024-09-28 00:06:56 root Unexpected error: 500: Failed to fetch Blog details
+Traceback (most recent call last):
+  File "D:\Projects\Fast_API\blog_app\backend\app\routers\blog.py", line 123, in get_blog_by_id_route
+    return blog_detail  # Return early if it's an inactive blog response
+                   ^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'dict' object has no attribute 'category_id'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Projects\Fast_API\blog_app\backend\app\core\database.py", line 21, in get_db
+    yield session
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\fastapi\routing.py", line 278, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\fastapi\routing.py", line 191, in run_endpoint_function
+    return await dependant.call(**values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\Fast_API\blog_app\backend\app\routers\blog.py", line 147, in get_blog_by_id_route
+    except HTTPException as http_exc:
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+fastapi.exceptions.HTTPException: 500: Failed to fetch Blog details

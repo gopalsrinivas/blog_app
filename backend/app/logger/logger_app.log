@@ -26737,3 +26737,1780 @@ INFO 2024-09-27 22:55:36 root Application startup application...
 INFO 2024-09-27 22:56:53 root Shutting down application...
 INFO 2024-09-27 22:56:56 root Application startup application...
 INFO 2024-09-27 22:57:12 root Shutting down application...
+INFO 2024-09-27 22:57:15 root Application startup application...
+INFO 2024-09-27 23:04:58 root Shutting down application...
+INFO 2024-09-27 23:05:01 root Application startup application...
+INFO 2024-09-27 23:05:52 root Shutting down application...
+INFO 2024-09-27 23:05:55 root Application startup application...
+DEBUG 2024-09-27 23:06:45 multipart.multipart Calling on_part_begin with no data
+DEBUG 2024-09-27 23:06:45 multipart.multipart Calling on_header_field with data[42:61]
+DEBUG 2024-09-27 23:06:45 multipart.multipart Calling on_header_value with data[63:92]
+DEBUG 2024-09-27 23:06:45 multipart.multipart Calling on_header_end with no data
+DEBUG 2024-09-27 23:06:45 multipart.multipart Calling on_headers_finished with no data
+DEBUG 2024-09-27 23:06:45 multipart.multipart Calling on_part_data with data[96:98]
+DEBUG 2024-09-27 23:06:45 multipart.multipart Calling on_part_end with no data
+DEBUG 2024-09-27 23:06:45 multipart.multipart Calling on_part_begin with no data
+DEBUG 2024-09-27 23:06:45 multipart.multipart Calling on_header_field with data[142:161]
+DEBUG 2024-09-27 23:06:45 multipart.multipart Calling on_header_value with data[163:195]
+DEBUG 2024-09-27 23:06:45 multipart.multipart Calling on_header_end with no data
+DEBUG 2024-09-27 23:06:45 multipart.multipart Calling on_headers_finished with no data
+DEBUG 2024-09-27 23:06:45 multipart.multipart Calling on_part_data with data[199:201]
+DEBUG 2024-09-27 23:06:45 multipart.multipart Calling on_part_end with no data
+DEBUG 2024-09-27 23:06:45 multipart.multipart Calling on_part_begin with no data
+DEBUG 2024-09-27 23:06:45 multipart.multipart Calling on_header_field with data[245:264]
+DEBUG 2024-09-27 23:06:45 multipart.multipart Calling on_header_value with data[266:289]
+DEBUG 2024-09-27 23:06:45 multipart.multipart Calling on_header_end with no data
+DEBUG 2024-09-27 23:06:45 multipart.multipart Calling on_headers_finished with no data
+DEBUG 2024-09-27 23:06:45 multipart.multipart Calling on_part_data with data[293:322]
+DEBUG 2024-09-27 23:06:45 multipart.multipart Calling on_part_end with no data
+DEBUG 2024-09-27 23:06:45 multipart.multipart Calling on_part_begin with no data
+DEBUG 2024-09-27 23:06:45 multipart.multipart Calling on_header_field with data[366:385]
+DEBUG 2024-09-27 23:06:45 multipart.multipart Calling on_header_value with data[387:412]
+DEBUG 2024-09-27 23:06:45 multipart.multipart Calling on_header_end with no data
+DEBUG 2024-09-27 23:06:45 multipart.multipart Calling on_headers_finished with no data
+DEBUG 2024-09-27 23:06:45 multipart.multipart Calling on_part_data with data[416:464]
+DEBUG 2024-09-27 23:06:45 multipart.multipart Calling on_part_end with no data
+DEBUG 2024-09-27 23:06:45 multipart.multipart Calling on_part_begin with no data
+DEBUG 2024-09-27 23:06:45 multipart.multipart Calling on_header_field with data[508:527]
+DEBUG 2024-09-27 23:06:45 multipart.multipart Calling on_header_value with data[529:556]
+DEBUG 2024-09-27 23:06:45 multipart.multipart Calling on_header_end with no data
+DEBUG 2024-09-27 23:06:45 multipart.multipart Calling on_headers_finished with no data
+DEBUG 2024-09-27 23:06:45 multipart.multipart Calling on_part_data with data[560:564]
+DEBUG 2024-09-27 23:06:45 multipart.multipart Calling on_part_end with no data
+DEBUG 2024-09-27 23:06:45 multipart.multipart Calling on_part_begin with no data
+DEBUG 2024-09-27 23:06:45 multipart.multipart Calling on_header_field with data[608:627]
+DEBUG 2024-09-27 23:06:45 multipart.multipart Calling on_header_value with data[629:677]
+DEBUG 2024-09-27 23:06:45 multipart.multipart Calling on_header_end with no data
+DEBUG 2024-09-27 23:06:45 multipart.multipart Calling on_header_field with data[679:691]
+DEBUG 2024-09-27 23:06:45 multipart.multipart Calling on_header_value with data[693:703]
+DEBUG 2024-09-27 23:06:45 multipart.multipart Calling on_header_end with no data
+DEBUG 2024-09-27 23:06:45 multipart.multipart Calling on_headers_finished with no data
+DEBUG 2024-09-27 23:06:45 multipart.multipart Calling on_part_data with data[707:801]
+DEBUG 2024-09-27 23:06:45 multipart.multipart Calling on_part_data with data[0:1]
+DEBUG 2024-09-27 23:06:45 multipart.multipart Calling on_part_data with data[802:6766]
+DEBUG 2024-09-27 23:06:45 multipart.multipart Calling on_part_end with no data
+DEBUG 2024-09-27 23:06:45 multipart.multipart Calling on_end with no data
+INFO 2024-09-27 23:06:45 sqlalchemy.engine.Engine select pg_catalog.version()
+INFO 2024-09-27 23:06:45 sqlalchemy.engine.Engine [raw sql] ()
+INFO 2024-09-27 23:06:45 sqlalchemy.engine.Engine select current_schema()
+INFO 2024-09-27 23:06:45 sqlalchemy.engine.Engine [raw sql] ()
+INFO 2024-09-27 23:06:45 sqlalchemy.engine.Engine show standard_conforming_strings
+INFO 2024-09-27 23:06:45 sqlalchemy.engine.Engine [raw sql] ()
+INFO 2024-09-27 23:06:45 sqlalchemy.engine.Engine BEGIN (implicit)
+INFO 2024-09-27 23:06:45 sqlalchemy.engine.Engine SELECT count(*) AS count_1 
+FROM categories 
+WHERE categories.id = $1::INTEGER
+INFO 2024-09-27 23:06:45 sqlalchemy.engine.Engine [generated in 0.00090s] (33,)
+INFO 2024-09-27 23:06:45 sqlalchemy.engine.Engine SELECT count(*) AS count_1 
+FROM subcategories 
+WHERE subcategories.id = $1::INTEGER
+INFO 2024-09-27 23:06:45 sqlalchemy.engine.Engine [generated in 0.00098s] (33,)
+INFO 2024-09-27 23:06:45 sqlalchemy.engine.Engine SELECT count(*) AS count_1 
+FROM blog 
+WHERE blog.title = $1::VARCHAR
+INFO 2024-09-27 23:06:45 sqlalchemy.engine.Engine [generated in 0.00089s] ("string3fhjpoiuytrdsxcv.iytd'd",)
+INFO 2024-09-27 23:06:45 sqlalchemy.engine.Engine SELECT max(blog.id) AS max_1 
+FROM blog
+INFO 2024-09-27 23:06:45 sqlalchemy.engine.Engine [generated in 0.00100s] ()
+INFO 2024-09-27 23:06:45 sqlalchemy.engine.Engine INSERT INTO blog (category_id, subcategory_id, blog_id, title, content, image, is_active, created_on, updated_on) VALUES ($1::INTEGER, $2::INTEGER, $3::VARCHAR, $4::VARCHAR, $5::VARCHAR, $6::VARCHAR, $7::BOOLEAN, $8::TIMESTAMP WITHOUT TIME ZONE, $9::TIMESTAMP WITHOUT TIME ZONE) RETURNING blog.id
+INFO 2024-09-27 23:06:45 sqlalchemy.engine.Engine [generated in 0.00091s] (33, 33, 'blog_69', "string3fhjpoiuytrdsxcv.iytd'd", "asdfadslfjadlfjaldfjodsjdasdmf'adslfjalkdjfakdjf", None, True, datetime.datetime(2024, 9, 27, 23, 6, 45, 425335), None)
+INFO 2024-09-27 23:06:45 sqlalchemy.engine.Engine COMMIT
+INFO 2024-09-27 23:06:45 sqlalchemy.engine.Engine BEGIN (implicit)
+INFO 2024-09-27 23:06:45 sqlalchemy.engine.Engine SELECT blog.id, blog.category_id, blog.subcategory_id, blog.blog_id, blog.title, blog.content, blog.image, blog.is_active, blog.created_on, blog.updated_on 
+FROM blog 
+WHERE blog.id = $1::INTEGER
+INFO 2024-09-27 23:06:45 sqlalchemy.engine.Engine [generated in 0.00248s] (69,)
+INFO 2024-09-27 23:06:45 root Blog 'string3fhjpoiuytrdsxcv.iytd'd' created successfully with ID blog_69
+INFO 2024-09-27 23:06:45 sqlalchemy.engine.Engine ROLLBACK
+INFO 2024-09-27 23:07:43 root Shutting down application...
+INFO 2024-09-27 23:07:45 root Application startup application...
+INFO 2024-09-27 23:07:45 root Shutting down application...
+INFO 2024-09-27 23:07:48 root Application startup application...
+DEBUG 2024-09-27 23:07:55 multipart.multipart Calling on_part_begin with no data
+DEBUG 2024-09-27 23:07:55 multipart.multipart Calling on_header_field with data[42:61]
+DEBUG 2024-09-27 23:07:55 multipart.multipart Calling on_header_value with data[63:92]
+DEBUG 2024-09-27 23:07:55 multipart.multipart Calling on_header_end with no data
+DEBUG 2024-09-27 23:07:55 multipart.multipart Calling on_headers_finished with no data
+DEBUG 2024-09-27 23:07:55 multipart.multipart Calling on_part_data with data[96:98]
+DEBUG 2024-09-27 23:07:55 multipart.multipart Calling on_part_end with no data
+DEBUG 2024-09-27 23:07:55 multipart.multipart Calling on_part_begin with no data
+DEBUG 2024-09-27 23:07:55 multipart.multipart Calling on_header_field with data[142:161]
+DEBUG 2024-09-27 23:07:55 multipart.multipart Calling on_header_value with data[163:195]
+DEBUG 2024-09-27 23:07:55 multipart.multipart Calling on_header_end with no data
+DEBUG 2024-09-27 23:07:55 multipart.multipart Calling on_headers_finished with no data
+DEBUG 2024-09-27 23:07:55 multipart.multipart Calling on_part_data with data[199:201]
+DEBUG 2024-09-27 23:07:55 multipart.multipart Calling on_part_end with no data
+DEBUG 2024-09-27 23:07:55 multipart.multipart Calling on_part_begin with no data
+DEBUG 2024-09-27 23:07:55 multipart.multipart Calling on_header_field with data[245:264]
+DEBUG 2024-09-27 23:07:55 multipart.multipart Calling on_header_value with data[266:289]
+DEBUG 2024-09-27 23:07:55 multipart.multipart Calling on_header_end with no data
+DEBUG 2024-09-27 23:07:55 multipart.multipart Calling on_headers_finished with no data
+DEBUG 2024-09-27 23:07:55 multipart.multipart Calling on_part_data with data[293:323]
+DEBUG 2024-09-27 23:07:55 multipart.multipart Calling on_part_end with no data
+DEBUG 2024-09-27 23:07:55 multipart.multipart Calling on_part_begin with no data
+DEBUG 2024-09-27 23:07:55 multipart.multipart Calling on_header_field with data[367:386]
+DEBUG 2024-09-27 23:07:55 multipart.multipart Calling on_header_value with data[388:413]
+DEBUG 2024-09-27 23:07:55 multipart.multipart Calling on_header_end with no data
+DEBUG 2024-09-27 23:07:55 multipart.multipart Calling on_headers_finished with no data
+DEBUG 2024-09-27 23:07:55 multipart.multipart Calling on_part_data with data[417:465]
+DEBUG 2024-09-27 23:07:55 multipart.multipart Calling on_part_end with no data
+DEBUG 2024-09-27 23:07:55 multipart.multipart Calling on_part_begin with no data
+DEBUG 2024-09-27 23:07:55 multipart.multipart Calling on_header_field with data[509:528]
+DEBUG 2024-09-27 23:07:55 multipart.multipart Calling on_header_value with data[530:557]
+DEBUG 2024-09-27 23:07:55 multipart.multipart Calling on_header_end with no data
+DEBUG 2024-09-27 23:07:55 multipart.multipart Calling on_headers_finished with no data
+DEBUG 2024-09-27 23:07:55 multipart.multipart Calling on_part_data with data[561:565]
+DEBUG 2024-09-27 23:07:55 multipart.multipart Calling on_part_end with no data
+DEBUG 2024-09-27 23:07:55 multipart.multipart Calling on_part_begin with no data
+DEBUG 2024-09-27 23:07:55 multipart.multipart Calling on_header_field with data[609:628]
+DEBUG 2024-09-27 23:07:55 multipart.multipart Calling on_header_value with data[630:678]
+DEBUG 2024-09-27 23:07:55 multipart.multipart Calling on_header_end with no data
+DEBUG 2024-09-27 23:07:55 multipart.multipart Calling on_header_field with data[680:692]
+DEBUG 2024-09-27 23:07:55 multipart.multipart Calling on_header_value with data[694:704]
+DEBUG 2024-09-27 23:07:55 multipart.multipart Calling on_header_end with no data
+DEBUG 2024-09-27 23:07:55 multipart.multipart Calling on_headers_finished with no data
+DEBUG 2024-09-27 23:07:55 multipart.multipart Calling on_part_data with data[708:802]
+DEBUG 2024-09-27 23:07:55 multipart.multipart Calling on_part_data with data[0:1]
+DEBUG 2024-09-27 23:07:55 multipart.multipart Calling on_part_data with data[803:6767]
+DEBUG 2024-09-27 23:07:55 multipart.multipart Calling on_part_end with no data
+DEBUG 2024-09-27 23:07:55 multipart.multipart Calling on_end with no data
+INFO 2024-09-27 23:07:55 sqlalchemy.engine.Engine select pg_catalog.version()
+INFO 2024-09-27 23:07:55 sqlalchemy.engine.Engine [raw sql] ()
+INFO 2024-09-27 23:07:55 sqlalchemy.engine.Engine select current_schema()
+INFO 2024-09-27 23:07:55 sqlalchemy.engine.Engine [raw sql] ()
+INFO 2024-09-27 23:07:55 sqlalchemy.engine.Engine show standard_conforming_strings
+INFO 2024-09-27 23:07:55 sqlalchemy.engine.Engine [raw sql] ()
+INFO 2024-09-27 23:07:55 sqlalchemy.engine.Engine BEGIN (implicit)
+INFO 2024-09-27 23:07:55 sqlalchemy.engine.Engine SELECT count(*) AS count_1 
+FROM categories 
+WHERE categories.id = $1::INTEGER
+INFO 2024-09-27 23:07:55 sqlalchemy.engine.Engine [generated in 0.00089s] (33,)
+INFO 2024-09-27 23:07:55 sqlalchemy.engine.Engine SELECT count(*) AS count_1 
+FROM subcategories 
+WHERE subcategories.id = $1::INTEGER
+INFO 2024-09-27 23:07:55 sqlalchemy.engine.Engine [generated in 0.00107s] (33,)
+INFO 2024-09-27 23:07:55 sqlalchemy.engine.Engine SELECT count(*) AS count_1 
+FROM blog 
+WHERE blog.title = $1::VARCHAR
+INFO 2024-09-27 23:07:55 sqlalchemy.engine.Engine [generated in 0.00086s] ("string3fhjpoiuytrdsxcv.iytd'dw",)
+INFO 2024-09-27 23:07:55 sqlalchemy.engine.Engine SELECT max(blog.id) AS max_1 
+FROM blog
+INFO 2024-09-27 23:07:55 sqlalchemy.engine.Engine [generated in 0.00066s] ()
+INFO 2024-09-27 23:07:55 sqlalchemy.engine.Engine INSERT INTO blog (category_id, subcategory_id, blog_id, title, content, image, is_active, created_on, updated_on) VALUES ($1::INTEGER, $2::INTEGER, $3::VARCHAR, $4::VARCHAR, $5::VARCHAR, $6::VARCHAR, $7::BOOLEAN, $8::TIMESTAMP WITHOUT TIME ZONE, $9::TIMESTAMP WITHOUT TIME ZONE) RETURNING blog.id
+INFO 2024-09-27 23:07:55 sqlalchemy.engine.Engine [generated in 0.00136s] (33, 33, 'blog_70', "string3fhjpoiuytrdsxcv.iytd'dw", "asdfadslfjadlfjaldfjodsjdasdmf'adslfjalkdjfakdjf", None, True, datetime.datetime(2024, 9, 27, 23, 7, 55, 779547), None)
+INFO 2024-09-27 23:07:55 sqlalchemy.engine.Engine COMMIT
+INFO 2024-09-27 23:07:55 sqlalchemy.engine.Engine BEGIN (implicit)
+INFO 2024-09-27 23:07:55 sqlalchemy.engine.Engine SELECT blog.id, blog.category_id, blog.subcategory_id, blog.blog_id, blog.title, blog.content, blog.image, blog.is_active, blog.created_on, blog.updated_on 
+FROM blog 
+WHERE blog.id = $1::INTEGER
+INFO 2024-09-27 23:07:55 sqlalchemy.engine.Engine [generated in 0.00095s] (70,)
+INFO 2024-09-27 23:07:55 root Blog 'string3fhjpoiuytrdsxcv.iytd'dw' created successfully with ID blog_70
+INFO 2024-09-27 23:07:55 sqlalchemy.engine.Engine ROLLBACK
+INFO 2024-09-27 23:08:06 root Shutting down application...
+INFO 2024-09-27 23:08:08 root Application startup application...
+INFO 2024-09-27 23:10:17 root Shutting down application...
+INFO 2024-09-27 23:10:21 root Application startup application...
+DEBUG 2024-09-27 23:10:35 multipart.multipart Calling on_part_begin with no data
+DEBUG 2024-09-27 23:10:35 multipart.multipart Calling on_header_field with data[42:61]
+DEBUG 2024-09-27 23:10:35 multipart.multipart Calling on_header_value with data[63:92]
+DEBUG 2024-09-27 23:10:35 multipart.multipart Calling on_header_end with no data
+DEBUG 2024-09-27 23:10:35 multipart.multipart Calling on_headers_finished with no data
+DEBUG 2024-09-27 23:10:35 multipart.multipart Calling on_part_data with data[96:98]
+DEBUG 2024-09-27 23:10:35 multipart.multipart Calling on_part_end with no data
+DEBUG 2024-09-27 23:10:35 multipart.multipart Calling on_part_begin with no data
+DEBUG 2024-09-27 23:10:35 multipart.multipart Calling on_header_field with data[142:161]
+DEBUG 2024-09-27 23:10:35 multipart.multipart Calling on_header_value with data[163:195]
+DEBUG 2024-09-27 23:10:35 multipart.multipart Calling on_header_end with no data
+DEBUG 2024-09-27 23:10:35 multipart.multipart Calling on_headers_finished with no data
+DEBUG 2024-09-27 23:10:35 multipart.multipart Calling on_part_data with data[199:201]
+DEBUG 2024-09-27 23:10:35 multipart.multipart Calling on_part_end with no data
+DEBUG 2024-09-27 23:10:35 multipart.multipart Calling on_part_begin with no data
+DEBUG 2024-09-27 23:10:35 multipart.multipart Calling on_header_field with data[245:264]
+DEBUG 2024-09-27 23:10:35 multipart.multipart Calling on_header_value with data[266:289]
+DEBUG 2024-09-27 23:10:35 multipart.multipart Calling on_header_end with no data
+DEBUG 2024-09-27 23:10:35 multipart.multipart Calling on_headers_finished with no data
+DEBUG 2024-09-27 23:10:35 multipart.multipart Calling on_part_data with data[293:323]
+DEBUG 2024-09-27 23:10:35 multipart.multipart Calling on_part_end with no data
+DEBUG 2024-09-27 23:10:35 multipart.multipart Calling on_part_begin with no data
+DEBUG 2024-09-27 23:10:35 multipart.multipart Calling on_header_field with data[367:386]
+DEBUG 2024-09-27 23:10:35 multipart.multipart Calling on_header_value with data[388:413]
+DEBUG 2024-09-27 23:10:35 multipart.multipart Calling on_header_end with no data
+DEBUG 2024-09-27 23:10:35 multipart.multipart Calling on_headers_finished with no data
+DEBUG 2024-09-27 23:10:35 multipart.multipart Calling on_part_data with data[417:465]
+DEBUG 2024-09-27 23:10:35 multipart.multipart Calling on_part_end with no data
+DEBUG 2024-09-27 23:10:35 multipart.multipart Calling on_part_begin with no data
+DEBUG 2024-09-27 23:10:35 multipart.multipart Calling on_header_field with data[509:528]
+DEBUG 2024-09-27 23:10:35 multipart.multipart Calling on_header_value with data[530:557]
+DEBUG 2024-09-27 23:10:35 multipart.multipart Calling on_header_end with no data
+DEBUG 2024-09-27 23:10:35 multipart.multipart Calling on_headers_finished with no data
+DEBUG 2024-09-27 23:10:35 multipart.multipart Calling on_part_data with data[561:565]
+DEBUG 2024-09-27 23:10:35 multipart.multipart Calling on_part_end with no data
+DEBUG 2024-09-27 23:10:35 multipart.multipart Calling on_part_begin with no data
+DEBUG 2024-09-27 23:10:35 multipart.multipart Calling on_header_field with data[609:628]
+DEBUG 2024-09-27 23:10:35 multipart.multipart Calling on_header_value with data[630:678]
+DEBUG 2024-09-27 23:10:35 multipart.multipart Calling on_header_end with no data
+DEBUG 2024-09-27 23:10:35 multipart.multipart Calling on_header_field with data[680:692]
+DEBUG 2024-09-27 23:10:35 multipart.multipart Calling on_header_value with data[694:704]
+DEBUG 2024-09-27 23:10:35 multipart.multipart Calling on_header_end with no data
+DEBUG 2024-09-27 23:10:35 multipart.multipart Calling on_headers_finished with no data
+DEBUG 2024-09-27 23:10:35 multipart.multipart Calling on_part_data with data[708:802]
+DEBUG 2024-09-27 23:10:35 multipart.multipart Calling on_part_data with data[0:1]
+DEBUG 2024-09-27 23:10:35 multipart.multipart Calling on_part_data with data[803:6767]
+DEBUG 2024-09-27 23:10:35 multipart.multipart Calling on_part_end with no data
+DEBUG 2024-09-27 23:10:35 multipart.multipart Calling on_end with no data
+INFO 2024-09-27 23:10:35 sqlalchemy.engine.Engine select pg_catalog.version()
+INFO 2024-09-27 23:10:35 sqlalchemy.engine.Engine [raw sql] ()
+INFO 2024-09-27 23:10:35 sqlalchemy.engine.Engine select current_schema()
+INFO 2024-09-27 23:10:35 sqlalchemy.engine.Engine [raw sql] ()
+INFO 2024-09-27 23:10:35 sqlalchemy.engine.Engine show standard_conforming_strings
+INFO 2024-09-27 23:10:35 sqlalchemy.engine.Engine [raw sql] ()
+INFO 2024-09-27 23:10:35 sqlalchemy.engine.Engine BEGIN (implicit)
+INFO 2024-09-27 23:10:35 sqlalchemy.engine.Engine SELECT count(*) AS count_1 
+FROM categories 
+WHERE categories.id = $1::INTEGER
+INFO 2024-09-27 23:10:35 sqlalchemy.engine.Engine [generated in 0.00076s] (33,)
+INFO 2024-09-27 23:10:35 sqlalchemy.engine.Engine SELECT count(*) AS count_1 
+FROM subcategories 
+WHERE subcategories.id = $1::INTEGER
+INFO 2024-09-27 23:10:35 sqlalchemy.engine.Engine [generated in 0.00133s] (33,)
+INFO 2024-09-27 23:10:35 sqlalchemy.engine.Engine SELECT count(*) AS count_1 
+FROM blog 
+WHERE blog.title = $1::VARCHAR
+INFO 2024-09-27 23:10:35 sqlalchemy.engine.Engine [generated in 0.00082s] ("string3fhjpoiuytrdsxcv.iytd'dw",)
+WARNING 2024-09-27 23:10:35 root Blog title 'string3fhjpoiuytrdsxcv.iytd'dw' already exists
+INFO 2024-09-27 23:10:35 sqlalchemy.engine.Engine ROLLBACK
+ERROR 2024-09-27 23:10:35 root Unexpected error occurred: 400: Blog title already exists
+Traceback (most recent call last):
+  File "D:\Projects\Fast_API\blog_app\backend\app\services\blog.py", line 60, in create_blog
+    raise HTTPException(
+fastapi.exceptions.HTTPException: 400: Blog title already exists
+ERROR 2024-09-27 23:10:35 root HTTP error while creating blog: An unexpected error occurred: 400: Blog title already exists
+ERROR 2024-09-27 23:10:35 root Unexpected error: 500: An unexpected error occurred: 400: Blog title already exists
+Traceback (most recent call last):
+  File "D:\Projects\Fast_API\blog_app\backend\app\services\blog.py", line 60, in create_blog
+    raise HTTPException(
+fastapi.exceptions.HTTPException: 400: Blog title already exists
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Projects\Fast_API\blog_app\backend\app\core\database.py", line 21, in get_db
+    yield session
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\fastapi\routing.py", line 278, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\fastapi\routing.py", line 191, in run_endpoint_function
+    return await dependant.call(**values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\Fast_API\blog_app\backend\app\routers\blog.py", line 69, in create_blog_api
+    raise http_exc
+  File "D:\Projects\Fast_API\blog_app\backend\app\routers\blog.py", line 30, in create_blog_api
+    new_blog = await create_blog(db, {
+               ^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\Fast_API\blog_app\backend\app\services\blog.py", line 100, in create_blog
+    raise HTTPException(
+fastapi.exceptions.HTTPException: 500: An unexpected error occurred: 400: Blog title already exists
+DEBUG 2024-09-27 23:10:47 multipart.multipart Calling on_part_begin with no data
+DEBUG 2024-09-27 23:10:47 multipart.multipart Calling on_header_field with data[42:61]
+DEBUG 2024-09-27 23:10:47 multipart.multipart Calling on_header_value with data[63:92]
+DEBUG 2024-09-27 23:10:47 multipart.multipart Calling on_header_end with no data
+DEBUG 2024-09-27 23:10:47 multipart.multipart Calling on_headers_finished with no data
+DEBUG 2024-09-27 23:10:47 multipart.multipart Calling on_part_data with data[96:98]
+DEBUG 2024-09-27 23:10:47 multipart.multipart Calling on_part_end with no data
+DEBUG 2024-09-27 23:10:47 multipart.multipart Calling on_part_begin with no data
+DEBUG 2024-09-27 23:10:47 multipart.multipart Calling on_header_field with data[142:161]
+DEBUG 2024-09-27 23:10:47 multipart.multipart Calling on_header_value with data[163:195]
+DEBUG 2024-09-27 23:10:47 multipart.multipart Calling on_header_end with no data
+DEBUG 2024-09-27 23:10:47 multipart.multipart Calling on_headers_finished with no data
+DEBUG 2024-09-27 23:10:47 multipart.multipart Calling on_part_data with data[199:201]
+DEBUG 2024-09-27 23:10:47 multipart.multipart Calling on_part_end with no data
+DEBUG 2024-09-27 23:10:47 multipart.multipart Calling on_part_begin with no data
+DEBUG 2024-09-27 23:10:47 multipart.multipart Calling on_header_field with data[245:264]
+DEBUG 2024-09-27 23:10:47 multipart.multipart Calling on_header_value with data[266:289]
+DEBUG 2024-09-27 23:10:47 multipart.multipart Calling on_header_end with no data
+DEBUG 2024-09-27 23:10:47 multipart.multipart Calling on_headers_finished with no data
+DEBUG 2024-09-27 23:10:47 multipart.multipart Calling on_part_data with data[293:324]
+DEBUG 2024-09-27 23:10:47 multipart.multipart Calling on_part_end with no data
+DEBUG 2024-09-27 23:10:47 multipart.multipart Calling on_part_begin with no data
+DEBUG 2024-09-27 23:10:47 multipart.multipart Calling on_header_field with data[368:387]
+DEBUG 2024-09-27 23:10:47 multipart.multipart Calling on_header_value with data[389:414]
+DEBUG 2024-09-27 23:10:47 multipart.multipart Calling on_header_end with no data
+DEBUG 2024-09-27 23:10:47 multipart.multipart Calling on_headers_finished with no data
+DEBUG 2024-09-27 23:10:47 multipart.multipart Calling on_part_data with data[418:466]
+DEBUG 2024-09-27 23:10:47 multipart.multipart Calling on_part_end with no data
+DEBUG 2024-09-27 23:10:47 multipart.multipart Calling on_part_begin with no data
+DEBUG 2024-09-27 23:10:47 multipart.multipart Calling on_header_field with data[510:529]
+DEBUG 2024-09-27 23:10:47 multipart.multipart Calling on_header_value with data[531:558]
+DEBUG 2024-09-27 23:10:47 multipart.multipart Calling on_header_end with no data
+DEBUG 2024-09-27 23:10:47 multipart.multipart Calling on_headers_finished with no data
+DEBUG 2024-09-27 23:10:47 multipart.multipart Calling on_part_data with data[562:566]
+DEBUG 2024-09-27 23:10:47 multipart.multipart Calling on_part_end with no data
+DEBUG 2024-09-27 23:10:47 multipart.multipart Calling on_part_begin with no data
+DEBUG 2024-09-27 23:10:47 multipart.multipart Calling on_header_field with data[610:629]
+DEBUG 2024-09-27 23:10:47 multipart.multipart Calling on_header_value with data[631:679]
+DEBUG 2024-09-27 23:10:47 multipart.multipart Calling on_header_end with no data
+DEBUG 2024-09-27 23:10:47 multipart.multipart Calling on_header_field with data[681:693]
+DEBUG 2024-09-27 23:10:47 multipart.multipart Calling on_header_value with data[695:705]
+DEBUG 2024-09-27 23:10:47 multipart.multipart Calling on_header_end with no data
+DEBUG 2024-09-27 23:10:47 multipart.multipart Calling on_headers_finished with no data
+DEBUG 2024-09-27 23:10:47 multipart.multipart Calling on_part_data with data[709:803]
+DEBUG 2024-09-27 23:10:47 multipart.multipart Calling on_part_data with data[0:1]
+DEBUG 2024-09-27 23:10:47 multipart.multipart Calling on_part_data with data[804:6768]
+DEBUG 2024-09-27 23:10:47 multipart.multipart Calling on_part_end with no data
+DEBUG 2024-09-27 23:10:47 multipart.multipart Calling on_end with no data
+INFO 2024-09-27 23:10:47 sqlalchemy.engine.Engine BEGIN (implicit)
+INFO 2024-09-27 23:10:47 sqlalchemy.engine.Engine SELECT count(*) AS count_1 
+FROM categories 
+WHERE categories.id = $1::INTEGER
+INFO 2024-09-27 23:10:47 sqlalchemy.engine.Engine [cached since 12.02s ago] (33,)
+INFO 2024-09-27 23:10:47 sqlalchemy.engine.Engine SELECT count(*) AS count_1 
+FROM subcategories 
+WHERE subcategories.id = $1::INTEGER
+INFO 2024-09-27 23:10:47 sqlalchemy.engine.Engine [cached since 12.02s ago] (33,)
+INFO 2024-09-27 23:10:47 sqlalchemy.engine.Engine SELECT count(*) AS count_1 
+FROM blog 
+WHERE blog.title = $1::VARCHAR
+INFO 2024-09-27 23:10:47 sqlalchemy.engine.Engine [cached since 12.01s ago] ("string3fhjpoiuytrdsxcv.iytd'dwd",)
+INFO 2024-09-27 23:10:47 sqlalchemy.engine.Engine SELECT max(blog.id) AS max_1 
+FROM blog
+INFO 2024-09-27 23:10:47 sqlalchemy.engine.Engine [generated in 0.00087s] ()
+INFO 2024-09-27 23:10:47 sqlalchemy.engine.Engine INSERT INTO blog (category_id, subcategory_id, blog_id, title, content, image, is_active, created_on, updated_on) VALUES ($1::INTEGER, $2::INTEGER, $3::VARCHAR, $4::VARCHAR, $5::VARCHAR, $6::VARCHAR, $7::BOOLEAN, $8::TIMESTAMP WITHOUT TIME ZONE, $9::TIMESTAMP WITHOUT TIME ZONE) RETURNING blog.id
+INFO 2024-09-27 23:10:47 sqlalchemy.engine.Engine [generated in 0.00104s] (33, 33, 'blog_71', "string3fhjpoiuytrdsxcv.iytd'dwd", "asdfadslfjadlfjaldfjodsjdasdmf'adslfjalkdjfakdjf", None, True, datetime.datetime(2024, 9, 27, 23, 10, 47, 591475), None)
+INFO 2024-09-27 23:10:47 sqlalchemy.engine.Engine COMMIT
+INFO 2024-09-27 23:10:47 sqlalchemy.engine.Engine BEGIN (implicit)
+INFO 2024-09-27 23:10:47 sqlalchemy.engine.Engine SELECT blog.id, blog.category_id, blog.subcategory_id, blog.blog_id, blog.title, blog.content, blog.image, blog.is_active, blog.created_on, blog.updated_on 
+FROM blog 
+WHERE blog.id = $1::INTEGER
+INFO 2024-09-27 23:10:47 sqlalchemy.engine.Engine [generated in 0.00081s] (71,)
+INFO 2024-09-27 23:10:47 root Blog 'string3fhjpoiuytrdsxcv.iytd'dwd' created successfully with ID blog_71
+INFO 2024-09-27 23:10:47 sqlalchemy.engine.Engine ROLLBACK
+INFO 2024-09-27 23:12:12 root Shutting down application...
+INFO 2024-09-27 23:12:16 root Application startup application...
+INFO 2024-09-27 23:13:01 root Shutting down application...
+INFO 2024-09-27 23:13:05 root Application startup application...
+DEBUG 2024-09-27 23:13:08 multipart.multipart Calling on_part_begin with no data
+DEBUG 2024-09-27 23:13:08 multipart.multipart Calling on_header_field with data[42:61]
+DEBUG 2024-09-27 23:13:08 multipart.multipart Calling on_header_value with data[63:92]
+DEBUG 2024-09-27 23:13:08 multipart.multipart Calling on_header_end with no data
+DEBUG 2024-09-27 23:13:08 multipart.multipart Calling on_headers_finished with no data
+DEBUG 2024-09-27 23:13:08 multipart.multipart Calling on_part_data with data[96:98]
+DEBUG 2024-09-27 23:13:08 multipart.multipart Calling on_part_end with no data
+DEBUG 2024-09-27 23:13:08 multipart.multipart Calling on_part_begin with no data
+DEBUG 2024-09-27 23:13:08 multipart.multipart Calling on_header_field with data[142:161]
+DEBUG 2024-09-27 23:13:08 multipart.multipart Calling on_header_value with data[163:195]
+DEBUG 2024-09-27 23:13:08 multipart.multipart Calling on_header_end with no data
+DEBUG 2024-09-27 23:13:08 multipart.multipart Calling on_headers_finished with no data
+DEBUG 2024-09-27 23:13:08 multipart.multipart Calling on_part_data with data[199:201]
+DEBUG 2024-09-27 23:13:08 multipart.multipart Calling on_part_end with no data
+DEBUG 2024-09-27 23:13:08 multipart.multipart Calling on_part_begin with no data
+DEBUG 2024-09-27 23:13:08 multipart.multipart Calling on_header_field with data[245:264]
+DEBUG 2024-09-27 23:13:08 multipart.multipart Calling on_header_value with data[266:289]
+DEBUG 2024-09-27 23:13:08 multipart.multipart Calling on_header_end with no data
+DEBUG 2024-09-27 23:13:08 multipart.multipart Calling on_headers_finished with no data
+DEBUG 2024-09-27 23:13:08 multipart.multipart Calling on_part_data with data[293:324]
+DEBUG 2024-09-27 23:13:08 multipart.multipart Calling on_part_end with no data
+DEBUG 2024-09-27 23:13:08 multipart.multipart Calling on_part_begin with no data
+DEBUG 2024-09-27 23:13:08 multipart.multipart Calling on_header_field with data[368:387]
+DEBUG 2024-09-27 23:13:08 multipart.multipart Calling on_header_value with data[389:414]
+DEBUG 2024-09-27 23:13:08 multipart.multipart Calling on_header_end with no data
+DEBUG 2024-09-27 23:13:08 multipart.multipart Calling on_headers_finished with no data
+DEBUG 2024-09-27 23:13:08 multipart.multipart Calling on_part_data with data[418:466]
+DEBUG 2024-09-27 23:13:08 multipart.multipart Calling on_part_end with no data
+DEBUG 2024-09-27 23:13:08 multipart.multipart Calling on_part_begin with no data
+DEBUG 2024-09-27 23:13:08 multipart.multipart Calling on_header_field with data[510:529]
+DEBUG 2024-09-27 23:13:08 multipart.multipart Calling on_header_value with data[531:558]
+DEBUG 2024-09-27 23:13:08 multipart.multipart Calling on_header_end with no data
+DEBUG 2024-09-27 23:13:08 multipart.multipart Calling on_headers_finished with no data
+DEBUG 2024-09-27 23:13:08 multipart.multipart Calling on_part_data with data[562:566]
+DEBUG 2024-09-27 23:13:08 multipart.multipart Calling on_part_end with no data
+DEBUG 2024-09-27 23:13:08 multipart.multipart Calling on_part_begin with no data
+DEBUG 2024-09-27 23:13:08 multipart.multipart Calling on_header_field with data[610:629]
+DEBUG 2024-09-27 23:13:08 multipart.multipart Calling on_header_value with data[631:679]
+DEBUG 2024-09-27 23:13:08 multipart.multipart Calling on_header_end with no data
+DEBUG 2024-09-27 23:13:08 multipart.multipart Calling on_header_field with data[681:693]
+DEBUG 2024-09-27 23:13:08 multipart.multipart Calling on_header_value with data[695:705]
+DEBUG 2024-09-27 23:13:08 multipart.multipart Calling on_header_end with no data
+DEBUG 2024-09-27 23:13:08 multipart.multipart Calling on_headers_finished with no data
+DEBUG 2024-09-27 23:13:08 multipart.multipart Calling on_part_data with data[709:803]
+DEBUG 2024-09-27 23:13:08 multipart.multipart Calling on_part_data with data[0:1]
+DEBUG 2024-09-27 23:13:08 multipart.multipart Calling on_part_data with data[804:6768]
+DEBUG 2024-09-27 23:13:08 multipart.multipart Calling on_part_end with no data
+DEBUG 2024-09-27 23:13:08 multipart.multipart Calling on_end with no data
+INFO 2024-09-27 23:13:08 sqlalchemy.engine.Engine select pg_catalog.version()
+INFO 2024-09-27 23:13:08 sqlalchemy.engine.Engine [raw sql] ()
+INFO 2024-09-27 23:13:08 sqlalchemy.engine.Engine select current_schema()
+INFO 2024-09-27 23:13:08 sqlalchemy.engine.Engine [raw sql] ()
+INFO 2024-09-27 23:13:08 sqlalchemy.engine.Engine show standard_conforming_strings
+INFO 2024-09-27 23:13:08 sqlalchemy.engine.Engine [raw sql] ()
+INFO 2024-09-27 23:13:08 sqlalchemy.engine.Engine BEGIN (implicit)
+INFO 2024-09-27 23:13:08 sqlalchemy.engine.Engine SELECT count(*) AS count_1 
+FROM categories 
+WHERE categories.id = $1::INTEGER
+INFO 2024-09-27 23:13:08 sqlalchemy.engine.Engine [generated in 0.00106s] (33,)
+INFO 2024-09-27 23:13:08 sqlalchemy.engine.Engine SELECT count(*) AS count_1 
+FROM subcategories 
+WHERE subcategories.id = $1::INTEGER
+INFO 2024-09-27 23:13:08 sqlalchemy.engine.Engine [generated in 0.00158s] (33,)
+INFO 2024-09-27 23:13:08 sqlalchemy.engine.Engine SELECT count(*) AS count_1 
+FROM blog 
+WHERE blog.title = $1::VARCHAR
+INFO 2024-09-27 23:13:08 sqlalchemy.engine.Engine [generated in 0.00094s] ("string3fhjpoiuytrdsxcv.iytd'dwd",)
+WARNING 2024-09-27 23:13:08 root Blog title 'string3fhjpoiuytrdsxcv.iytd'dwd' already exists
+INFO 2024-09-27 23:13:08 sqlalchemy.engine.Engine ROLLBACK
+ERROR 2024-09-27 23:13:08 root Unexpected error occurred: 400: Blog title already exists
+Traceback (most recent call last):
+  File "D:\Projects\Fast_API\blog_app\backend\app\services\blog.py", line 60, in create_blog
+    raise HTTPException(
+fastapi.exceptions.HTTPException: 400: Blog title already exists
+ERROR 2024-09-27 23:13:08 root HTTP error while creating blog: An unexpected error occurred: 400: Blog title already exists
+ERROR 2024-09-27 23:13:08 root Unexpected error: 500: An unexpected error occurred: 400: Blog title already exists
+Traceback (most recent call last):
+  File "D:\Projects\Fast_API\blog_app\backend\app\services\blog.py", line 60, in create_blog
+    raise HTTPException(
+fastapi.exceptions.HTTPException: 400: Blog title already exists
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Projects\Fast_API\blog_app\backend\app\core\database.py", line 21, in get_db
+    yield session
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\fastapi\routing.py", line 278, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\fastapi\routing.py", line 191, in run_endpoint_function
+    return await dependant.call(**values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\Fast_API\blog_app\backend\app\routers\blog.py", line 73, in create_blog_api
+    raise http_exc
+  File "D:\Projects\Fast_API\blog_app\backend\app\routers\blog.py", line 30, in create_blog_api
+    new_blog = await create_blog(db, {
+               ^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\Fast_API\blog_app\backend\app\services\blog.py", line 100, in create_blog
+    raise HTTPException(
+fastapi.exceptions.HTTPException: 500: An unexpected error occurred: 400: Blog title already exists
+DEBUG 2024-09-27 23:13:18 multipart.multipart Calling on_part_begin with no data
+DEBUG 2024-09-27 23:13:18 multipart.multipart Calling on_header_field with data[42:61]
+DEBUG 2024-09-27 23:13:18 multipart.multipart Calling on_header_value with data[63:92]
+DEBUG 2024-09-27 23:13:18 multipart.multipart Calling on_header_end with no data
+DEBUG 2024-09-27 23:13:18 multipart.multipart Calling on_headers_finished with no data
+DEBUG 2024-09-27 23:13:18 multipart.multipart Calling on_part_data with data[96:98]
+DEBUG 2024-09-27 23:13:18 multipart.multipart Calling on_part_end with no data
+DEBUG 2024-09-27 23:13:18 multipart.multipart Calling on_part_begin with no data
+DEBUG 2024-09-27 23:13:18 multipart.multipart Calling on_header_field with data[142:161]
+DEBUG 2024-09-27 23:13:18 multipart.multipart Calling on_header_value with data[163:195]
+DEBUG 2024-09-27 23:13:18 multipart.multipart Calling on_header_end with no data
+DEBUG 2024-09-27 23:13:18 multipart.multipart Calling on_headers_finished with no data
+DEBUG 2024-09-27 23:13:18 multipart.multipart Calling on_part_data with data[199:201]
+DEBUG 2024-09-27 23:13:18 multipart.multipart Calling on_part_end with no data
+DEBUG 2024-09-27 23:13:18 multipart.multipart Calling on_part_begin with no data
+DEBUG 2024-09-27 23:13:18 multipart.multipart Calling on_header_field with data[245:264]
+DEBUG 2024-09-27 23:13:18 multipart.multipart Calling on_header_value with data[266:289]
+DEBUG 2024-09-27 23:13:18 multipart.multipart Calling on_header_end with no data
+DEBUG 2024-09-27 23:13:18 multipart.multipart Calling on_headers_finished with no data
+DEBUG 2024-09-27 23:13:18 multipart.multipart Calling on_part_data with data[293:305]
+DEBUG 2024-09-27 23:13:18 multipart.multipart Calling on_part_end with no data
+DEBUG 2024-09-27 23:13:18 multipart.multipart Calling on_part_begin with no data
+DEBUG 2024-09-27 23:13:18 multipart.multipart Calling on_header_field with data[349:368]
+DEBUG 2024-09-27 23:13:18 multipart.multipart Calling on_header_value with data[370:395]
+DEBUG 2024-09-27 23:13:18 multipart.multipart Calling on_header_end with no data
+DEBUG 2024-09-27 23:13:18 multipart.multipart Calling on_headers_finished with no data
+DEBUG 2024-09-27 23:13:18 multipart.multipart Calling on_part_data with data[399:447]
+DEBUG 2024-09-27 23:13:18 multipart.multipart Calling on_part_end with no data
+DEBUG 2024-09-27 23:13:18 multipart.multipart Calling on_part_begin with no data
+DEBUG 2024-09-27 23:13:18 multipart.multipart Calling on_header_field with data[491:510]
+DEBUG 2024-09-27 23:13:18 multipart.multipart Calling on_header_value with data[512:539]
+DEBUG 2024-09-27 23:13:18 multipart.multipart Calling on_header_end with no data
+DEBUG 2024-09-27 23:13:18 multipart.multipart Calling on_headers_finished with no data
+DEBUG 2024-09-27 23:13:18 multipart.multipart Calling on_part_data with data[543:547]
+DEBUG 2024-09-27 23:13:18 multipart.multipart Calling on_part_end with no data
+DEBUG 2024-09-27 23:13:18 multipart.multipart Calling on_part_begin with no data
+DEBUG 2024-09-27 23:13:18 multipart.multipart Calling on_header_field with data[591:610]
+DEBUG 2024-09-27 23:13:18 multipart.multipart Calling on_header_value with data[612:660]
+DEBUG 2024-09-27 23:13:18 multipart.multipart Calling on_header_end with no data
+DEBUG 2024-09-27 23:13:18 multipart.multipart Calling on_header_field with data[662:674]
+DEBUG 2024-09-27 23:13:18 multipart.multipart Calling on_header_value with data[676:686]
+DEBUG 2024-09-27 23:13:18 multipart.multipart Calling on_header_end with no data
+DEBUG 2024-09-27 23:13:18 multipart.multipart Calling on_headers_finished with no data
+DEBUG 2024-09-27 23:13:18 multipart.multipart Calling on_part_data with data[690:784]
+DEBUG 2024-09-27 23:13:18 multipart.multipart Calling on_part_data with data[0:1]
+DEBUG 2024-09-27 23:13:18 multipart.multipart Calling on_part_data with data[785:6749]
+DEBUG 2024-09-27 23:13:18 multipart.multipart Calling on_part_end with no data
+DEBUG 2024-09-27 23:13:18 multipart.multipart Calling on_end with no data
+INFO 2024-09-27 23:13:18 sqlalchemy.engine.Engine BEGIN (implicit)
+INFO 2024-09-27 23:13:18 sqlalchemy.engine.Engine SELECT count(*) AS count_1 
+FROM categories 
+WHERE categories.id = $1::INTEGER
+INFO 2024-09-27 23:13:18 sqlalchemy.engine.Engine [cached since 10.03s ago] (33,)
+INFO 2024-09-27 23:13:18 sqlalchemy.engine.Engine SELECT count(*) AS count_1 
+FROM subcategories 
+WHERE subcategories.id = $1::INTEGER
+INFO 2024-09-27 23:13:18 sqlalchemy.engine.Engine [cached since 10.03s ago] (33,)
+INFO 2024-09-27 23:13:18 sqlalchemy.engine.Engine SELECT count(*) AS count_1 
+FROM blog 
+WHERE blog.title = $1::VARCHAR
+INFO 2024-09-27 23:13:18 sqlalchemy.engine.Engine [cached since 10.02s ago] ('string3fhjpd',)
+INFO 2024-09-27 23:13:18 sqlalchemy.engine.Engine SELECT max(blog.id) AS max_1 
+FROM blog
+INFO 2024-09-27 23:13:18 sqlalchemy.engine.Engine [generated in 0.00085s] ()
+INFO 2024-09-27 23:13:18 sqlalchemy.engine.Engine INSERT INTO blog (category_id, subcategory_id, blog_id, title, content, image, is_active, created_on, updated_on) VALUES ($1::INTEGER, $2::INTEGER, $3::VARCHAR, $4::VARCHAR, $5::VARCHAR, $6::VARCHAR, $7::BOOLEAN, $8::TIMESTAMP WITHOUT TIME ZONE, $9::TIMESTAMP WITHOUT TIME ZONE) RETURNING blog.id
+INFO 2024-09-27 23:13:18 sqlalchemy.engine.Engine [generated in 0.00095s] (33, 33, 'blog_72', 'string3fhjpd', "asdfadslfjadlfjaldfjodsjdasdmf'adslfjalkdjfakdjf", None, True, datetime.datetime(2024, 9, 27, 23, 13, 18, 567847), None)
+INFO 2024-09-27 23:13:18 sqlalchemy.engine.Engine COMMIT
+INFO 2024-09-27 23:13:18 sqlalchemy.engine.Engine BEGIN (implicit)
+INFO 2024-09-27 23:13:18 sqlalchemy.engine.Engine SELECT blog.id, blog.category_id, blog.subcategory_id, blog.blog_id, blog.title, blog.content, blog.image, blog.is_active, blog.created_on, blog.updated_on 
+FROM blog 
+WHERE blog.id = $1::INTEGER
+INFO 2024-09-27 23:13:18 sqlalchemy.engine.Engine [generated in 0.00105s] (72,)
+INFO 2024-09-27 23:13:18 root Blog 'string3fhjpd' created successfully with ID blog_72
+INFO 2024-09-27 23:13:18 sqlalchemy.engine.Engine ROLLBACK
+INFO 2024-09-27 23:13:18 root Image path being saved: D:\Projects\Fast_API\blog_app\backend\media\72_string3fhjpd.jpg
+INFO 2024-09-27 23:20:58 root Shutting down application...
+INFO 2024-09-27 23:21:00 root Application startup application...
+INFO 2024-09-27 23:21:01 root Shutting down application...
+INFO 2024-09-27 23:21:04 root Application startup application...
+INFO 2024-09-27 23:21:41 root Shutting down application...
+INFO 2024-09-27 23:21:45 root Application startup application...
+INFO 2024-09-27 23:22:10 root Shutting down application...
+INFO 2024-09-27 23:22:13 root Application startup application...
+INFO 2024-09-27 23:22:14 root Shutting down application...
+INFO 2024-09-27 23:22:17 root Application startup application...
+DEBUG 2024-09-27 23:22:30 multipart.multipart Calling on_part_begin with no data
+DEBUG 2024-09-27 23:22:30 multipart.multipart Calling on_header_field with data[42:61]
+DEBUG 2024-09-27 23:22:30 multipart.multipart Calling on_header_value with data[63:92]
+DEBUG 2024-09-27 23:22:30 multipart.multipart Calling on_header_end with no data
+DEBUG 2024-09-27 23:22:30 multipart.multipart Calling on_headers_finished with no data
+DEBUG 2024-09-27 23:22:30 multipart.multipart Calling on_part_data with data[96:98]
+DEBUG 2024-09-27 23:22:30 multipart.multipart Calling on_part_end with no data
+DEBUG 2024-09-27 23:22:30 multipart.multipart Calling on_part_begin with no data
+DEBUG 2024-09-27 23:22:30 multipart.multipart Calling on_header_field with data[142:161]
+DEBUG 2024-09-27 23:22:30 multipart.multipart Calling on_header_value with data[163:195]
+DEBUG 2024-09-27 23:22:30 multipart.multipart Calling on_header_end with no data
+DEBUG 2024-09-27 23:22:30 multipart.multipart Calling on_headers_finished with no data
+DEBUG 2024-09-27 23:22:30 multipart.multipart Calling on_part_data with data[199:201]
+DEBUG 2024-09-27 23:22:30 multipart.multipart Calling on_part_end with no data
+DEBUG 2024-09-27 23:22:30 multipart.multipart Calling on_part_begin with no data
+DEBUG 2024-09-27 23:22:30 multipart.multipart Calling on_header_field with data[245:264]
+DEBUG 2024-09-27 23:22:30 multipart.multipart Calling on_header_value with data[266:289]
+DEBUG 2024-09-27 23:22:30 multipart.multipart Calling on_header_end with no data
+DEBUG 2024-09-27 23:22:30 multipart.multipart Calling on_headers_finished with no data
+DEBUG 2024-09-27 23:22:30 multipart.multipart Calling on_part_data with data[293:306]
+DEBUG 2024-09-27 23:22:30 multipart.multipart Calling on_part_end with no data
+DEBUG 2024-09-27 23:22:30 multipart.multipart Calling on_part_begin with no data
+DEBUG 2024-09-27 23:22:30 multipart.multipart Calling on_header_field with data[350:369]
+DEBUG 2024-09-27 23:22:30 multipart.multipart Calling on_header_value with data[371:396]
+DEBUG 2024-09-27 23:22:30 multipart.multipart Calling on_header_end with no data
+DEBUG 2024-09-27 23:22:30 multipart.multipart Calling on_headers_finished with no data
+DEBUG 2024-09-27 23:22:30 multipart.multipart Calling on_part_data with data[400:448]
+DEBUG 2024-09-27 23:22:30 multipart.multipart Calling on_part_end with no data
+DEBUG 2024-09-27 23:22:30 multipart.multipart Calling on_part_begin with no data
+DEBUG 2024-09-27 23:22:30 multipart.multipart Calling on_header_field with data[492:511]
+DEBUG 2024-09-27 23:22:30 multipart.multipart Calling on_header_value with data[513:540]
+DEBUG 2024-09-27 23:22:30 multipart.multipart Calling on_header_end with no data
+DEBUG 2024-09-27 23:22:30 multipart.multipart Calling on_headers_finished with no data
+DEBUG 2024-09-27 23:22:30 multipart.multipart Calling on_part_data with data[544:548]
+DEBUG 2024-09-27 23:22:30 multipart.multipart Calling on_part_end with no data
+DEBUG 2024-09-27 23:22:30 multipart.multipart Calling on_part_begin with no data
+DEBUG 2024-09-27 23:22:30 multipart.multipart Calling on_header_field with data[592:611]
+DEBUG 2024-09-27 23:22:30 multipart.multipart Calling on_header_value with data[613:661]
+DEBUG 2024-09-27 23:22:30 multipart.multipart Calling on_header_end with no data
+DEBUG 2024-09-27 23:22:30 multipart.multipart Calling on_header_field with data[663:675]
+DEBUG 2024-09-27 23:22:30 multipart.multipart Calling on_header_value with data[677:687]
+DEBUG 2024-09-27 23:22:30 multipart.multipart Calling on_header_end with no data
+DEBUG 2024-09-27 23:22:30 multipart.multipart Calling on_headers_finished with no data
+DEBUG 2024-09-27 23:22:30 multipart.multipart Calling on_part_data with data[691:785]
+DEBUG 2024-09-27 23:22:30 multipart.multipart Calling on_part_data with data[0:1]
+DEBUG 2024-09-27 23:22:30 multipart.multipart Calling on_part_data with data[786:6750]
+DEBUG 2024-09-27 23:22:30 multipart.multipart Calling on_part_end with no data
+DEBUG 2024-09-27 23:22:30 multipart.multipart Calling on_end with no data
+INFO 2024-09-27 23:22:30 sqlalchemy.engine.Engine select pg_catalog.version()
+INFO 2024-09-27 23:22:30 sqlalchemy.engine.Engine [raw sql] ()
+INFO 2024-09-27 23:22:30 sqlalchemy.engine.Engine select current_schema()
+INFO 2024-09-27 23:22:30 sqlalchemy.engine.Engine [raw sql] ()
+INFO 2024-09-27 23:22:30 sqlalchemy.engine.Engine show standard_conforming_strings
+INFO 2024-09-27 23:22:30 sqlalchemy.engine.Engine [raw sql] ()
+INFO 2024-09-27 23:22:30 sqlalchemy.engine.Engine BEGIN (implicit)
+INFO 2024-09-27 23:22:30 sqlalchemy.engine.Engine SELECT max(blog.id) AS max_1 
+FROM blog
+INFO 2024-09-27 23:22:30 sqlalchemy.engine.Engine [generated in 0.00086s] ()
+INFO 2024-09-27 23:22:30 root Image path being saved: D:\Projects\Fast_API\blog_app\backend\media\blog_73_string3fhjpds.jpg
+INFO 2024-09-27 23:22:30 sqlalchemy.engine.Engine SELECT count(*) AS count_1 
+FROM categories 
+WHERE categories.id = $1::INTEGER
+INFO 2024-09-27 23:22:30 sqlalchemy.engine.Engine [generated in 0.00087s] (33,)
+INFO 2024-09-27 23:22:30 sqlalchemy.engine.Engine SELECT count(*) AS count_1 
+FROM subcategories 
+WHERE subcategories.id = $1::INTEGER
+INFO 2024-09-27 23:22:30 sqlalchemy.engine.Engine [generated in 0.00072s] (33,)
+INFO 2024-09-27 23:22:30 sqlalchemy.engine.Engine SELECT count(*) AS count_1 
+FROM blog 
+WHERE blog.title = $1::VARCHAR
+INFO 2024-09-27 23:22:30 sqlalchemy.engine.Engine [generated in 0.00077s] ('string3fhjpds',)
+INFO 2024-09-27 23:22:30 sqlalchemy.engine.Engine SELECT max(blog.id) AS max_1 
+FROM blog
+INFO 2024-09-27 23:22:30 sqlalchemy.engine.Engine [cached since 0.02682s ago] ()
+INFO 2024-09-27 23:22:30 sqlalchemy.engine.Engine INSERT INTO blog (category_id, subcategory_id, blog_id, title, content, image, is_active, created_on, updated_on) VALUES ($1::INTEGER, $2::INTEGER, $3::VARCHAR, $4::VARCHAR, $5::VARCHAR, $6::VARCHAR, $7::BOOLEAN, $8::TIMESTAMP WITHOUT TIME ZONE, $9::TIMESTAMP WITHOUT TIME ZONE) RETURNING blog.id
+INFO 2024-09-27 23:22:30 sqlalchemy.engine.Engine [generated in 0.00094s] (33, 33, 'blog_73', 'string3fhjpds', "asdfadslfjadlfjaldfjodsjdasdmf'adslfjalkdjfakdjf", 'D:\\Projects\\Fast_API\\blog_app\\backend\\media\\blog_73_string3fhjpds.jpg', True, datetime.datetime(2024, 9, 27, 23, 22, 30, 628875), None)
+INFO 2024-09-27 23:22:30 sqlalchemy.engine.Engine COMMIT
+INFO 2024-09-27 23:22:30 sqlalchemy.engine.Engine BEGIN (implicit)
+INFO 2024-09-27 23:22:30 sqlalchemy.engine.Engine SELECT blog.id, blog.category_id, blog.subcategory_id, blog.blog_id, blog.title, blog.content, blog.image, blog.is_active, blog.created_on, blog.updated_on 
+FROM blog 
+WHERE blog.id = $1::INTEGER
+INFO 2024-09-27 23:22:30 sqlalchemy.engine.Engine [generated in 0.00109s] (73,)
+INFO 2024-09-27 23:22:30 root Blog 'string3fhjpds' created successfully with ID blog_73
+INFO 2024-09-27 23:22:30 sqlalchemy.engine.Engine ROLLBACK
+INFO 2024-09-27 23:23:33 root Shutting down application...
+INFO 2024-09-27 23:23:36 root Application startup application...
+INFO 2024-09-27 23:23:39 root Shutting down application...
+INFO 2024-09-27 23:23:42 root Application startup application...
+INFO 2024-09-27 23:23:44 root Shutting down application...
+INFO 2024-09-27 23:23:47 root Application startup application...
+INFO 2024-09-27 23:23:50 root Shutting down application...
+INFO 2024-09-27 23:23:53 root Application startup application...
+DEBUG 2024-09-27 23:24:03 multipart.multipart Calling on_part_begin with no data
+DEBUG 2024-09-27 23:24:03 multipart.multipart Calling on_header_field with data[42:61]
+DEBUG 2024-09-27 23:24:03 multipart.multipart Calling on_header_value with data[63:92]
+DEBUG 2024-09-27 23:24:03 multipart.multipart Calling on_header_end with no data
+DEBUG 2024-09-27 23:24:03 multipart.multipart Calling on_headers_finished with no data
+DEBUG 2024-09-27 23:24:03 multipart.multipart Calling on_part_data with data[96:98]
+DEBUG 2024-09-27 23:24:03 multipart.multipart Calling on_part_end with no data
+DEBUG 2024-09-27 23:24:03 multipart.multipart Calling on_part_begin with no data
+DEBUG 2024-09-27 23:24:03 multipart.multipart Calling on_header_field with data[142:161]
+DEBUG 2024-09-27 23:24:03 multipart.multipart Calling on_header_value with data[163:195]
+DEBUG 2024-09-27 23:24:03 multipart.multipart Calling on_header_end with no data
+DEBUG 2024-09-27 23:24:03 multipart.multipart Calling on_headers_finished with no data
+DEBUG 2024-09-27 23:24:03 multipart.multipart Calling on_part_data with data[199:201]
+DEBUG 2024-09-27 23:24:03 multipart.multipart Calling on_part_end with no data
+DEBUG 2024-09-27 23:24:03 multipart.multipart Calling on_part_begin with no data
+DEBUG 2024-09-27 23:24:03 multipart.multipart Calling on_header_field with data[245:264]
+DEBUG 2024-09-27 23:24:03 multipart.multipart Calling on_header_value with data[266:289]
+DEBUG 2024-09-27 23:24:03 multipart.multipart Calling on_header_end with no data
+DEBUG 2024-09-27 23:24:03 multipart.multipart Calling on_headers_finished with no data
+DEBUG 2024-09-27 23:24:03 multipart.multipart Calling on_part_data with data[293:307]
+DEBUG 2024-09-27 23:24:03 multipart.multipart Calling on_part_end with no data
+DEBUG 2024-09-27 23:24:03 multipart.multipart Calling on_part_begin with no data
+DEBUG 2024-09-27 23:24:03 multipart.multipart Calling on_header_field with data[351:370]
+DEBUG 2024-09-27 23:24:03 multipart.multipart Calling on_header_value with data[372:397]
+DEBUG 2024-09-27 23:24:03 multipart.multipart Calling on_header_end with no data
+DEBUG 2024-09-27 23:24:03 multipart.multipart Calling on_headers_finished with no data
+DEBUG 2024-09-27 23:24:03 multipart.multipart Calling on_part_data with data[401:449]
+DEBUG 2024-09-27 23:24:03 multipart.multipart Calling on_part_end with no data
+DEBUG 2024-09-27 23:24:03 multipart.multipart Calling on_part_begin with no data
+DEBUG 2024-09-27 23:24:03 multipart.multipart Calling on_header_field with data[493:512]
+DEBUG 2024-09-27 23:24:03 multipart.multipart Calling on_header_value with data[514:541]
+DEBUG 2024-09-27 23:24:03 multipart.multipart Calling on_header_end with no data
+DEBUG 2024-09-27 23:24:03 multipart.multipart Calling on_headers_finished with no data
+DEBUG 2024-09-27 23:24:03 multipart.multipart Calling on_part_data with data[545:549]
+DEBUG 2024-09-27 23:24:03 multipart.multipart Calling on_part_end with no data
+DEBUG 2024-09-27 23:24:03 multipart.multipart Calling on_part_begin with no data
+DEBUG 2024-09-27 23:24:03 multipart.multipart Calling on_header_field with data[593:612]
+DEBUG 2024-09-27 23:24:03 multipart.multipart Calling on_header_value with data[614:660]
+DEBUG 2024-09-27 23:24:03 multipart.multipart Calling on_header_end with no data
+DEBUG 2024-09-27 23:24:03 multipart.multipart Calling on_header_field with data[662:674]
+DEBUG 2024-09-27 23:24:03 multipart.multipart Calling on_header_value with data[676:686]
+DEBUG 2024-09-27 23:24:03 multipart.multipart Calling on_header_end with no data
+DEBUG 2024-09-27 23:24:03 multipart.multipart Calling on_headers_finished with no data
+DEBUG 2024-09-27 23:24:03 multipart.multipart Calling on_part_data with data[690:10303]
+DEBUG 2024-09-27 23:24:03 multipart.multipart Calling on_part_end with no data
+DEBUG 2024-09-27 23:24:03 multipart.multipart Calling on_end with no data
+INFO 2024-09-27 23:24:03 sqlalchemy.engine.Engine select pg_catalog.version()
+INFO 2024-09-27 23:24:03 sqlalchemy.engine.Engine [raw sql] ()
+INFO 2024-09-27 23:24:03 sqlalchemy.engine.Engine select current_schema()
+INFO 2024-09-27 23:24:03 sqlalchemy.engine.Engine [raw sql] ()
+INFO 2024-09-27 23:24:03 sqlalchemy.engine.Engine show standard_conforming_strings
+INFO 2024-09-27 23:24:03 sqlalchemy.engine.Engine [raw sql] ()
+INFO 2024-09-27 23:24:03 sqlalchemy.engine.Engine BEGIN (implicit)
+INFO 2024-09-27 23:24:03 sqlalchemy.engine.Engine SELECT max(blog.id) AS max_1 
+FROM blog
+INFO 2024-09-27 23:24:03 sqlalchemy.engine.Engine [generated in 0.00082s] ()
+INFO 2024-09-27 23:24:03 root Image path being saved: D:\Projects\Fast_API\blog_app\backend\media\blog_74.jpg
+INFO 2024-09-27 23:24:03 sqlalchemy.engine.Engine SELECT count(*) AS count_1 
+FROM categories 
+WHERE categories.id = $1::INTEGER
+INFO 2024-09-27 23:24:03 sqlalchemy.engine.Engine [generated in 0.00118s] (33,)
+INFO 2024-09-27 23:24:03 sqlalchemy.engine.Engine SELECT count(*) AS count_1 
+FROM subcategories 
+WHERE subcategories.id = $1::INTEGER
+INFO 2024-09-27 23:24:03 sqlalchemy.engine.Engine [generated in 0.00075s] (33,)
+INFO 2024-09-27 23:24:03 sqlalchemy.engine.Engine SELECT count(*) AS count_1 
+FROM blog 
+WHERE blog.title = $1::VARCHAR
+INFO 2024-09-27 23:24:03 sqlalchemy.engine.Engine [generated in 0.00075s] ('string3fhjpdsd',)
+INFO 2024-09-27 23:24:03 sqlalchemy.engine.Engine SELECT max(blog.id) AS max_1 
+FROM blog
+INFO 2024-09-27 23:24:03 sqlalchemy.engine.Engine [cached since 0.0267s ago] ()
+INFO 2024-09-27 23:24:03 sqlalchemy.engine.Engine INSERT INTO blog (category_id, subcategory_id, blog_id, title, content, image, is_active, created_on, updated_on) VALUES ($1::INTEGER, $2::INTEGER, $3::VARCHAR, $4::VARCHAR, $5::VARCHAR, $6::VARCHAR, $7::BOOLEAN, $8::TIMESTAMP WITHOUT TIME ZONE, $9::TIMESTAMP WITHOUT TIME ZONE) RETURNING blog.id
+INFO 2024-09-27 23:24:03 sqlalchemy.engine.Engine [generated in 0.00089s] (33, 33, 'blog_74', 'string3fhjpdsd', "asdfadslfjadlfjaldfjodsjdasdmf'adslfjalkdjfakdjf", 'D:\\Projects\\Fast_API\\blog_app\\backend\\media\\blog_74.jpg', True, datetime.datetime(2024, 9, 27, 23, 24, 3, 432771), None)
+INFO 2024-09-27 23:24:03 sqlalchemy.engine.Engine COMMIT
+INFO 2024-09-27 23:24:03 sqlalchemy.engine.Engine BEGIN (implicit)
+INFO 2024-09-27 23:24:03 sqlalchemy.engine.Engine SELECT blog.id, blog.category_id, blog.subcategory_id, blog.blog_id, blog.title, blog.content, blog.image, blog.is_active, blog.created_on, blog.updated_on 
+FROM blog 
+WHERE blog.id = $1::INTEGER
+INFO 2024-09-27 23:24:03 sqlalchemy.engine.Engine [generated in 0.00151s] (74,)
+INFO 2024-09-27 23:24:03 root Blog 'string3fhjpdsd' created successfully with ID blog_74
+INFO 2024-09-27 23:24:03 sqlalchemy.engine.Engine ROLLBACK
+INFO 2024-09-27 23:24:48 root Shutting down application...
+INFO 2024-09-27 23:24:50 root Application startup application...
+DEBUG 2024-09-27 23:25:17 multipart.multipart Calling on_part_begin with no data
+DEBUG 2024-09-27 23:25:17 multipart.multipart Calling on_header_field with data[42:61]
+DEBUG 2024-09-27 23:25:17 multipart.multipart Calling on_header_value with data[63:92]
+DEBUG 2024-09-27 23:25:17 multipart.multipart Calling on_header_end with no data
+DEBUG 2024-09-27 23:25:17 multipart.multipart Calling on_headers_finished with no data
+DEBUG 2024-09-27 23:25:17 multipart.multipart Calling on_part_data with data[96:98]
+DEBUG 2024-09-27 23:25:17 multipart.multipart Calling on_part_end with no data
+DEBUG 2024-09-27 23:25:17 multipart.multipart Calling on_part_begin with no data
+DEBUG 2024-09-27 23:25:17 multipart.multipart Calling on_header_field with data[142:161]
+DEBUG 2024-09-27 23:25:17 multipart.multipart Calling on_header_value with data[163:195]
+DEBUG 2024-09-27 23:25:17 multipart.multipart Calling on_header_end with no data
+DEBUG 2024-09-27 23:25:17 multipart.multipart Calling on_headers_finished with no data
+DEBUG 2024-09-27 23:25:17 multipart.multipart Calling on_part_data with data[199:201]
+DEBUG 2024-09-27 23:25:17 multipart.multipart Calling on_part_end with no data
+DEBUG 2024-09-27 23:25:17 multipart.multipart Calling on_part_begin with no data
+DEBUG 2024-09-27 23:25:17 multipart.multipart Calling on_header_field with data[245:264]
+DEBUG 2024-09-27 23:25:17 multipart.multipart Calling on_header_value with data[266:289]
+DEBUG 2024-09-27 23:25:17 multipart.multipart Calling on_header_end with no data
+DEBUG 2024-09-27 23:25:17 multipart.multipart Calling on_headers_finished with no data
+DEBUG 2024-09-27 23:25:17 multipart.multipart Calling on_part_data with data[293:308]
+DEBUG 2024-09-27 23:25:17 multipart.multipart Calling on_part_end with no data
+DEBUG 2024-09-27 23:25:17 multipart.multipart Calling on_part_begin with no data
+DEBUG 2024-09-27 23:25:17 multipart.multipart Calling on_header_field with data[352:371]
+DEBUG 2024-09-27 23:25:17 multipart.multipart Calling on_header_value with data[373:398]
+DEBUG 2024-09-27 23:25:17 multipart.multipart Calling on_header_end with no data
+DEBUG 2024-09-27 23:25:17 multipart.multipart Calling on_headers_finished with no data
+DEBUG 2024-09-27 23:25:17 multipart.multipart Calling on_part_data with data[402:450]
+DEBUG 2024-09-27 23:25:17 multipart.multipart Calling on_part_end with no data
+DEBUG 2024-09-27 23:25:17 multipart.multipart Calling on_part_begin with no data
+DEBUG 2024-09-27 23:25:17 multipart.multipart Calling on_header_field with data[494:513]
+DEBUG 2024-09-27 23:25:17 multipart.multipart Calling on_header_value with data[515:542]
+DEBUG 2024-09-27 23:25:17 multipart.multipart Calling on_header_end with no data
+DEBUG 2024-09-27 23:25:17 multipart.multipart Calling on_headers_finished with no data
+DEBUG 2024-09-27 23:25:17 multipart.multipart Calling on_part_data with data[546:550]
+DEBUG 2024-09-27 23:25:17 multipart.multipart Calling on_part_end with no data
+DEBUG 2024-09-27 23:25:17 multipart.multipart Calling on_part_begin with no data
+DEBUG 2024-09-27 23:25:17 multipart.multipart Calling on_header_field with data[594:613]
+DEBUG 2024-09-27 23:25:17 multipart.multipart Calling on_header_value with data[615:661]
+DEBUG 2024-09-27 23:25:17 multipart.multipart Calling on_header_end with no data
+DEBUG 2024-09-27 23:25:17 multipart.multipart Calling on_header_field with data[663:675]
+DEBUG 2024-09-27 23:25:17 multipart.multipart Calling on_header_value with data[677:687]
+DEBUG 2024-09-27 23:25:17 multipart.multipart Calling on_header_end with no data
+DEBUG 2024-09-27 23:25:17 multipart.multipart Calling on_headers_finished with no data
+DEBUG 2024-09-27 23:25:17 multipart.multipart Calling on_part_data with data[691:10304]
+DEBUG 2024-09-27 23:25:17 multipart.multipart Calling on_part_end with no data
+DEBUG 2024-09-27 23:25:17 multipart.multipart Calling on_end with no data
+ERROR 2024-09-27 23:25:17 root Unexpected error occurred: cannot access local variable 'new_blog' where it is not associated with a value
+Traceback (most recent call last):
+  File "D:\Projects\Fast_API\blog_app\backend\app\routers\blog.py", line 38, in create_blog_api
+    new_blog_id = new_blog.id
+                  ^^^^^^^^
+UnboundLocalError: cannot access local variable 'new_blog' where it is not associated with a value
+ERROR 2024-09-27 23:25:17 root Unexpected error: 500: An unexpected error occurred: cannot access local variable 'new_blog' where it is not associated with a value
+Traceback (most recent call last):
+  File "D:\Projects\Fast_API\blog_app\backend\app\routers\blog.py", line 38, in create_blog_api
+    new_blog_id = new_blog.id
+                  ^^^^^^^^
+UnboundLocalError: cannot access local variable 'new_blog' where it is not associated with a value
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Projects\Fast_API\blog_app\backend\app\core\database.py", line 21, in get_db
+    yield session
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\fastapi\routing.py", line 278, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\fastapi\routing.py", line 191, in run_endpoint_function
+    return await dependant.call(**values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\Fast_API\blog_app\backend\app\routers\blog.py", line 71, in create_blog_api
+    raise HTTPException(
+fastapi.exceptions.HTTPException: 500: An unexpected error occurred: cannot access local variable 'new_blog' where it is not associated with a value
+INFO 2024-09-27 23:25:24 root Shutting down application...
+INFO 2024-09-27 23:25:27 root Application startup application...
+INFO 2024-09-27 23:28:01 root Shutting down application...
+INFO 2024-09-27 23:28:04 root Application startup application...
+INFO 2024-09-27 23:28:08 root Shutting down application...
+INFO 2024-09-27 23:28:11 root Application startup application...
+DEBUG 2024-09-27 23:28:25 multipart.multipart Calling on_part_begin with no data
+DEBUG 2024-09-27 23:28:25 multipart.multipart Calling on_header_field with data[42:61]
+DEBUG 2024-09-27 23:28:25 multipart.multipart Calling on_header_value with data[63:92]
+DEBUG 2024-09-27 23:28:25 multipart.multipart Calling on_header_end with no data
+DEBUG 2024-09-27 23:28:25 multipart.multipart Calling on_headers_finished with no data
+DEBUG 2024-09-27 23:28:25 multipart.multipart Calling on_part_data with data[96:98]
+DEBUG 2024-09-27 23:28:25 multipart.multipart Calling on_part_end with no data
+DEBUG 2024-09-27 23:28:25 multipart.multipart Calling on_part_begin with no data
+DEBUG 2024-09-27 23:28:25 multipart.multipart Calling on_header_field with data[142:161]
+DEBUG 2024-09-27 23:28:25 multipart.multipart Calling on_header_value with data[163:195]
+DEBUG 2024-09-27 23:28:25 multipart.multipart Calling on_header_end with no data
+DEBUG 2024-09-27 23:28:25 multipart.multipart Calling on_headers_finished with no data
+DEBUG 2024-09-27 23:28:25 multipart.multipart Calling on_part_data with data[199:201]
+DEBUG 2024-09-27 23:28:25 multipart.multipart Calling on_part_end with no data
+DEBUG 2024-09-27 23:28:25 multipart.multipart Calling on_part_begin with no data
+DEBUG 2024-09-27 23:28:25 multipart.multipart Calling on_header_field with data[245:264]
+DEBUG 2024-09-27 23:28:25 multipart.multipart Calling on_header_value with data[266:289]
+DEBUG 2024-09-27 23:28:25 multipart.multipart Calling on_header_end with no data
+DEBUG 2024-09-27 23:28:25 multipart.multipart Calling on_headers_finished with no data
+DEBUG 2024-09-27 23:28:25 multipart.multipart Calling on_part_data with data[293:309]
+DEBUG 2024-09-27 23:28:25 multipart.multipart Calling on_part_end with no data
+DEBUG 2024-09-27 23:28:25 multipart.multipart Calling on_part_begin with no data
+DEBUG 2024-09-27 23:28:25 multipart.multipart Calling on_header_field with data[353:372]
+DEBUG 2024-09-27 23:28:25 multipart.multipart Calling on_header_value with data[374:399]
+DEBUG 2024-09-27 23:28:25 multipart.multipart Calling on_header_end with no data
+DEBUG 2024-09-27 23:28:25 multipart.multipart Calling on_headers_finished with no data
+DEBUG 2024-09-27 23:28:25 multipart.multipart Calling on_part_data with data[403:451]
+DEBUG 2024-09-27 23:28:25 multipart.multipart Calling on_part_end with no data
+DEBUG 2024-09-27 23:28:25 multipart.multipart Calling on_part_begin with no data
+DEBUG 2024-09-27 23:28:25 multipart.multipart Calling on_header_field with data[495:514]
+DEBUG 2024-09-27 23:28:25 multipart.multipart Calling on_header_value with data[516:543]
+DEBUG 2024-09-27 23:28:25 multipart.multipart Calling on_header_end with no data
+DEBUG 2024-09-27 23:28:25 multipart.multipart Calling on_headers_finished with no data
+DEBUG 2024-09-27 23:28:25 multipart.multipart Calling on_part_data with data[547:551]
+DEBUG 2024-09-27 23:28:25 multipart.multipart Calling on_part_end with no data
+DEBUG 2024-09-27 23:28:25 multipart.multipart Calling on_part_begin with no data
+DEBUG 2024-09-27 23:28:25 multipart.multipart Calling on_header_field with data[595:614]
+DEBUG 2024-09-27 23:28:25 multipart.multipart Calling on_header_value with data[616:662]
+DEBUG 2024-09-27 23:28:25 multipart.multipart Calling on_header_end with no data
+DEBUG 2024-09-27 23:28:25 multipart.multipart Calling on_header_field with data[664:676]
+DEBUG 2024-09-27 23:28:25 multipart.multipart Calling on_header_value with data[678:688]
+DEBUG 2024-09-27 23:28:25 multipart.multipart Calling on_header_end with no data
+DEBUG 2024-09-27 23:28:25 multipart.multipart Calling on_headers_finished with no data
+DEBUG 2024-09-27 23:28:25 multipart.multipart Calling on_part_data with data[692:4570]
+DEBUG 2024-09-27 23:28:25 multipart.multipart Calling on_part_data with data[0:1]
+DEBUG 2024-09-27 23:28:25 multipart.multipart Calling on_part_data with data[4571:10305]
+DEBUG 2024-09-27 23:28:25 multipart.multipart Calling on_part_end with no data
+DEBUG 2024-09-27 23:28:25 multipart.multipart Calling on_end with no data
+INFO 2024-09-27 23:28:25 sqlalchemy.engine.Engine select pg_catalog.version()
+INFO 2024-09-27 23:28:25 sqlalchemy.engine.Engine [raw sql] ()
+INFO 2024-09-27 23:28:25 sqlalchemy.engine.Engine select current_schema()
+INFO 2024-09-27 23:28:25 sqlalchemy.engine.Engine [raw sql] ()
+INFO 2024-09-27 23:28:25 sqlalchemy.engine.Engine show standard_conforming_strings
+INFO 2024-09-27 23:28:25 sqlalchemy.engine.Engine [raw sql] ()
+INFO 2024-09-27 23:28:25 sqlalchemy.engine.Engine BEGIN (implicit)
+INFO 2024-09-27 23:28:25 sqlalchemy.engine.Engine SELECT max(blog.id) AS max_1 
+FROM blog
+INFO 2024-09-27 23:28:25 sqlalchemy.engine.Engine [generated in 0.00093s] ()
+INFO 2024-09-27 23:28:25 root Image path being saved: D:\Projects\Fast_API\blog_app\backend\media\blog_75_jr.NTR.jpg
+INFO 2024-09-27 23:28:25 sqlalchemy.engine.Engine SELECT count(*) AS count_1 
+FROM categories 
+WHERE categories.id = $1::INTEGER
+INFO 2024-09-27 23:28:25 sqlalchemy.engine.Engine [generated in 0.00081s] (33,)
+INFO 2024-09-27 23:28:25 sqlalchemy.engine.Engine SELECT count(*) AS count_1 
+FROM subcategories 
+WHERE subcategories.id = $1::INTEGER
+INFO 2024-09-27 23:28:25 sqlalchemy.engine.Engine [generated in 0.00074s] (33,)
+INFO 2024-09-27 23:28:25 sqlalchemy.engine.Engine SELECT count(*) AS count_1 
+FROM blog 
+WHERE blog.title = $1::VARCHAR
+INFO 2024-09-27 23:28:25 sqlalchemy.engine.Engine [generated in 0.00080s] ('string3fhjpdsdse',)
+INFO 2024-09-27 23:28:25 sqlalchemy.engine.Engine SELECT max(blog.id) AS max_1 
+FROM blog
+INFO 2024-09-27 23:28:25 sqlalchemy.engine.Engine [cached since 0.02843s ago] ()
+INFO 2024-09-27 23:28:25 sqlalchemy.engine.Engine INSERT INTO blog (category_id, subcategory_id, blog_id, title, content, image, is_active, created_on, updated_on) VALUES ($1::INTEGER, $2::INTEGER, $3::VARCHAR, $4::VARCHAR, $5::VARCHAR, $6::VARCHAR, $7::BOOLEAN, $8::TIMESTAMP WITHOUT TIME ZONE, $9::TIMESTAMP WITHOUT TIME ZONE) RETURNING blog.id
+INFO 2024-09-27 23:28:25 sqlalchemy.engine.Engine [generated in 0.00088s] (33, 33, 'blog_75', 'string3fhjpdsdse', "asdfadslfjadlfjaldfjodsjdasdmf'adslfjalkdjfakdjf", 'D:\\Projects\\Fast_API\\blog_app\\backend\\media\\blog_75_jr.NTR.jpg', True, datetime.datetime(2024, 9, 27, 23, 28, 25, 125213), None)
+INFO 2024-09-27 23:28:25 sqlalchemy.engine.Engine COMMIT
+INFO 2024-09-27 23:28:25 sqlalchemy.engine.Engine BEGIN (implicit)
+INFO 2024-09-27 23:28:25 sqlalchemy.engine.Engine SELECT blog.id, blog.category_id, blog.subcategory_id, blog.blog_id, blog.title, blog.content, blog.image, blog.is_active, blog.created_on, blog.updated_on 
+FROM blog 
+WHERE blog.id = $1::INTEGER
+INFO 2024-09-27 23:28:25 sqlalchemy.engine.Engine [generated in 0.00123s] (75,)
+INFO 2024-09-27 23:28:25 root Blog 'string3fhjpdsdse' created successfully with ID blog_75
+INFO 2024-09-27 23:28:25 sqlalchemy.engine.Engine ROLLBACK
+INFO 2024-09-27 23:33:13 root Shutting down application...
+INFO 2024-09-27 23:33:18 root Application startup application...
+INFO 2024-09-27 23:33:34 root Shutting down application...
+INFO 2024-09-27 23:33:40 root Application startup application...
+INFO 2024-09-27 23:33:40 root Shutting down application...
+INFO 2024-09-27 23:33:45 root Application startup application...
+DEBUG 2024-09-27 23:33:53 multipart.multipart Calling on_part_begin with no data
+DEBUG 2024-09-27 23:33:53 multipart.multipart Calling on_header_field with data[42:61]
+DEBUG 2024-09-27 23:33:53 multipart.multipart Calling on_header_value with data[63:92]
+DEBUG 2024-09-27 23:33:53 multipart.multipart Calling on_header_end with no data
+DEBUG 2024-09-27 23:33:53 multipart.multipart Calling on_headers_finished with no data
+DEBUG 2024-09-27 23:33:53 multipart.multipart Calling on_part_data with data[96:98]
+DEBUG 2024-09-27 23:33:53 multipart.multipart Calling on_part_end with no data
+DEBUG 2024-09-27 23:33:53 multipart.multipart Calling on_part_begin with no data
+DEBUG 2024-09-27 23:33:53 multipart.multipart Calling on_header_field with data[142:161]
+DEBUG 2024-09-27 23:33:53 multipart.multipart Calling on_header_value with data[163:195]
+DEBUG 2024-09-27 23:33:53 multipart.multipart Calling on_header_end with no data
+DEBUG 2024-09-27 23:33:53 multipart.multipart Calling on_headers_finished with no data
+DEBUG 2024-09-27 23:33:53 multipart.multipart Calling on_part_data with data[199:201]
+DEBUG 2024-09-27 23:33:53 multipart.multipart Calling on_part_end with no data
+DEBUG 2024-09-27 23:33:53 multipart.multipart Calling on_part_begin with no data
+DEBUG 2024-09-27 23:33:53 multipart.multipart Calling on_header_field with data[245:264]
+DEBUG 2024-09-27 23:33:53 multipart.multipart Calling on_header_value with data[266:289]
+DEBUG 2024-09-27 23:33:53 multipart.multipart Calling on_header_end with no data
+DEBUG 2024-09-27 23:33:53 multipart.multipart Calling on_headers_finished with no data
+DEBUG 2024-09-27 23:33:53 multipart.multipart Calling on_part_data with data[293:313]
+DEBUG 2024-09-27 23:33:53 multipart.multipart Calling on_part_end with no data
+DEBUG 2024-09-27 23:33:53 multipart.multipart Calling on_part_begin with no data
+DEBUG 2024-09-27 23:33:53 multipart.multipart Calling on_header_field with data[357:376]
+DEBUG 2024-09-27 23:33:53 multipart.multipart Calling on_header_value with data[378:403]
+DEBUG 2024-09-27 23:33:53 multipart.multipart Calling on_header_end with no data
+DEBUG 2024-09-27 23:33:53 multipart.multipart Calling on_headers_finished with no data
+DEBUG 2024-09-27 23:33:53 multipart.multipart Calling on_part_data with data[407:455]
+DEBUG 2024-09-27 23:33:53 multipart.multipart Calling on_part_end with no data
+DEBUG 2024-09-27 23:33:53 multipart.multipart Calling on_part_begin with no data
+DEBUG 2024-09-27 23:33:53 multipart.multipart Calling on_header_field with data[499:518]
+DEBUG 2024-09-27 23:33:53 multipart.multipart Calling on_header_value with data[520:547]
+DEBUG 2024-09-27 23:33:53 multipart.multipart Calling on_header_end with no data
+DEBUG 2024-09-27 23:33:53 multipart.multipart Calling on_headers_finished with no data
+DEBUG 2024-09-27 23:33:53 multipart.multipart Calling on_part_data with data[551:555]
+DEBUG 2024-09-27 23:33:53 multipart.multipart Calling on_part_end with no data
+DEBUG 2024-09-27 23:33:53 multipart.multipart Calling on_part_begin with no data
+DEBUG 2024-09-27 23:33:53 multipart.multipart Calling on_header_field with data[599:618]
+DEBUG 2024-09-27 23:33:53 multipart.multipart Calling on_header_value with data[620:666]
+DEBUG 2024-09-27 23:33:53 multipart.multipart Calling on_header_end with no data
+DEBUG 2024-09-27 23:33:53 multipart.multipart Calling on_header_field with data[668:680]
+DEBUG 2024-09-27 23:33:53 multipart.multipart Calling on_header_value with data[682:692]
+DEBUG 2024-09-27 23:33:53 multipart.multipart Calling on_header_end with no data
+DEBUG 2024-09-27 23:33:53 multipart.multipart Calling on_headers_finished with no data
+DEBUG 2024-09-27 23:33:53 multipart.multipart Calling on_part_data with data[696:10309]
+DEBUG 2024-09-27 23:33:53 multipart.multipart Calling on_part_end with no data
+DEBUG 2024-09-27 23:33:53 multipart.multipart Calling on_end with no data
+INFO 2024-09-27 23:33:53 sqlalchemy.engine.Engine select pg_catalog.version()
+INFO 2024-09-27 23:33:53 sqlalchemy.engine.Engine [raw sql] ()
+INFO 2024-09-27 23:33:53 sqlalchemy.engine.Engine select current_schema()
+INFO 2024-09-27 23:33:53 sqlalchemy.engine.Engine [raw sql] ()
+INFO 2024-09-27 23:33:53 sqlalchemy.engine.Engine show standard_conforming_strings
+INFO 2024-09-27 23:33:53 sqlalchemy.engine.Engine [raw sql] ()
+INFO 2024-09-27 23:33:53 sqlalchemy.engine.Engine BEGIN (implicit)
+INFO 2024-09-27 23:33:54 sqlalchemy.engine.Engine SELECT max(blog.id) AS max_1 
+FROM blog
+INFO 2024-09-27 23:33:54 sqlalchemy.engine.Engine [generated in 0.00177s] ()
+INFO 2024-09-27 23:33:54 root Image path being saved: D:\Projects\Fast_API\blog_app\backend\media\blog_76_jr.NTR.jpg
+INFO 2024-09-27 23:33:54 sqlalchemy.engine.Engine SELECT max(blog.id) AS max_1 
+FROM blog
+INFO 2024-09-27 23:33:54 sqlalchemy.engine.Engine [cached since 0.02519s ago] ()
+INFO 2024-09-27 23:33:54 sqlalchemy.engine.Engine INSERT INTO blog (category_id, subcategory_id, blog_id, title, content, image, is_active, created_on, updated_on) VALUES ($1::INTEGER, $2::INTEGER, $3::VARCHAR, $4::VARCHAR, $5::VARCHAR, $6::VARCHAR, $7::BOOLEAN, $8::TIMESTAMP WITHOUT TIME ZONE, $9::TIMESTAMP WITHOUT TIME ZONE) RETURNING blog.id
+INFO 2024-09-27 23:33:54 sqlalchemy.engine.Engine [generated in 0.00245s] (33, 33, 'blog_76', "string3fhjpdsdse'sdf", "asdfadslfjadlfjaldfjodsjdasdmf'adslfjalkdjfakdjf", 'blog_76_jr.NTR.jpg', True, datetime.datetime(2024, 9, 27, 23, 33, 54, 47073), None)
+INFO 2024-09-27 23:33:54 sqlalchemy.engine.Engine COMMIT
+INFO 2024-09-27 23:33:54 sqlalchemy.engine.Engine BEGIN (implicit)
+INFO 2024-09-27 23:33:54 sqlalchemy.engine.Engine SELECT blog.id, blog.category_id, blog.subcategory_id, blog.blog_id, blog.title, blog.content, blog.image, blog.is_active, blog.created_on, blog.updated_on 
+FROM blog 
+WHERE blog.id = $1::INTEGER
+INFO 2024-09-27 23:33:54 sqlalchemy.engine.Engine [generated in 0.00277s] (76,)
+INFO 2024-09-27 23:33:54 root Blog 'string3fhjpdsdse'sdf' created successfully with ID blog_76
+INFO 2024-09-27 23:33:54 sqlalchemy.engine.Engine ROLLBACK
+INFO 2024-09-27 23:34:05 root Shutting down application...
+INFO 2024-09-27 23:34:11 root Application startup application...
+INFO 2024-09-27 23:34:11 root Shutting down application...
+INFO 2024-09-27 23:34:17 root Application startup application...
+DEBUG 2024-09-27 23:34:17 multipart.multipart Calling on_part_begin with no data
+DEBUG 2024-09-27 23:34:17 multipart.multipart Calling on_header_field with data[42:61]
+DEBUG 2024-09-27 23:34:17 multipart.multipart Calling on_header_value with data[63:92]
+DEBUG 2024-09-27 23:34:17 multipart.multipart Calling on_header_end with no data
+DEBUG 2024-09-27 23:34:17 multipart.multipart Calling on_headers_finished with no data
+DEBUG 2024-09-27 23:34:17 multipart.multipart Calling on_part_data with data[96:98]
+DEBUG 2024-09-27 23:34:17 multipart.multipart Calling on_part_end with no data
+DEBUG 2024-09-27 23:34:17 multipart.multipart Calling on_part_begin with no data
+DEBUG 2024-09-27 23:34:17 multipart.multipart Calling on_header_field with data[142:161]
+DEBUG 2024-09-27 23:34:17 multipart.multipart Calling on_header_value with data[163:195]
+DEBUG 2024-09-27 23:34:17 multipart.multipart Calling on_header_end with no data
+DEBUG 2024-09-27 23:34:17 multipart.multipart Calling on_headers_finished with no data
+DEBUG 2024-09-27 23:34:17 multipart.multipart Calling on_part_data with data[199:201]
+DEBUG 2024-09-27 23:34:17 multipart.multipart Calling on_part_end with no data
+DEBUG 2024-09-27 23:34:17 multipart.multipart Calling on_part_begin with no data
+DEBUG 2024-09-27 23:34:17 multipart.multipart Calling on_header_field with data[245:264]
+DEBUG 2024-09-27 23:34:17 multipart.multipart Calling on_header_value with data[266:289]
+DEBUG 2024-09-27 23:34:17 multipart.multipart Calling on_header_end with no data
+DEBUG 2024-09-27 23:34:17 multipart.multipart Calling on_headers_finished with no data
+DEBUG 2024-09-27 23:34:17 multipart.multipart Calling on_part_data with data[293:314]
+DEBUG 2024-09-27 23:34:17 multipart.multipart Calling on_part_end with no data
+DEBUG 2024-09-27 23:34:17 multipart.multipart Calling on_part_begin with no data
+DEBUG 2024-09-27 23:34:17 multipart.multipart Calling on_header_field with data[358:377]
+DEBUG 2024-09-27 23:34:17 multipart.multipart Calling on_header_value with data[379:404]
+DEBUG 2024-09-27 23:34:17 multipart.multipart Calling on_header_end with no data
+DEBUG 2024-09-27 23:34:17 multipart.multipart Calling on_headers_finished with no data
+DEBUG 2024-09-27 23:34:17 multipart.multipart Calling on_part_data with data[408:456]
+DEBUG 2024-09-27 23:34:17 multipart.multipart Calling on_part_end with no data
+DEBUG 2024-09-27 23:34:17 multipart.multipart Calling on_part_begin with no data
+DEBUG 2024-09-27 23:34:17 multipart.multipart Calling on_header_field with data[500:519]
+DEBUG 2024-09-27 23:34:17 multipart.multipart Calling on_header_value with data[521:548]
+DEBUG 2024-09-27 23:34:17 multipart.multipart Calling on_header_end with no data
+DEBUG 2024-09-27 23:34:17 multipart.multipart Calling on_headers_finished with no data
+DEBUG 2024-09-27 23:34:17 multipart.multipart Calling on_part_data with data[552:556]
+DEBUG 2024-09-27 23:34:17 multipart.multipart Calling on_part_end with no data
+DEBUG 2024-09-27 23:34:17 multipart.multipart Calling on_part_begin with no data
+DEBUG 2024-09-27 23:34:17 multipart.multipart Calling on_header_field with data[600:619]
+DEBUG 2024-09-27 23:34:17 multipart.multipart Calling on_header_value with data[621:667]
+DEBUG 2024-09-27 23:34:17 multipart.multipart Calling on_header_end with no data
+DEBUG 2024-09-27 23:34:17 multipart.multipart Calling on_header_field with data[669:681]
+DEBUG 2024-09-27 23:34:17 multipart.multipart Calling on_header_value with data[683:693]
+DEBUG 2024-09-27 23:34:17 multipart.multipart Calling on_header_end with no data
+DEBUG 2024-09-27 23:34:17 multipart.multipart Calling on_headers_finished with no data
+DEBUG 2024-09-27 23:34:17 multipart.multipart Calling on_part_data with data[697:9467]
+DEBUG 2024-09-27 23:34:17 multipart.multipart Calling on_part_data with data[0:1]
+DEBUG 2024-09-27 23:34:17 multipart.multipart Calling on_part_data with data[9468:10271]
+DEBUG 2024-09-27 23:34:17 multipart.multipart Calling on_part_data with data[0:1]
+DEBUG 2024-09-27 23:34:17 multipart.multipart Calling on_part_data with data[10272:10310]
+DEBUG 2024-09-27 23:34:17 multipart.multipart Calling on_part_end with no data
+DEBUG 2024-09-27 23:34:17 multipart.multipart Calling on_end with no data
+INFO 2024-09-27 23:34:17 sqlalchemy.engine.Engine select pg_catalog.version()
+INFO 2024-09-27 23:34:17 sqlalchemy.engine.Engine [raw sql] ()
+INFO 2024-09-27 23:34:17 sqlalchemy.engine.Engine select current_schema()
+INFO 2024-09-27 23:34:17 sqlalchemy.engine.Engine [raw sql] ()
+INFO 2024-09-27 23:34:17 sqlalchemy.engine.Engine show standard_conforming_strings
+INFO 2024-09-27 23:34:17 sqlalchemy.engine.Engine [raw sql] ()
+INFO 2024-09-27 23:34:17 sqlalchemy.engine.Engine BEGIN (implicit)
+INFO 2024-09-27 23:34:17 sqlalchemy.engine.Engine SELECT max(blog.id) AS max_1 
+FROM blog
+INFO 2024-09-27 23:34:17 sqlalchemy.engine.Engine [generated in 0.00135s] ()
+INFO 2024-09-27 23:34:17 root Image path being saved: D:\Projects\Fast_API\blog_app\backend\media\blog_77_jr.NTR.jpg
+INFO 2024-09-27 23:34:17 sqlalchemy.engine.Engine SELECT count(*) AS count_1 
+FROM categories 
+WHERE categories.id = $1::INTEGER
+INFO 2024-09-27 23:34:17 sqlalchemy.engine.Engine [generated in 0.00142s] (33,)
+INFO 2024-09-27 23:34:17 sqlalchemy.engine.Engine SELECT count(*) AS count_1 
+FROM subcategories 
+WHERE subcategories.id = $1::INTEGER
+INFO 2024-09-27 23:34:17 sqlalchemy.engine.Engine [generated in 0.00139s] (33,)
+INFO 2024-09-27 23:34:17 sqlalchemy.engine.Engine SELECT count(*) AS count_1 
+FROM blog 
+WHERE blog.title = $1::VARCHAR
+INFO 2024-09-27 23:34:17 sqlalchemy.engine.Engine [generated in 0.08428s] ("string3fhjpdsdse'sdfd",)
+INFO 2024-09-27 23:34:17 sqlalchemy.engine.Engine SELECT max(blog.id) AS max_1 
+FROM blog
+INFO 2024-09-27 23:34:17 sqlalchemy.engine.Engine [cached since 0.1327s ago] ()
+INFO 2024-09-27 23:34:17 sqlalchemy.engine.Engine INSERT INTO blog (category_id, subcategory_id, blog_id, title, content, image, is_active, created_on, updated_on) VALUES ($1::INTEGER, $2::INTEGER, $3::VARCHAR, $4::VARCHAR, $5::VARCHAR, $6::VARCHAR, $7::BOOLEAN, $8::TIMESTAMP WITHOUT TIME ZONE, $9::TIMESTAMP WITHOUT TIME ZONE) RETURNING blog.id
+INFO 2024-09-27 23:34:17 sqlalchemy.engine.Engine [generated in 0.00279s] (33, 33, 'blog_77', "string3fhjpdsdse'sdfd", "asdfadslfjadlfjaldfjodsjdasdmf'adslfjalkdjfakdjf", 'D:\\Projects\\Fast_API\\blog_app\\backend\\media\\blog_77_jr.NTR.jpg', True, datetime.datetime(2024, 9, 27, 23, 34, 17, 818510), None)
+INFO 2024-09-27 23:34:17 sqlalchemy.engine.Engine COMMIT
+INFO 2024-09-27 23:34:17 sqlalchemy.engine.Engine BEGIN (implicit)
+INFO 2024-09-27 23:34:17 sqlalchemy.engine.Engine SELECT blog.id, blog.category_id, blog.subcategory_id, blog.blog_id, blog.title, blog.content, blog.image, blog.is_active, blog.created_on, blog.updated_on 
+FROM blog 
+WHERE blog.id = $1::INTEGER
+INFO 2024-09-27 23:34:17 sqlalchemy.engine.Engine [generated in 0.00297s] (77,)
+INFO 2024-09-27 23:34:17 root Blog 'string3fhjpdsdse'sdfd' created successfully with ID blog_77
+INFO 2024-09-27 23:34:17 sqlalchemy.engine.Engine ROLLBACK
+INFO 2024-09-27 23:35:20 sqlalchemy.engine.Engine BEGIN (implicit)
+INFO 2024-09-27 23:35:20 sqlalchemy.engine.Engine SELECT categories.id AS category_id, categories.name AS category_name, subcategories.id AS subcategory_id, subcategories.name AS subcategory_name, blog.id AS id, blog.blog_id AS blog_id, blog.title AS blog_title, blog.content AS blog_content, blog.is_active AS is_active, blog.created_on AS created_on, blog.updated_on AS updated_on 
+FROM categories JOIN subcategories ON categories.id = subcategories.category_id JOIN blog ON subcategories.id = blog.subcategory_id 
+WHERE blog.is_active = true ORDER BY blog.id DESC 
+ LIMIT $1::INTEGER OFFSET $2::INTEGER
+INFO 2024-09-27 23:35:20 sqlalchemy.engine.Engine [generated in 0.00396s] (10, 0)
+INFO 2024-09-27 23:35:20 sqlalchemy.engine.Engine SELECT count(blog.id) AS count_1 
+FROM categories JOIN subcategories ON categories.id = subcategories.category_id JOIN blog ON subcategories.id = blog.subcategory_id 
+WHERE blog.is_active = true
+INFO 2024-09-27 23:35:20 sqlalchemy.engine.Engine [generated in 0.00587s] ()
+INFO 2024-09-27 23:35:20 root Successfully retrieved all active Blog with details.
+INFO 2024-09-27 23:35:20 root Successfully retrieved all blog details.
+INFO 2024-09-27 23:35:20 sqlalchemy.engine.Engine ROLLBACK
+INFO 2024-09-27 23:35:41 sqlalchemy.engine.Engine BEGIN (implicit)
+INFO 2024-09-27 23:35:41 sqlalchemy.engine.Engine SELECT categories.id AS category_id, categories.name AS category_name, subcategories.id AS subcategory_id, subcategories.name AS subcategory_name, blog.id AS id, blog.blog_id AS blog_id, blog.title AS blog_title, blog.content AS blog_content, blog.is_active AS is_active, blog.created_on AS created_on, blog.updated_on AS updated_on 
+FROM categories JOIN subcategories ON categories.id = subcategories.category_id JOIN blog ON subcategories.id = blog.subcategory_id 
+WHERE blog.is_active = true AND blog.id = $1::INTEGER
+INFO 2024-09-27 23:35:41 sqlalchemy.engine.Engine [generated in 0.00389s] (77,)
+INFO 2024-09-27 23:35:41 root Successfully retrieved blog with ID 77.
+ERROR 2024-09-27 23:35:41 root Failed to fetch Blog details: 'int' object has no attribute 'category_id'
+INFO 2024-09-27 23:35:41 sqlalchemy.engine.Engine ROLLBACK
+ERROR 2024-09-27 23:35:41 root Unexpected error: 500: Failed to fetch Blog details
+Traceback (most recent call last):
+  File "D:\Projects\Fast_API\blog_app\backend\app\routers\blog.py", line 123, in get_blog_by_id_route
+    "category_id": blog_detail.category_id,
+                   ^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'int' object has no attribute 'category_id'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Projects\Fast_API\blog_app\backend\app\core\database.py", line 21, in get_db
+    yield session
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\fastapi\routing.py", line 278, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\fastapi\routing.py", line 191, in run_endpoint_function
+    return await dependant.call(**values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\Fast_API\blog_app\backend\app\routers\blog.py", line 144, in get_blog_by_id_route
+    raise HTTPException(
+fastapi.exceptions.HTTPException: 500: Failed to fetch Blog details
+DEBUG 2024-09-27 23:37:43 multipart.multipart Calling on_part_begin with no data
+DEBUG 2024-09-27 23:37:43 multipart.multipart Calling on_header_field with data[42:61]
+DEBUG 2024-09-27 23:37:43 multipart.multipart Calling on_header_value with data[63:86]
+DEBUG 2024-09-27 23:37:43 multipart.multipart Calling on_header_end with no data
+DEBUG 2024-09-27 23:37:43 multipart.multipart Calling on_headers_finished with no data
+DEBUG 2024-09-27 23:37:43 multipart.multipart Calling on_part_data with data[90:111]
+DEBUG 2024-09-27 23:37:43 multipart.multipart Calling on_part_end with no data
+DEBUG 2024-09-27 23:37:43 multipart.multipart Calling on_part_begin with no data
+DEBUG 2024-09-27 23:37:43 multipart.multipart Calling on_header_field with data[155:174]
+DEBUG 2024-09-27 23:37:43 multipart.multipart Calling on_header_value with data[176:201]
+DEBUG 2024-09-27 23:37:43 multipart.multipart Calling on_header_end with no data
+DEBUG 2024-09-27 23:37:43 multipart.multipart Calling on_headers_finished with no data
+DEBUG 2024-09-27 23:37:43 multipart.multipart Calling on_part_data with data[205:234]
+DEBUG 2024-09-27 23:37:43 multipart.multipart Calling on_part_end with no data
+DEBUG 2024-09-27 23:37:43 multipart.multipart Calling on_part_begin with no data
+DEBUG 2024-09-27 23:37:43 multipart.multipart Calling on_header_field with data[278:297]
+DEBUG 2024-09-27 23:37:43 multipart.multipart Calling on_header_value with data[299:326]
+DEBUG 2024-09-27 23:37:43 multipart.multipart Calling on_header_end with no data
+DEBUG 2024-09-27 23:37:43 multipart.multipart Calling on_headers_finished with no data
+DEBUG 2024-09-27 23:37:43 multipart.multipart Calling on_part_data with data[330:334]
+DEBUG 2024-09-27 23:37:43 multipart.multipart Calling on_part_end with no data
+DEBUG 2024-09-27 23:37:43 multipart.multipart Calling on_part_begin with no data
+DEBUG 2024-09-27 23:37:43 multipart.multipart Calling on_header_field with data[378:397]
+DEBUG 2024-09-27 23:37:43 multipart.multipart Calling on_header_value with data[399:428]
+DEBUG 2024-09-27 23:37:43 multipart.multipart Calling on_header_end with no data
+DEBUG 2024-09-27 23:37:43 multipart.multipart Calling on_headers_finished with no data
+DEBUG 2024-09-27 23:37:43 multipart.multipart Calling on_part_data with data[432:434]
+DEBUG 2024-09-27 23:37:43 multipart.multipart Calling on_part_end with no data
+DEBUG 2024-09-27 23:37:43 multipart.multipart Calling on_part_begin with no data
+DEBUG 2024-09-27 23:37:43 multipart.multipart Calling on_header_field with data[478:497]
+DEBUG 2024-09-27 23:37:43 multipart.multipart Calling on_header_value with data[499:531]
+DEBUG 2024-09-27 23:37:43 multipart.multipart Calling on_header_end with no data
+DEBUG 2024-09-27 23:37:43 multipart.multipart Calling on_headers_finished with no data
+DEBUG 2024-09-27 23:37:43 multipart.multipart Calling on_part_data with data[535:537]
+DEBUG 2024-09-27 23:37:43 multipart.multipart Calling on_part_end with no data
+DEBUG 2024-09-27 23:37:43 multipart.multipart Calling on_part_begin with no data
+DEBUG 2024-09-27 23:37:43 multipart.multipart Calling on_header_field with data[581:600]
+DEBUG 2024-09-27 23:37:43 multipart.multipart Calling on_header_value with data[602:654]
+DEBUG 2024-09-27 23:37:43 multipart.multipart Calling on_header_end with no data
+DEBUG 2024-09-27 23:37:43 multipart.multipart Calling on_header_field with data[656:668]
+DEBUG 2024-09-27 23:37:43 multipart.multipart Calling on_header_value with data[670:680]
+DEBUG 2024-09-27 23:37:43 multipart.multipart Calling on_header_end with no data
+DEBUG 2024-09-27 23:37:43 multipart.multipart Calling on_headers_finished with no data
+DEBUG 2024-09-27 23:37:43 multipart.multipart Calling on_part_data with data[684:778]
+DEBUG 2024-09-27 23:37:43 multipart.multipart Calling on_part_data with data[0:1]
+DEBUG 2024-09-27 23:37:43 multipart.multipart Calling on_part_data with data[779:6743]
+DEBUG 2024-09-27 23:37:43 multipart.multipart Calling on_part_end with no data
+DEBUG 2024-09-27 23:37:43 multipart.multipart Calling on_end with no data
+INFO 2024-09-27 23:37:43 sqlalchemy.engine.Engine BEGIN (implicit)
+INFO 2024-09-27 23:37:43 sqlalchemy.engine.Engine SELECT blog.id AS blog_id_1, blog.category_id AS blog_category_id, blog.subcategory_id AS blog_subcategory_id, blog.blog_id AS blog_blog_id, blog.title AS blog_title, blog.content AS blog_content, blog.image AS blog_image, blog.is_active AS blog_is_active, blog.created_on AS blog_created_on, blog.updated_on AS blog_updated_on 
+FROM blog 
+WHERE blog.id = $1::INTEGER
+INFO 2024-09-27 23:37:43 sqlalchemy.engine.Engine [generated in 0.00185s] (77,)
+INFO 2024-09-27 23:37:43 root Old image D:\Projects\Fast_API\blog_app\backend\media\blog_77_jr.NTR.jpg deleted successfully.
+INFO 2024-09-27 23:37:43 root New image D:\Projects\Fast_API\blog_app\backend\media\77_Jr.ntr_2.jpg saved successfully.
+INFO 2024-09-27 23:37:43 sqlalchemy.engine.Engine UPDATE blog SET category_id=$1::INTEGER, subcategory_id=$2::INTEGER, title=$3::VARCHAR, content=$4::VARCHAR, image=$5::VARCHAR, updated_on=$6::TIMESTAMP WITHOUT TIME ZONE WHERE blog.id = $7::INTEGER
+INFO 2024-09-27 23:37:43 sqlalchemy.engine.Engine [generated in 0.00157s] (32, 32, 'Gopal_srinivas_update', 'Gopal_srinivas_update_content', 'D:\\Projects\\Fast_API\\blog_app\\backend\\media\\77_Jr.ntr_2.jpg', datetime.datetime(2024, 9, 27, 23, 37, 43, 145663), 77)
+INFO 2024-09-27 23:37:43 sqlalchemy.engine.Engine COMMIT
+INFO 2024-09-27 23:37:43 sqlalchemy.engine.Engine BEGIN (implicit)
+INFO 2024-09-27 23:37:43 sqlalchemy.engine.Engine SELECT blog.id, blog.category_id, blog.subcategory_id, blog.blog_id, blog.title, blog.content, blog.image, blog.is_active, blog.created_on, blog.updated_on 
+FROM blog 
+WHERE blog.id = $1::INTEGER
+INFO 2024-09-27 23:37:43 sqlalchemy.engine.Engine [cached since 205.3s ago] (77,)
+INFO 2024-09-27 23:37:43 sqlalchemy.engine.Engine ROLLBACK
+DEBUG 2024-09-27 23:38:26 multipart.multipart Calling on_part_begin with no data
+DEBUG 2024-09-27 23:38:26 multipart.multipart Calling on_header_field with data[42:61]
+DEBUG 2024-09-27 23:38:26 multipart.multipart Calling on_header_value with data[63:86]
+DEBUG 2024-09-27 23:38:26 multipart.multipart Calling on_header_end with no data
+DEBUG 2024-09-27 23:38:26 multipart.multipart Calling on_headers_finished with no data
+DEBUG 2024-09-27 23:38:26 multipart.multipart Calling on_part_data with data[90:111]
+DEBUG 2024-09-27 23:38:26 multipart.multipart Calling on_part_end with no data
+DEBUG 2024-09-27 23:38:26 multipart.multipart Calling on_part_begin with no data
+DEBUG 2024-09-27 23:38:26 multipart.multipart Calling on_header_field with data[155:174]
+DEBUG 2024-09-27 23:38:26 multipart.multipart Calling on_header_value with data[176:201]
+DEBUG 2024-09-27 23:38:26 multipart.multipart Calling on_header_end with no data
+DEBUG 2024-09-27 23:38:26 multipart.multipart Calling on_headers_finished with no data
+DEBUG 2024-09-27 23:38:26 multipart.multipart Calling on_part_data with data[205:234]
+DEBUG 2024-09-27 23:38:26 multipart.multipart Calling on_part_end with no data
+DEBUG 2024-09-27 23:38:26 multipart.multipart Calling on_part_begin with no data
+DEBUG 2024-09-27 23:38:26 multipart.multipart Calling on_header_field with data[278:297]
+DEBUG 2024-09-27 23:38:26 multipart.multipart Calling on_header_value with data[299:326]
+DEBUG 2024-09-27 23:38:26 multipart.multipart Calling on_header_end with no data
+DEBUG 2024-09-27 23:38:26 multipart.multipart Calling on_headers_finished with no data
+DEBUG 2024-09-27 23:38:26 multipart.multipart Calling on_part_data with data[330:334]
+DEBUG 2024-09-27 23:38:26 multipart.multipart Calling on_part_end with no data
+DEBUG 2024-09-27 23:38:26 multipart.multipart Calling on_part_begin with no data
+DEBUG 2024-09-27 23:38:26 multipart.multipart Calling on_header_field with data[378:397]
+DEBUG 2024-09-27 23:38:26 multipart.multipart Calling on_header_value with data[399:428]
+DEBUG 2024-09-27 23:38:26 multipart.multipart Calling on_header_end with no data
+DEBUG 2024-09-27 23:38:26 multipart.multipart Calling on_headers_finished with no data
+DEBUG 2024-09-27 23:38:26 multipart.multipart Calling on_part_data with data[432:434]
+DEBUG 2024-09-27 23:38:26 multipart.multipart Calling on_part_end with no data
+DEBUG 2024-09-27 23:38:26 multipart.multipart Calling on_part_begin with no data
+DEBUG 2024-09-27 23:38:26 multipart.multipart Calling on_header_field with data[478:497]
+DEBUG 2024-09-27 23:38:26 multipart.multipart Calling on_header_value with data[499:531]
+DEBUG 2024-09-27 23:38:26 multipart.multipart Calling on_header_end with no data
+DEBUG 2024-09-27 23:38:26 multipart.multipart Calling on_headers_finished with no data
+DEBUG 2024-09-27 23:38:26 multipart.multipart Calling on_part_data with data[535:537]
+DEBUG 2024-09-27 23:38:26 multipart.multipart Calling on_part_end with no data
+DEBUG 2024-09-27 23:38:26 multipart.multipart Calling on_part_begin with no data
+DEBUG 2024-09-27 23:38:26 multipart.multipart Calling on_header_field with data[581:600]
+DEBUG 2024-09-27 23:38:26 multipart.multipart Calling on_header_value with data[602:652]
+DEBUG 2024-09-27 23:38:26 multipart.multipart Calling on_header_end with no data
+DEBUG 2024-09-27 23:38:26 multipart.multipart Calling on_header_field with data[654:666]
+DEBUG 2024-09-27 23:38:26 multipart.multipart Calling on_header_value with data[668:678]
+DEBUG 2024-09-27 23:38:26 multipart.multipart Calling on_header_end with no data
+DEBUG 2024-09-27 23:38:26 multipart.multipart Calling on_headers_finished with no data
+DEBUG 2024-09-27 23:38:26 multipart.multipart Calling on_part_data with data[682:10295]
+DEBUG 2024-09-27 23:38:26 multipart.multipart Calling on_part_end with no data
+DEBUG 2024-09-27 23:38:26 multipart.multipart Calling on_end with no data
+INFO 2024-09-27 23:38:26 sqlalchemy.engine.Engine BEGIN (implicit)
+INFO 2024-09-27 23:38:26 sqlalchemy.engine.Engine SELECT blog.id AS blog_id_1, blog.category_id AS blog_category_id, blog.subcategory_id AS blog_subcategory_id, blog.blog_id AS blog_blog_id, blog.title AS blog_title, blog.content AS blog_content, blog.image AS blog_image, blog.is_active AS blog_is_active, blog.created_on AS blog_created_on, blog.updated_on AS blog_updated_on 
+FROM blog 
+WHERE blog.id = $1::INTEGER
+INFO 2024-09-27 23:38:26 sqlalchemy.engine.Engine [cached since 43.29s ago] (77,)
+INFO 2024-09-27 23:38:26 root Old image D:\Projects\Fast_API\blog_app\backend\media\77_Jr.ntr_2.jpg deleted successfully.
+INFO 2024-09-27 23:38:26 root New image D:\Projects\Fast_API\blog_app\backend\media\77_jr.NTR.jpg saved successfully.
+INFO 2024-09-27 23:38:26 sqlalchemy.engine.Engine UPDATE blog SET image=$1::VARCHAR, updated_on=$2::TIMESTAMP WITHOUT TIME ZONE WHERE blog.id = $3::INTEGER
+INFO 2024-09-27 23:38:26 sqlalchemy.engine.Engine [generated in 0.00118s] ('D:\\Projects\\Fast_API\\blog_app\\backend\\media\\77_jr.NTR.jpg', datetime.datetime(2024, 9, 27, 23, 38, 26, 430544), 77)
+INFO 2024-09-27 23:38:26 sqlalchemy.engine.Engine COMMIT
+INFO 2024-09-27 23:38:26 sqlalchemy.engine.Engine BEGIN (implicit)
+INFO 2024-09-27 23:38:26 sqlalchemy.engine.Engine SELECT blog.id, blog.category_id, blog.subcategory_id, blog.blog_id, blog.title, blog.content, blog.image, blog.is_active, blog.created_on, blog.updated_on 
+FROM blog 
+WHERE blog.id = $1::INTEGER
+INFO 2024-09-27 23:38:26 sqlalchemy.engine.Engine [cached since 248.6s ago] (77,)
+INFO 2024-09-27 23:38:26 sqlalchemy.engine.Engine ROLLBACK
+INFO 2024-09-27 23:38:45 sqlalchemy.engine.Engine BEGIN (implicit)
+INFO 2024-09-27 23:38:45 sqlalchemy.engine.Engine SELECT blog.id, blog.category_id, blog.subcategory_id, blog.blog_id, blog.title, blog.content, blog.image, blog.is_active, blog.created_on, blog.updated_on 
+FROM blog 
+WHERE blog.id = $1::INTEGER
+INFO 2024-09-27 23:38:45 sqlalchemy.engine.Engine [generated in 0.00120s] (77,)
+INFO 2024-09-27 23:38:45 sqlalchemy.engine.Engine UPDATE blog SET is_active=$1::BOOLEAN, updated_on=now() WHERE blog.id = $2::INTEGER
+INFO 2024-09-27 23:38:45 sqlalchemy.engine.Engine [generated in 0.00092s] (False, 77)
+INFO 2024-09-27 23:38:45 sqlalchemy.engine.Engine COMMIT
+INFO 2024-09-27 23:38:45 sqlalchemy.engine.Engine BEGIN (implicit)
+INFO 2024-09-27 23:38:45 sqlalchemy.engine.Engine SELECT blog.id, blog.category_id, blog.subcategory_id, blog.blog_id, blog.title, blog.content, blog.image, blog.is_active, blog.created_on, blog.updated_on 
+FROM blog 
+WHERE blog.id = $1::INTEGER
+INFO 2024-09-27 23:38:45 sqlalchemy.engine.Engine [cached since 267.6s ago] (77,)
+INFO 2024-09-27 23:38:45 root Blog with ID 77 soft deleted successfully.
+INFO 2024-09-27 23:38:45 root Blog detail soft deleted with ID: 77
+INFO 2024-09-27 23:38:45 sqlalchemy.engine.Engine ROLLBACK
+INFO 2024-09-27 23:39:20 sqlalchemy.engine.Engine BEGIN (implicit)
+INFO 2024-09-27 23:39:20 sqlalchemy.engine.Engine SELECT categories.id AS category_id, categories.name AS category_name, subcategories.id AS subcategory_id, subcategories.name AS subcategory_name, blog.id AS id, blog.blog_id AS blog_id, blog.title AS blog_title, blog.content AS blog_content, blog.is_active AS is_active, blog.created_on AS created_on, blog.updated_on AS updated_on 
+FROM categories JOIN subcategories ON categories.id = subcategories.category_id JOIN blog ON subcategories.id = blog.subcategory_id 
+WHERE blog.is_active = true AND blog.id = $1::INTEGER
+INFO 2024-09-27 23:39:20 sqlalchemy.engine.Engine [cached since 219.2s ago] (77,)
+WARNING 2024-09-27 23:39:20 root Blog with ID 77 not found.
+ERROR 2024-09-27 23:39:20 root Error retrieving blog detail with ID 77: 404: Blog with ID 77 not found
+Traceback (most recent call last):
+  File "D:\Projects\Fast_API\blog_app\backend\app\services\blog.py", line 184, in get_blog_detail_by_id
+    raise HTTPException(status_code=404, detail=f"Blog with ID {
+fastapi.exceptions.HTTPException: 404: Blog with ID 77 not found
+ERROR 2024-09-27 23:39:20 root Failed to fetch Blog details: 500: Error retrieving Blog
+INFO 2024-09-27 23:39:20 sqlalchemy.engine.Engine ROLLBACK
+ERROR 2024-09-27 23:39:20 root Unexpected error: 500: Failed to fetch Blog details
+Traceback (most recent call last):
+  File "D:\Projects\Fast_API\blog_app\backend\app\services\blog.py", line 184, in get_blog_detail_by_id
+    raise HTTPException(status_code=404, detail=f"Blog with ID {
+fastapi.exceptions.HTTPException: 404: Blog with ID 77 not found
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Projects\Fast_API\blog_app\backend\app\routers\blog.py", line 119, in get_blog_by_id_route
+    blog_detail = await get_blog_detail_by_id(db, blog_detail_id)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\Fast_API\blog_app\backend\app\services\blog.py", line 193, in get_blog_detail_by_id
+    raise HTTPException(status_code=500, detail="Error retrieving Blog")
+fastapi.exceptions.HTTPException: 500: Error retrieving Blog
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Projects\Fast_API\blog_app\backend\app\core\database.py", line 21, in get_db
+    yield session
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\fastapi\routing.py", line 278, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\fastapi\routing.py", line 191, in run_endpoint_function
+    return await dependant.call(**values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\Fast_API\blog_app\backend\app\routers\blog.py", line 144, in get_blog_by_id_route
+    raise HTTPException(
+fastapi.exceptions.HTTPException: 500: Failed to fetch Blog details
+INFO 2024-09-27 23:44:11 root Shutting down application...
+INFO 2024-09-27 23:44:16 root Application startup application...
+INFO 2024-09-27 23:44:36 root Shutting down application...
+INFO 2024-09-27 23:44:42 root Application startup application...
+INFO 2024-09-27 23:44:42 root Shutting down application...
+INFO 2024-09-27 23:44:47 root Application startup application...
+INFO 2024-09-27 23:44:48 sqlalchemy.engine.Engine select pg_catalog.version()
+INFO 2024-09-27 23:44:48 sqlalchemy.engine.Engine [raw sql] ()
+INFO 2024-09-27 23:44:48 sqlalchemy.engine.Engine select current_schema()
+INFO 2024-09-27 23:44:48 sqlalchemy.engine.Engine [raw sql] ()
+INFO 2024-09-27 23:44:48 sqlalchemy.engine.Engine show standard_conforming_strings
+INFO 2024-09-27 23:44:48 sqlalchemy.engine.Engine [raw sql] ()
+INFO 2024-09-27 23:44:48 sqlalchemy.engine.Engine BEGIN (implicit)
+INFO 2024-09-27 23:44:48 sqlalchemy.engine.Engine SELECT categories.id AS category_id, categories.name AS category_name, subcategories.id AS subcategory_id, subcategories.name AS subcategory_name, blog.id AS id, blog.blog_id AS blog_id, blog.title AS blog_title, blog.content AS blog_content, blog.is_active AS is_active, blog.created_on AS created_on, blog.updated_on AS updated_on 
+FROM categories JOIN subcategories ON categories.id = subcategories.category_id JOIN blog ON subcategories.id = blog.subcategory_id 
+WHERE blog.is_active = true AND blog.id = $1::INTEGER
+INFO 2024-09-27 23:44:48 sqlalchemy.engine.Engine [generated in 0.00183s] (77,)
+WARNING 2024-09-27 23:44:48 root Blog with ID 77 not found.
+ERROR 2024-09-27 23:44:48 root Error retrieving blog detail with ID 77: 404: Blog with ID 77 not found
+Traceback (most recent call last):
+  File "D:\Projects\Fast_API\blog_app\backend\app\services\blog.py", line 183, in get_blog_detail_by_id
+    raise HTTPException(status_code=404, detail=f"Blog with ID {
+fastapi.exceptions.HTTPException: 404: Blog with ID 77 not found
+ERROR 2024-09-27 23:44:48 root HTTP error occurred: Error retrieving Blog
+INFO 2024-09-27 23:44:48 sqlalchemy.engine.Engine ROLLBACK
+ERROR 2024-09-27 23:44:48 root Unexpected error: 500: Error retrieving Blog
+Traceback (most recent call last):
+  File "D:\Projects\Fast_API\blog_app\backend\app\services\blog.py", line 183, in get_blog_detail_by_id
+    raise HTTPException(status_code=404, detail=f"Blog with ID {
+fastapi.exceptions.HTTPException: 404: Blog with ID 77 not found
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Projects\Fast_API\blog_app\backend\app\core\database.py", line 21, in get_db
+    yield session
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\fastapi\routing.py", line 278, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\fastapi\routing.py", line 191, in run_endpoint_function
+    return await dependant.call(**values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\Fast_API\blog_app\backend\app\routers\blog.py", line 144, in get_blog_by_id_route
+    raise http_exc  # Reraise the HTTPException for FastAPI to handle
+    ^^^^^^^^^^^^^^
+  File "D:\Projects\Fast_API\blog_app\backend\app\routers\blog.py", line 119, in get_blog_by_id_route
+    blog_detail = await get_blog_detail_by_id(db, blog_detail_id)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\Fast_API\blog_app\backend\app\services\blog.py", line 192, in get_blog_detail_by_id
+    raise HTTPException(status_code=500, detail="Error retrieving Blog")
+fastapi.exceptions.HTTPException: 500: Error retrieving Blog
+INFO 2024-09-27 23:46:48 sqlalchemy.engine.Engine BEGIN (implicit)
+INFO 2024-09-27 23:46:48 sqlalchemy.engine.Engine SELECT categories.id AS category_id, categories.name AS category_name, subcategories.id AS subcategory_id, subcategories.name AS subcategory_name, blog.id AS id, blog.blog_id AS blog_id, blog.title AS blog_title, blog.content AS blog_content, blog.is_active AS is_active, blog.created_on AS created_on, blog.updated_on AS updated_on 
+FROM categories JOIN subcategories ON categories.id = subcategories.category_id JOIN blog ON subcategories.id = blog.subcategory_id 
+WHERE blog.is_active = true AND blog.id = $1::INTEGER
+INFO 2024-09-27 23:46:48 sqlalchemy.engine.Engine [cached since 120.5s ago] (76,)
+INFO 2024-09-27 23:46:48 root Successfully retrieved blog with ID 76.
+ERROR 2024-09-27 23:46:48 root Failed to fetch Blog details: 'int' object has no attribute 'category_id'
+INFO 2024-09-27 23:46:48 sqlalchemy.engine.Engine ROLLBACK
+ERROR 2024-09-27 23:46:48 root Unexpected error: 500: Failed to fetch Blog details
+Traceback (most recent call last):
+  File "D:\Projects\Fast_API\blog_app\backend\app\routers\blog.py", line 123, in get_blog_by_id_route
+    "category_id": blog_detail.category_id,
+                   ^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'int' object has no attribute 'category_id'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Projects\Fast_API\blog_app\backend\app\core\database.py", line 21, in get_db
+    yield session
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\fastapi\routing.py", line 278, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\fastapi\routing.py", line 191, in run_endpoint_function
+    return await dependant.call(**values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\Fast_API\blog_app\backend\app\routers\blog.py", line 147, in get_blog_by_id_route
+    raise HTTPException(
+fastapi.exceptions.HTTPException: 500: Failed to fetch Blog details
+INFO 2024-09-27 23:50:21 root Shutting down application...
+INFO 2024-09-27 23:50:27 root Application startup application...
+INFO 2024-09-27 23:50:29 root Shutting down application...
+INFO 2024-09-27 23:50:35 root Application startup application...
+INFO 2024-09-27 23:50:35 sqlalchemy.engine.Engine select pg_catalog.version()
+INFO 2024-09-27 23:50:35 sqlalchemy.engine.Engine [raw sql] ()
+INFO 2024-09-27 23:50:35 sqlalchemy.engine.Engine select current_schema()
+INFO 2024-09-27 23:50:35 sqlalchemy.engine.Engine [raw sql] ()
+INFO 2024-09-27 23:50:35 sqlalchemy.engine.Engine show standard_conforming_strings
+INFO 2024-09-27 23:50:35 sqlalchemy.engine.Engine [raw sql] ()
+INFO 2024-09-27 23:50:35 sqlalchemy.engine.Engine BEGIN (implicit)
+INFO 2024-09-27 23:50:35 sqlalchemy.engine.Engine SELECT categories.id AS category_id, categories.name AS category_name, subcategories.id AS subcategory_id, subcategories.name AS subcategory_name, blog.id AS id, blog.blog_id AS blog_id, blog.title AS blog_title, blog.content AS blog_content, blog.is_active AS is_active, blog.created_on AS created_on, blog.updated_on AS updated_on 
+FROM categories JOIN subcategories ON categories.id = subcategories.category_id JOIN blog ON subcategories.id = blog.subcategory_id 
+WHERE blog.id = $1::INTEGER
+INFO 2024-09-27 23:50:35 sqlalchemy.engine.Engine [generated in 0.00187s] (76,)
+ERROR 2024-09-27 23:50:35 root Error retrieving blog detail with ID 76: 'int' object has no attribute 'is_active'
+Traceback (most recent call last):
+  File "D:\Projects\Fast_API\blog_app\backend\app\services\blog.py", line 188, in get_blog_detail_by_id
+    if not blog_detail.is_active:
+           ^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'int' object has no attribute 'is_active'
+ERROR 2024-09-27 23:50:35 root HTTP error occurred: Error retrieving Blog
+INFO 2024-09-27 23:50:35 sqlalchemy.engine.Engine ROLLBACK
+ERROR 2024-09-27 23:50:35 root Unexpected error: 500: Error retrieving Blog
+Traceback (most recent call last):
+  File "D:\Projects\Fast_API\blog_app\backend\app\services\blog.py", line 188, in get_blog_detail_by_id
+    if not blog_detail.is_active:
+           ^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'int' object has no attribute 'is_active'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Projects\Fast_API\blog_app\backend\app\core\database.py", line 21, in get_db
+    yield session
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\fastapi\routing.py", line 278, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\fastapi\routing.py", line 191, in run_endpoint_function
+    return await dependant.call(**values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\Fast_API\blog_app\backend\app\routers\blog.py", line 144, in get_blog_by_id_route
+    raise http_exc  # Reraise the HTTPException for FastAPI to handle
+    ^^^^^^^^^^^^^^
+  File "D:\Projects\Fast_API\blog_app\backend\app\routers\blog.py", line 119, in get_blog_by_id_route
+    blog_detail = await get_blog_detail_by_id(db, blog_detail_id)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\Fast_API\blog_app\backend\app\services\blog.py", line 205, in get_blog_detail_by_id
+    raise HTTPException(status_code=500, detail="Error retrieving Blog")
+fastapi.exceptions.HTTPException: 500: Error retrieving Blog
+INFO 2024-09-27 23:52:24 root Shutting down application...
+INFO 2024-09-27 23:52:30 root Application startup application...
+INFO 2024-09-27 23:52:44 root Shutting down application...
+INFO 2024-09-27 23:52:49 root Application startup application...
+INFO 2024-09-27 23:52:49 root Shutting down application...
+INFO 2024-09-27 23:52:54 root Application startup application...
+INFO 2024-09-27 23:52:54 sqlalchemy.engine.Engine select pg_catalog.version()
+INFO 2024-09-27 23:52:54 sqlalchemy.engine.Engine [raw sql] ()
+INFO 2024-09-27 23:52:54 sqlalchemy.engine.Engine select current_schema()
+INFO 2024-09-27 23:52:54 sqlalchemy.engine.Engine [raw sql] ()
+INFO 2024-09-27 23:52:54 sqlalchemy.engine.Engine show standard_conforming_strings
+INFO 2024-09-27 23:52:54 sqlalchemy.engine.Engine [raw sql] ()
+INFO 2024-09-27 23:52:54 sqlalchemy.engine.Engine BEGIN (implicit)
+INFO 2024-09-27 23:52:54 sqlalchemy.engine.Engine SELECT categories.id AS category_id, categories.name AS category_name, subcategories.id AS subcategory_id, subcategories.name AS subcategory_name, blog.id AS id, blog.blog_id AS blog_id, blog.title AS blog_title, blog.content AS blog_content, blog.is_active AS is_active, blog.created_on AS created_on, blog.updated_on AS updated_on 
+FROM categories JOIN subcategories ON categories.id = subcategories.category_id JOIN blog ON subcategories.id = blog.subcategory_id 
+WHERE blog.id = $1::INTEGER
+INFO 2024-09-27 23:52:54 sqlalchemy.engine.Engine [generated in 0.00223s] (76,)
+INFO 2024-09-27 23:52:54 root Successfully retrieved blog with ID 76.
+INFO 2024-09-27 23:52:54 root Blog details retrieved: string3fhjpdsdse'sdf
+INFO 2024-09-27 23:52:54 sqlalchemy.engine.Engine ROLLBACK
+INFO 2024-09-27 23:54:37 sqlalchemy.engine.Engine BEGIN (implicit)
+INFO 2024-09-27 23:54:37 sqlalchemy.engine.Engine SELECT categories.id AS category_id, categories.name AS category_name, subcategories.id AS subcategory_id, subcategories.name AS subcategory_name, blog.id AS id, blog.blog_id AS blog_id, blog.title AS blog_title, blog.content AS blog_content, blog.is_active AS is_active, blog.created_on AS created_on, blog.updated_on AS updated_on 
+FROM categories JOIN subcategories ON categories.id = subcategories.category_id JOIN blog ON subcategories.id = blog.subcategory_id 
+WHERE blog.id = $1::INTEGER
+INFO 2024-09-27 23:54:37 sqlalchemy.engine.Engine [cached since 102.9s ago] (76,)
+INFO 2024-09-27 23:54:37 root Successfully retrieved blog with ID 76.
+INFO 2024-09-27 23:54:37 root Blog details retrieved: string3fhjpdsdse'sdf
+INFO 2024-09-27 23:54:37 sqlalchemy.engine.Engine ROLLBACK
+INFO 2024-09-27 23:55:46 sqlalchemy.engine.Engine BEGIN (implicit)
+INFO 2024-09-27 23:55:46 sqlalchemy.engine.Engine SELECT categories.id AS category_id, categories.name AS category_name, subcategories.id AS subcategory_id, subcategories.name AS subcategory_name, blog.id AS id, blog.blog_id AS blog_id, blog.title AS blog_title, blog.content AS blog_content, blog.is_active AS is_active, blog.created_on AS created_on, blog.updated_on AS updated_on 
+FROM categories JOIN subcategories ON categories.id = subcategories.category_id JOIN blog ON subcategories.id = blog.subcategory_id 
+WHERE blog.id = $1::INTEGER
+INFO 2024-09-27 23:55:46 sqlalchemy.engine.Engine [cached since 171.6s ago] (76,)
+INFO 2024-09-27 23:55:46 root Successfully retrieved blog with ID 76.
+INFO 2024-09-27 23:55:46 root Blog details retrieved: string3fhjpdsdse'sdf
+INFO 2024-09-27 23:55:46 sqlalchemy.engine.Engine ROLLBACK
+INFO 2024-09-27 23:56:17 sqlalchemy.engine.Engine BEGIN (implicit)
+INFO 2024-09-27 23:56:17 sqlalchemy.engine.Engine SELECT categories.id AS category_id, categories.name AS category_name, subcategories.id AS subcategory_id, subcategories.name AS subcategory_name, blog.id AS id, blog.blog_id AS blog_id, blog.title AS blog_title, blog.content AS blog_content, blog.is_active AS is_active, blog.created_on AS created_on, blog.updated_on AS updated_on 
+FROM categories JOIN subcategories ON categories.id = subcategories.category_id JOIN blog ON subcategories.id = blog.subcategory_id 
+WHERE blog.id = $1::INTEGER
+INFO 2024-09-27 23:56:17 sqlalchemy.engine.Engine [cached since 202.9s ago] (77,)
+INFO 2024-09-27 23:56:17 root Blog with ID 77 is not active.
+ERROR 2024-09-27 23:56:17 root Failed to fetch Blog details: 'dict' object has no attribute 'category_id'
+INFO 2024-09-27 23:56:17 sqlalchemy.engine.Engine ROLLBACK
+ERROR 2024-09-27 23:56:17 root Unexpected error: 500: Failed to fetch Blog details
+Traceback (most recent call last):
+  File "D:\Projects\Fast_API\blog_app\backend\app\routers\blog.py", line 123, in get_blog_by_id_route
+    "category_id": blog_detail.category_id,
+                   ^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'dict' object has no attribute 'category_id'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Projects\Fast_API\blog_app\backend\app\core\database.py", line 21, in get_db
+    yield session
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\fastapi\routing.py", line 278, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\fastapi\routing.py", line 191, in run_endpoint_function
+    return await dependant.call(**values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\Fast_API\blog_app\backend\app\routers\blog.py", line 147, in get_blog_by_id_route
+    logging.error(f"Failed to fetch Blog details: {str(e)}")
+fastapi.exceptions.HTTPException: 500: Failed to fetch Blog details
+INFO 2024-09-27 23:56:30 sqlalchemy.engine.Engine BEGIN (implicit)
+INFO 2024-09-27 23:56:30 sqlalchemy.engine.Engine SELECT categories.id AS category_id, categories.name AS category_name, subcategories.id AS subcategory_id, subcategories.name AS subcategory_name, blog.id AS id, blog.blog_id AS blog_id, blog.title AS blog_title, blog.content AS blog_content, blog.is_active AS is_active, blog.created_on AS created_on, blog.updated_on AS updated_on 
+FROM categories JOIN subcategories ON categories.id = subcategories.category_id JOIN blog ON subcategories.id = blog.subcategory_id 
+WHERE blog.id = $1::INTEGER
+INFO 2024-09-27 23:56:30 sqlalchemy.engine.Engine [cached since 215.2s ago] (75,)
+INFO 2024-09-27 23:56:30 root Successfully retrieved blog with ID 75.
+INFO 2024-09-27 23:56:30 root Blog details retrieved: string3fhjpdsdse
+INFO 2024-09-27 23:56:30 sqlalchemy.engine.Engine ROLLBACK
+INFO 2024-09-28 00:03:03 sqlalchemy.engine.Engine BEGIN (implicit)
+INFO 2024-09-28 00:03:03 sqlalchemy.engine.Engine SELECT categories.id AS category_id, categories.name AS category_name, subcategories.id AS subcategory_id, subcategories.name AS subcategory_name, blog.id AS id, blog.blog_id AS blog_id, blog.title AS blog_title, blog.content AS blog_content, blog.is_active AS is_active, blog.created_on AS created_on, blog.updated_on AS updated_on 
+FROM categories JOIN subcategories ON categories.id = subcategories.category_id JOIN blog ON subcategories.id = blog.subcategory_id 
+WHERE blog.id = $1::INTEGER
+INFO 2024-09-28 00:03:03 sqlalchemy.engine.Engine [cached since 608.6s ago] (75,)
+INFO 2024-09-28 00:03:03 root Successfully retrieved blog with ID 75.
+INFO 2024-09-28 00:03:03 root Blog details retrieved: string3fhjpdsdse
+INFO 2024-09-28 00:03:03 sqlalchemy.engine.Engine ROLLBACK
+INFO 2024-09-28 00:03:24 sqlalchemy.engine.Engine BEGIN (implicit)
+INFO 2024-09-28 00:03:24 sqlalchemy.engine.Engine SELECT categories.id AS category_id, categories.name AS category_name, subcategories.id AS subcategory_id, subcategories.name AS subcategory_name, blog.id AS id, blog.blog_id AS blog_id, blog.title AS blog_title, blog.content AS blog_content, blog.is_active AS is_active, blog.created_on AS created_on, blog.updated_on AS updated_on 
+FROM categories JOIN subcategories ON categories.id = subcategories.category_id JOIN blog ON subcategories.id = blog.subcategory_id 
+WHERE blog.id = $1::INTEGER
+INFO 2024-09-28 00:03:24 sqlalchemy.engine.Engine [cached since 629.5s ago] (77,)
+INFO 2024-09-28 00:03:24 root Blog with ID 77 is not active.
+ERROR 2024-09-28 00:03:24 root Failed to fetch Blog details: 'dict' object has no attribute 'category_id'
+INFO 2024-09-28 00:03:24 sqlalchemy.engine.Engine ROLLBACK
+ERROR 2024-09-28 00:03:24 root Unexpected error: 500: Failed to fetch Blog details
+Traceback (most recent call last):
+  File "D:\Projects\Fast_API\blog_app\backend\app\routers\blog.py", line 123, in get_blog_by_id_route
+AttributeError: 'dict' object has no attribute 'category_id'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Projects\Fast_API\blog_app\backend\app\core\database.py", line 21, in get_db
+    yield session
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\fastapi\routing.py", line 278, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\fastapi\routing.py", line 191, in run_endpoint_function
+    return await dependant.call(**values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\Fast_API\blog_app\backend\app\routers\blog.py", line 147, in get_blog_by_id_route
+    blog_data = BlogUpdateModel(
+        ^^^^^^^^^^^^^^^^^^^^^^^^
+fastapi.exceptions.HTTPException: 500: Failed to fetch Blog details
+INFO 2024-09-28 00:04:35 sqlalchemy.engine.Engine BEGIN (implicit)
+INFO 2024-09-28 00:04:35 sqlalchemy.engine.Engine SELECT categories.id AS category_id, categories.name AS category_name, subcategories.id AS subcategory_id, subcategories.name AS subcategory_name, blog.id AS id, blog.blog_id AS blog_id, blog.title AS blog_title, blog.content AS blog_content, blog.is_active AS is_active, blog.created_on AS created_on, blog.updated_on AS updated_on 
+FROM categories JOIN subcategories ON categories.id = subcategories.category_id JOIN blog ON subcategories.id = blog.subcategory_id 
+WHERE blog.id = $1::INTEGER
+INFO 2024-09-28 00:04:35 sqlalchemy.engine.Engine [cached since 701.1s ago] (76,)
+INFO 2024-09-28 00:04:35 root Successfully retrieved blog with ID 76.
+INFO 2024-09-28 00:04:35 root Blog details retrieved: string3fhjpdsdse'sdf
+INFO 2024-09-28 00:04:35 sqlalchemy.engine.Engine ROLLBACK
+INFO 2024-09-28 00:06:32 sqlalchemy.engine.Engine BEGIN (implicit)
+INFO 2024-09-28 00:06:32 sqlalchemy.engine.Engine SELECT categories.id AS category_id, categories.name AS category_name, subcategories.id AS subcategory_id, subcategories.name AS subcategory_name, blog.id AS id, blog.blog_id AS blog_id, blog.title AS blog_title, blog.content AS blog_content, blog.is_active AS is_active, blog.created_on AS created_on, blog.updated_on AS updated_on 
+FROM categories JOIN subcategories ON categories.id = subcategories.category_id JOIN blog ON subcategories.id = blog.subcategory_id 
+WHERE blog.id = $1::INTEGER
+INFO 2024-09-28 00:06:32 sqlalchemy.engine.Engine [cached since 817.3s ago] (76,)
+INFO 2024-09-28 00:06:32 root Successfully retrieved blog with ID 76.
+INFO 2024-09-28 00:06:32 root Blog details retrieved: string3fhjpdsdse'sdf
+INFO 2024-09-28 00:06:32 sqlalchemy.engine.Engine ROLLBACK
+INFO 2024-09-28 00:06:56 sqlalchemy.engine.Engine BEGIN (implicit)
+INFO 2024-09-28 00:06:56 sqlalchemy.engine.Engine SELECT categories.id AS category_id, categories.name AS category_name, subcategories.id AS subcategory_id, subcategories.name AS subcategory_name, blog.id AS id, blog.blog_id AS blog_id, blog.title AS blog_title, blog.content AS blog_content, blog.is_active AS is_active, blog.created_on AS created_on, blog.updated_on AS updated_on 
+FROM categories JOIN subcategories ON categories.id = subcategories.category_id JOIN blog ON subcategories.id = blog.subcategory_id 
+WHERE blog.id = $1::INTEGER
+INFO 2024-09-28 00:06:56 sqlalchemy.engine.Engine [cached since 841.5s ago] (77,)
+INFO 2024-09-28 00:06:56 root Blog with ID 77 is not active.
+ERROR 2024-09-28 00:06:56 root Failed to fetch Blog details: 'dict' object has no attribute 'category_id'
+INFO 2024-09-28 00:06:56 sqlalchemy.engine.Engine ROLLBACK
+ERROR 2024-09-28 00:06:56 root Unexpected error: 500: Failed to fetch Blog details
+Traceback (most recent call last):
+  File "D:\Projects\Fast_API\blog_app\backend\app\routers\blog.py", line 123, in get_blog_by_id_route
+    return blog_detail  # Return early if it's an inactive blog response
+                   ^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'dict' object has no attribute 'category_id'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Projects\Fast_API\blog_app\backend\app\core\database.py", line 21, in get_db
+    yield session
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\fastapi\routing.py", line 278, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\fastapi\routing.py", line 191, in run_endpoint_function
+    return await dependant.call(**values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\Fast_API\blog_app\backend\app\routers\blog.py", line 147, in get_blog_by_id_route
+    except HTTPException as http_exc:
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+fastapi.exceptions.HTTPException: 500: Failed to fetch Blog details
+INFO 2024-09-28 00:07:02 sqlalchemy.engine.Engine BEGIN (implicit)
+INFO 2024-09-28 00:07:02 sqlalchemy.engine.Engine SELECT categories.id AS category_id, categories.name AS category_name, subcategories.id AS subcategory_id, subcategories.name AS subcategory_name, blog.id AS id, blog.blog_id AS blog_id, blog.title AS blog_title, blog.content AS blog_content, blog.is_active AS is_active, blog.created_on AS created_on, blog.updated_on AS updated_on 
+FROM categories JOIN subcategories ON categories.id = subcategories.category_id JOIN blog ON subcategories.id = blog.subcategory_id 
+WHERE blog.id = $1::INTEGER
+INFO 2024-09-28 00:07:02 sqlalchemy.engine.Engine [cached since 847.6s ago] (76,)
+INFO 2024-09-28 00:07:02 root Successfully retrieved blog with ID 76.
+INFO 2024-09-28 00:07:02 root Blog details retrieved: string3fhjpdsdse'sdf
+INFO 2024-09-28 00:07:02 sqlalchemy.engine.Engine ROLLBACK
+INFO 2024-09-28 00:08:33 sqlalchemy.engine.Engine BEGIN (implicit)
+INFO 2024-09-28 00:08:33 sqlalchemy.engine.Engine SELECT categories.id AS category_id, categories.name AS category_name, subcategories.id AS subcategory_id, subcategories.name AS subcategory_name, blog.id AS id, blog.blog_id AS blog_id, blog.title AS blog_title, blog.content AS blog_content, blog.is_active AS is_active, blog.created_on AS created_on, blog.updated_on AS updated_on 
+FROM categories JOIN subcategories ON categories.id = subcategories.category_id JOIN blog ON subcategories.id = blog.subcategory_id 
+WHERE blog.id = $1::INTEGER
+INFO 2024-09-28 00:08:33 sqlalchemy.engine.Engine [cached since 938.6s ago] (76,)
+INFO 2024-09-28 00:08:33 root Successfully retrieved blog with ID 76.
+INFO 2024-09-28 00:08:33 root Blog details retrieved: string3fhjpdsdse'sdf
+INFO 2024-09-28 00:08:33 sqlalchemy.engine.Engine ROLLBACK
+INFO 2024-09-28 00:08:56 sqlalchemy.engine.Engine BEGIN (implicit)
+INFO 2024-09-28 00:08:56 sqlalchemy.engine.Engine SELECT categories.id AS category_id, categories.name AS category_name, subcategories.id AS subcategory_id, subcategories.name AS subcategory_name, blog.id AS id, blog.blog_id AS blog_id, blog.title AS blog_title, blog.content AS blog_content, blog.is_active AS is_active, blog.created_on AS created_on, blog.updated_on AS updated_on 
+FROM categories JOIN subcategories ON categories.id = subcategories.category_id JOIN blog ON subcategories.id = blog.subcategory_id 
+WHERE blog.id = $1::INTEGER
+INFO 2024-09-28 00:08:56 sqlalchemy.engine.Engine [cached since 961.2s ago] (76,)
+INFO 2024-09-28 00:08:56 root Successfully retrieved blog with ID 76.
+INFO 2024-09-28 00:08:56 root Blog details retrieved: string3fhjpdsdse'sdf
+INFO 2024-09-28 00:08:56 sqlalchemy.engine.Engine ROLLBACK
+INFO 2024-09-28 00:09:43 sqlalchemy.engine.Engine BEGIN (implicit)
+INFO 2024-09-28 00:09:43 sqlalchemy.engine.Engine SELECT categories.id AS category_id, categories.name AS category_name, subcategories.id AS subcategory_id, subcategories.name AS subcategory_name, blog.id AS id, blog.blog_id AS blog_id, blog.title AS blog_title, blog.content AS blog_content, blog.is_active AS is_active, blog.created_on AS created_on, blog.updated_on AS updated_on 
+FROM categories JOIN subcategories ON categories.id = subcategories.category_id JOIN blog ON subcategories.id = blog.subcategory_id 
+WHERE blog.id = $1::INTEGER
+INFO 2024-09-28 00:09:43 sqlalchemy.engine.Engine [cached since 1009s ago] (76,)
+INFO 2024-09-28 00:09:43 root Successfully retrieved blog with ID 76.
+INFO 2024-09-28 00:09:43 root Blog details retrieved: string3fhjpdsdse'sdf
+INFO 2024-09-28 00:09:43 sqlalchemy.engine.Engine ROLLBACK
+INFO 2024-09-28 00:11:10 sqlalchemy.engine.Engine BEGIN (implicit)
+INFO 2024-09-28 00:11:10 sqlalchemy.engine.Engine SELECT categories.id AS category_id, categories.name AS category_name, subcategories.id AS subcategory_id, subcategories.name AS subcategory_name, blog.id AS id, blog.blog_id AS blog_id, blog.title AS blog_title, blog.content AS blog_content, blog.is_active AS is_active, blog.created_on AS created_on, blog.updated_on AS updated_on 
+FROM categories JOIN subcategories ON categories.id = subcategories.category_id JOIN blog ON subcategories.id = blog.subcategory_id 
+WHERE blog.is_active = true ORDER BY blog.id DESC 
+ LIMIT $1::INTEGER OFFSET $2::INTEGER
+INFO 2024-09-28 00:11:10 sqlalchemy.engine.Engine [generated in 0.00133s] (10, 0)
+INFO 2024-09-28 00:11:10 sqlalchemy.engine.Engine SELECT count(blog.id) AS count_1 
+FROM categories JOIN subcategories ON categories.id = subcategories.category_id JOIN blog ON subcategories.id = blog.subcategory_id 
+WHERE blog.is_active = true
+INFO 2024-09-28 00:11:10 sqlalchemy.engine.Engine [generated in 0.00090s] ()
+INFO 2024-09-28 00:11:10 root Successfully retrieved all active Blog with details.
+INFO 2024-09-28 00:11:10 root Successfully retrieved all blog details.
+INFO 2024-09-28 00:11:10 sqlalchemy.engine.Engine ROLLBACK
+INFO 2024-09-28 00:14:00 sqlalchemy.engine.Engine BEGIN (implicit)
+INFO 2024-09-28 00:14:00 sqlalchemy.engine.Engine SELECT categories.id AS category_id, categories.name AS category_name, subcategories.id AS subcategory_id, subcategories.name AS subcategory_name, blog.id AS id, blog.blog_id AS blog_id, blog.title AS blog_title, blog.content AS blog_content, blog.is_active AS is_active, blog.created_on AS created_on, blog.updated_on AS updated_on 
+FROM categories JOIN subcategories ON categories.id = subcategories.category_id JOIN blog ON subcategories.id = blog.subcategory_id 
+WHERE blog.is_active = true ORDER BY blog.id DESC 
+ LIMIT $1::INTEGER OFFSET $2::INTEGER
+INFO 2024-09-28 00:14:00 sqlalchemy.engine.Engine [cached since 170.8s ago] (10, 0)
+INFO 2024-09-28 00:14:00 sqlalchemy.engine.Engine SELECT count(blog.id) AS count_1 
+FROM categories JOIN subcategories ON categories.id = subcategories.category_id JOIN blog ON subcategories.id = blog.subcategory_id 
+WHERE blog.is_active = true
+INFO 2024-09-28 00:14:00 sqlalchemy.engine.Engine [cached since 170.8s ago] ()
+INFO 2024-09-28 00:14:00 root Successfully retrieved all active Blog with details.
+INFO 2024-09-28 00:14:00 root Successfully retrieved all blog details.
+INFO 2024-09-28 00:14:00 sqlalchemy.engine.Engine ROLLBACK
+INFO 2024-09-28 00:14:56 sqlalchemy.engine.Engine BEGIN (implicit)
+INFO 2024-09-28 00:14:56 sqlalchemy.engine.Engine SELECT categories.id AS category_id, categories.name AS category_name, subcategories.id AS subcategory_id, subcategories.name AS subcategory_name, blog.id AS id, blog.blog_id AS blog_id, blog.title AS blog_title, blog.content AS blog_content, blog.is_active AS is_active, blog.created_on AS created_on, blog.updated_on AS updated_on 
+FROM categories JOIN subcategories ON categories.id = subcategories.category_id JOIN blog ON subcategories.id = blog.subcategory_id 
+WHERE blog.id = $1::INTEGER
+INFO 2024-09-28 00:14:56 sqlalchemy.engine.Engine [cached since 1322s ago] (55,)
+INFO 2024-09-28 00:14:56 root Successfully retrieved blog with ID 55.
+INFO 2024-09-28 00:14:56 root Blog details retrieved: eoirutorieutwoeiru
+INFO 2024-09-28 00:14:56 sqlalchemy.engine.Engine ROLLBACK
+INFO 2024-09-28 00:21:09 sqlalchemy.engine.Engine BEGIN (implicit)
+INFO 2024-09-28 00:21:09 sqlalchemy.engine.Engine SELECT categories.id AS category_id, categories.name AS category_name, subcategories.id AS subcategory_id, subcategories.name AS subcategory_name, blog.id AS id, blog.blog_id AS blog_id, blog.title AS blog_title, blog.content AS blog_content, blog.is_active AS is_active, blog.created_on AS created_on, blog.updated_on AS updated_on 
+FROM categories JOIN subcategories ON categories.id = subcategories.category_id JOIN blog ON subcategories.id = blog.subcategory_id 
+WHERE blog.id = $1::INTEGER
+INFO 2024-09-28 00:21:09 sqlalchemy.engine.Engine [cached since 1695s ago] (55,)
+INFO 2024-09-28 00:21:09 root Successfully retrieved blog with ID 55.
+INFO 2024-09-28 00:21:09 root Blog details retrieved: eoirutorieutwoeiru
+INFO 2024-09-28 00:21:09 sqlalchemy.engine.Engine ROLLBACK
+INFO 2024-09-28 00:21:24 sqlalchemy.engine.Engine BEGIN (implicit)
+INFO 2024-09-28 00:21:24 sqlalchemy.engine.Engine SELECT categories.id AS category_id, categories.name AS category_name, subcategories.id AS subcategory_id, subcategories.name AS subcategory_name, blog.id AS id, blog.blog_id AS blog_id, blog.title AS blog_title, blog.content AS blog_content, blog.is_active AS is_active, blog.created_on AS created_on, blog.updated_on AS updated_on 
+FROM categories JOIN subcategories ON categories.id = subcategories.category_id JOIN blog ON subcategories.id = blog.subcategory_id 
+WHERE blog.id = $1::INTEGER
+INFO 2024-09-28 00:21:24 sqlalchemy.engine.Engine [cached since 1710s ago] (55,)
+INFO 2024-09-28 00:21:24 root Successfully retrieved blog with ID 55.
+INFO 2024-09-28 00:21:24 root Blog details retrieved: eoirutorieutwoeiru
+INFO 2024-09-28 00:21:24 sqlalchemy.engine.Engine ROLLBACK
+INFO 2024-09-28 00:24:10 sqlalchemy.engine.Engine BEGIN (implicit)
+INFO 2024-09-28 00:24:10 sqlalchemy.engine.Engine SELECT categories.id AS category_id, categories.name AS category_name, subcategories.id AS subcategory_id, subcategories.name AS subcategory_name, blog.id AS id, blog.blog_id AS blog_id, blog.title AS blog_title, blog.content AS blog_content, blog.is_active AS is_active, blog.created_on AS created_on, blog.updated_on AS updated_on 
+FROM categories JOIN subcategories ON categories.id = subcategories.category_id JOIN blog ON subcategories.id = blog.subcategory_id 
+WHERE blog.id = $1::INTEGER
+INFO 2024-09-28 00:24:10 sqlalchemy.engine.Engine [cached since 1875s ago] (76,)
+INFO 2024-09-28 00:24:10 root Successfully retrieved blog with ID 76.
+INFO 2024-09-28 00:24:10 root Blog details retrieved: string3fhjpdsdse'sdf
+INFO 2024-09-28 00:24:10 sqlalchemy.engine.Engine ROLLBACK
+INFO 2024-09-28 00:24:18 root Shutting down application...
+INFO 2024-09-28 00:24:22 root Application startup application...
+INFO 2024-09-28 08:18:51 root Application startup application...
+INFO 2024-09-28 08:20:41 root Shutting down application...
+INFO 2024-09-28 09:28:06 root Application startup application...
+INFO 2024-09-28 09:28:52 sqlalchemy.engine.Engine select pg_catalog.version()
+INFO 2024-09-28 09:28:52 sqlalchemy.engine.Engine [raw sql] ()
+INFO 2024-09-28 09:28:52 sqlalchemy.engine.Engine select current_schema()
+INFO 2024-09-28 09:28:52 sqlalchemy.engine.Engine [raw sql] ()
+INFO 2024-09-28 09:28:52 sqlalchemy.engine.Engine show standard_conforming_strings
+INFO 2024-09-28 09:28:52 sqlalchemy.engine.Engine [raw sql] ()
+INFO 2024-09-28 09:28:52 sqlalchemy.engine.Engine BEGIN (implicit)
+INFO 2024-09-28 09:28:52 sqlalchemy.engine.Engine SELECT categories.id AS category_id, categories.name AS category_name, subcategories.id AS subcategory_id, subcategories.name AS subcategory_name, blog.id AS id, blog.blog_id AS blog_id, blog.title AS blog_title, blog.content AS blog_content, blog.image AS blog_image, blog.is_active AS is_active, blog.created_on AS created_on, blog.updated_on AS updated_on 
+FROM categories JOIN subcategories ON categories.id = subcategories.category_id JOIN blog ON subcategories.id = blog.subcategory_id 
+WHERE blog.is_active = true ORDER BY blog.id DESC 
+ LIMIT $1::INTEGER OFFSET $2::INTEGER
+INFO 2024-09-28 09:28:52 sqlalchemy.engine.Engine [generated in 0.00506s] (10, 0)
+INFO 2024-09-28 09:28:53 sqlalchemy.engine.Engine SELECT count(blog.id) AS count_1 
+FROM categories JOIN subcategories ON categories.id = subcategories.category_id JOIN blog ON subcategories.id = blog.subcategory_id 
+WHERE blog.is_active = true
+INFO 2024-09-28 09:28:53 sqlalchemy.engine.Engine [generated in 0.00338s] ()
+INFO 2024-09-28 09:28:53 root Successfully retrieved all active Blog with details.
+INFO 2024-09-28 09:28:53 root Successfully retrieved all blog details.
+INFO 2024-09-28 09:28:53 sqlalchemy.engine.Engine ROLLBACK
+INFO 2024-09-28 09:30:03 root Shutting down application...
+INFO 2024-09-28 09:30:09 root Application startup application...
+INFO 2024-09-28 09:30:09 sqlalchemy.engine.Engine select pg_catalog.version()
+INFO 2024-09-28 09:30:09 sqlalchemy.engine.Engine [raw sql] ()
+INFO 2024-09-28 09:30:09 sqlalchemy.engine.Engine select current_schema()
+INFO 2024-09-28 09:30:09 sqlalchemy.engine.Engine [raw sql] ()
+INFO 2024-09-28 09:30:09 sqlalchemy.engine.Engine show standard_conforming_strings
+INFO 2024-09-28 09:30:09 sqlalchemy.engine.Engine [raw sql] ()
+INFO 2024-09-28 09:30:09 sqlalchemy.engine.Engine BEGIN (implicit)
+INFO 2024-09-28 09:30:09 sqlalchemy.engine.Engine SELECT categories.id AS category_id, categories.name AS category_name, subcategories.id AS subcategory_id, subcategories.name AS subcategory_name, blog.id AS id, blog.blog_id AS blog_id, blog.title AS blog_title, blog.content AS blog_content, blog.image AS blog_image, blog.is_active AS is_active, blog.created_on AS created_on, blog.updated_on AS updated_on 
+FROM categories JOIN subcategories ON categories.id = subcategories.category_id JOIN blog ON subcategories.id = blog.subcategory_id 
+WHERE blog.is_active = true ORDER BY blog.id DESC 
+ LIMIT $1::INTEGER OFFSET $2::INTEGER
+INFO 2024-09-28 09:30:09 sqlalchemy.engine.Engine [generated in 0.00215s] (10, 0)
+INFO 2024-09-28 09:30:09 sqlalchemy.engine.Engine SELECT count(blog.id) AS count_1 
+FROM categories JOIN subcategories ON categories.id = subcategories.category_id JOIN blog ON subcategories.id = blog.subcategory_id 
+WHERE blog.is_active = true
+INFO 2024-09-28 09:30:09 sqlalchemy.engine.Engine [generated in 0.00174s] ()
+INFO 2024-09-28 09:30:09 root Successfully retrieved all active Blog with details.
+INFO 2024-09-28 09:30:09 root Successfully retrieved all blog details.
+INFO 2024-09-28 09:30:09 sqlalchemy.engine.Engine ROLLBACK
+INFO 2024-09-28 09:30:14 root Shutting down application...
+INFO 2024-09-28 09:30:18 root Application startup application...
+INFO 2024-09-28 09:36:34 root Shutting down application...
+INFO 2024-09-28 09:36:38 root Application startup application...
+INFO 2024-09-28 09:36:41 sqlalchemy.engine.Engine select pg_catalog.version()
+INFO 2024-09-28 09:36:41 sqlalchemy.engine.Engine [raw sql] ()
+INFO 2024-09-28 09:36:41 sqlalchemy.engine.Engine select current_schema()
+INFO 2024-09-28 09:36:41 sqlalchemy.engine.Engine [raw sql] ()
+INFO 2024-09-28 09:36:41 sqlalchemy.engine.Engine show standard_conforming_strings
+INFO 2024-09-28 09:36:41 sqlalchemy.engine.Engine [raw sql] ()
+INFO 2024-09-28 09:36:41 sqlalchemy.engine.Engine BEGIN (implicit)
+INFO 2024-09-28 09:36:41 sqlalchemy.engine.Engine SELECT categories.id AS category_id, categories.name AS category_name, subcategories.id AS subcategory_id, subcategories.name AS subcategory_name, blog.id AS id, blog.blog_id AS blog_id, blog.title AS blog_title, blog.content AS blog_content, blog.image AS blog_image, blog.is_active AS is_active, blog.created_on AS created_on, blog.updated_on AS updated_on 
+FROM categories JOIN subcategories ON categories.id = subcategories.category_id JOIN blog ON subcategories.id = blog.subcategory_id 
+WHERE blog.is_active = true ORDER BY blog.id DESC 
+ LIMIT $1::INTEGER OFFSET $2::INTEGER
+INFO 2024-09-28 09:36:41 sqlalchemy.engine.Engine [generated in 0.00331s] (10, 0)
+INFO 2024-09-28 09:36:41 sqlalchemy.engine.Engine SELECT count(blog.id) AS count_1 
+FROM categories JOIN subcategories ON categories.id = subcategories.category_id JOIN blog ON subcategories.id = blog.subcategory_id 
+WHERE blog.is_active = true
+INFO 2024-09-28 09:36:41 sqlalchemy.engine.Engine [generated in 0.00175s] ()
+INFO 2024-09-28 09:36:41 root Successfully retrieved all active Blog with details.
+INFO 2024-09-28 09:36:41 root Successfully retrieved all blog details.
+INFO 2024-09-28 09:36:41 sqlalchemy.engine.Engine ROLLBACK
+INFO 2024-09-28 09:52:05 root Shutting down application...
+INFO 2024-09-28 09:52:08 root Application startup application...
+INFO 2024-09-28 09:52:34 root Shutting down application...
+INFO 2024-09-28 09:52:36 root Application startup application...
+INFO 2024-09-28 09:52:48 sqlalchemy.engine.Engine select pg_catalog.version()
+INFO 2024-09-28 09:52:48 sqlalchemy.engine.Engine [raw sql] ()
+INFO 2024-09-28 09:52:48 sqlalchemy.engine.Engine select current_schema()
+INFO 2024-09-28 09:52:48 sqlalchemy.engine.Engine [raw sql] ()
+INFO 2024-09-28 09:52:48 sqlalchemy.engine.Engine show standard_conforming_strings
+INFO 2024-09-28 09:52:48 sqlalchemy.engine.Engine [raw sql] ()
+INFO 2024-09-28 09:52:48 sqlalchemy.engine.Engine BEGIN (implicit)
+INFO 2024-09-28 09:52:48 sqlalchemy.engine.Engine SELECT categories.id AS category_id, categories.name AS category_name, subcategories.id AS subcategory_id, subcategories.name AS subcategory_name, blog.id AS id, blog.blog_id AS blog_id, blog.title AS blog_title, blog.content AS blog_content, blog.image AS blog_image, blog.is_active AS is_active, blog.created_on AS created_on, blog.updated_on AS updated_on 
+FROM categories JOIN subcategories ON categories.id = subcategories.category_id JOIN blog ON subcategories.id = blog.subcategory_id 
+WHERE blog.is_active = true ORDER BY blog.id DESC 
+ LIMIT $1::INTEGER OFFSET $2::INTEGER
+INFO 2024-09-28 09:52:48 sqlalchemy.engine.Engine [generated in 0.00112s] (10, 0)
+INFO 2024-09-28 09:52:48 sqlalchemy.engine.Engine SELECT count(blog.id) AS count_1 
+FROM categories JOIN subcategories ON categories.id = subcategories.category_id JOIN blog ON subcategories.id = blog.subcategory_id 
+WHERE blog.is_active = true
+INFO 2024-09-28 09:52:48 sqlalchemy.engine.Engine [generated in 0.00159s] ()
+INFO 2024-09-28 09:52:48 root Successfully retrieved all active blogs with details.
+INFO 2024-09-28 09:52:48 root Successfully retrieved all blog details.
+INFO 2024-09-28 09:52:48 sqlalchemy.engine.Engine ROLLBACK
+INFO 2024-09-28 09:54:01 sqlalchemy.engine.Engine BEGIN (implicit)
+INFO 2024-09-28 09:54:01 sqlalchemy.engine.Engine SELECT categories.id AS category_id, categories.name AS category_name, subcategories.id AS subcategory_id, subcategories.name AS subcategory_name, blog.id AS id, blog.blog_id AS blog_id, blog.title AS blog_title, blog.content AS blog_content, blog.image AS blog_image, blog.is_active AS is_active, blog.created_on AS created_on, blog.updated_on AS updated_on 
+FROM categories JOIN subcategories ON categories.id = subcategories.category_id JOIN blog ON subcategories.id = blog.subcategory_id 
+WHERE blog.id = $1::INTEGER
+INFO 2024-09-28 09:54:01 sqlalchemy.engine.Engine [generated in 0.00094s] (76,)
+INFO 2024-09-28 09:54:01 root Successfully retrieved blog with ID 76.
+INFO 2024-09-28 09:54:01 root Blog details retrieved: string3fhjpdsdse'sdf
+INFO 2024-09-28 09:54:01 sqlalchemy.engine.Engine ROLLBACK
+INFO 2024-09-28 09:54:20 sqlalchemy.engine.Engine BEGIN (implicit)
+INFO 2024-09-28 09:54:20 sqlalchemy.engine.Engine SELECT categories.id AS category_id, categories.name AS category_name, subcategories.id AS subcategory_id, subcategories.name AS subcategory_name, blog.id AS id, blog.blog_id AS blog_id, blog.title AS blog_title, blog.content AS blog_content, blog.image AS blog_image, blog.is_active AS is_active, blog.created_on AS created_on, blog.updated_on AS updated_on 
+FROM categories JOIN subcategories ON categories.id = subcategories.category_id JOIN blog ON subcategories.id = blog.subcategory_id 
+WHERE blog.id = $1::INTEGER
+INFO 2024-09-28 09:54:20 sqlalchemy.engine.Engine [cached since 19.67s ago] (77,)
+INFO 2024-09-28 09:54:20 root Blog with ID 77 is not active.
+INFO 2024-09-28 09:54:20 sqlalchemy.engine.Engine ROLLBACK
+INFO 2024-09-28 09:55:57 root Shutting down application...
+INFO 2024-09-28 09:55:59 root Application startup application...
+INFO 2024-09-28 09:56:16 root Shutting down application...
+INFO 2024-09-28 09:56:19 root Application startup application...
+INFO 2024-09-28 09:56:19 root Shutting down application...
+INFO 2024-09-28 09:56:21 root Application startup application...
+INFO 2024-09-28 09:56:30 sqlalchemy.engine.Engine select pg_catalog.version()
+INFO 2024-09-28 09:56:30 sqlalchemy.engine.Engine [raw sql] ()
+INFO 2024-09-28 09:56:30 sqlalchemy.engine.Engine select current_schema()
+INFO 2024-09-28 09:56:30 sqlalchemy.engine.Engine [raw sql] ()
+INFO 2024-09-28 09:56:30 sqlalchemy.engine.Engine show standard_conforming_strings
+INFO 2024-09-28 09:56:30 sqlalchemy.engine.Engine [raw sql] ()
+INFO 2024-09-28 09:56:30 sqlalchemy.engine.Engine BEGIN (implicit)
+INFO 2024-09-28 09:56:30 sqlalchemy.engine.Engine SELECT categories.id AS category_id, categories.name AS category_name, subcategories.id AS subcategory_id, subcategories.name AS subcategory_name, blog.id AS id, blog.blog_id AS blog_id, blog.title AS blog_title, blog.content AS blog_content, blog.image AS blog_image, blog.is_active AS is_active, blog.created_on AS created_on, blog.updated_on AS updated_on 
+FROM categories JOIN subcategories ON categories.id = subcategories.category_id JOIN blog ON subcategories.id = blog.subcategory_id 
+WHERE blog.is_active = true ORDER BY blog.id DESC 
+ LIMIT $1::INTEGER OFFSET $2::INTEGER
+INFO 2024-09-28 09:56:30 sqlalchemy.engine.Engine [generated in 0.00183s] (10, 0)
+INFO 2024-09-28 09:56:30 sqlalchemy.engine.Engine SELECT count(blog.id) AS count_1 
+FROM categories JOIN subcategories ON categories.id = subcategories.category_id JOIN blog ON subcategories.id = blog.subcategory_id 
+WHERE blog.is_active = true
+INFO 2024-09-28 09:56:30 sqlalchemy.engine.Engine [generated in 0.00107s] ()
+INFO 2024-09-28 09:56:30 root Successfully retrieved all active blogs with details.
+INFO 2024-09-28 09:56:30 root Successfully retrieved all blog details.
+INFO 2024-09-28 09:56:30 sqlalchemy.engine.Engine ROLLBACK
+INFO 2024-09-28 09:58:41 root Shutting down application...
+INFO 2024-09-28 09:58:44 root Application startup application...
+INFO 2024-09-28 09:58:50 root Shutting down application...

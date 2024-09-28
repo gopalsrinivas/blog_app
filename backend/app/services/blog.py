@@ -40,8 +40,7 @@ async def create_blog(db: AsyncSession, blog_data: dict, image_path: str = None)
             logging.warning(
                 f"Category ID {blog_data['category_id']} not found")
             raise HTTPException(
-                status_code=400, detail="Category ID not found"
-            )
+                status_code=400, detail="Category ID not found")
 
         # Validate Subcategory ID
         subcategory_exists = await db.scalar(select(func.count()).select_from(Subcategory).where(Subcategory.id == blog_data["subcategory_id"]))
@@ -49,8 +48,7 @@ async def create_blog(db: AsyncSession, blog_data: dict, image_path: str = None)
             logging.warning(f"Subcategory ID {
                             blog_data['subcategory_id']} not found")
             raise HTTPException(
-                status_code=400, detail="Subcategory ID not found"
-            )
+                status_code=400, detail="Subcategory ID not found")
 
         # Check if the blog title already exists
         title_exists = await db.scalar(select(func.count()).select_from(Blog).where(Blog.title == blog_data["title"]))
@@ -58,8 +56,7 @@ async def create_blog(db: AsyncSession, blog_data: dict, image_path: str = None)
             logging.warning(
                 f"Blog title '{blog_data['title']}' already exists")
             raise HTTPException(
-                status_code=400, detail="Blog title already exists"
-            )
+                status_code=400, detail="Blog title already exists")
 
         # Generate a unique blog ID
         new_blog_id = await generate_blog_id(db)
@@ -71,7 +68,7 @@ async def create_blog(db: AsyncSession, blog_data: dict, image_path: str = None)
             category_id=blog_data["category_id"],
             subcategory_id=blog_data["subcategory_id"],
             content=blog_data["content"],
-            image=image_path,
+            image=image_path,  # Use this variable for image
             is_active=blog_data["is_active"],
             created_on=datetime.now(),
             updated_on=None
@@ -91,19 +88,17 @@ async def create_blog(db: AsyncSession, blog_data: dict, image_path: str = None)
         await db.rollback()  # Rollback in case of IntegrityError
         logging.error(f"IntegrityError occurred: {str(e)}")
         raise HTTPException(
-            status_code=500, detail=f"IntegrityError: {str(e)}"
-        )
+            status_code=500, detail=f"IntegrityError: {str(e)}")
 
     except Exception as exc:
         await db.rollback()  # Rollback in case of general Exception
         logging.error(f"Unexpected error occurred: {str(exc)}", exc_info=True)
         raise HTTPException(
-            status_code=500, detail=f"An unexpected error occurred: {str(exc)}"
-        )
+            status_code=500, detail=f"An unexpected error occurred: {str(exc)}")
 
     finally:
-        await db.close()  # Ensure the session is closed
-
+        await db.close()
+        
 
 async def get_all_blog_detail(db: AsyncSession, skip: int = 0, limit: int = 10):
     try:
@@ -118,6 +113,7 @@ async def get_all_blog_detail(db: AsyncSession, skip: int = 0, limit: int = 10):
                 Blog.blog_id.label("blog_id"),
                 Blog.title.label("blog_title"),
                 Blog.content.label("blog_content"),
+                Blog.image.label("blog_image"),
                 Blog.is_active.label("is_active"),
                 Blog.created_on.label("created_on"),
                 Blog.updated_on.label("updated_on")
@@ -148,14 +144,14 @@ async def get_all_blog_detail(db: AsyncSession, skip: int = 0, limit: int = 10):
         )
         total_count = total_count_result.scalar()
 
-        logging.info("Successfully retrieved all active Blog with details.")
+        logging.info("Successfully retrieved all active blogs with details.")
         return blog_details, total_count
 
     except Exception as e:
-        logging.error(f"Failed to fetch Blog details: {str(e)}", exc_info=True)
+        logging.error(f"Failed to fetch blog details: {str(e)}", exc_info=True)
         raise HTTPException(
-            status_code=500, detail="Failed to fetch Blog details")
-
+            status_code=500, detail="Failed to fetch blog details"
+        )
 
 async def get_blog_detail_by_id(db: AsyncSession, blog_detail_id: int):
     try:
@@ -170,6 +166,7 @@ async def get_blog_detail_by_id(db: AsyncSession, blog_detail_id: int):
                 Blog.blog_id.label("blog_id"),
                 Blog.title.label("blog_title"),
                 Blog.content.label("blog_content"),
+                Blog.image.label("blog_image"),
                 Blog.is_active.label("is_active"),
                 Blog.created_on.label("created_on"),
                 Blog.updated_on.label("updated_on")
@@ -179,19 +176,30 @@ async def get_blog_detail_by_id(db: AsyncSession, blog_detail_id: int):
                      Subcategory.category_id)
                 .join(Blog, Subcategory.id == Blog.subcategory_id)
             )
-            # Use SQLAlchemy and_ for logical AND
-            .where(and_(Blog.is_active == True, Blog.id == blog_detail_id))
+            .where(Blog.id == blog_detail_id)
         )
 
-        blog_detail = result.scalars().first()
+        blog_detail = result.fetchone()  # Use fetchone() instead of scalars()
 
         if not blog_detail:
             logging.warning(f"Blog with ID {blog_detail_id} not found.")
             raise HTTPException(status_code=404, detail=f"Blog with ID {
                                 blog_detail_id} not found")
 
+        # Check if the blog is active
+        if not blog_detail.is_active:
+            logging.info(f"Blog with ID {blog_detail_id} is not active.")
+            return {
+                "status_code": 200,
+                "message": "Blog is not active",
+                "data": {
+                    "is_active": blog_detail.is_active,
+                    "blog_title": blog_detail.blog_title
+                }
+            }
+
         logging.info(f"Successfully retrieved blog with ID {blog_detail_id}.")
-        return blog_detail
+        return blog_detail  # This will return a Row object
 
     except Exception as e:
         logging.error(f"Error retrieving blog detail with ID {

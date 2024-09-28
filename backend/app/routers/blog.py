@@ -14,7 +14,8 @@ from app.core.config import MEDIA_DIR
 
 router = APIRouter()
 
-@router.post("/create_blog", response_model=BlogResponseModel)
+
+@router.post("/create_blog", response_model=BlogResponseModel, summary="Create new Blog")
 async def create_blog_api(
     category_id: Optional[int] = Form(None),
     subcategory_id: Optional[int] = Form(None),
@@ -25,18 +26,28 @@ async def create_blog_api(
     db: AsyncSession = Depends(get_db),
 ):
     try:
-        # Save image if provided
+        # Generate a unique blog ID
+        new_blog_id = await generate_blog_id(db)
+
+        # Prepare the image path if an image is provided
         image_path = None
         if image:
-            image_id = str(uuid.uuid4())
             image_extension = image.filename.split(".")[-1]
-            image_filename = f"{image_id}.{image_extension}"
+            # Get the original filename without extension
+            original_filename = os.path.splitext(image.filename)[0]
+            image_filename = f"{new_blog_id}_{original_filename}.{
+                image_extension}"  # Format: (blogid)originalfilename.ext
             image_path = os.path.join(MEDIA_DIR, image_filename)
+
+            # Create the media directory if it doesn't exist
             os.makedirs(MEDIA_DIR, exist_ok=True)
             with open(image_path, "wb") as buffer:
                 shutil.copyfileobj(image.file, buffer)
 
-        # Create the blog
+            # Log the image path being saved
+            logging.info(f"Image path being saved: {image_path}")
+
+        # Create the blog entry with the generated blog ID
         new_blog = await create_blog(db, {
             "category_id": category_id,
             "subcategory_id": subcategory_id,
@@ -62,7 +73,7 @@ async def create_blog_api(
         )
 
 
-@router.get("/all/", response_model=dict, summary="List of Blog_details")
+@router.get("/all/", response_model=dict, summary="List of Blog Details")
 async def get_blog_details(
     skip: int = Query(0, ge=0),
     limit: int = Query(10, gt=0),
@@ -70,6 +81,10 @@ async def get_blog_details(
 ):
     try:
         blog_details, total_count = await get_all_blog_detail(db, skip=skip, limit=limit)
+
+        # # Handle images properly: Convert paths to URLs
+        # # Replace with your actual media server or base URL
+        # base_url = MEDIA_DIR
 
         # Flatten the result into a list of dictionaries
         data = [
@@ -82,11 +97,13 @@ async def get_blog_details(
                 "blog_id": blog_id,
                 "blog_title": blog_title,
                 "blog_content": blog_content,
+                # Generate the image URL if image exists
+                "blog_image": f"{blog_image}" if blog_image else None,
                 "is_active": is_active,
                 "created_on": created_on,
                 "updated_on": updated_on
             }
-            for category_id, category_name, subcategory_id, subcategory_name, id, blog_id, blog_title, blog_content, is_active, created_on, updated_on in blog_details
+            for category_id, category_name, subcategory_id, subcategory_name, id, blog_id, blog_title, blog_content, blog_image, is_active, created_on, updated_on in blog_details
         ]
 
         logging.info("Successfully retrieved all blog details.")
@@ -99,39 +116,54 @@ async def get_blog_details(
     except Exception as e:
         logging.error(f"Failed to fetch blog details: {str(e)}")
         raise HTTPException(
-            status_code=500, detail="Failed to fetch blog details")
-
+            status_code=500, detail="Failed to fetch blog details"
+        )
 
 @router.get("/{blog_detail_id}", response_model=dict, summary="Retrieve a Blog by ID")
 async def get_blog_by_id_route(blog_detail_id: int, db: AsyncSession = Depends(get_db)):
     try:
         blog_detail = await get_blog_detail_by_id(db, blog_detail_id)
 
-        # Manually construct response data as blog_detail is a Row object
-        data = {
-            "category_id": blog_detail.category_id,
-            "category_name": blog_detail.category_name,
-            "subcategory_id": blog_detail.subcategory_id,
-            "subcategory_name": blog_detail.subcategory_name,
-            "id": blog_detail.id,
-            "blog_id": blog_detail.blog_id,
-            "blog_title": blog_detail.blog_title,
-            "blog_content": blog_detail.blog_content,
-            "is_active": blog_detail.is_active,
-            "created_on": blog_detail.created_on,
-            "updated_on": blog_detail.updated_on
-        }
+        # Check if blog_detail is a dictionary and contains "status_code"
+        if isinstance(blog_detail, dict) and "status_code" in blog_detail:
+            return blog_detail  # Return early if it's an inactive blog response
 
-        logging.info(f"Blog details retrieved: {blog_detail.blog_title}")
-        return {
-            "status_code": 200,
-            "message": "Blog detail retrieved successfully",
-            "data": data
-        }
+        # If blog_detail is a Row object, manually construct response data
+        if blog_detail:
+            data = {
+                "category_id": blog_detail.category_id,
+                "category_name": blog_detail.category_name,
+                "subcategory_id": blog_detail.subcategory_id,
+                "subcategory_name": blog_detail.subcategory_name,
+                "id": blog_detail.id,
+                "blog_id": blog_detail.blog_id,
+                "blog_title": blog_detail.blog_title,
+                "blog_content": blog_detail.blog_content,
+                "blog_image": blog_detail.blog_image,  # Include the image
+                "is_active": blog_detail.is_active,
+                "created_on": blog_detail.created_on,
+                "updated_on": blog_detail.updated_on
+            }
+
+            logging.info(f"Blog details retrieved: {blog_detail.blog_title}")
+            return {
+                "status_code": 200,
+                "message": "Blog detail retrieved successfully",
+                "data": data
+            }
+        else:
+            logging.warning(f"Blog with ID {blog_detail_id} not found.")
+            raise HTTPException(status_code=404, detail=f"Blog with ID {
+                                blog_detail_id} not found")
+
+    except HTTPException as http_exc:
+        logging.error(f"HTTP error occurred: {str(http_exc.detail)}")
+        raise http_exc  # Reraise the HTTPException for FastAPI to handle
     except Exception as e:
         logging.error(f"Failed to fetch Blog details: {str(e)}")
         raise HTTPException(
-            status_code=500, detail="Failed to fetch Blog details")
+            status_code=500, detail="Failed to fetch Blog details"
+        )
 
 
 @router.put("/{blog_detail_id}", response_model=BlogResponseModel, summary="Update a Blog by ID")
