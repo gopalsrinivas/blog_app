@@ -1,3 +1,5 @@
+from fastapi.staticfiles import StaticFiles
+from app.core.config import settings, MEDIA_DIR
 import os
 import logging
 from alembic import command
@@ -7,7 +9,6 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 import uvicorn
 from sqlalchemy import text
-from app.core.config import settings
 from app.routers.categories import router
 from app.models.categories import *
 from app.core.logging import logging
@@ -16,6 +17,8 @@ from app.routers import categories,subcategories,blog
 
 app = FastAPI(title="FastAPI Blog Application", docs_url="/api_v1/docs", redoc_url="/api_v1/redoc")
 
+# Mount media files directory
+app.mount("/media", StaticFiles(directory=MEDIA_DIR), name="media")
 
 app.include_router(categories.router, prefix="/api/categories", tags=["categories"])
 app.include_router(subcategories.router, prefix="/api/subcategories", tags=["Subcategories"])
@@ -38,8 +41,6 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
-
-
 
 
 if __name__ == "__main__":

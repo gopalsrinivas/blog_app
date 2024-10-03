@@ -1,6 +1,6 @@
 from sqlalchemy import Column, String, Boolean, DateTime, Integer, Text, func, ForeignKey
 from app.core.database import Base
-
+from sqlalchemy.orm import relationship
 
 class Blog(Base):
     __tablename__ = 'blog'
@@ -16,6 +16,9 @@ class Blog(Base):
     is_active = Column(Boolean, default=True)
     created_on = Column(DateTime, default=func.now(), nullable=False)
     updated_on = Column(DateTime, onupdate=func.now())
+    
+    # Relationship with Subcategory
+    subcategory = relationship("Subcategory", back_populates="blogs")
 
     def __repr__(self):
         return f"<Blog {self.title} (ID: {self.blog_id}) created on {self.created_on}>"

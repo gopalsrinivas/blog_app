@@ -1,5 +1,6 @@
 from sqlalchemy import Column, Integer, String, Boolean, DateTime
 from sqlalchemy.sql import func
+from sqlalchemy.orm import relationship
 from app.core.database import Base
 
 
@@ -13,5 +14,8 @@ class Category(Base):
     created_on = Column(DateTime, default=func.now(), nullable=False)
     updated_on = Column(DateTime, onupdate=func.now())
 
+
+    subcategories = relationship("Subcategory", back_populates="category")
+    
     def __repr__(self):
         return f"<Category {self.name} (ID: {self.cat_id}) created on {self.created_on}>"
