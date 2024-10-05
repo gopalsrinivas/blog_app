@@ -1,9 +1,9 @@
-from dotenv import load_dotenv
-import os
 from pydantic_settings import BaseSettings
+from dotenv import load_dotenv
 from pathlib import Path
 from typing import List
 import json
+import os
 
 # Load Media files
 MEDIA_DIR = Path(__file__).resolve().parent.parent.parent / 'media'
@@ -20,6 +20,13 @@ class Settings(BaseSettings):
     ALLOWED_HOSTS: List[str]
     CORS_ORIGINS: List[str]
     ENVIRONMENT: str
+    # Email settings
+    EMAIL_HOST: str
+    EMAIL_PORT: int
+    EMAIL_USE_TLS: bool
+    EMAIL_HOST_USER: str
+    EMAIL_HOST_PASSWORD: str
+    MAIN_FROM_NAME: str
 
     class Config:
         env_file = ".env"

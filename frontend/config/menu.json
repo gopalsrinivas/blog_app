@@ -8,22 +8,19 @@
       "name": "About",
       "url": "/about"
     },
+
     {
-      "name": "Contact",
-      "url": "/contact"
-    },
-    {
-      "name": "Pages",
+      "name": "Services",
       "url": "",
       "hasChildren": true,
       "children": [
         {
-          "name": "Authors",
-          "url": "/authors"
-        },
-        {
           "name": "Categories",
           "url": "/categories"
+        },
+        {
+          "name": "Authors",
+          "url": "/authors"
         },
         {
           "name": "Tags",
@@ -38,6 +35,10 @@
           "url": "/privacy-policy"
         }
       ]
+    },
+    {
+      "name": "Contact",
+      "url": "/contact"
     }
   ],
   "footer": [

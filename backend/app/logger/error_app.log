@@ -18527,3 +18527,248 @@ Traceback (most recent call last):
   File "D:\Projects\Fast_API\blog_app\backend\app\routers\blog.py", line 274, in get_blogdetail_for_subcategory
     raise HTTPException(
 fastapi.exceptions.HTTPException: 404: No blog details found for this subcategory.
+ERROR 2024-10-03 18:10:35 root HTTPException: No blog details found for this subcategory. (Subcategory ID: 16)
+ERROR 2024-10-03 18:10:35 root Unexpected error: 404: No blog details found for this subcategory.
+Traceback (most recent call last):
+  File "D:\Projects\Fast_API\blog_app\backend\app\core\database.py", line 21, in get_db
+    yield session
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\fastapi\routing.py", line 278, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\fastapi\routing.py", line 191, in run_endpoint_function
+    return await dependant.call(**values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\Fast_API\blog_app\backend\app\routers\blog.py", line 310, in get_blogdetail_for_subcategory
+    raise e
+  File "D:\Projects\Fast_API\blog_app\backend\app\routers\blog.py", line 274, in get_blogdetail_for_subcategory
+    raise HTTPException(
+fastapi.exceptions.HTTPException: 404: No blog details found for this subcategory.
+ERROR 2024-10-03 18:10:35 root HTTPException: No blog details found for this subcategory. (Subcategory ID: 16)
+ERROR 2024-10-03 18:10:35 root Unexpected error: 404: No blog details found for this subcategory.
+Traceback (most recent call last):
+  File "D:\Projects\Fast_API\blog_app\backend\app\core\database.py", line 21, in get_db
+    yield session
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\fastapi\routing.py", line 278, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\fastapi\routing.py", line 191, in run_endpoint_function
+    return await dependant.call(**values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\Fast_API\blog_app\backend\app\routers\blog.py", line 310, in get_blogdetail_for_subcategory
+    raise e
+  File "D:\Projects\Fast_API\blog_app\backend\app\routers\blog.py", line 274, in get_blogdetail_for_subcategory
+    raise HTTPException(
+fastapi.exceptions.HTTPException: 404: No blog details found for this subcategory.
+ERROR 2024-10-03 18:13:20 root HTTPException: No blog details found for this subcategory. (Subcategory ID: 16)
+ERROR 2024-10-03 18:13:20 root Unexpected error: 404: No blog details found for this subcategory.
+Traceback (most recent call last):
+  File "D:\Projects\Fast_API\blog_app\backend\app\core\database.py", line 21, in get_db
+    yield session
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\fastapi\routing.py", line 278, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\fastapi\routing.py", line 191, in run_endpoint_function
+    return await dependant.call(**values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\Fast_API\blog_app\backend\app\routers\blog.py", line 310, in get_blogdetail_for_subcategory
+    raise e
+  File "D:\Projects\Fast_API\blog_app\backend\app\routers\blog.py", line 274, in get_blogdetail_for_subcategory
+    raise HTTPException(
+fastapi.exceptions.HTTPException: 404: No blog details found for this subcategory.
+ERROR 2024-10-03 18:13:46 root HTTPException: No blog details found for this subcategory. (Subcategory ID: 16)
+ERROR 2024-10-03 18:13:46 root Unexpected error: 404: No blog details found for this subcategory.
+Traceback (most recent call last):
+  File "D:\Projects\Fast_API\blog_app\backend\app\core\database.py", line 21, in get_db
+    yield session
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\fastapi\routing.py", line 278, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\fastapi\routing.py", line 191, in run_endpoint_function
+    return await dependant.call(**values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\Fast_API\blog_app\backend\app\routers\blog.py", line 310, in get_blogdetail_for_subcategory
+    raise e
+  File "D:\Projects\Fast_API\blog_app\backend\app\routers\blog.py", line 274, in get_blogdetail_for_subcategory
+    raise HTTPException(
+fastapi.exceptions.HTTPException: 404: No blog details found for this subcategory.
+ERROR 2024-10-03 18:13:46 root HTTPException: No blog details found for this subcategory. (Subcategory ID: 16)
+ERROR 2024-10-03 18:13:46 root Unexpected error: 404: No blog details found for this subcategory.
+Traceback (most recent call last):
+  File "D:\Projects\Fast_API\blog_app\backend\app\core\database.py", line 21, in get_db
+    yield session
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\fastapi\routing.py", line 278, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\fastapi\routing.py", line 191, in run_endpoint_function
+    return await dependant.call(**values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\Fast_API\blog_app\backend\app\routers\blog.py", line 310, in get_blogdetail_for_subcategory
+    raise e
+  File "D:\Projects\Fast_API\blog_app\backend\app\routers\blog.py", line 274, in get_blogdetail_for_subcategory
+    raise HTTPException(
+fastapi.exceptions.HTTPException: 404: No blog details found for this subcategory.
+ERROR 2024-10-03 18:17:51 root HTTPException: No blog details found for this subcategory. (Subcategory ID: 16)
+ERROR 2024-10-03 18:17:51 root Unexpected error: 404: No blog details found for this subcategory.
+Traceback (most recent call last):
+  File "D:\Projects\Fast_API\blog_app\backend\app\core\database.py", line 21, in get_db
+    yield session
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\fastapi\routing.py", line 278, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\fastapi\routing.py", line 191, in run_endpoint_function
+    return await dependant.call(**values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\Fast_API\blog_app\backend\app\routers\blog.py", line 310, in get_blogdetail_for_subcategory
+    raise e
+  File "D:\Projects\Fast_API\blog_app\backend\app\routers\blog.py", line 274, in get_blogdetail_for_subcategory
+    raise HTTPException(
+fastapi.exceptions.HTTPException: 404: No blog details found for this subcategory.
+ERROR 2024-10-03 18:17:51 root HTTPException: No blog details found for this subcategory. (Subcategory ID: 16)
+ERROR 2024-10-03 18:17:51 root Unexpected error: 404: No blog details found for this subcategory.
+Traceback (most recent call last):
+  File "D:\Projects\Fast_API\blog_app\backend\app\core\database.py", line 21, in get_db
+    yield session
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\fastapi\routing.py", line 278, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\fastapi\routing.py", line 191, in run_endpoint_function
+    return await dependant.call(**values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\Fast_API\blog_app\backend\app\routers\blog.py", line 310, in get_blogdetail_for_subcategory
+    raise e
+  File "D:\Projects\Fast_API\blog_app\backend\app\routers\blog.py", line 274, in get_blogdetail_for_subcategory
+    raise HTTPException(
+fastapi.exceptions.HTTPException: 404: No blog details found for this subcategory.
+ERROR 2024-10-03 18:20:22 root HTTPException: No subcategories found for this category. (Category ID: 40)
+ERROR 2024-10-03 18:20:22 root Unexpected error: 404: No subcategories found for this category.
+Traceback (most recent call last):
+  File "D:\Projects\Fast_API\blog_app\backend\app\core\database.py", line 21, in get_db
+    yield session
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\fastapi\routing.py", line 278, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\fastapi\routing.py", line 191, in run_endpoint_function
+    return await dependant.call(**values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\Fast_API\blog_app\backend\app\routers\subcategories.py", line 176, in get_subcategories_for_category
+    raise e
+  File "D:\Projects\Fast_API\blog_app\backend\app\routers\subcategories.py", line 150, in get_subcategories_for_category
+    raise HTTPException(
+fastapi.exceptions.HTTPException: 404: No subcategories found for this category.
+ERROR 2024-10-03 18:20:22 root HTTPException: No subcategories found for this category. (Category ID: 40)
+ERROR 2024-10-03 18:20:22 root Unexpected error: 404: No subcategories found for this category.
+Traceback (most recent call last):
+  File "D:\Projects\Fast_API\blog_app\backend\app\core\database.py", line 21, in get_db
+    yield session
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\fastapi\routing.py", line 278, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\fastapi\routing.py", line 191, in run_endpoint_function
+    return await dependant.call(**values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\Fast_API\blog_app\backend\app\routers\subcategories.py", line 176, in get_subcategories_for_category
+    raise e
+  File "D:\Projects\Fast_API\blog_app\backend\app\routers\subcategories.py", line 150, in get_subcategories_for_category
+    raise HTTPException(
+fastapi.exceptions.HTTPException: 404: No subcategories found for this category.
+ERROR 2024-10-03 18:21:03 root HTTPException: No blog details found for this subcategory. (Subcategory ID: 22)
+ERROR 2024-10-03 18:21:03 root Unexpected error: 404: No blog details found for this subcategory.
+Traceback (most recent call last):
+  File "D:\Projects\Fast_API\blog_app\backend\app\core\database.py", line 21, in get_db
+    yield session
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\fastapi\routing.py", line 278, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\fastapi\routing.py", line 191, in run_endpoint_function
+    return await dependant.call(**values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\Fast_API\blog_app\backend\app\routers\blog.py", line 310, in get_blogdetail_for_subcategory
+    raise e
+  File "D:\Projects\Fast_API\blog_app\backend\app\routers\blog.py", line 274, in get_blogdetail_for_subcategory
+    raise HTTPException(
+fastapi.exceptions.HTTPException: 404: No blog details found for this subcategory.
+ERROR 2024-10-03 18:21:03 root HTTPException: No blog details found for this subcategory. (Subcategory ID: 22)
+ERROR 2024-10-03 18:21:03 root Unexpected error: 404: No blog details found for this subcategory.
+Traceback (most recent call last):
+  File "D:\Projects\Fast_API\blog_app\backend\app\core\database.py", line 21, in get_db
+    yield session
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\fastapi\routing.py", line 278, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\fastapi\routing.py", line 191, in run_endpoint_function
+    return await dependant.call(**values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\Fast_API\blog_app\backend\app\routers\blog.py", line 310, in get_blogdetail_for_subcategory
+    raise e
+  File "D:\Projects\Fast_API\blog_app\backend\app\routers\blog.py", line 274, in get_blogdetail_for_subcategory
+    raise HTTPException(
+fastapi.exceptions.HTTPException: 404: No blog details found for this subcategory.
+ERROR 2024-10-03 18:21:12 root HTTPException: No subcategories found for this category. (Category ID: 40)
+ERROR 2024-10-03 18:21:12 root HTTPException: No subcategories found for this category. (Category ID: 40)
+ERROR 2024-10-03 18:21:12 root Unexpected error: 404: No subcategories found for this category.
+Traceback (most recent call last):
+  File "D:\Projects\Fast_API\blog_app\backend\app\core\database.py", line 21, in get_db
+    yield session
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\fastapi\routing.py", line 278, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\fastapi\routing.py", line 191, in run_endpoint_function
+    return await dependant.call(**values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\Fast_API\blog_app\backend\app\routers\subcategories.py", line 176, in get_subcategories_for_category
+    raise e
+  File "D:\Projects\Fast_API\blog_app\backend\app\routers\subcategories.py", line 150, in get_subcategories_for_category
+    raise HTTPException(
+fastapi.exceptions.HTTPException: 404: No subcategories found for this category.
+ERROR 2024-10-03 18:21:12 root Unexpected error: 404: No subcategories found for this category.
+Traceback (most recent call last):
+  File "D:\Projects\Fast_API\blog_app\backend\app\core\database.py", line 21, in get_db
+    yield session
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\fastapi\routing.py", line 278, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\fastapi\routing.py", line 191, in run_endpoint_function
+    return await dependant.call(**values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\Fast_API\blog_app\backend\app\routers\subcategories.py", line 176, in get_subcategories_for_category
+    raise e
+  File "D:\Projects\Fast_API\blog_app\backend\app\routers\subcategories.py", line 150, in get_subcategories_for_category
+    raise HTTPException(
+fastapi.exceptions.HTTPException: 404: No subcategories found for this category.
+ERROR 2024-10-03 18:21:36 root HTTPException: No blog details found for this subcategory. (Subcategory ID: 32)
+ERROR 2024-10-03 18:21:36 root HTTPException: No blog details found for this subcategory. (Subcategory ID: 32)
+ERROR 2024-10-03 18:21:36 root Unexpected error: 404: No blog details found for this subcategory.
+Traceback (most recent call last):
+  File "D:\Projects\Fast_API\blog_app\backend\app\core\database.py", line 21, in get_db
+    yield session
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\fastapi\routing.py", line 278, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\fastapi\routing.py", line 191, in run_endpoint_function
+    return await dependant.call(**values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\Fast_API\blog_app\backend\app\routers\blog.py", line 310, in get_blogdetail_for_subcategory
+    raise e
+  File "D:\Projects\Fast_API\blog_app\backend\app\routers\blog.py", line 274, in get_blogdetail_for_subcategory
+    raise HTTPException(
+fastapi.exceptions.HTTPException: 404: No blog details found for this subcategory.
+ERROR 2024-10-03 18:21:36 root Unexpected error: 404: No blog details found for this subcategory.
+Traceback (most recent call last):
+  File "D:\Projects\Fast_API\blog_app\backend\app\core\database.py", line 21, in get_db
+    yield session
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\fastapi\routing.py", line 278, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\fastapi\routing.py", line 191, in run_endpoint_function
+    return await dependant.call(**values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\Fast_API\blog_app\backend\app\routers\blog.py", line 310, in get_blogdetail_for_subcategory
+    raise e
+  File "D:\Projects\Fast_API\blog_app\backend\app\routers\blog.py", line 274, in get_blogdetail_for_subcategory
+    raise HTTPException(
+fastapi.exceptions.HTTPException: 404: No blog details found for this subcategory.
+ERROR 2024-10-05 18:38:57 root Error rendering contact form template: contactform.html
+ERROR 2024-10-05 18:39:33 root Error rendering contact form template: contactform.html
+ERROR 2024-10-05 18:42:55 root Error rendering contact form template: contactform.html
+ERROR 2024-10-05 18:47:58 root Error rendering contact form template: contactform.html
+ERROR 2024-10-05 18:49:17 root Error rendering contact form template: contactform.html
