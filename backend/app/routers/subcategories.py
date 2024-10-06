@@ -57,18 +57,15 @@ async def get_subcategories_route(
         }
     except Exception as e:
         logging.error(f"Failed to fetch subcategories: {str(e)}")
-        raise HTTPException(
-            status_code=500, detail="Failed to fetch subcategories")
+        raise HTTPException(status_code=500, detail="Failed to fetch subcategories")
 
 
 @router.get("/{subcategory_id}", response_model=dict, summary="Retrieve a Subcategory by ID")
 async def get_subcategory_by_id_route(subcategory_id: int, db: AsyncSession = Depends(get_db)):
     try:
         subcategory = await get_subcategory_by_id(db, subcategory_id)
-        print(f"Retrived subcategory: {subcategory}")
         if not subcategory:
-            raise HTTPException(
-                status_code=404, detail="Subcategory not found")
+            raise HTTPException(status_code=404, detail="Subcategory not found")
 
         logging.info(f"Subcategory retrieved: {subcategory.name}")
         return {
@@ -78,8 +75,7 @@ async def get_subcategory_by_id_route(subcategory_id: int, db: AsyncSession = De
         }
     except Exception as e:
         logging.error(f"Failed to fetch subcategory: {str(e)}")
-        raise HTTPException(
-            status_code=500, detail="Failed to fetch subcategory")
+        raise HTTPException(status_code=500, detail="Failed to fetch subcategory")
 
 
 @router.put("/{subcategory_id}", response_model=dict, summary="Update a Subcategory by ID")
@@ -89,11 +85,9 @@ async def update_subcategory_route(
     try:
         updated_subcategory = await update_subcategory(db, subcategory_id, subcategory_data)
         if not updated_subcategory:
-            raise HTTPException(
-                status_code=404, detail="Subcategory not found")
+            raise HTTPException(status_code=404, detail="Subcategory not found")
 
-        logging.info(f"Subcategory updated: {
-                     updated_subcategory.name or 'Unnamed'}")
+        logging.info(f"Subcategory updated: {updated_subcategory.name or 'Unnamed'}")
 
         return {
             "status_code": 200,
@@ -106,8 +100,7 @@ async def update_subcategory_route(
         raise he
     except Exception as e:
         logging.error(f"Failed to update subcategory: {str(e)}", exc_info=True)
-        raise HTTPException(
-            status_code=500, detail="Failed to update subcategory")
+        raise HTTPException(status_code=500, detail="Failed to update subcategory")
         
         
 @router.delete("/{subcategory_id}", response_model=dict, summary="Delete a Subcategory by ID")
@@ -115,8 +108,7 @@ async def delete_subcategory_route(subcategory_id: int, db: AsyncSession = Depen
     try:
         updated_subcategory = await soft_delete_subcategory(db, subcategory_id)
         if not updated_subcategory:
-            raise HTTPException(
-                status_code=404, detail="Subcategory not found")
+            raise HTTPException(status_code=404, detail="Subcategory not found")
 
         logging.info(f"Subcategory soft deleted with ID: {subcategory_id}")
         return {
@@ -126,10 +118,8 @@ async def delete_subcategory_route(subcategory_id: int, db: AsyncSession = Depen
         }
 
     except Exception as e:
-        logging.error(f"Failed to soft delete subcategory: {
-                      str(e)}", exc_info=True)
-        raise HTTPException(
-            status_code=500, detail="Failed to soft delete subcategory")
+        logging.error(f"Failed to soft delete subcategory: {str(e)}", exc_info=True)
+        raise HTTPException(status_code=500, detail="Failed to soft delete subcategory")
 
 
 @router.get("/categories/{category_id}/subcategories", response_model=dict)
@@ -145,8 +135,7 @@ async def get_subcategories_for_category(
 
         # Check if subcategories were found
         if not result["subcategories"]:
-            logging.warning(
-                f"No subcategories found for category ID {category_id}.")
+            logging.warning(f"No subcategories found for category ID {category_id}.")
             raise HTTPException(
                 status_code=404, detail="No subcategories found for this category."
             )
@@ -171,11 +160,8 @@ async def get_subcategories_for_category(
         }
 
     except HTTPException as e:
-        logging.error(f"HTTPException: {
-                      e.detail} (Category ID: {category_id})")
+        logging.error(f"HTTPException: {e.detail} (Category ID: {category_id})")
         raise e
     except Exception as e:
-        logging.error(f"Unexpected error in fetching subcategories for category ID {
-                      category_id}: {str(e)}", exc_info=True)
-        raise HTTPException(
-            status_code=500, detail="Failed to fetch subcategories for the category.")
+        logging.error(f"Unexpected error in fetching subcategories for category ID {category_id}: {str(e)}", exc_info=True)
+        raise HTTPException(status_code=500, detail="Failed to fetch subcategories for the category.")

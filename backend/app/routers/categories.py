@@ -19,8 +19,7 @@ async def create_category_route(
         if existing_names:
             raise HTTPException(
                 status_code=400,
-                detail=f"Category names already exist: {
-                    ', '.join(existing_names)}"
+                detail=f"Category names already exist: {', '.join(existing_names)}"
             )
         new_categories = await create_category(db, category_data)
         logging.info(f"{len(new_categories)} categories created.")
@@ -34,9 +33,7 @@ async def create_category_route(
         raise he
     except Exception as e:
         logging.error(f"Failed to create categories: {str(e)}", exc_info=True)
-        raise HTTPException(
-            status_code=500, detail="Failed to create categories"
-        )
+        raise HTTPException(status_code=500, detail="Failed to create categories")
 
 @router.get("/all/", response_model=dict, summary="List of categories")
 async def get_categories_route(
@@ -56,8 +53,7 @@ async def get_categories_route(
         }
     except Exception as e:
         logging.error(f"Failed to fetch categories: {str(e)}", exc_info=True)
-        raise HTTPException(
-            status_code=500, detail="Failed to fetch categories")
+        raise HTTPException(status_code=500, detail="Failed to fetch categories")
 
 
 @router.get("/{category_id}", response_model=dict, summary="Retrieve a Category by ID")
@@ -104,8 +100,7 @@ async def update_category_route(
 
     except Exception as e:
         logging.error(f"Failed to update category: {str(e)}", exc_info=True)
-        raise HTTPException(
-            status_code=500, detail="Failed to update category")
+        raise HTTPException(status_code=500, detail="Failed to update category")
 
 
 @router.delete("/{category_id}", response_model=dict, summary="Delete a category by ID")
@@ -127,10 +122,8 @@ async def delete_category_route(category_id: int, db: AsyncSession = Depends(get
         raise he
 
     except Exception as e:
-        logging.error(f"Failed to soft delete category: {
-                      str(e)}", exc_info=True)
-        raise HTTPException(
-            status_code=500, detail="Failed to soft delete category")
+        logging.error(f"Failed to soft delete category: {str(e)}", exc_info=True)
+        raise HTTPException(status_code=500, detail="Failed to soft delete category")
 
 
 @router.get("/search/", response_model=Dict[str, Any], summary="Search for Categories")
@@ -164,5 +157,4 @@ async def search_category(
         raise he
     except Exception as e:
         logging.error(f"Failed to search categories: {str(e)}", exc_info=True)
-        raise HTTPException(
-            status_code=500, detail="Failed to search categories")
+        raise HTTPException(status_code=500, detail="Failed to search categories")

@@ -17,7 +17,7 @@ router = APIRouter()
 
 @router.post("/create_blog", response_model=BlogResponseModel, summary="Create new Blog")
 async def create_blog_api(
-    request: Request,  # Add request parameter here
+    request: Request,
     category_id: Optional[int] = Form(None),
     subcategory_id: Optional[int] = Form(None),
     title: str = Form(...),
@@ -73,15 +73,11 @@ async def create_blog_api(
         return response_data
 
     except HTTPException as http_exc:
-        logging.error(f"HTTP error while creating blog: {
-                      str(http_exc.detail)}")
+        logging.error(f"HTTP error while creating blog: {str(http_exc.detail)}")
         raise http_exc
     except Exception as exc:
         logging.error(f"Unexpected error occurred: {str(exc)}", exc_info=True)
-        raise HTTPException(
-            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
-            detail=f"An unexpected error occurred: {str(exc)}"
-        )
+        raise HTTPException(status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,detail=f"An unexpected error occurred: {str(exc)}")
         
 
 @router.get("/all/", response_model=dict, summary="List of Blog Details")
@@ -125,13 +121,12 @@ async def get_blog_details(
         }
     except Exception as e:
         logging.error(f"Failed to fetch blog details: {str(e)}")
-        raise HTTPException(
-            status_code=500, detail="Failed to fetch blog details")
+        raise HTTPException(status_code=500, detail="Failed to fetch blog details")
         
         
 @router.get("/{blog_detail_id}", response_model=dict, summary="Retrieve a Blog by ID")
 async def get_blog_by_id_route(
-    request: Request,  # Add the request object to get base_url
+    request: Request,
     blog_detail_id: int,
     db: AsyncSession = Depends(get_db)
 ):
@@ -170,22 +165,19 @@ async def get_blog_by_id_route(
             }
         else:
             logging.warning(f"Blog with ID {blog_detail_id} not found.")
-            raise HTTPException(status_code=404, detail=f"Blog with ID {
-                                blog_detail_id} not found")
+            raise HTTPException(status_code=404, detail=f"Blog with ID {blog_detail_id} not found")
 
     except HTTPException as http_exc:
         logging.error(f"HTTP error occurred: {str(http_exc.detail)}")
         raise http_exc
     except Exception as e:
         logging.error(f"Failed to fetch Blog details: {str(e)}")
-        raise HTTPException(
-            status_code=500, detail="Failed to fetch Blog details"
-        )
+        raise HTTPException(status_code=500, detail="Failed to fetch Blog details")
 
 
 @router.put("/{blog_detail_id}", response_model=BlogResponseModel, summary="Update a Blog by ID")
 async def update_blog_route(
-    request: Request,  # Capture the request to access the base URL
+    request: Request,
     blog_detail_id: int,
     title: str = Form(...),
     content: str = Form(...),
@@ -232,8 +224,7 @@ async def delete_blog_detail_route(blogdetail_id: int, db: AsyncSession = Depend
     try:
         delete_blogdetail = await soft_delete_blog_detail(db, blogdetail_id)
         if not delete_blogdetail:
-            raise HTTPException(
-                status_code=404, detail="Blog detail ID not found")
+            raise HTTPException(status_code=404, detail="Blog detail ID not found")
 
         logging.info(f"Blog detail soft deleted with ID: {blogdetail_id}")
         return {
@@ -246,10 +237,8 @@ async def delete_blog_detail_route(blogdetail_id: int, db: AsyncSession = Depend
         }
 
     except Exception as e:
-        logging.error(f"Failed to soft delete blog detail with ID {
-                      blogdetail_id}: {str(e)}", exc_info=True)
-        raise HTTPException(
-            status_code=500, detail="Failed to soft delete blog detail")
+        logging.error(f"Failed to soft delete blog detail with ID {blogdetail_id}: {str(e)}", exc_info=True)
+        raise HTTPException(status_code=500, detail="Failed to soft delete blog detail")
 
 
 @router.get("/subcategories/{subcategory_id}/blog", response_model=dict, summary="Get blog details for subcategory")
@@ -261,21 +250,18 @@ async def get_blogdetail_for_subcategory(
     db: AsyncSession = Depends(get_db)
 ):
     try:
-        logging.info(f"Fetching blog details for subcategory ID: {
-                     subcategory_id} with skip: {skip} and limit: {limit}.")
+        logging.info(f"Fetching blog details for subcategory ID: {subcategory_id} with skip: {skip} and limit: {limit}.")
 
         # Fetch blog details for the subcategory
         result = await get_blogdetail_by_subcategory_id(db, subcategory_id, skip, limit)
 
         # Check if any blogs were found
         if not result["blogs"]:
-            logging.warning(f"No blog details found for subcategory ID {
-                            subcategory_id}.")
+            logging.warning(f"No blog details found for subcategory ID {subcategory_id}.")
             raise HTTPException(
                 status_code=404, detail="No blog details found for this subcategory.")
 
-        logging.info(f"Successfully retrieved blog details for subcategory ID {
-                     subcategory_id}.")
+        logging.info(f"Successfully retrieved blog details for subcategory ID {subcategory_id}.")
 
         # Dynamically get the base URL and construct the media URL
         base_url = str(request.base_url)
@@ -294,7 +280,6 @@ async def get_blogdetail_for_subcategory(
                     "id": blog.id,
                     "title": blog.title,
                     "content": blog.content,
-                    # Dynamically include image URL
                     "image": f"{base_url}media/{blog.image}" if blog.image else None,
                     "is_active": blog.is_active,
                     "created_on": blog.created_on,
@@ -305,11 +290,8 @@ async def get_blogdetail_for_subcategory(
         }
 
     except HTTPException as e:
-        logging.error(f"HTTPException: {
-                      e.detail} (Subcategory ID: {subcategory_id})")
+        logging.error(f"HTTPException: {e.detail} (Subcategory ID: {subcategory_id})")
         raise e
     except Exception as e:
-        logging.error(f"Unexpected error in fetching blog details for subcategory ID {
-                      subcategory_id}: {str(e)}", exc_info=True)
-        raise HTTPException(
-            status_code=500, detail="Failed to fetch blog details for the subcategory.")
+        logging.error(f"Unexpected error in fetching blog details for subcategory ID {subcategory_id}: {str(e)}", exc_info=True)
+        raise HTTPException(status_code=500, detail="Failed to fetch blog details for the subcategory.")

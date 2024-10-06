@@ -15,8 +15,7 @@ async def generate_subcat_id(db: AsyncSession) -> str:
         return f"subcat_{new_id}"
     except Exception as e:
         logging.error(f"Error generating subcategory ID: {str(e)}")
-        raise HTTPException(
-            status_code=500, detail="Error generating subcategory ID")
+        raise HTTPException(status_code=500, detail="Error generating subcategory ID")
 
 async def create_subcategory(db: AsyncSession, subcategory_data: SubcategoryCreateModel):
     try:
@@ -36,14 +35,11 @@ async def create_subcategory(db: AsyncSession, subcategory_data: SubcategoryCrea
         for subcategory in subcategories:
             await db.refresh(subcategory)
 
-        logging.info(f"Successfully created {
-                     len(subcategories)} subcategories.")
+        logging.info(f"Successfully created {len(subcategories)} subcategories.")
         return subcategories
     except Exception as e:
-        logging.error(f"Failed to create subcategories: {
-                      str(e)}", exc_info=True)
-        raise HTTPException(
-            status_code=500, detail="Failed to create subcategories")
+        logging.error(f"Failed to create subcategories: {str(e)}", exc_info=True)
+        raise HTTPException(status_code=500, detail="Failed to create subcategories")
 
 async def get_all_subcategories(db: AsyncSession, skip: int = 0, limit: int = 10):
     try:
@@ -55,18 +51,15 @@ async def get_all_subcategories(db: AsyncSession, skip: int = 0, limit: int = 10
 
         # Get the total count of active subcategories
         total_count_result = await db.execute(
-            select(func.count(Subcategory.id)).where(
-                Subcategory.is_active == True)
+            select(func.count(Subcategory.id)).where(Subcategory.is_active == True)
         )
         total_count = total_count_result.scalar()
 
         logging.info("Successfully retrieved all active subcategories.")
         return subcategories, total_count
     except Exception as e:
-        logging.error(f"Failed to fetch subcategories: {
-                      str(e)}", exc_info=True)
-        raise HTTPException(
-            status_code=500, detail="Failed to fetch subcategories")
+        logging.error(f"Failed to fetch subcategories: {str(e)}", exc_info=True)
+        raise HTTPException(status_code=500, detail="Failed to fetch subcategories")
 
 
 async def get_subcategory_by_id(db: AsyncSession, subcategory_id: int):
@@ -76,10 +69,8 @@ async def get_subcategory_by_id(db: AsyncSession, subcategory_id: int):
             logging.warning(f"Subcategory with ID {subcategory_id} not found.")
         return result
     except Exception as e:
-        logging.error(f"Error retrieving subcategory by ID {
-                      subcategory_id}: {str(e)}", exc_info=True)
-        raise HTTPException(
-            status_code=500, detail="Error retrieving subcategory")
+        logging.error(f"Error retrieving subcategory by ID {subcategory_id}: {str(e)}", exc_info=True)
+        raise HTTPException(status_code=500, detail="Error retrieving subcategory")
 
 
 async def update_subcategory(db: AsyncSession, subcategory_id: int, subcategory_data: SubcategoryUpdateModel):
@@ -101,22 +92,18 @@ async def update_subcategory(db: AsyncSession, subcategory_id: int, subcategory_
         await db.commit()
         await db.refresh(subcategory)
 
-        logging.info(f"Subcategory with ID {
-                     subcategory_id} updated successfully.")
+        logging.info(f"Subcategory with ID {subcategory_id} updated successfully.")
         return subcategory
     except Exception as e:
-        logging.error(f"Failed to update subcategory with ID {
-                      subcategory_id}: {str(e)}", exc_info=True)
-        raise HTTPException(
-            status_code=500, detail="Failed to update subcategory")
+        logging.error(f"Failed to update subcategory with ID {subcategory_id}: {str(e)}", exc_info=True)
+        raise HTTPException(status_code=500, detail="Failed to update subcategory")
 
 
 async def soft_delete_subcategory(db: AsyncSession, subcategory_id: int):
     try:
         subcategory = await get_subcategory_by_id(db, subcategory_id)
         if not subcategory:
-            logging.warning(f"Subcategory with ID {
-                            subcategory_id} not found for soft delete.")
+            logging.warning(f"Subcategory with ID {subcategory_id} not found for soft delete.")
             return None
 
         # Set is_active to False for soft delete
@@ -124,8 +111,7 @@ async def soft_delete_subcategory(db: AsyncSession, subcategory_id: int):
         await db.commit()
         await db.refresh(subcategory)
 
-        logging.info(f"Subcategory with ID {
-                     subcategory_id} soft deleted successfully.")
+        logging.info(f"Subcategory with ID {subcategory_id} soft deleted successfully.")
         return subcategory
     except Exception as e:
         logging.error(f"Failed to soft delete subcategory with ID {subcategory_id}: {str(e)}", exc_info=True)
@@ -149,8 +135,7 @@ async def get_subcategories_by_category_id(db: AsyncSession, category_id: int, s
         subcategories = subcategories_result.scalars().all()
 
         if not subcategories:
-            logging.info(f"No active subcategories found for category ID {
-                         category_id}.")
+            logging.info(f"No active subcategories found for category ID {category_id}.")
 
         total_count_result = await db.execute(
             select(func.count(Subcategory.id))
@@ -158,8 +143,7 @@ async def get_subcategories_by_category_id(db: AsyncSession, category_id: int, s
         )
         total_count = total_count_result.scalar()
 
-        logging.info(f"Retrieved {len(subcategories)
-                                  } subcategories for category ID {category_id}.")
+        logging.info(f"Retrieved {len(subcategories)} subcategories for category ID {category_id}.")
 
         return {
             "category_id": category.id,
@@ -170,7 +154,5 @@ async def get_subcategories_by_category_id(db: AsyncSession, category_id: int, s
         }
 
     except Exception as e:
-        logging.error(f"Error fetching subcategories for category ID {
-                      category_id}: {str(e)}", exc_info=True)
-        raise HTTPException(
-            status_code=500, detail="Failed to fetch subcategories for the category.")
+        logging.error(f"Error fetching subcategories for category ID {category_id}: {str(e)}", exc_info=True)
+        raise HTTPException(status_code=500, detail="Failed to fetch subcategories for the category.")

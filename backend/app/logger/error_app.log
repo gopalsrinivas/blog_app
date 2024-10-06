@@ -18772,3 +18772,8 @@ ERROR 2024-10-05 18:39:33 root Error rendering contact form template: contactfor
 ERROR 2024-10-05 18:42:55 root Error rendering contact form template: contactform.html
 ERROR 2024-10-05 18:47:58 root Error rendering contact form template: contactform.html
 ERROR 2024-10-05 18:49:17 root Error rendering contact form template: contactform.html
+ERROR 2024-10-06 18:37:45 app.core.logging This is an error message
+ERROR 2024-10-06 18:37:49 app.core.logging This is an error message
+ERROR 2024-10-06 18:39:18 app.core.logging This is an error message
+ERROR 2024-10-06 18:39:25 app.core.logging This is an error message
+ERROR 2024-10-06 18:40:31 app.core.logging This is an error message

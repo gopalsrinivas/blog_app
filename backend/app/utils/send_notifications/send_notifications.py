@@ -42,13 +42,10 @@ async def send_contact_form(
         subject = "Contact Form Submission"
         try:
             contact_body = templates.get_template("contactform.html").render(
-                {"name": name, "email": email,
-                 "subject": esubject, "message": message}
-            )
+                {"name": name, "email": email,"subject": esubject, "message": message})
         except TemplateError as e:
             logging.error(f"Error rendering contact form template: {str(e)}")
-            raise HTTPException(
-                status_code=500, detail="Template rendering failed")
+            raise HTTPException(status_code=500, detail="Template rendering failed")
 
         # Define CC recipients
         cc_emails = ["gopalsrinivas29@gmail.com",
@@ -72,8 +69,7 @@ async def send_contact_form(
         raise http_exc
     except Exception as e:
         logging.error(f"Error sending contact form email: {str(e)}")
-        raise HTTPException(
-            status_code=500, detail="Error sending contact form email")
+        raise HTTPException(status_code=500, detail="Error sending contact form email")
 
 # Define endpoints and bind functions
 @router.post("/send-contact-email/", summary="Send contact form email")
@@ -112,12 +108,10 @@ async def send_otp_email(
         # Render the OTP email body using Jinja2
         subject = "OTP Verification"
         try:
-            otp_body = templates.get_template("otp.html").render(
-                {"name": name, "otp_code": otp_code})
+            otp_body = templates.get_template("otp.html").render({"name": name, "otp_code": otp_code})
         except TemplateError as e:
             logging.error(f"Error rendering OTP template: {str(e)}")
-            raise HTTPException(
-                status_code=500, detail="Template rendering failed")
+            raise HTTPException(status_code=500, detail="Template rendering failed")
 
         # Define CC recipients
         cc_emails = ["gopalsrinivas29@gmail.com",
@@ -134,8 +128,7 @@ async def send_otp_email(
 
         # Add task to send OTP email in the background
         background_tasks.add_task(conf.send_message, otp_message)
-        logging.info(f"OTP email sent to {
-                     email} (OTP not logged for security reasons)")
+        logging.info(f"OTP email sent to {email} (OTP not logged for security reasons)")
         return {"message": "OTP email sent successfully."}
     except HTTPException as http_exc:
         logging.warning(f"HTTP Exception occurred: {str(http_exc)}")

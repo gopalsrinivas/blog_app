@@ -8,7 +8,6 @@ from app.schemas.categories import CategoryCreateModel, CategoryModel, CategoryU
 from app.core.logging import logging
 from datetime import datetime
 
-
 async def generate_cat_id(db: AsyncSession) -> str:
     try:
         # Get the last inserted ID
@@ -16,20 +15,16 @@ async def generate_cat_id(db: AsyncSession) -> str:
         max_id = result.scalar_one_or_none()
         # Start from 1 if no categories exist
         new_id = (max_id + 1) if max_id is not None else 1
-
         return f"cat_{new_id}"
     except Exception as e:
         logging.error(f"Error generating category ID: {str(e)}")
-        raise HTTPException(
-            status_code=500, detail="Error generating category ID"
-        )
-
+        raise HTTPException(status_code=500, detail="Error generating category ID")
 
 async def create_category(db: AsyncSession, category_data: CategoryCreateModel):
     try:
         categories = []
         for name in category_data.names:
-            new_cat_id = await generate_cat_id(db)  # Generate the new cat_id
+            new_cat_id = await generate_cat_id(db)
             new_category = Category(
                 cat_id=new_cat_id,
                 name=name,
@@ -45,9 +40,7 @@ async def create_category(db: AsyncSession, category_data: CategoryCreateModel):
         return categories
     except Exception as e:
         logging.error(f"Failed to create categories: {str(e)}", exc_info=True)
-        raise HTTPException(
-            status_code=500, detail="Failed to create categories"
-        )
+        raise HTTPException(status_code=500, detail="Failed to create categories")
 
 async def get_all_categories(db: AsyncSession, skip: int = 0, limit: int = 10):
     try:
@@ -59,21 +52,14 @@ async def get_all_categories(db: AsyncSession, skip: int = 0, limit: int = 10):
             .limit(limit)
         )
         categories = result.scalars().all()
-
         # Get the total count of active categories
-        total_count_result = await db.execute(
-            select(func.count(Category.id)).where(Category.is_active == True)
-        )
+        total_count_result = await db.execute(select(func.count(Category.id)).where(Category.is_active == True))
         total_count = total_count_result.scalar()
-
         logging.info("Successfully retrieved all active categories.")
         return categories, total_count
-
     except Exception as e:
         logging.error(f"Failed to fetch categories: {str(e)}", exc_info=True)
-        raise HTTPException(
-            status_code=500, detail="Failed to fetch categories"
-        )
+        raise HTTPException(status_code=500, detail="Failed to fetch categories")
 
 
 async def get_category_by_id(db: AsyncSession, category_id: int):
@@ -100,41 +86,30 @@ async def update_category(db: AsyncSession, category_id: int, category_data: Cat
             category.name = category_data.name
         if category_data.is_active is not None:
             category.is_active = category_data.is_active
-
         # Commit changes to the database
         await db.commit()
         await db.refresh(category)
-
         logging.info(f"Category with ID {category_id} updated successfully.")
         return category
-
     except Exception as e:
-        logging.error(f"Failed to update category with ID {
-                      category_id}: {str(e)}", exc_info=True)
-        raise HTTPException(
-            status_code=500, detail="Failed to update category")
+        logging.error(f"Failed to update category with ID {category_id}: {str(e)}", exc_info=True)
+        raise HTTPException(status_code=500, detail="Failed to update category")
 
 
 async def soft_delete_category(db: AsyncSession, category_id: int):
     try:
         category = await get_category_by_id(db, category_id)
         if not category:
-            logging.warning(f"Category with ID {
-                            category_id} not found for soft delete.")
+            logging.warning(f"Category with ID {category_id} not found for soft delete.")
             return None
-
         # Set is_active to False for soft delete
         category.is_active = False
         await db.commit()
         await db.refresh(category)
-
-        logging.info(f"Category with ID {
-                     category_id} soft deleted successfully.")
+        logging.info(f"Category with ID {category_id} soft deleted successfully.")
         return category
-
     except Exception as e:
-        logging.error(f"Failed to soft delete category with ID {
-                      category_id}: {str(e)}", exc_info=True)
+        logging.error(f"Failed to soft delete category with ID {category_id}: {str(e)}", exc_info=True)
         raise HTTPException(status_code=500, detail="Failed to soft delete category")
 
 
@@ -158,7 +133,8 @@ async def get_category_by_search(
 
         # Execute the query for categories
         result = await db.execute(query)
-        categories = result.scalars().all()  # Fetch all matching categories
+        # Fetch all matching categories
+        categories = result.scalars().all()
 
         # Execute a count query to get the total number of matching records
         total_count = await db.execute(select(func.count()).select_from(Category).where(
@@ -167,13 +143,9 @@ async def get_category_by_search(
             (Category.is_active == is_active) if is_active is not None else True
         ))
         total_count_value = total_count.scalar()
-
         logging.info(f"Total categories found: {total_count_value}")
-
         return categories, total_count_value
     except Exception as e:
         logging.error(f"Error retrieving categories: {str(e)}", exc_info=True)
-        raise HTTPException(
-            status_code=500, detail="Error retrieving categories"
-        )
+        raise HTTPException(status_code=500, detail="Error retrieving categories")
 

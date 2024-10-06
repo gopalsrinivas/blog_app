@@ -28,35 +28,31 @@ async def generate_blog_id(db: AsyncSession) -> str:
         return f"blog_{new_id}"
     except Exception as e:
         logging.error(f"Error generating Blog ID: {str(e)}")
-        raise HTTPException(
-            status_code=500, detail="Error generating Blog ID"
-        )
+        raise HTTPException(status_code=500, detail="Error generating Blog ID")
 
 async def create_blog(db: AsyncSession, blog_data: dict, image_path: str = None):
     try:
         # Validate Category ID
         category_exists = await db.scalar(select(func.count()).select_from(Category).where(Category.id == blog_data["category_id"]))
         if not category_exists:
-            logging.warning(
-                f"Category ID {blog_data['category_id']} not found")
-            raise HTTPException(
-                status_code=400, detail="Category ID not found")
+            logging.warning(f"Category ID {blog_data['category_id']} not found")
+            raise HTTPException(status_code=400, detail="Category ID not found")
 
         # Validate Subcategory ID
-        subcategory_exists = await db.scalar(select(func.count()).select_from(Subcategory).where(Subcategory.id == blog_data["subcategory_id"]))
+        subcategory_exists = await db.scalar(
+            select(func.count()).select_from(Subcategory)
+            .where(Subcategory.id == blog_data["subcategory_id"]))
         if not subcategory_exists:
-            logging.warning(f"Subcategory ID {
-                            blog_data['subcategory_id']} not found")
-            raise HTTPException(
-                status_code=400, detail="Subcategory ID not found")
+            logging.warning(f"Subcategory ID {blog_data['subcategory_id']} not found")
+            raise HTTPException(status_code=400, detail="Subcategory ID not found")
 
         # Check if the blog title already exists
-        title_exists = await db.scalar(select(func.count()).select_from(Blog).where(Blog.title == blog_data["title"]))
+        title_exists = await db.scalar(
+            select(func.count()).select_from(Blog)
+            .where(Blog.title == blog_data["title"]))
         if title_exists:
-            logging.warning(
-                f"Blog title '{blog_data['title']}' already exists")
-            raise HTTPException(
-                status_code=400, detail="Blog title already exists")
+            logging.warning(f"Blog title '{blog_data['title']}' already exists")
+            raise HTTPException(status_code=400, detail="Blog title already exists")
 
         # Generate a unique blog ID
         new_blog_id = await generate_blog_id(db)
@@ -68,7 +64,7 @@ async def create_blog(db: AsyncSession, blog_data: dict, image_path: str = None)
             category_id=blog_data["category_id"],
             subcategory_id=blog_data["subcategory_id"],
             content=blog_data["content"],
-            image=image_path,  # Use this variable for image
+            image=image_path,
             is_active=blog_data["is_active"],
             created_on=datetime.now(),
             updated_on=None
@@ -80,21 +76,18 @@ async def create_blog(db: AsyncSession, blog_data: dict, image_path: str = None)
         # Refresh the object to get the updated instance
         await db.refresh(new_blog)
 
-        logging.info(
-            f"Blog '{blog_data['title']}' created successfully with ID {new_blog_id}")
+        logging.info(f"Blog '{blog_data['title']}' created successfully with ID {new_blog_id}")
         return new_blog
 
     except IntegrityError as e:
-        await db.rollback()  # Rollback in case of IntegrityError
+        await db.rollback()
         logging.error(f"IntegrityError occurred: {str(e)}")
-        raise HTTPException(
-            status_code=500, detail=f"IntegrityError: {str(e)}")
+        raise HTTPException(status_code=500, detail=f"IntegrityError: {str(e)}")
 
     except Exception as exc:
-        await db.rollback()  # Rollback in case of general Exception
+        await db.rollback()
         logging.error(f"Unexpected error occurred: {str(exc)}", exc_info=True)
-        raise HTTPException(
-            status_code=500, detail=f"An unexpected error occurred: {str(exc)}")
+        raise HTTPException(status_code=500, detail=f"An unexpected error occurred: {str(exc)}")
 
     finally:
         await db.close()
@@ -118,8 +111,7 @@ async def get_all_blog_detail(db: AsyncSession, skip: int = 0, limit: int = 10):
                 Blog.updated_on.label("updated_on")
             )
             .select_from(
-                join(Category, Subcategory, Category.id ==
-                     Subcategory.category_id)
+                 join(Category, Subcategory, Category.id == Subcategory.category_id)
                 .join(Blog, Subcategory.id == Blog.subcategory_id)
             )
             .where(Blog.is_active == True)
@@ -132,8 +124,7 @@ async def get_all_blog_detail(db: AsyncSession, skip: int = 0, limit: int = 10):
         total_count_result = await db.execute(
             select(func.count(Blog.id))
             .select_from(
-                join(Category, Subcategory, Category.id ==
-                     Subcategory.category_id)
+                join(Category, Subcategory, Category.id == Subcategory.category_id)
                 .join(Blog, Subcategory.id == Blog.subcategory_id)
             )
             .where(Blog.is_active == True)
@@ -145,8 +136,7 @@ async def get_all_blog_detail(db: AsyncSession, skip: int = 0, limit: int = 10):
 
     except Exception as e:
         logging.error(f"Failed to fetch blog details: {str(e)}", exc_info=True)
-        raise HTTPException(
-            status_code=500, detail="Failed to fetch blog details")
+        raise HTTPException(status_code=500, detail="Failed to fetch blog details")
         
 
 async def get_blog_detail_by_id(db: AsyncSession, blog_detail_id: int):
@@ -168,19 +158,17 @@ async def get_blog_detail_by_id(db: AsyncSession, blog_detail_id: int):
                 Blog.updated_on.label("updated_on")
             )
             .select_from(
-                join(Category, Subcategory, Category.id ==
-                     Subcategory.category_id)
+                join(Category, Subcategory, Category.id == Subcategory.category_id)
                 .join(Blog, Subcategory.id == Blog.subcategory_id)
             )
             .where(Blog.id == blog_detail_id)
         )
 
-        blog_detail = result.fetchone()  # Use fetchone() instead of scalars()
+        blog_detail = result.fetchone()
 
         if not blog_detail:
             logging.warning(f"Blog with ID {blog_detail_id} not found.")
-            raise HTTPException(status_code=404, detail=f"Blog with ID {
-                                blog_detail_id} not found")
+            raise HTTPException(status_code=404, detail=f"Blog with ID {blog_detail_id} not found")
 
         # Check if the blog is active
         if not blog_detail.is_active:
@@ -198,8 +186,7 @@ async def get_blog_detail_by_id(db: AsyncSession, blog_detail_id: int):
         return blog_detail
 
     except Exception as e:
-        logging.error(f"Error retrieving blog detail with ID {
-                      blog_detail_id}: {str(e)}", exc_info=True)
+        logging.error(f"Error retrieving blog detail with ID {blog_detail_id}: {str(e)}", exc_info=True)
         raise HTTPException(status_code=500, detail="Error retrieving Blog")
 
 
@@ -215,22 +202,18 @@ async def handle_image_update(blog, new_image: UploadFile):
             logging.error(f"Failed to delete old image {blog.image}: {str(e)}")
 
     # Save the new image
-    new_image_filename = f"blog_{blog.id}_{
-        new_image.filename}"  # New filename format
+    new_image_filename = f"blog_{blog.id}_{new_image.filename}"
     new_image_path = os.path.join(MEDIA_DIR, new_image_filename)
 
     try:
-        with open(new_image_path, "wb") as buffer:
-            shutil.copyfileobj(new_image.file, buffer)
+        with open(new_image_path, "wb") as buffer: shutil.copyfileobj(new_image.file, buffer)
 
         # Update the blog image field with just the new image filename
         blog.image = new_image_filename
         logging.info(f"New image {new_image_filename} saved successfully.")
     except Exception as e:
-        logging.error(f"Failed to save new image {
-                      new_image_filename}: {str(e)}")
-        raise HTTPException(
-            status_code=500, detail="Failed to upload new image")
+        logging.error(f"Failed to save new image {new_image_filename}: {str(e)}")
+        raise HTTPException(status_code=500, detail="Failed to upload new image")
 
 
 async def update_blog_details(db: AsyncSession, blog_detail_id: int, blog_data: BlogUpdateModel, new_image: UploadFile = None):
@@ -239,8 +222,7 @@ async def update_blog_details(db: AsyncSession, blog_detail_id: int, blog_data: 
 
     # Raise an exception if the blog entry does not exist
     if not blog:
-        raise HTTPException(status_code=404, detail=f"Blog with ID {
-                            blog_detail_id} not found.")
+        raise HTTPException(status_code=404, detail=f"Blog with ID {blog_detail_id} not found.")
 
     # Prepare the updated fields
     updated_fields = {
@@ -263,11 +245,11 @@ async def update_blog_details(db: AsyncSession, blog_detail_id: int, blog_data: 
     # Commit the changes to the database
     try:
         await db.commit()
-        await db.refresh(blog)  # Refresh the instance to get updated values
+        await db.refresh(blog)
         return blog
     except Exception as e:
-        await db.rollback()  # Rollback in case of error
-        logging.error(f"Error updating blog: {str(e)}")  # Log the error
+        await db.rollback()
+        logging.error(f"Error updating blog: {str(e)}")
         raise HTTPException(status_code=500, detail="Failed to update blog")
     
 
@@ -285,25 +267,21 @@ async def soft_delete_blog_detail(db: AsyncSession, blog_detail_id: int):
 
         # Set is_active to False for soft delete
         blog_detail.is_active = False
-        db.add(blog_detail)  # Mark it as dirty
+        db.add(blog_detail)
         await db.commit()
-        await db.refresh(blog_detail)  # Refresh to get the updated values
-
-        logging.info(f"Blog with ID {
-                     blog_detail_id} soft deleted successfully.")
-        return blog_detail  # Return the updated blog detail
+        await db.refresh(blog_detail)
+        
+        logging.info(f"Blog with ID {blog_detail_id} soft deleted successfully.")
+        return blog_detail
 
     except Exception as e:
-        await db.rollback()  # Rollback on exception
-        logging.error(f"Failed to soft delete blog with ID {
-                      blog_detail_id}: {str(e)}", exc_info=True)
-        raise HTTPException(
-            status_code=500, detail="Failed to soft delete blog")
+        await db.rollback()
+        logging.error(f"Failed to soft delete blog with ID {blog_detail_id}: {str(e)}", exc_info=True)
+        raise HTTPException(status_code=500, detail="Failed to soft delete blog")
 
 async def get_blogdetail_by_subcategory_id(db: AsyncSession, subcategory_id: int, skip: int = 0, limit: int = 10):
     try:
-        logging.info(f"Fetching blog details for subcategory ID: {
-                     subcategory_id}.")
+        logging.info(f"Fetching blog details for subcategory ID: {subcategory_id}.")
 
         # Query to get the subcategory along with its associated blogs and category
         query = (
@@ -324,14 +302,12 @@ async def get_blogdetail_by_subcategory_id(db: AsyncSession, subcategory_id: int
         # Check if the subcategory exists
         if not subcategory:
             logging.warning(f"Subcategory with ID {subcategory_id} not found.")
-            raise HTTPException(
-                status_code=404, detail="Subcategory not found.")
+            raise HTTPException(status_code=404, detail="Subcategory not found.")
 
         # Filter blogs to include only those that are active
         active_blogs = [blog for blog in subcategory.blogs if blog.is_active]
 
-        logging.info(f"Retrieved {len(active_blogs)} active blogs for subcategory ID: {
-                     subcategory_id}.")
+        logging.info(f"Retrieved {len(active_blogs)} active blogs for subcategory ID: {subcategory_id}.")
 
         # Implement pagination for active blogs
         paginated_blogs = active_blogs[skip: skip + limit]
@@ -353,6 +329,5 @@ async def get_blogdetail_by_subcategory_id(db: AsyncSession, subcategory_id: int
         }
 
     except Exception as e:
-        logging.error(f"Error fetching blogs for subcategory ID {
-                      subcategory_id}: {str(e)}", exc_info=True)
+        logging.error(f"Error fetching blogs for subcategory ID {subcategory_id}: {str(e)}", exc_info=True)
         raise HTTPException(status_code=500, detail="Failed to fetch blogs.")
